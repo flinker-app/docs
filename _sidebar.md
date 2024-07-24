@@ -1,3 +1,6 @@
 - [Flinker Documentation](README)
-- [Installation with Admin Approval](installation)
-- [Share App Setup](share-app-setup)
+- Share App
+  - [Installation with Admin Approval](installation)
+  - [Share App Setup](share-app-setup)
+- IFC Viewer App
+  - [Installation with Admin Approval](installation)
