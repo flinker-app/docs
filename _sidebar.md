@@ -1,2 +1,2 @@
-- [Read Me](README)
+- [Flinker Documentation](README)
 - [Share App Setup](share-app-setup)
