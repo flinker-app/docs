@@ -43,16 +43,16 @@ If you are already syncing the SharePoint site with your local OneDrive on your 
 
 Create permission groups on SharePoint.
 To do so open the SHARE app from any given folder:
-![image](https://github.com/user-attachments/assets/7e99ad80-ca90-4407-8e9f-64ba30eea6fa)
+![Foto](/_media/open-share-app.png)
 
 Click on the "home" icon on the top left in the open app window of the SHARE app:
-![image](https://github.com/user-attachments/assets/31af060a-e1cc-493a-bc4a-ad61c0c8fd0c)
+![Foto](/_media/click-on-home-in-share-app.png)
 
 Now click on the button with the group icon:
-![image](https://github.com/user-attachments/assets/41fd9910-5df0-476a-9ff5-cc06ac131346)
+![Foto](/_media/click-on-group-icon-in-share-app.png)
 
 By clicking on "New" you can create new SharePoint user groups:
-![image](https://github.com/user-attachments/assets/04d4bc25-c090-4913-8607-45e795d503b5)
+![Foto](/_media/click-on-new-sharepoint-group.png)
 
 Note: If you have also created Microsoft security groups the SharePoint user groups can be name identical with the existing Microsoft security groups.
 
@@ -64,19 +64,19 @@ If you operate various projects and you have often times a bunch of same users i
 
 Create permission groups as security groups.
 Go to Microsoft admin > active teams and groups > security groups:
-![image](https://github.com/user-attachments/assets/cc80bc49-e76e-4264-9549-72fb669bf647)
+![Foto](/_media/add-new-security-groups.png)
 
 
 ### 3.2 Invite Security Groups to SharePoint
 
 Invite security groups to your SharePoint groups by clicking on a SharePoint user groups (click on the group name link, not on edit button):
-![image](https://github.com/user-attachments/assets/f5ce8710-a892-408d-b605-5beaee6587cd)
+![Foto](/_media/click-on-sharepoint-groups-to-add-security-groups.png)
 
 Click on add members:
-![image](https://github.com/user-attachments/assets/d4de3c8e-cbd2-40b4-83f0-33306a34e51d)
+![Foto](/_media/add-new-members-to-sharepoint-group.png)
 
 Search your Microsoft security group and hit enter:
-![image](https://github.com/user-attachments/assets/abec71c2-08bb-46a5-bb2e-d9886ac0335a)
+![Foto](/_media/invite-security-groups.png)
 
 You have now linked the security group with the SharePoint group.
 
@@ -85,24 +85,24 @@ You have now linked the security group with the SharePoint group.
 ### 4.1 Download Template File from Share App
 
 To download the template file from the Share App click on the download icon on the top right in the SHARE App:
-![image](https://github.com/user-attachments/assets/b433c774-92d8-4a14-840f-2a78c95cf3fe)
+![Foto](/_media/invite-security-groups.png)
 
 
 ### 4.2 Set Permissions in Excel
 
 Set permissions or permission levels in Excel. 
 The list of created permission groups can be found when you click on the key icon in the SHARE app:
-![image](https://github.com/user-attachments/assets/a46e6ce8-ed76-4556-ab01-ac5f12347f43)
+![Foto](/_media/set-authority-levels.png)
 
 
 To use these authorisation levels just copy the text and paste them into the Excel cells of the template file. Keep attenation to avoid typos:
-![image](https://github.com/user-attachments/assets/8a311695-6445-4961-ac6d-562c873bcb64)
+![Foto](/_media/select-authority-levels.png)
 
 
 ### 4.3 Upload Template File to Share App
 
 Upload the template file to the Share App, review the preview and save it.
-![image](https://github.com/user-attachments/assets/41cfc6e7-7ccf-4630-922b-ab307e013241)
+![Foto](/_media/upload-the-permission-template.png)
 
 You have now setup all permissions successfully!
 
@@ -120,8 +120,8 @@ You have now setup all permissions successfully!
 
 If you have any further questions or need assistance, you can reach us through the following channels:
 
-- **Email:** support@flinker.app
-- **Phone:** +491606469866
+- **Email:** [support@flinker.app](mailto:support@flinker.app)
+- **Phone:** [+491606469866](tel:+491606469866)
 
 ---
 
