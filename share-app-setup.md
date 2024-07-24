@@ -20,7 +20,8 @@ Create a new SharePoint page or use an existing SharePoint page in your organisa
 ### 1.2 Install Share App on SharePoint Page
 
 Install the Share App on your SharePoint page by a simple click: [Installation Link](https://appsource.microsoft.com/de-de/product/office/WA200007197?tab=Overview)
-![image](https://github.com/user-attachments/assets/0c30c927-ff41-489f-9264-a6a458dd5550)
+![Foto](/_media/MSFT-AppSource-Share-App.png)
+
 
 ## Preparation
 
