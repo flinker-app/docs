@@ -108,11 +108,11 @@ You have now setup all permissions successfully!
 
 ## Frequently Asked Questions (FAQ)
 
-### 5.1 Question 1: Can I use the template file for other SharePoint pages?
+### Question 1: Can I use the template file for other SharePoint pages?
 
 - **Answer:** Yes, this template file can be used to easily duplicate the folder structure and access rights for other SharePoint sites. You will save a lot of time by doing so.
 
-### 5.2 Question 2: Do I have to create Microsoft security groups?
+### Question 2: Do I have to create Microsoft security groups?
 
 - **Answer:** No, you can also create just the SharePoint groups. If you frequently work with the same user groups, it is worthwhile to create security groups to manage users more efficiently.
 
