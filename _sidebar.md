@@ -1,2 +1,2 @@
 - [Read Me](README)
-- [Example Second Page](second-page)
+- [Share App Setup](share-app-setup)
