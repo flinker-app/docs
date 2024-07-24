@@ -1,4 +1,5 @@
-- [Flinker Documentation](README)
+- Getting started
+  - [Flinker Documentation](README)
 - Share App
   - [Installation with Admin Approval](installation)
   - [Share App Setup](share-app-setup)
