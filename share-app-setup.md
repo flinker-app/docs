@@ -29,14 +29,14 @@ Install the Share App on your SharePoint page by a simple click: [Installation L
 
 Create your prefered folders and folder structure in the chosen SharePoint Site:
 
-<img width="881" alt="image" src="https://github.com/user-attachments/assets/d51ba888-0be3-4e0d-a303-3b0392584635">
+![Foto](/_media/folder-structure.png)
 
 Add new folders by clicking on "New folder":
 
-![image](https://github.com/user-attachments/assets/8528c56e-285f-4492-872f-a9d62269f392)
+![Foto](/_media/create-new-folders.png)
 
 If you are already syncing the SharePoint site with your local OneDrive on your desktop PC or MAC you may also create the folder structure in your file explorer:
-![image](https://github.com/user-attachments/assets/2dd15c8a-8b15-4e5d-a089-cb3183cc2cb4)
+![Foto](/_media/sync-with-local-onedrive.png)
 
 
 ### 2.2 Create SharePoint Permission Groups
