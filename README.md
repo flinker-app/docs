@@ -1,12 +1,15 @@
 # Welcome to Flinker Documentation
 
-Welcome to the official documentation page for Flinker. 
-Here, you can find comprehensive guides, how-to articles, and documentation to help you get the most out of Flinker.
+**Discover the full potential of Flinker with our user-friendly guides and resources. Jumpstart your journey to enhanced collaboration and security across Microsoft SharePoint and Teams.**
 
-## Support
+### Quick Start Guide
+- Begin your Flinker experience here. Learn how to install, configure, and use Flinker effectively with step-by-step instructions.
 
-If you need help or have any questions, please contact us directly at [support@flinker.app](mailto:support@flinker.app).
+### Explore Our Apps
+- **[Manage SharePoint and Teams Permissions](https://appsource.microsoft.com/de-de/product/office/WA200007197)**: Gain comprehensive control over permissions with our robust tools designed for precision and efficiency.
+- **[Free IFC Viewer for SharePoint and Teams](https://appsource.microsoft.com/de-de/product/office/wa200006238)**: Seamlessly integrate Building Information Modeling (BIM) into your SharePoint and Teams environment for enhanced collaboration in construction and building management.
+
+### Need Help?
+- **[Support Center](mailto:support@flinker.app)**: Reach out to our dedicated support team for any assistance or inquiries.
 
 ---
-
-Thank you for choosing Flinker. We are excited to help you achieve your goals.
