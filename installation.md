@@ -1,4 +1,4 @@
-# Installation with Admin Approval
+# App Installation with Admin Approval
 
 ## Step 1: SharePoint Site Owner Requests App
 
