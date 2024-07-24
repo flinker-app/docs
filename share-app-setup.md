@@ -85,7 +85,7 @@ You have now linked the security group with the SharePoint group.
 ### 4.1 Download Template File from Share App
 
 To download the template file from the Share App click on the download icon on the top right in the SHARE App:
-![Foto](/_media/invite-security-groups.png)
+![Foto](/_media/download-permissions-template.png)
 
 
 ### 4.2 Set Permissions in Excel
