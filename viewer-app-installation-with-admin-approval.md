@@ -2,7 +2,14 @@
 
 This guide provides detailed steps for installing the Viewer App with admin approval in SharePoint.
 
-## 1. Search for IFC Viewer in the SharePoint Store
+## 1. Add IFC Viewer App to a SharePoint Site
+
+1. Go to the SharePoint site where you want to add the app.
+2. Navigate to "Site settings" and select "Add an app".
+
+![Add App from Site Settings](/_media/sharepoint-site-settings-add-app.png)
+
+## 2. Search for IFC Viewer in the SharePoint Store
 
 1. Navigate to the SharePoint admin center.
 2. Go to the SharePoint Store.
@@ -10,7 +17,7 @@ This guide provides detailed steps for installing the Viewer App with admin appr
 
 ![Search IFC Viewer](/_media/sharepoint-store-search-ifc-viewer.png)
 
-## 2. Request IFC Viewer App
+## 3. Request IFC Viewer App
 
 1. Select the IFC Viewer from the search results.
 2. Click on "Request" to proceed.
@@ -21,7 +28,7 @@ This guide provides detailed steps for installing the Viewer App with admin appr
 
 ![Request Sent](/_media/sharepoint-store-ifc-viewer-request-sent.png)
 
-## 3. Approving the Pending Request
+## 4. Approving the Pending Request
 
 1. As an admin, go to the SharePoint admin center.
 2. Navigate to "Pending requests".
@@ -32,17 +39,6 @@ This guide provides detailed steps for installing the Viewer App with admin appr
 4. A confirmation dialog will appear. Click "Enable and Add" to approve the request.
 
 ![Enable and Add](/_media/sharepoint-admin-center-pending-requests-ifc-viewer-enable-and-add-confirm.png)
-
-## 4. Add IFC Viewer App to a SharePoint Site
-
-1. Go to the SharePoint site where you want to add the app.
-2. Click on "Add an app".
-
-![Add App](/_media/sharepint-site-add-app.png)
-
-3. Select the IFC Viewer from the list of available apps.
-
-![Select IFC Viewer](/_media/sharepoint-admin-center-pending-requests-ifc-viewer.png)
 
 ## 5. Use IFC Viewer to Open an IFC File
 
