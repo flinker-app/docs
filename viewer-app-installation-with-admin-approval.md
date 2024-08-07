@@ -36,9 +36,23 @@ This guide provides detailed steps for installing the Viewer App with admin appr
 
 ![Pending Requests](/_media/sharepoint-admin-center-pending-requests-ifc-viewer-approve.png)
 
-4. A confirmation dialog will appear. Click "Enable and Add" to approve the request.
+4. If a confirmation dialog appears, you have two options:
+    - Click "Enable and Add" to both approve and add the app to the site automatically.
 
-![Enable and Add](/_media/sharepoint-admin-center-pending-requests-ifc-viewer-enable-and-add-confirm.png)
+    ![Enable and Add](/_media/sharepoint-admin-center-pending-requests-ifc-viewer-enable-and-add-confirm.png)
+
+    - Click "Only Enable" to enable the app without adding it automatically.
+
+    ![Only Enable](/_media/sharepoint-admin-center-pending-requests-ifc-viewer-only-enable-confirm.png)
+
+### If You Clicked "Only Enable"
+
+1. The admin or site owner needs to manually add the app to the SharePoint site.
+2. Go to the SharePoint site where you want to add the app.
+3. Navigate to "My apps" and select "IFC Viewer".
+4. Click on "Add" to add the IFC Viewer app to the site.
+
+![Add IFC Viewer from My Apps](/_media/sharepoint-site-myapps-ifc.viewer-add.png)
 
 ## 5. Use IFC Viewer to Open an IFC File
 
