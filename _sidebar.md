@@ -4,4 +4,4 @@
   - [Installation with Admin Approval](installation)
   - [Share App Setup](share-app-setup)
 - IFC Viewer App
-  - [Installation with Admin Approval](installation)
+  - [Installation with Admin Approval](viewer-app-installation-with-admin-approval)
