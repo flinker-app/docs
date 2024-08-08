@@ -10,7 +10,14 @@ This guide provides detailed steps for adding the IFC Viewer app from SharePoint
 
 ![Add to All Sites](/_media/sharepoint-admin-center-manage-apps-add-to-all-sites.png)
 
-## 2. Add IFC Viewer App to Teams
+## 2. Add the App to Microsoft Teams from SharePoint Admin Center
+
+1. Still in the SharePoint admin center under "Manage apps".
+2. Locate the IFC Viewer app and click on "Add to Teams".
+
+![Add to Teams from Admin Center](/_media/sharepoint-admin-center-manage-apps-add-to-teams.png)
+
+## 3. Add IFC Viewer App to Teams
 
 1. Open Microsoft Teams.
 2. Navigate to "Apps" from the left-hand sidebar.
@@ -31,7 +38,7 @@ This guide provides detailed steps for adding the IFC Viewer app from SharePoint
 
 ![Save Tab](/_media/teams-apps-add-to-team-save.png)
 
-## 3. Copy the Link of the IFC File from SharePoint
+## 4. Copy the Link of the IFC File from SharePoint
 
 1. Go to the SharePoint site where your IFC files are stored.
 2. Navigate to the document library and select the IFC file you want to add to Teams.
@@ -39,12 +46,12 @@ This guide provides detailed steps for adding the IFC Viewer app from SharePoint
 
 ![Copy IFC File Link](/_media/teams-team-files-ifc-file-copy-link.png)
 
-## 4. Add IFC Viewer Tab in Teams with the Copied Link
+## 5. Add IFC Viewer Tab in Teams with the Copied Link
 
 1. Go to the team and channel in Microsoft Teams where you want to add the IFC Viewer tab.
 2. Click on the "+" icon to add a new tab.
 3. Select the IFC Viewer app.
-4. Paste the copied link of the IFC file into the required field and refresh the tab.
+4. Paste the copied link of the IFC file into the required field and refresh the tab..
 
 ![Paste Link](/_media/teams-team-files-ifc-viewer-tab-paste-link.png)
 
