@@ -2,7 +2,6 @@
   - [Flinker Documentation](README)
 - Share App
   - [Installation with Admin Approval](installation)
-  - [Share App Setup](share-app-setup)
 - IFC Viewer App
   - [Installation with Admin Approval](viewer-app-installation-with-admin-approval)
   - [Adding to Teams](adding-ifc-viewer-app-from-sharepoint-to-teams)
