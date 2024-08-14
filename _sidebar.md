@@ -5,3 +5,4 @@
 - IFC Viewer App
   - [Installation with Admin Approval](viewer-app-installation-with-admin-approval)
   - [Adding to Teams](adding-ifc-viewer-app-from-sharepoint-to-teams)
+  - [Teams IFC viewer quick guide](teams-ifc-viewer-quick-guide)
