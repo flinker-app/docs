@@ -1,4 +1,4 @@
-# Using IFC Viewer in SharePoint: Usage Tutorial
+# Using IFC Viewer in SharePoint
 
 Once you have successfully installed the IFC Viewer app in SharePoint, follow these steps to use it for viewing IFC files and integrating it as a web part on your site's homepage.
 
