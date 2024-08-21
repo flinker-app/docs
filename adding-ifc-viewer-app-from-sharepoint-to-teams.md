@@ -1,6 +1,6 @@
 # Adding IFC Viewer App from SharePoint to Microsoft Teams
 
-This guide provides detailed steps for adding the IFC Viewer app from SharePoint to Microsoft Teams.
+Once you have successfully installed the IFC Viewer app in SharePoint, follow these steps for adding the IFC Viewer app from SharePoint to Microsoft Teams.
 
 ## 1. Enable the App for All Sites in SharePoint Admin Center
 
