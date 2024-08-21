@@ -6,13 +6,13 @@ Once you have successfully installed the IFC Viewer app in SharePoint, follow th
 
 1. **Navigate to the Document Library:**
    - Go to the document library where your IFC files are stored.
+   - Click on the IFC file you want to open.
+   - Select the new "View" command
 
    ![Select IFC File](/_media/sharepoint-document-library-select-ifc-file.png)
 
-2. **Select and View the IFC File:**
-   - Click on the IFC file you want to open.
+2. **View the IFC File:**
    - The file will automatically open using the IFC Viewer.
-
    ![View IFC File](/_media/sharepoint-document-library-view-ifc-file.png)
 
 ## Step 2: Add IFC Viewer as a Web Part on the SharePoint Homepage
