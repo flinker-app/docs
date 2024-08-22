@@ -52,7 +52,7 @@ This guide provides detailed steps for installing the Share App with admin appro
 3. Navigate to "My apps" and select "Share App".
 4. Click on "Add" to add the Share App to the site.
 
-<!--- ![Add Share App from My Apps](/_media/site-myapps-share-app-add.png) -->
+![Add Share App from My Apps](/_media/sharepoint-site-myapps-share-app-add.png)
 
 ## 6. Manage Permissions for the Share App
 
