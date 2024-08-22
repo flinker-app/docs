@@ -1,34 +1,63 @@
-# App Installation with Admin Approval
+# Share App Installation with Admin Approval
 
-## Step 1: SharePoint Site Owner Requests App
+This guide provides detailed steps for installing the Share App with admin approval.
 
-1. Navigate to the SharePoint site and go to the **SharePoint Apps** section.
-2. Search for the app **Flinker App**.
-3. Click on the app to view its details.
-4. Click on the **Request** button to request the app for your site.
+## 1. Add Share App to Your Site
 
-![Search for Flinker App](/_media/search-for-app.png)
-![Flinker App Details](/_media/app-details.png)
-![Request Flinker App](/_media/request-app.png)
+1. Navigate to the site where you want to install the app.
+2. Go to "Site settings" and select "Add an app".
 
-## Step 2: Admin Approves App
+![Add App from Site Settings](/_media/sharepoint-site-settings-add-app.png)
 
-1. The admin will receive a notification about the pending request.
-2. The admin navigates to the **Pending Requests** section in the SharePoint Admin Center.
-3. Select the **Flinker App** app request.
-4. Click on **Approve and add to App Catalog**.
+## 2. Search for Share App in the App Store
 
-![Admin Approval](/_media/admin-approval.png)
+1. Navigate to the admin center.
+2. Go to the App Store.
+3. Use the search bar to type "Share App".
 
-## Step 3: SharePoint Site Owner Adds App to Site
+![Search Share App](/_media/app-store-search-share-app.png)
 
-1. Once the app is approved by the admin, go back to the **SharePoint Apps** section.
-2. Navigate to **My Apps**.
-3. Find the **Flinker App** app under the **Available Apps** section.
-4. Click on **Add** to add the app to your SharePoint site.
+## 3. Request the Share App
 
-![Add Flinker App to Site](/_media/add-app-to-site.png)
+1. Select the Share App from the search results.
+2. Click on "Request" to proceed.
 
----
+![Request Share App](/_media/app-store-share-app-request.png)
 
-This guide covers the process of installing an app in SharePoint with admin approval, ensuring a seamless and secure integration into your SharePoint site.
+3. A confirmation message will appear indicating that your request has been sent.
+
+<!--- ![Request Sent](/_media/app-store-share-app-request-sent.png) -->
+
+## 4. Approving the Pending Request
+
+1. As an admin, go to the admin center.
+2. Navigate to "Pending requests".
+3. Locate the Share App request and click on "Approve".
+
+![Pending Requests](/_media/admin-center-pending-requests-share-app-approve.png)
+
+4. If a confirmation dialog appears, you have two options:
+    - Click "Enable and Add" to both approve and add the app to the site automatically.
+
+    <!--- ![Enable and Add](/_media/admin-center-pending-requests-share-app-enable-and-add-confirm.png) -->
+
+    - Click "Only Enable" to enable the app without adding it automatically.
+
+    <!--- ![Only Enable](/_media/admin-center-pending-requests-share-app-only-enable-confirm.png) -->
+
+### If You Clicked "Only Enable"
+
+1. The admin or site owner needs to manually add the app to the site.
+2. Go to the site where you want to add the app.
+3. Navigate to "My apps" and select "Share App".
+4. Click on "Add" to add the Share App to the site.
+
+<!--- ![Add Share App from My Apps](/_media/site-myapps-share-app-add.png) -->
+
+## 6. Manage Permissions for the Share App
+
+1. Navigate to the document library where your content is stored.
+2. Select the folder or file for which you want to manage permissions.
+3. Click on the three dots (**...**) next to the selected item to open the context menu.
+4. Choose **Manage permissions** from the dropdown menu.
+5. Adjust the permissions as needed for users or groups.
