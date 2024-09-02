@@ -1,10 +1,10 @@
 - Getting started
   - [Flinker Documentation](README)
-- Share App
+- Share App for SharePoint
   - [Installation with Admin Approval](installation)
-- IFC Viewer App
+- IFC Viewer for SharePoint
   - [Installation with Admin Approval](viewer-app-installation-with-admin-approval)
   - [Usage in SharePoint](using-ifc-viewer-in-sharepoint)
   - [Usage in Microsoft Teams](adding-ifc-viewer-app-from-sharepoint-to-teams)
-- Open IFC Viewer App
+- Open IFC Viewer for Teams
   - [Teams IFC viewer quick guide](teams-ifc-viewer-quick-guide)
