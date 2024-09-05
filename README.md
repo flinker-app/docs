@@ -2,6 +2,7 @@
 
 **Discover the full potential of Flinker Apps with our guides and documentation. Jumpstart your journey here. Enhanced your team collaboration and security across Microsoft SharePoint and Teams with Flinker Apps.**
 
+
 ### Quick Start Guide
 - Begin your Flinker experience here. Learn how to install, configure, and use Flinker effectively with step-by-step instructions.
 
