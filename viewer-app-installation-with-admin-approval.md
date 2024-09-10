@@ -1,3 +1,9 @@
+> ### 🛡️ **Privacy First: Your Data Stays With You!**
+> 
+> **We do not upload your files anywhere.**  
+> **All processing is client-side, ensuring full privacy and security.** 🔐
+
+
 # Viewer App Installation with Admin Approval
 
 This guide provides detailed steps for installing the Viewer App with admin approval in SharePoint.
