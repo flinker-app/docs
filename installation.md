@@ -3,6 +3,10 @@
 > **No files or data are transferred or uploaded anywhere.**  
 > **All permission management is handled directly within SharePoint, ensuring full privacy and security.** 🔐
 
+> #### 🚨 **Admin Approval Needed!**
+> **This app requires admin approval in the SharePoint admin center.**  
+> **Contact your SharePoint admin to get started.**
+
 # Share App Installation with Admin Approval
 
 This guide provides detailed steps for installing the Share App with admin approval.
