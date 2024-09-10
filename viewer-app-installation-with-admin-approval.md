@@ -1,4 +1,4 @@
-> ### 🛡️ **Privacy First: Your Data Stays With You!**
+> #### 🛡️ **Privacy First: Your Data Stays With You!**
 > 
 > **We do not upload your files anywhere.**  
 > **All processing is client-side, ensuring full privacy and security.** 🔐
