@@ -5,7 +5,6 @@
 
 > #### 🚨 **Admin Approval Needed!**
 > **This app requires admin approval in the SharePoint admin center.**  
-> **Contact your SharePoint admin to get started.**
 
 # Viewer App Installation with Admin Approval
 
