@@ -8,5 +8,4 @@
   - [Usage in Microsoft Teams](adding-ifc-viewer-app-from-sharepoint-to-teams)
 - Open IFC Viewer for Teams
   - [Installation](setting-up-the-ifc-viewer-in-microsoft-teams)
-  - [Quick guide](teams-ifc-viewer-quick-guide)
   
