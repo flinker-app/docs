@@ -13,7 +13,7 @@
 ### 🌐 Explore Our Apps
 Here's the updated table with the links embedded in the app names and without emojis:
 
-| App Name                                                | Description                                       |
+|                                                 |                                        |
 |---------------------------------------------------------|---------------------------------------------------|
 | [Share App](https://appsource.microsoft.com/de-de/product/office/WA200007197) | Simplify sharing with our powerful tools.         |
 | [IFC Viewer for SharePoint](https://appsource.microsoft.com/de-de/product/office/wa200006238) | Enhance your SharePoint experience with our IFC Viewer. |
