@@ -3,8 +3,8 @@
 > **We do not upload your files anywhere.**  
 > **All processing is client-side, ensuring full privacy and security.** 🔐
 
-> #### 🚨 **Admin Approval Needed!**
-> **This app requires admin approval in the SharePoint admin center.**  
+> 🚨 **Admin Approval Needed!**
+> This app requires admin approval in the SharePoint admin center.  
 
 # Viewer App Installation with Admin Approval
 
