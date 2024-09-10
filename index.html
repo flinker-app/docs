@@ -67,7 +67,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         noData: 'No matches found.',
         // Headline depth, 1 - 6
         depth: 2,
-      }
+      },
+      plugins: [
+        function pageFooter(hook, vm) {
+          var footer = [
+            '<hr/>',
+            '<footer style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">',
+            '<span>&copy; 2024 <a href="https://www.flinker.app" target="_blank">Flinker</a>. All rights reserved.</span>',
+            '<span>Powered by <a href="https://github.com/docsifyjs/docsify" target="_blank">Docsify</a>.</span>',
+            '</footer>',
+          ].join('');
+        
+          hook.afterEach(function (html) {
+            return html + footer;
+          });
+        }
+      ]
     };
   </script>
 
