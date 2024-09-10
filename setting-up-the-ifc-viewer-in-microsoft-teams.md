@@ -1,4 +1,9 @@
-# Tutorial: Setting Up the IFC Viewer in Microsoft Teams
+> ### 🛡️ **Privacy First: Your Data Stays With You!**
+> 
+> **We do not upload your files anywhere.**  
+> **All processing is client-side, ensuring full privacy and security.** 🔐
+
+# Setting Up the IFC Viewer in Microsoft Teams
 
 Follow these steps to set up the IFC Viewer in your Microsoft Teams environment.
 
