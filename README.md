@@ -22,5 +22,3 @@ Here's the updated table with the links embedded in the app names and without em
 
 ### 🤝 Need Help?
 - **[Support Center](https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/)**: Reach out to our dedicated support team for any assistance or inquiries.
-
----
