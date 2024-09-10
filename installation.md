@@ -1,3 +1,9 @@
+> #### 🛡️ **Privacy First: Your Data Remains Secure!**
+>  
+> **No files or data are transferred or uploaded anywhere.**  
+> **All permission management is handled directly within SharePoint, ensuring full privacy and security.** 🔐
+---
+
 # Share App Installation with Admin Approval
 
 This guide provides detailed steps for installing the Share App with admin approval.
