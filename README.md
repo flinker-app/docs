@@ -18,6 +18,6 @@
 | [**Open IFC Viewer for Teams**](https://appsource.microsoft.com/de-de/product/office/WA200007412)      | Seamlessly view IFC files directly in Teams.          |
 
 ### 🤝 Need Help?
-- **[Support Center](mailto:support@flinker.app)**: Reach out to our dedicated support team for any assistance or inquiries.
+- **[Support Center](https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/)**: Reach out to our dedicated support team for any assistance or inquiries.
 
 ---
