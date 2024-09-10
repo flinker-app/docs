@@ -11,7 +11,7 @@
 - Begin your Flinker experience here. Learn how to install, configure, and use Flinker effectively with step-by-step instructions.
 
 ### 🌐 Explore Our Apps
-| **App Name**                                                | **Description**                                       |
+| App Name                                                | Description                                       |
 |-------------------------------------------------------------|-------------------------------------------------------|
 | [Share App](https://appsource.microsoft.com/de-de/product/office/WA200007197)                      | Simplify sharing with our powerful tools.             |
 | [IFC Viewer for SharePoint](https://appsource.microsoft.com/de-de/product/office/wa200006238)      | Enhance your SharePoint experience with our IFC Viewer.|
