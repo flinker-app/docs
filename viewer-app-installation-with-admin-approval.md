@@ -10,8 +10,6 @@
 
 This guide provides detailed steps for installing the Viewer App with admin approval in SharePoint.
 
-### Installation Steps
-
 ```mermaid
 flowchart LR
     subgraph SearchApp[Search App]
