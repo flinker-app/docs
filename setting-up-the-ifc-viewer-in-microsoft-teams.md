@@ -37,7 +37,11 @@ Go to the Files tab and copy the links of the IFC files you want to view in the 
 ![Copy Links of IFC Files](/_media/teams-apps-ifc-viewer-in-files-tab-copy-links-of-ifc-files.png)
 
 ## Step 6: Configure Tab Settings
-Return to the tab settings, paste the copied IFC file links, and save the settings. Pasting IFC file links from SharePoint or Teams ensures that these files will load automatically whenever the tab is opened.
+Return to the tab settings.
+
+![Return to the tab settings](/_media/teams-apps-ifc-viewer-tab-settings-to-connect-with-your-files.png)
+
+Paste the copied IFC file links, and save the settings. Pasting IFC file links from SharePoint or Teams ensures that these files will load automatically whenever the tab is opened.
 
 ![Paste IFC File Links and Save](/_media/teams-apps-ifc-viewer-tab-settings-paste-ifc-file-links-and-save.png)
 
