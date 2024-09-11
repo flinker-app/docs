@@ -1,5 +1,4 @@
-- Getting started
-  - [Flinker Documentation](README)
+[Flinker Documentation](README)
 - Share App for SharePoint
   - [Installation](installation)
 - IFC Viewer for SharePoint
