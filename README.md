@@ -11,8 +11,6 @@
 - Begin your Flinker experience here. Learn how to install, configure, and use Flinker effectively with step-by-step instructions.
 
 ### 🌐 Explore Our Apps
-Here's the updated table with the links embedded in the app names and without emojis:
-
 |                                                 |                                        |
 |---------------------------------------------------------|---------------------------------------------------|
 | [Share App](https://appsource.microsoft.com/de-de/product/office/WA200007197) | Simplify sharing with our powerful tools.         |
