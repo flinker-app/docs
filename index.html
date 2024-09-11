@@ -26,6 +26,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   body {font-family: 'Segoe UI', Arial, sans-serif;}
   .sidebar-nav{font-weight:600;}
   </style>
+    <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true });
+    window.mermaid = mermaid;
+  </script>
+  <script src="//unpkg.com/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
 </head>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
