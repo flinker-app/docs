@@ -7,13 +7,15 @@
 
 Follow these steps to set up the IFC Viewer in your Microsoft Teams environment.
 
-## Step 1: Search for the IFC Viewer App
-Open Microsoft Teams, go to the Apps section, and search for "IFC Viewer." Click on "Add" to start the setup.
+## Step 1: Get the IFC Viewer App
+Option 1: Vist the [Teams App Store link](https://teams.microsoft.com/l/app/828163ae-0b22-445f-85c6-5768b56dfa4e?source=app-details-dialog)
+
+Option 2: Open Microsoft Teams, go to the Apps section, and search for "IFC Viewer." Click on "Add" to start the setup.
 
 ![Search for IFC Viewer and Click Add](/_media/teams-apps-search-for-ifc-viewer-and-click-add.png)
 
 ## Step 2: Add IFC Viewer to Your Team
-Select the team where you want to add the IFC Viewer and click "Set up a tab."
+Select the team where you want to add the IFC Viewer and click "Set up a tab" or "Add to a Team".
 
 ![Add to Team](/_media/teams-apps-add-to-team.png)
 
