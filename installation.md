@@ -1,3 +1,4 @@
+
 > #### 🛡️ **Privacy First: Your Data Remains Secure!**
 >  
 > **No files or data are transferred or uploaded anywhere.**  
@@ -6,9 +7,68 @@
 > 🚨 **Admin Approval Needed!**
 > This app requires admin approval in the SharePoint admin center.  
 
+
 # Share App Installation with Admin Approval
 
 This guide provides detailed steps for installing the Share App with admin approval.
+
+### Installation Steps
+
+```mermaid
+flowchart LR
+    subgraph SearchApp[Search App]
+      style SearchApp fill:transparent,stroke:transparent,rounded
+      A((🔍))
+      style A fill:#f0f0f0,stroke:#f0f0f0,stroke-width:1px,rounded
+    end
+
+    subgraph RequestApp[Request]
+      style RequestApp fill:transparent,stroke:transparent,rounded
+      B((📝))
+      style B fill:#f0f0f0,stroke:#f0f0f0,stroke-width:1px,rounded
+    end
+
+    subgraph AdminTasks[SharePoint Admin]
+      style AdminTasks fill:#f9f9f9,stroke:#f9f9f9,stroke-width:1px,rounded
+      subgraph AdminApproval[<br>Approves<br>App]
+        style AdminApproval fill:transparent,stroke:transparent,rounded
+        C{🚨}
+        style C fill:#f0f0f0,stroke:#f0f0f0,stroke-width:1px,rounded
+      end
+
+      subgraph EnableAdd[Add To All Sites]
+        style EnableAdd fill:transparent,stroke:transparent,rounded
+        D((🌐🌐🌐))
+        style D fill:#f0f0f0,stroke:#f0f0f0,stroke-width:1px,rounded
+      end
+
+      subgraph OnlyEnable[Only Enable]
+        style OnlyEnable fill:transparent,stroke:transparent,rounded
+        E((🔓))
+        style E fill:#f0f0f0,stroke:#f0f0f0,stroke-width:1px,rounded
+      end
+
+        subgraph ManualAdd[Add To Specific Site]
+        style ManualAdd fill:transparent,stroke:transparent,rounded
+        F((🌐))
+        style F fill:#f0f0f0,stroke:#f0f0f0,stroke-width:1px,rounded
+        end
+    end
+
+    subgraph ManagePermissions[Use App]
+      style ManagePermissions fill:transparent,stroke:transparent,rounded
+      G((🔐))
+      style G fill:#f0f0f0,stroke:#f0f0f0,stroke-width:1px,rounded
+    end
+
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    D --> G
+    E --> F
+    F --> G
+```
 
 ## 1. Add Share App to Your Site
 
