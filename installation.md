@@ -12,8 +12,6 @@
 
 This guide provides detailed steps for installing the Share App with admin approval.
 
-### Installation Steps
-
 ```mermaid
 flowchart LR
     subgraph SearchApp[Search App]
