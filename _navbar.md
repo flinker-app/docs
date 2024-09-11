@@ -1,2 +1,2 @@
 - [Website](https://www.flinker.app/)
-- [Costumer Portal](https://flinkerapp.sharepoint.com/sites/documentation)
+- [Customer Portal](https://flinkerapp.sharepoint.com/sites/documentation)
