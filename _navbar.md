@@ -1,1 +1,2 @@
-- [Flinker Website](https://www.flinker.app/)
+- [Website](https://www.flinker.app/)
+- [Help Center](https://flinkerapp.sharepoint.com/sites/documentation)
