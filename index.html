@@ -3,57 +3,151 @@
 
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5Q7CL8WF');</script>
-<!-- End Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5Q7CL8WF');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport"
     content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
-  <link href="https://cdn.prod.website-files.com/62c5bbce6bd5588d4aeb6a81/62c5bbce6bd5588304eb6c61_flinker%20fav%20icon.png" rel="shortcut icon" type="image/x-icon">
-  
+  <link
+    href="https://cdn.prod.website-files.com/62c5bbce6bd5588d4aeb6a81/62c5bbce6bd5588304eb6c61_flinker%20fav%20icon.png"
+    rel="shortcut icon" type="image/x-icon">
+
   <!-- Replace with your own title and description. -->
   <title>Flinker Documentation - Teams & SharePoint Apps: IFC Viewer & Permissions Management</title>
-  <meta name="description" content="Official Flinker documentation for Teams and SharePoint apps. Learn how to use the IFC Viewer for BIM files and manage sharing and permissions with our comprehensive guides.">
-  <meta name="keywords" content="Flinker, Teams Apps, SharePoint Apps, IFC Viewer, BIM Viewer, Sharing Permissions, Permissions Management, Documentation">
+  <meta name="description"
+    content="Official Flinker documentation for Teams and SharePoint apps. Learn how to use the IFC Viewer for BIM files and manage sharing and permissions with our comprehensive guides.">
+  <meta name="keywords"
+    content="Flinker, Teams Apps, SharePoint Apps, IFC Viewer, BIM Viewer, Sharing Permissions, Permissions Management, Documentation">
 
   <!-- Default Theme (see https://docsify.js.org/#/themes) -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <style>
-  .app-name {max-width: 100px; margin-left: 15px !important;}
-  body {font-family: 'Segoe UI', Arial, sans-serif;}
-  .sidebar-nav{font-weight:600;}
+    .app-name {
+      max-width: 100px;
+      margin-left: 15px !important;
+    }
+
+    :root body {
+      font-family: Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-feature-settings: 'liga' 1, 'calt' 1;
+      /* fix for Chrome */
+    }
+
+    .sidebar-toggle {
+      background-color: transparent !important;
+    }
+
+    @supports (font-variation-settings: normal) {
+      :root {
+        font-family: Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif;
+      }
+    }
+
+    .sidebar-nav {
+      font-weight: 600;
+    }
+
+    span {
+      color: #161616 !important;
+    }
+
+    .sidebar {
+      padding: 1.5rem !important;
+    }
+
+    .sidebar a {}
+
+    input {
+      border-radius: .25rem;
+      font-size: 0.875rem !important;
+      padding-inline-start: 1rem;
+      padding: 6px 30px !important;
+      border: 1px solid #000000 !important;
+      border-color: #757575;
+    }
+
+    .edit-link {
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: #e8e6df;
+      padding: 50px !important;
+      min-height: 300px;
+      margin-left: calc(-13% - 15px);
+      margin-right: calc(-13% - 15px);
+      margin-bottom: calc(-40px);
+    }
+
+    .markdown-section img {
+      border: solid 1px #e6e6e6;
+    }
+
+    .markdown-section h1 {
+      font-size: clamp(1.875rem, 22.1053px + 1.64474vw, 2.5rem);
+      line-height: 1.3;
+    }
+
+    .markdown-section h2 {
+      margin-top: 32px;
+      font-size: clamp(1.59375rem, 18.7895px + 1.39803vw, 2.125rem);
+    }
+
+    .markdown-section h3 {
+      margin-top: 30px;
+      margin-bottom: 18px;
+      font-size: clamp(1.3125rem, 15.4737px + 1.15132vw, 1.75rem);
+    }
+
+    .alert {
+      border-radius: 8px !important;
+      border: none !important;
+    }
+
   </style>
+  <!-- Adds the default breadcrumb styling -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
+
 </head>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/66bf2442146b7af4a43b1969/1i5dab971';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/66bf2442146b7af4a43b1969/1i5dab971';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
 </script>
 <!--End of Tawk.to Script-->
+
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q7CL8WF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q7CL8WF" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <div id="app"></div>
 
   <script>
     // Docsify Configuration (see https://docsify.js.org/#/configuration)
     window.$docsify = {
-      name: 'Flinker Documentation',
-      logo: '/_media/flinker-logo.svg',
+      //name: 'Flinker Documentation',
+      //logo: '/_media/flinker-logo.svg',
       themeColor: '#0779ff',
-
+      'flexible-alerts': {
+        style: 'flat'
+      },
       // Sidebar Configuration
       auto2top: true,
       loadSidebar: true,
@@ -84,12 +178,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             '</span>',
             '</footer>',
           ].join('');
-        
+
           hook.afterEach(function (html) {
             return html + footer;
           });
-        }
-      ]
+        },
+        function editButton(hook, vm) {
+          // The date template pattern
+          $docsify.formatUpdated = '{YYYY}/{MM}/{DD} {HH}:{mm}';
+
+          hook.beforeEach(function (html) {
+            var url =
+              'https://github.com/flinker-app/docs/edit/main/' +
+              vm.route.file;
+            var editHtml = `\n<a class="edit-link" href="${url}">✎</a>\n`;
+            return (
+              html + editHtml
+            );
+          });
+        },
+      ],
+      breadcrumb: {
+        showHome: true,
+        homeText: 'Home',
+        separator: ' / ',
+        casing: 'capitalize',
+        linkColor: 'var(--theme-color, #42b983)',
+        size: 'middle'
+      }
     };
   </script>
 
@@ -106,10 +222,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
   <!-- Alerts Plugin -->
   <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
-  
+  <!-- Adds the breadcrumb JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/index.min.js"></script>
+
   <!-- Recommended -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
 
 </body>
+
 </html>
