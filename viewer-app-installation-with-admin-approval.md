@@ -1,3 +1,5 @@
+> [!TIP]  
+> **Enhance BIM collaboration effortlessly** by viewing and interacting with 3D IFC models directly in SharePoint and Teams, ensuring secure, real-time access to centralized BIM data without compromising privacy.
 
 > #### 🛡️ **Privacy First: Your Data Stays With You!**
 > 
