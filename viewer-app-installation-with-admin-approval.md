@@ -1,5 +1,8 @@
 > [!TIP]  
-> **Enhance BIM collaboration effortlessly** by viewing and interacting with 3D IFC models directly in SharePoint and Teams, ensuring secure, real-time access to centralized BIM data without compromising privacy.
+> Why Choose the IFC Viewer for SharePoint?
+> - **Integrated Experience**: View and interact with 3D IFC models directly in SharePoint Pages and Document Libraries.  
+> - **Enhanced Collaboration**: Facilitate real-time teamwork among architects, engineers, and managers.  
+> - **Data Privacy and Security**: Ensures your files stay within Microsoft 365.  
 
 > [!Note]
 > - 🛡️ **Privacy First: Your Data Stays With You!** We do not upload your files anywhere. All processing is client-side, ensuring full privacy and security.
