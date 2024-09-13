@@ -1,11 +1,9 @@
 > [!TIP]  
 > **Boost productivity and secure collaboration** by easily managing access in SharePoint and Teams, ensuring the right people see the right data with streamlined control and clear visibility.
 
-> #### 🛡️ **Privacy First: Your Data Remains Secure!**
-> **No files or data are transferred or uploaded anywhere.**  
-> **All permission management is handled directly within SharePoint, ensuring full privacy and security.** 🔐
-
-> 🚨 **App must be installed by a SharePoint administrator!**
+> [!Note]
+> - 🛡️ **Privacy First: Your Data Stays With You!** No files or data are transferred or uploaded anywhere. All permission management is handled directly within SharePoint, ensuring full privacy and security.
+> - 🚨 **App must be installed by a SharePoint administrator!**
 
 # Share App Installation
 
