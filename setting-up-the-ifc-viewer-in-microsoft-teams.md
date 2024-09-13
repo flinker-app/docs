@@ -1,3 +1,6 @@
+> [!TIP]  
+> **Streamline BIM collaboration in Teams** with real-time viewing and sharing of IFC models, enhancing communication and project management while keeping your data secure and private.
+
 > #### 🛡️ **Privacy First: Your Data Stays With You!**
 > 
 > **We do not upload your files anywhere.**  
