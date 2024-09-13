@@ -1,3 +1,5 @@
+> [!TIP]  
+> **Boost productivity and secure collaboration** by easily managing access in SharePoint and Teams, ensuring the right people see the right data with streamlined control and clear visibility.
 
 > #### 🛡️ **Privacy First: Your Data Remains Secure!**
 > **No files or data are transferred or uploaded anywhere.**  
