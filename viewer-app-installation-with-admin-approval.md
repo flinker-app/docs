@@ -1,9 +1,10 @@
 > [!TIP]  
 > **Enhance BIM collaboration effortlessly** by viewing and interacting with 3D IFC models directly in SharePoint and Teams, ensuring secure, real-time access to centralized BIM data without compromising privacy.
 
-> [!NOTE|style:flat|label:Privacy First Your Data Stays With You|icon:shield-halved]
-> We do not upload your files anywhere.  
-> All processing is client-side, ensuring full privacy and security. 🔐
+> #### 🛡️ **Privacy First: Your Data Stays With You!**
+> 
+> **We do not upload your files anywhere.**  
+> **All processing is client-side, ensuring full privacy and security.** 🔐
 
 > 🚨 **App must be installed by a SharePoint administrator!**
 
