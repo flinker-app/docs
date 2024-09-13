@@ -1,5 +1,8 @@
 > [!TIP]  
-> **Streamline BIM collaboration in Teams** with real-time viewing and sharing of IFC models, enhancing communication and project management while keeping your data secure and private.
+> Why Choose the IFC Viewer for  Teams?
+> - **Integrated Experience**: View and interact with 3D IFC models directly in Teams channels.  
+> - **Enhanced Collaboration**: Facilitate real-time teamwork among architects, engineers, and managers.  
+> - **Data Privacy and Security**: Ensures your files stay within Microsoft 365.  
 
 > [!Note]
 > - 🛡️ **Privacy First: Your Data Stays With You!** We do not upload your files anywhere. All processing is client-side, ensuring full privacy and security.
