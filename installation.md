@@ -1,5 +1,8 @@
 > [!TIP]  
-> **Boost productivity and secure collaboration** by easily managing access in SharePoint and Teams, ensuring the right people see the right data with streamlined control and clear visibility.
+> Why Choose the IFC Viewer for  Teams?
+> - **Integrated Experience**: View and interact with 3D IFC models directly in Teams channels.  
+> - **Enhanced Collaboration**: Facilitate real-time teamwork among architects, engineers, and managers.  
+> - **Data Privacy and Security**: Ensures your files stay within Microsoft 365.  
 
 > [!Note]
 > - 🛡️ **Privacy First: Your Data Stays With You!** No files or data are transferred or uploaded anywhere. All permission management is handled directly within SharePoint, ensuring full privacy and security.
