@@ -71,9 +71,11 @@
       }
     }
 
-    .sidebar-nav {
-      font-weight: 600;
+    td::before {
+      display: none
     }
+
+    .sidebar-nav {}
 
     span {
       color: #161616 !important;
@@ -101,15 +103,18 @@
     footer {
       background-color: #e8e6df;
       padding: 50px !important;
-      min-height: 300px;
+      min-height: 200px;
       margin-left: calc(-13% - 15px);
       margin-right: calc(-13% - 15px);
       margin-bottom: calc(-40px);
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      flex-direction: column; 
+      align-items: flex-start;
     }
 
-    .markdown-section img {
-      border: solid 1px #e6e6e6;
-    }
+    .markdown-section img {}
 
     .markdown-section h1 {
       font-size: clamp(1.875rem, 22.1053px + 1.64474vw, 2.5rem);
@@ -131,7 +136,6 @@
       border-radius: 8px !important;
       border: none !important;
     }
-
   </style>
   <!-- Adds the default breadcrumb styling -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
@@ -176,7 +180,7 @@
     window.$docsify = {
       //name: 'Flinker Documentation',
       //logo: '/_media/flinker-logo.svg',
-      themeColor: '#0779ff',
+      themeColor: '#161616',
       'flexible-alerts': {
         style: 'flat'
       },
@@ -200,16 +204,17 @@
       },
       plugins: [
         function pageFooter(hook, vm) {
-          var footer = [
-            '<hr/>',
-            '<footer style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">',
-            '<span>&copy; 2024 <a href="https://www.flinker.app" target="_blank">Flinker</a>. All rights reserved.</span>',
-            '<span>',
-            '<a href="https://docs.flinker.app/" target="_blank">Home</a> | ',
-            '<a href="https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/" target="_blank">Support</a>',
-            '</span>',
-            '</footer>',
-          ].join('');
+          var footer = `
+<footer >
+      <span style="margin-top: 10px;">
+        <a href="https://docs.flinker.app/" target="_blank">Home</a> | 
+        <a href="https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/" target="_blank">Support</a> | 
+        <a href="https://www.flinker.app/data-protection" target="_blank">Privacy</a>
+    </span>
+    <img src="/_media/microsoft-partner-logo.jpeg" alt="Microsoft Partner" style="margin-top: 20px; margin-bottom: 20px; max-width: 100px;" />
+    <span>&copy; 2024 Flinker GmbH. All rights reserved.</span>
+</footer>
+            `;
 
 
           hook.afterEach(function (html) {
