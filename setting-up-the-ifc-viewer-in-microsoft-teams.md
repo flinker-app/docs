@@ -35,7 +35,15 @@ After setting up the tab, the settings window will automatically appear. You can
 ## Step 4: Connect with Your Files
 Click "Connect" to grant permissions for the IFC Viewer to access your files. This step must be completed to give the app access to the files.
 
+> [!Note]
+> We do not upload your files anywhere. All processing is client-side, ensuring full privacy and security.
+> 
+> - You may see a message saying **“This app requires your admin's approval”** when trying to install our app in Microsoft Teams. This occurs based on your organization’s settings for third-party app access. Contact your IT admin for approval.
+
+
 ![Connect and Grant Permissions to Read Your Files](/_media/teams-apps-ifc-viewer-click-connect-and-grant-permissions-to-read-your-files.png)
+
+
 
 ## Step 5: Copy Links of IFC Files
 Go to the Files tab and copy the links of the IFC files you want to view in the IFC Viewer.
@@ -51,7 +59,7 @@ Paste the copied IFC file links, and save the settings. Pasting IFC file links f
 
 ![Paste IFC File Links and Save](/_media/teams-apps-ifc-viewer-tab-settings-paste-ifc-file-links-and-save.png)
 
-## Step 7: Automatically Load IFC Files
+## IFC Files Load Automatically
 IFC files will load automatically according to the settings whenever you open the tab.
 
 ![IFC Files from Settings Load Automatically](/_media/teams-apps-ifc-viewer-ifc-files-from-settings-load-automatically.png)
