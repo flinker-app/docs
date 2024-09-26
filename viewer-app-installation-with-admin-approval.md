@@ -65,7 +65,7 @@ You can add the IFC Viewer to your site directly through the App Catalog or AppS
 
 ### Option 1: From AppSource
 
-1. Visit the [AppSource link](https://appsource.microsoft.com/en-us/product/office/WA200006238).
+1. Visit the [AppSource link](https://appsource.microsoft.com/en-us/product/office/WA200006238?src=docs&mktcmpid=docs_installation).
 2. Click on "Get it now" to proceed with adding the IFC Viewer to your environment.
 
 ### Option 2: From the App Catalog
