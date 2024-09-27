@@ -24,10 +24,10 @@ All our products have been designed specifically for Microsoft. That means our s
 
 
 ### Support Contact
-Reach out to our dedicated **[support team](https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/)** for any assistance or inquiries.
+**Online meeting: ** Reach out to our dedicated **[support team](https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/)** for any assistance or inquiries.
 
-eMail: support@flinker.app
+**eMail: ** support@flinker.app
 
-Phone: +49 89 26204274
+**Phone:** +49 89 26204274
 
-FAQs
+**FAQs**
