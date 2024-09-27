@@ -8,10 +8,10 @@ Discover the full potential of Flinker Apps with our guides and documentation. J
 > **🛡️ Privacy First: Your Data Remains Secure!**
 > No files or data are transferred or uploaded anywhere. All processing is handled directly within SharePoint and Teams, ensuring full privacy and security.
 
-### Quick Start Guide
+### Setup Guides
 Begin your experience here. Learn how to install, configure, and use the 100% private and secure Microsoft 365 Add-ons effectively with step-by-step instructions.
 
-### Our Apps
+### Add Ons
 
 #### For Microsoft <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/240px-Microsoft_logo.svg.png" alt="Teams" width="26" height="auto" style="vertical-align:top; margin-left: 10px">
 All our products have been designed specifically for Microsoft. That means our solutions fit seamlessly with your existing technology.
