@@ -2,7 +2,7 @@
 
 ### Microsoft 365 Add ons for 100% secure project management between teams and companies.
 
-Discover the full potential of Flinker Apps with our guides and documentation. Jumpstart your journey here. Enhanced your team collaboration and security across Microsoft SharePoint and Teams with Flinker Apps.
+Discover the full potential of Microsoft Add ons with these guides and documentation. Enhanced your team collaboration and security across Microsoft SharePoint and Teams.
 
 > [!NOTE]
 > **🛡️ Privacy First: Your Data Remains Secure!**
