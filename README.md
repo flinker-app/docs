@@ -1,4 +1,4 @@
-# Introduction
+# Introduction and Support
 
 **Discover the full potential of Flinker Apps with our guides and documentation. Jumpstart your journey here. Enhanced your team collaboration and security across Microsoft SharePoint and Teams with Flinker Apps.**
 
