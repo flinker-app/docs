@@ -21,5 +21,11 @@ All our products have been designed specifically for Microsoft. That means our s
 | <img src="https://store-images.s-microsoft.com/image/apps.12309.c24477af-2aeb-444a-9f51-3442091a108b.7f8441a4-87aa-4f3c-b52a-2f18c329ec78.fe7c80b2-03e4-4f1f-8dc5-c08984c0d3ec.png" alt="Teams" width="46" height="auto"> | [Open IFC Viewer](https://appsource.microsoft.com/de-de/product/office/WA200007412?src=docs&mktcmpid=docs_home) <br /> Seamlessly view IFC files directly in Teams. | <img src="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/assets/brand-icons/product/svg/teams_16x1.svg" alt="Teams" width="16" height="16"> Teams |
 
 
-### Need Help?
+### Support Contact
 Reach out to our dedicated **[support team](https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/)** for any assistance or inquiries.
+
+eMail: support@flinker.app
+
+Phone: +49 89 26204274
+
+FAQs
