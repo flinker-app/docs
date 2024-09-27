@@ -35,15 +35,17 @@ After setting up the tab, the settings window will automatically appear. You can
 ## Step 4: Connect with Your Files
 Click "Connect" to grant permissions for the IFC Viewer to access your files. This step must be completed to give the app access to the files.
 
-> [!Note]
-> We do not upload your files anywhere. All processing is client-side, ensuring full privacy and security.
-> 
-> - You may see a message saying **“This app requires your admin's approval”** when trying to install our app in Microsoft Teams. This occurs based on your organization’s settings for third-party app access. Contact your IT admin for approval.
-
-
 ![Connect and Grant Permissions to Read Your Files](/_media/teams-apps-ifc-viewer-click-connect-and-grant-permissions-to-read-your-files.png)
 
 
+> [!Note]
+> **Why Do You Need to Grant File Read Permissions?**
+> 
+> The **IFC Viewer** requires permission to read the IFC files stored in your **SharePoint** and **Teams**. This is essential for the app to retrieve and display the files directly from these platforms, allowing you to view them without any manual downloads or transfers.
+> 
+> **Your files are not transferred externally**. The app operates **within the SharePoint and Teams environment**, ensuring that all data remains securely within your organization's ecosystem.
+> 
+> If you see a message saying that _"This app requires your admin’s approval,"_ it simply means that your organization's security settings require admin approval before third-party apps can access your files. In this case, you will need to contact your IT admin for approval.
 
 ## Step 5: Copy Links of IFC Files
 Go to the Files tab and copy the links of the IFC files you want to view in the IFC Viewer.
