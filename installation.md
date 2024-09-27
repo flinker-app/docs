@@ -64,7 +64,7 @@ You can add the Share App to your site directly through the App Catalog or AppSo
 
 ### Option 1: From AppSource
 
-1. Visit the [AppSource link](https://appsource.microsoft.com/en-us/product/office/WA200007197).
+1. Visit the [AppSource link](https://appsource.microsoft.com/en-us/product/office/WA200007197?src=docs&mktcmpid=docs_installation).
 2. Click on "Get it now" to proceed with adding the Share App to your environment.
 
 ### Option 2: From the App Catalog

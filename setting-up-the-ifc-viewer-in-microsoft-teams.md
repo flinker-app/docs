@@ -5,7 +5,7 @@
 > - **Data Privacy and Security**: Ensures your files stay within Microsoft 365.  
 
 > [!Note]
-> - 🛡️ **Privacy First: Your Data Stays With You!** We do not upload your files anywhere. All processing is client-side, ensuring full privacy and security.
+> - 🛡️ **Privacy First: Your Data Stays With You!** We do not upload your files anywhere. All processing is client-side, ensuring full privacy and security. For more details, see [Microsoft App Compliance](https://learn.microsoft.com/en-us/microsoft-365-app-certification/teams/flinker-gmbh-open-ifc-viewer?pivots=general).
 
 # Setting Up the IFC Viewer in Microsoft Teams
 
