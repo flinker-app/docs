@@ -7,7 +7,7 @@
 > No files or data are transferred or uploaded anywhere. All processing is handled directly within SharePoint and Teams, ensuring full privacy and security.
 
 ### Quick Start Guide
-Begin your Flinker experience here. Learn how to install, configure, and use Microsoft 365 Add-ons effectively with step-by-step instructions.
+Begin your experience here. Learn how to install, configure, and use the 100 private and secure Microsoft 365 Add-ons effectively with step-by-step instructions.
 
 ### Our Apps
 
