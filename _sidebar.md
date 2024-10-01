@@ -4,7 +4,7 @@
   - Integrations
     - [IFC GPT](ifc-gpt)
     - [BCF Integation](ifc-bcf)
-    - [Explore IFC with Azure AI](ifc-azureai)
+    - [Explore IFC with Azure AI](ifc-docslink)
 - IFC Viewer for SharePoint
   - [Installation for Admins](viewer-app-installation-with-admin-approval)
   - [Usage](using-ifc-viewer-in-sharepoint)
