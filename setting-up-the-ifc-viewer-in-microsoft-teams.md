@@ -28,7 +28,7 @@ Choose the specific team and channel where you want to set up the IFC Viewer tab
 
 ![Select Team and Setup Tab](/_media/teams-apps-ifc-viewer-select-team-and-setup-tab.png)
 
-After setting up the tab, the settings window will automatically appear. You can add the IFC file links now or return to this window later to add them as needed. Click "Save" to add the tab.
+After setting up the tab, the settings window will automatically appear. To load models automatically whenever the tab is opened you can add the SharePoint and Teams .ifc file links now or return to this window later to add them as needed. Click "Save" to add the tab.
 
 ![Tab Settings to Connect with Your Files](/_media/teams-apps-ifc-viewer-tab-settings-paste-ifc-file-links-and-save.png)
 
