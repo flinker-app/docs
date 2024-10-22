@@ -1,5 +1,5 @@
 # FAQ for IFC Viewer 
-#### An open, free, fast and privacy first IFC viewer for project work with 3D/BIM models
+##### An open, free, fast and privacy first IFC viewer for project work with 3D/BIM models
 
 **1. Can the IFC Viewer also be added as a tab in Microsoft Teams?**
 
@@ -21,6 +21,10 @@ A major advantage of the Open IFC Viewer app is that you can store any IFC files
 **4. Can you set which users can see the IFC model in Teams or SharePoint?**
 
 **Answer:** Yes, you can determine which users or user groups can see the 3D or IFC model in Teams or SharePoint. To do this, you can use Microsoft security groups, SharePoint groups, or the SHARE Add-On. For example, you can restrict access to the IFC model for certain users or groups who are not working on the model or do not need data from it. Additionally, you can set which user groups are allowed to edit the model.
+
+
+
+
 
 
 
