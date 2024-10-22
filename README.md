@@ -1,6 +1,6 @@
 # Introduction and Support
 
-### Microsoft 365 Add-ons for 100% secure project management between teams and companies.
+#### Microsoft 365 Add-ons for 100% secure project management between teams and companies.
 
 Discover the full potential of Microsoft Add-ons with these guides and documentation. Enhanced your team collaboration and security across Microsoft SharePoint and Teams.
 
@@ -9,9 +9,9 @@ Discover the full potential of Microsoft Add-ons with these guides and documenta
 > No files or data are transferred or uploaded anywhere. All processing is handled directly within SharePoint and Teams, ensuring full privacy and security.
 
 
-## Add-Ons
+### Add-Ons
 
-#### For Microsoft <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/240px-Microsoft_logo.svg.png" alt="Teams" width="26" height="auto" style="vertical-align:top; margin-left: 10px">
+#### For Microsoft 365 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/240px-Microsoft_logo.svg.png" alt="Teams" width="26" height="auto" style="vertical-align:top; margin-left: 10px">
 All our products have been designed specifically for Microsoft 365. That means our solutions fit seamlessly with your existing Microsoft infrastructure.
 
 | App                                                                                           | Description                                               | For                               |
@@ -21,18 +21,18 @@ All our products have been designed specifically for Microsoft 365. That means o
 | <img src="https://store-images.s-microsoft.com/image/apps.12309.c24477af-2aeb-444a-9f51-3442091a108b.7f8441a4-87aa-4f3c-b52a-2f18c329ec78.fe7c80b2-03e4-4f1f-8dc5-c08984c0d3ec.png" alt="Teams" width="46" height="auto"> | [Open IFC Viewer](https://appsource.microsoft.com/de-de/product/office/WA200007412?src=docs&mktcmpid=docs_home) <br /> Seamlessly view IFC files directly in Teams. | <img src="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/assets/brand-icons/product/svg/teams_16x1.svg" alt="Teams" width="16" height="16"> Teams |
 
 
-## Benefits
+### Benefits
 - ✅ Seamless integration with Microsoft 365
 - ✅ 100% privacy first and data sovereignty
 - ✅ As secure as Microsoft can be
 - ✅ Single Sign-On for any users
 
 
-## Setup
+### Setup
 Begin your experience here. Learn how to install, configure, and use the 100% private and secure Microsoft 365 Add-ons effectively with step-by-step instructions.
 
 
-## Contact
+### Support
 
 If you have any questions about implementation, usage and bug reports, please feel free to contact us at any time using the contact details below:
 
