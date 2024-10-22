@@ -1,5 +1,5 @@
 # FAQ for SHARE 
-##### A Microsoft Add-on to turn your Microsoft SharePoint sites into virtual data rooms for cross company colllaboration
+#### A Microsoft Add-on to turn your Microsoft SharePoint sites into virtual data rooms for cross company colllaboration
 
 **1. Which content can be managed with the Microsoft SHARE Add-on?**
 
