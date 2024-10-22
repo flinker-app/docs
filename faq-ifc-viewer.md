@@ -1,5 +1,5 @@
 # FAQ for IFC Viewer 
-#### An open, free, fast and privacy first IFC viewer for project work with 3D/BIM models
+#### An open, free, fast and privacy first online IFC viewer for project work with 3D/BIM models
 
 **1. Can the IFC Viewer also be added as a tab in Microsoft Teams?**
 
