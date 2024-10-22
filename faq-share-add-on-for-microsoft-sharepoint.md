@@ -1,5 +1,5 @@
 # FAQ for SHARE 
-#### A Microsoft Add to turn your Microsoft SharePoint Site into a complete virtual data room for cross company colllaboration
+#### A Microsoft Add-on to turn your Microsoft SharePoint sites into virtual data rooms for cross company colllaboration
 
 **1. Which content can be managed with the Microsoft SHARE Add-on?**
 
@@ -31,3 +31,6 @@ Do you use IFC files in your SharePoint? With the IFC Viewer for SharePoint and 
 **6. Can the access to websites be managed with the SHARE Add-On?**
 
 **Answer:** Yes, with the SHARE Add-On, you can manage access to external websites that you have embedded as tabs in Microsoft Teams or on a SharePoint page.
+
+
+
