@@ -2,14 +2,15 @@
 - IFC VIEWER in Webbrowser
   - [IFC Viewer FAQ](faq-ifc-viewer)  
 - IFC VIEWER in Teams
-  - [Installation](setting-up-the-ifc-viewer-in-microsoft-teams)
+  - [Setup](setting-up-the-ifc-viewer-in-microsoft-teams)
   - Integrations
     - [IFC GPT](ifc-gpt)
     - [BCF Integation](ifc-bcf)
     - [Document Linking](ifc-docslink)
 - IFC VIEWER in SharePoint
-  - [Installation for Admins](viewer-app-installation-with-admin-approval)
+  - [Setup for Admins](viewer-app-installation-with-admin-approval)
   - [Usage](using-ifc-viewer-in-sharepoint)
 - SHARE for SharePoint
-  - [Installation for Admins](installation)
+  - [Setup for Admins](installation)
+  - [Features](share-features)
   - [SHARE FAQ](faq-share-add-on-for-microsoft-sharepoint)
