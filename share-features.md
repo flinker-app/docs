@@ -25,20 +25,24 @@ The following key features are offered with the SHARE Add-on for SharePoint:
 The SHARE App is used by a variety of users, depending on company size, typically from project management or IT security and governance teams. It helps customers efficiently manage SharePoint sites, control access permissions, improve collaboration, and ensure data security and compliance.
 
 
-### Project & Workspace Managers
+#### Project & Workspace Managers
 * **Project Managers**: Streamlined project collaboration and document sharing, ensuring all team members have access to the latest information.
 * **Workspace Managers**: Efficient administration of multiple workspaces with customizable access controls.
-### BIM & Design Platform Management
+
+#### BIM & Design Platform Management
 * **BIM Managers/Coordinators**: Enhanced control over BIM data sharing and permissions, improving data integrity and security.
 * **Admins for Autodesk and Other Platforms**: Improved integration and management of data across various construction and design platforms[^1].
-### Automation & Workflow Optimization
+
+#### Automation & Workflow Optimization
 * **Process/Automation Managers**: Improved workflow automation and process management through advanced permission settings.
-### Cloud & Virtual Environment Administration
+
+#### Cloud & Virtual Environment Administration
 * **SharePoint/Microsoft Teams Admins**: Enhanced security and compliance features for managing SharePoint sites and Teams.
 * **Virtual Dataroom Admins**: Robust tools for managing virtual datarooms, ensuring secure and compliant data handling.
 * **Online Drive Admins**: Seamless integration with various cloud storage solutions, centralizing file management.
 * **Microsoft 365/Azure Admins**: Simplified management of user permissions and integration with existing Microsoft services.
-### IT Security, Compliance, and Governance
+
+#### IT Security, Compliance, and Governance
 * **IT Security Admins**: Advanced security features to protect sensitive information and manage user access.
 * **IT Compliance Managers**: Tools to ensure compliance with industry standards and regulations.
 * **IT Governance Managers**: Comprehensive governance tools to oversee and manage IT policies and procedures.
