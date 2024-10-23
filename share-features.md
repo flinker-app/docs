@@ -8,20 +8,19 @@ The following key features are offered with the SHARE Add-on for SharePoint:
 * **Secure file sharing to multi users:** MultiLinker enables users to efficiently select and directly send multiple file links boosting document sharing.
 
 
-## SHARE vs. SharePoint standard features
+## SHARE vs. SharePoint standard
 
 | Feature                                | Description                                    | SHARE Add-on | Standard SharePoint |
 |----------------------------------------|------------------------------------------------|--------------|---------------------|
-| Easy integration with SharePoint       | Seamless integration with SharePoint platform  | ☑️           | ☑️                  |
-| Customizable user permissions          | Tailor user permissions to specific needs      | ☑️           | ☑️                  |
-| Simple user permissions management     | Adjust permissions within SharePoint by clicking   | ☑️           | ⬜                 |
-| Secure file sharing to multi users     | Share files securely with multiple users       | ☑️           | ⬜                 |
-| Permission templates         | Use templates to quickly set permissions for new SharePoint sites or MS Teams      | ☑️           | ⬜                  |
-| Easy external website access management     | Manage access to embedded external websites    | ☑️           | ⬜                  |
-| Compliance and governance report        | Manage and oversee access rights for multiple SharePoint sites and teams        | ☑️           | ⬜                  |
+| **Customizable user permissions**        | Tailor user permissions to specific needs      | ☑️           | ☑️                  |
+| **Simple user permissions management**     | Adjust permissions within SharePoint by clicking   | ☑️           | ⬜                 |
+| **Permission templates**         | Use templates to quickly set permissions for new SharePoint sites or MS Teams      | ☑️           | ⬜                  |
+| **Easy external website access management**     | Manage access to embedded external websites    | ☑️           | ⬜                  |
+| **Compliance and governance report**        | Manage and oversee access rights for multiple SharePoint sites and teams        | ☑️           | ⬜                  |
+| **Secure file sharing to multi users**     | Share files securely with multiple users       | ☑️           | ⬜                 |
 
 
-## SHARE Users and Benefits
+## Users and Benefits
 
 The SHARE App is used by a wide range of users depending on the size of the company.
 Popular users are listed below and do usually belong either to the project management or to the IT security and governance teams.
