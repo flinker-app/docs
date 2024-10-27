@@ -1,5 +1,5 @@
 # FAQ for SHARE 
-#### A Microsoft Add-on to turn your Microsoft SharePoint sites into virtual data rooms for cross company colllaboration
+#### A Microsoft Add-on to turn your Microsoft SharePoint sites into enterprise-level secure virtual data rooms for cross company colllaboration
 
 ### Questions
 - [Where can I download or add the SHARE app to my SharePoint site?](#where-can-i-download-or-add-the-share-app-to-my-sharepoint-site)
@@ -41,7 +41,7 @@ If you do not see this button then select any folder to show it:
 
 Please find the feature overview page where you see any features and a comparison between SharePoint, Share and Share Premium verison.
 
-#### *Which content can be managed with the Microsoft SHARE Add-on?
+#### Which content can be managed with the Microsoft SHARE Add-on?
 
 With the Microsoft SHARE Add-on, you can manage all access to content in your OneDrive, SharePoint, or MS Teams. Technically speaking, this concerns all content stored on your Microsoft SharePoint sites. Since files in Microsoft Teams are also stored and synchronized on SharePoint sites, you can use SHARE to easily and granularly control access to all file formats, links/URLs, and folders in your SharePoint or in Microsoft Teams. The SHARE Add-On also enables you to securely manage access for users from external companies.
 
