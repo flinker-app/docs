@@ -35,7 +35,7 @@ The Share Add-on appears directly within your SharePoint menues and navigation. 
 ![Search for IFC Viewer and Click Add](/_media/sharepoint-document-library-view-share-add-on.png)
 
 If you do not see this button then select any folder to show it:
-![Search for IFC Viewer and Click Add](/_media/sharepoint-document-library-view-share-add-on.png)
+![Search for IFC Viewer and Click Add](/_media/sharepoint-document-library-view-select-folder.png)
 
 #### What features does the SHARE Add-on have?
 
