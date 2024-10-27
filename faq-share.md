@@ -10,13 +10,27 @@
 - [Are there alternatives to manage tasks and user groups on a SharePoint page, a Microsoft Teams team, or in so-called Microsoft CDEs/SharePoint project or data rooms with Flinker or the SHARE Add-On?](#are-there-alternatives-to-manage-tasks-and-user-groups-on-a-sharepoint-page-a-microsoft-teams-team-or-in-so-called-microsoft-cdessharepoint-project-or-data-rooms-with-flinker-or-the-share-add-on)
 - [Can the access to websites be managed with the SHARE Add-On?](#can-the-access-to-websites-be-managed-with-the-share-add-on)
 
-**I have installed the Share Add-on where do I find it?**
+
+**Where can I download or add the SHARE app?**
+
+**Answer:** Please visit [AppSource link](https://appsource.microsoft.com/en-us/product/office/WA200007197?src=docs&mktcmpid=docs_installation) to add the Share App. You need to be a SharePoint administrator to complete the setup. Click on "Get it now" to proceed with adding the Share App to your environment.
+If you are not an SharePoint administrator yourself please forward the SharePoint Administrator this setup guidline: [Setup for Admins](installation)
+
+**I have requested the Share Add-on what happens now?**
+
+**Answer:** Usually nothing. Why? Your SharePoint administrator will receive a notification about your requests. Please speak to your SharePoint administrator in person. Usually, SharePoint administrators oversee notifications because they receive many requests emails daily. By default do not expect the SharePoint administrator will setup the Share App upon your first requests but rather expect that you will need to talk to the SharePoint administrator in person and remind him about your request. If you work in a company and you get your SharePoint Add-on timely after your first request - great, you are lucky!
+
+**We have setup the Share Add-on where do I find it?**
 
 **Answer:** The Share Add-on appears directly within your SharePoint menues and navigation. If you have setup the Share Add-on in your SharePoint site you will find it in the standard SharePoint menue bar. There is a button named "Manage permissions":
 ![Search for IFC Viewer and Click Add](/_media/sharepoint-document-library-view-share-add-on.png)
 
 If you do not see this button then select any folder to show it:
 ![Search for IFC Viewer and Click Add](/_media/sharepoint-document-library-view-share-add-on.png)
+
+**What features does the SHARE Add-on have?**
+
+**Answer:** Please find the feature overview page where you see any features and a comparison between SharePoint, Share and Share Premium verison.
 
 **Which content can be managed with the Microsoft SHARE Add-on?**
 
