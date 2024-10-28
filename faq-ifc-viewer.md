@@ -13,7 +13,7 @@
 
 **3. What advantages do I have when I use the official Microsoft Teams app instead of embedding the IFC Viewer as a URL in a Microsoft Teams tab?**
 
-**Answer:** When you embed the IFC Viewer as a URL in a tab in Microsoft Teams, only you can load and view IFC models. This means that all users in Microsoft Teams would have to individually add the IFC Viewer as a URL when needed. With the official Open IFC Viewer app for Microsoft Teams, each user in the group does not need to add the viewer themselves.
+**Answer:** When you embed the IFC Viewer as a URL in a Microsoft Teams tab, you can only load local files, and only you can view these files. However, with the official Open IFC Viewer app for Microsoft Teams, you can load files directly from SharePoint and Teams, and all users in the group can access the models.
 
 A major advantage of the Open IFC Viewer app is that you can store any IFC files, such as an overall coordination model, which is then permanently embedded as a tab in Microsoft Teams. All project participants in Microsoft Teams or on the connected SharePoint page see all changes in the IFC model automatically and in real time with the Open IFC Viewer Add-On. This way, everyone is always up to date, and costly mistakes and confusion are avoided.
 
