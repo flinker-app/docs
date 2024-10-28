@@ -8,7 +8,7 @@
 
 **2. How can I embed the IFC Viewer in Microsoft Teams if my organization does not allow adding apps from the App Store?**
 
-**Answer:** You can insert the IFC Viewer as a URL in Teams. Add a new tab in Microsoft Teams and enter the URL [www.viewer.flinker.app](http://www.viewer.flinker.app). Done!
+**Answer:** You can insert the IFC Viewer as a URL in Teams. Add a new tab in Microsoft Teams and enter the URL `http://viewer.flinker.app`. Done!
 
 
 **3. What advantages do I have when I use the official Microsoft Teams app instead of embedding the IFC Viewer as a URL in a Microsoft Teams tab?**
