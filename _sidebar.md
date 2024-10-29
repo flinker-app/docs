@@ -5,6 +5,7 @@
   - [Setup](setting-up-the-ifc-viewer-in-microsoft-teams)
   - Integrations
     - [IFC GPT](ifc-gpt)
+    - [IFC GPT FAQ](ifc-gpt-faq)
     - [BCF Integation](ifc-bcf)
     - [Document Linking](ifc-docslink)
 - IFC VIEWER in SharePoint
