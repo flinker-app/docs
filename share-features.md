@@ -2,26 +2,33 @@
 
 The following key features are offered with the SHARE Add-on for SharePoint:
 
-* **Easy integration with SharePoint:** Admins can add the SHARE App with just a view clicks from the Microsoft AppSource store as an Add-On app to SharePoint. It can be added to selected SharePoint sites or all sites in the organization.
-* **Data protection and data security:** The Add-On uses the SharePoint Framework (SPFx) technology and installs directly on your SharePoint server, ensuring all operations are performed on your own server without transferring data to external servers or third parties.
-* **Customizable user permissions:** SHARE users can assign any permissions to internal or external Microsoft users or user groups for all data, documents, URLs, Microsoft lists or folders at any level of the SharePoint sites and folder directories.
-* **Shared folders report:** SHARE users can see what folders are shared on one simple report for the whole SharePoint site to enhance security.
-* **Secure file sharing to multi users:** MultiLinker enables users to efficiently select and directly send multiple file links boosting document sharing.
+* **⚽ Easy integration with SharePoint:** Admins can add the SHARE Microsoft Add-On with just a view clicks from the Microsoft AppSource store as an Add-On app to SharePoint. It can be added to selected SharePoint sites or all sites in the organization.
+* **🔒 Data protection and data security:** The Add-On uses the SharePoint Framework (SPFx) technology and installs directly on your SharePoint server, ensuring all operations are performed on your own server without transferring data to external servers or third parties.
+* **🎨 Customizable user permissions:** SHARE users can assign any permissions to internal or external Microsoft users or user groups for all data, documents, URLs, Microsoft lists or folders at any level of the SharePoint sites and folder directories.
+* **🕵️‍♂️ Shared folders report:** SHARE users can see what folders are shared on one simple report for the whole SharePoint site to enhance security.
+* **👥 Secure file sharing to multi users:** MultiLinker enables users to efficiently select and directly send multiple file links boosting document sharing.
 
 ## SHARE vs. SharePoint standard
 
-| Feature                                | Description                                    | SHARE Add-on | Standard SharePoint |
-|----------------------------------------|------------------------------------------------|--------------|---------------------|
-| **Customizable user permissions**        | Tailor user permissions to specific needs      | ☑️           | ☑️                  |
-| **Simple user permissions management**     | Adjust permissions within SharePoint by clicking   | ☑️           | ⬜                 |
-| **Permission templates**         | Use templates to quickly set permissions for new SharePoint sites or MS Teams      | ☑️           | ⬜                  |
-| **Easy external website access management**     | Manage access to embedded external websites    | ☑️           | ⬜                  |
-| **Compliance and governance report**        | Manage and oversee access rights for multiple SharePoint sites and teams        | ☑️           | ⬜                  |
-| **Secure file sharing to multi users**     | Share files securely with multiple users       | ☑️           | ⬜                 |
+| Feature                                | Gain                                    | SHARE Add-on (Enterprise) | SHARE Add-on (Free) | Standard SharePoint |
+|----------------------------------------|------------------------------------------------|--------------|-----------------------|---------------------|
+| **User permissions**      | Tailor user permissions to specific needs      | ☑️           | ☑️                    | ☑️                  |
+ **Folder access**   | Customized access for each folder  | ☑️           | ☑️                    | ☑️                  |
+ **Customize groups**   | Create user groups for same authorization levels   | ☑️           | ☑️                    | ☑️                  |
+  **Customize authorizations**   | Define who can view, edit, or share content with precision  | ☑️           | ☑️                    | ☑️                  |
+| **Access report**   | Manage and oversee access rights for multiple SharePoint sites and teams | ☑️           | ☑️                    | ⬜                  |
+| **Bulk editing**   | Quickly change access settings across folders and teams | ☑️           | ⬜                    | ⬜                  |
+| **Quick editing** | Adjust permissions within SharePoint by clicking| ☑️           | ⬜                    | ⬜                  |
+| **External organizations**   | Grant access and authorizations to external organizations and notify users | ☑️           | ⬜                    | ⬜                  |
+|**Permission templates**               | Create own permission templates to setup new SharePoint sites or MS Teams fast and secure | ☑️           | ⬜                    | ⬜                  |**   | Manage and oversee access rights for multiple SharePoint sites and teams | ☑️           | ⬜                    | ⬜                  |
+| **External websites** | Manage access to embedded external websites    | ☑️           | ⬜                    | ⬜                  |
+| **MultiShare** | Share files securely with multiple users    | ☑️           | ⬜                    | ⬜              
 
 ## Users and Benefits
 
 The SHARE App is used by a variety of users, depending on company size, typically from project management or IT security and governance teams. It helps customers efficiently manage SharePoint sites, control access permissions, improve collaboration, and ensure data security and compliance.
+
+>**💡 Empowered your organization by maintaining long-term flexibility with Microsoft. Turn your Microsoft SharePoint and Teams into a hyper useful Common Data Environment (CDE) everbody is already in and enjoys!**
 
 #### Project & Workspace Managers
 * **Project Managers**: Streamlined project collaboration and document sharing, ensuring all team members have access to the latest information.
