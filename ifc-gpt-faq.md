@@ -10,13 +10,13 @@
 
 #### What can I input in the search field?
 
-You can ask anything. Of course it should be relevant to the data in the IFC file. You cannot chat with data that is not contained in your IFC file - this is understandable.
+You can ask your IFC file anything. Of course your questions should be relevant to the data in the IFC file. You cannot chat with data that is not contained yet in your IFC file - this is understandable.
 
-#### What languages are supported for my GPT prompts/questions?
+#### What languages are supported for my IFC GPT prompts/questions?
 
 You can prompt and chat with your IFC file in any major world language. Just as you would do with GPT and other Large language Models (LLMs).
 
-#### Is GPT secure?
+#### Is IFC GPT Microsoft secure?
 
 Absolutely, as any of our privacy-first Microsoft Add-ons. It is as secure as it could be with Microsoft. Azure AI is an enterpise level security technology and is used by the largest organizations worldwide. 
 
