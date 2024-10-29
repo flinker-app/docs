@@ -23,3 +23,6 @@ Absolutely, as any of our privacy-first Microsoft Add-ons. It is as secure as it
 Your data stays with you and your organization! We do not upload your files or data anywhere. This is one of the big benefits when your company works with our Microsoft Add-Ons: There is no need to download your data and upload it again in external software platforms.
 
 All processing is client-side. That means all processing takes place in your SharePoint and MS Teams tenant without sending data to external parties. This ensures full privacy and security. For more details, see [Microsoft App Compliance](https://learn.microsoft.com/en-us/microsoft-365-app-certification/teams/flinker-gmbh-open-ifc-viewer?pivots=general)
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
