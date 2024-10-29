@@ -4,7 +4,7 @@
 ### Questions
 - [What can I input in the search field?](#what-can-i-input-in-the-search-field)
 - [What languages are supported for my prompts?](#what-languages-are-supported-for-my-prompts)
-- [Is it secure?](#is-it-secure)
+- [Is IFC GPT Microsoft secure?](#is-ifc-gpt-microsoft-secure)
 
 ### Answers
 
