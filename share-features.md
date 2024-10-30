@@ -3,10 +3,10 @@
 The following key features are offered with the SHARE Add-on for SharePoint:
 
 * **⚽ Easy integration with SharePoint:** Admins can add the SHARE Microsoft Add-On with just a view clicks from the Microsoft AppSource store as an Add-On app to SharePoint. It can be added to selected SharePoint sites or all sites in the organization.
-* **🔒 Data protection and data security:** The Add-On uses the SharePoint Framework (SPFx) technology and installs directly on your SharePoint server, ensuring all operations are performed on your own server without transferring data to external servers or third parties.
+* **🔒 Data protection and security:** The Add-On uses the SharePoint Framework (SPFx) technology and installs directly on your SharePoint server, ensuring all operations are performed on your own server without transferring data to external servers or third parties.
 * **🎨 Customizable user permissions:** SHARE users can assign any permissions to internal or external Microsoft users or user groups for all data, documents, URLs, Microsoft lists or folders at any level of the SharePoint sites and folder directories.
 * **🕵️‍♂️ Shared folders report:** SHARE users can see what folders are shared on one simple report for the whole SharePoint site to enhance security.
-* **👥 Secure file sharing to multi users:** MultiLinker enables users to efficiently select and directly send multiple file links boosting document sharing.
+* **👥 Secure multi file sharing to multi users:** MultiLinker enables users to efficiently select and directly send multiple file links to multiple users boosting document sharing.
 
 ## SHARE vs. SharePoint standard
 
@@ -22,7 +22,7 @@ The following key features are offered with the SHARE Add-on for SharePoint:
 | **External organizations**   | Grant access and authorizations to external organizations and notify users | ☑️           | ⬜                    | ⬜                  |
 |**Permission templates**               | Create own permission templates to setup new SharePoint sites or MS Teams fast and secure | ☑️           | ⬜                    | ⬜                  |**   | Manage and oversee access rights for multiple SharePoint sites and teams | ☑️           | ⬜                    | ⬜                  |
 | **External websites** | Manage access to embedded external websites    | ☑️           | ⬜                    | ⬜                  |
-| **MultiShare** | Share files securely with multiple users    | ☑️           | ⬜                    | ⬜              
+| **MultiLinker** | Share files securely with multiple users    | ☑️           | ⬜                    | ⬜              
 
 ## Users and Benefits
 
