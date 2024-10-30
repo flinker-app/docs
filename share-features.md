@@ -24,7 +24,7 @@ The following key features are offered with the SHARE Add-on for SharePoint:
 | **Permission templates**        | Create own permission templates in Excel to set up new SharePoint sites or MS Teams fast and secure                         | ✔️                            | ❌                      | ❌                      |
 | **MultiShare**                  | Share multiple files at the same time securely with multiple users                                                 | ✔️                            | ❌                      | ❌                      |
 
-### **Default Sharing Methods in Standard SharePoint**
+### **Default Sharing Features in Standard SharePoint**
 
 Standard SharePoint offers several default sharing features to facilitate collaboration and access management in AEC project management and beyond:
 
@@ -52,7 +52,7 @@ The **SHARE Add-on** enhances these default sharing methods by providing advance
 
 ---
 
-Feel free to reach out if you need further customization or additional features included in the comparison!
+Feel free to reach out to us if you need further customization or additional features!
 
 
 ## Users and Benefits
