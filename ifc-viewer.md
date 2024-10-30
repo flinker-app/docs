@@ -2,10 +2,10 @@
 #### An open, free, fast, privacy first, GPT online IFC viewer for project management with IFC/3D models
 
 > [!NOTE]
-> **🛡️ Privacy First: Your Data Remains Secure!**
-> No files or data are transferred or uploaded anywhere. All processing is handled directly within SharePoint and Teams, ensuring full privacy and security.
+> **🔒 Privacy First: Your Data Remains Secure!**
+> No files or data are transferred or uploaded anywhere. All processing is handled directly within YOUR Browser, YOUR SharePoint and YOUR Teams, ensuring full privacy and security.
 
->👉 Access the GPT IFC Online Viewer for Microsoft here: **https://viewer.flinker.app/**
+>👉 Access the GPT IFC Online Viewer for Microsoft **FULL SCREEN here: https://viewer.flinker.app/**
 
 <iframe src="https://viewer.flinker.app/" width="100%" height="1000px"></iframe>
 
