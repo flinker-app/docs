@@ -1,6 +1,14 @@
 # FAQ for IFC Viewer 
 #### An open, free, fast and privacy first online IFC viewer for project work with 3D/BIM models
 
+### Questions
+1. [Can the IFC Viewer also be added as a tab in Microsoft Teams?](#1-can-the-ifc-viewer-also-be-added-as-a-tab-in-microsoft-teams)
+2. [How can I embed the IFC Viewer in Microsoft Teams if my organization does not allow adding apps from the App Store?](#2-how-can-i-embed-the-ifc-viewer-in-microsoft-teams-if-my-organization-does-not-allow-adding-apps-from-the-app-store)
+3. [What advantages do I have when I use the official Microsoft Teams app instead of embedding the IFC Viewer as a URL in a Microsoft Teams tab?](#3-what-advantages-do-i-have-when-i-use-the-official-microsoft-teams-app-instead-of-embedding-the-ifc-viewer-as-a-url-in-a-microsoft-teams-tab)
+4. [Can you set which users can see the IFC model in Teams or SharePoint?](#4-can-you-set-which-users-can-see-the-ifc-model-in-teams-or-sharepoint)
+
+### Answers
+
 **1. Can the IFC Viewer also be added as a tab in Microsoft Teams?**
 
 **Answer:** Absolutely! We have developed the Microsoft Teams Add-On **"Open IFC Viewer"** so you can add the IFC Viewer as a tab in Microsoft Teams with just one click. However, adding Add-Ons or apps in Microsoft Teams must be allowed by your organization. A quick guide on how to add the IFC Viewer as a new tab can be found here. If your company does not yet allow adding apps from the Microsoft Teams App Store, please contact your IT administrators.
