@@ -5,7 +5,9 @@
 > **🛡️ Privacy First: Your Data Remains Secure!**
 > No files or data are transferred or uploaded anywhere. All processing is handled directly within SharePoint and Teams, ensuring full privacy and security.
 
-<iframe src="https://viewer.flinker.app/" width="100%" height="1200px"></iframe>
+>👉 Access the GPT IFC Online Viewer for Microsoft here: **https://viewer.flinker.app/**
+
+<iframe src="https://viewer.flinker.app/" width="100%" height="1000px"></iframe>
 
 > [!TIP]  
 > Why Choose this IFC Viewer for Microsoft Teams and SharePoint?
