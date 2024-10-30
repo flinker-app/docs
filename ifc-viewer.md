@@ -5,7 +5,7 @@
 > **🛡️ Privacy First: Your Data Remains Secure!**
 > No files or data are transferred or uploaded anywhere. All processing is handled directly within SharePoint and Teams, ensuring full privacy and security.
 
-<iframe src="https://viewer.flinker.app/" width="100%" height="600px"></iframe>
+<iframe src="https://viewer.flinker.app/" width="100%" height="1200px"></iframe>
 
 > [!TIP]  
 > Why Choose this IFC Viewer for Microsoft Teams and SharePoint?
