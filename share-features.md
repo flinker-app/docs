@@ -10,7 +10,7 @@ The following key features are offered with the SHARE Add-on for SharePoint:
 
 ## SHARE vs. Standard SharePoint
 
-| **Feature**                     | **Gain Description**                                                                                              | **SHARE Add-on (Enterprise)** | **SHARE Add-on (Free)** | **Standard SharePoint** |
+| **Feature**                     | **Gain**                                                                                              | **SHARE Add-on (Enterprise)** | **SHARE Add-on (Free)** | **Standard SharePoint** |
 |---------------------------------|-------------------------------------------------------------------------------------------------------------------|-------------------------------|-------------------------|-------------------------|
 | **User permissions**            | Tailor user permissions to specific needs                                                                        | ✔️                            | ✔️                      | ✔️                      |
 | **Folder access**               | Customized access for each folder                                                                                 | ✔️                            | ✔️                      | ✔️                      |
