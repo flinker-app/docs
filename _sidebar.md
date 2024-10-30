@@ -1,6 +1,7 @@
 - [Home](README)
 - IFC VIEWER in Webbrowser
-  - [IFC Viewer FAQ](faq-ifc-viewer)  
+  - [Features](ifc-viewer) 
+  - [IFC Viewer FAQ](faq-ifc-viewer) 
 - IFC VIEWER in Teams
   - [Setup](setting-up-the-ifc-viewer-in-microsoft-teams)
   - Integrations
