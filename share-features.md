@@ -22,7 +22,7 @@ The following key features are offered with the SHARE Add-on for SharePoint:
 | **Bulk editing**                | Bulk change access settings across folders                                                                       | ✔️                            | ❌                      | ❌                      |
 | **Quick editing**               | Adjust permissions within SharePoint by clicking for groups, authorization levels, folders, websites, MS Lists, etc.                                                                   | ✔️                            | ❌                      | ❌                      |
 | **Permission templates**        | Create own permission templates in Excel to set up new SharePoint sites or MS Teams fast and secure                         | ✔️                            | ❌                      | ❌                      |
-| **MultiShare**                  | Share multiple files at the same time securely with multiple users                                                 | ✔️                            | ❌                      | ❌                      |
+| **MultiShare**                  | Share multiple files or data at the same time securely with multiple users and send them a notification message.                                                | ✔️                            | ❌                      | ❌                      |
 
 ### **Default Sharing Features in Standard SharePoint**
 
