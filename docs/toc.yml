@@ -189,6 +189,8 @@
       href: ifc-excel-power-bi.md
     - name: IFC to Frag convertor
       href: IFC_to_FRAG_Converter.md  
+    - name: IFC to IFCZIP optimizer
+      href: IFC_to_IFCZIP_Optimizer.md
 
 - name: Developer
 - name: Developer resources
