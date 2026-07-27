@@ -186,9 +186,7 @@
     - name: Optimize IFC data in Power BI
       href: ifc-viewer-optimization-and-load-times-for-power-bi.md
     - name: Connect IFC data from Excel to Power BI
-      href: ifc-excel-power-bi.md
-    - name: IFC to Frag convertor
-      href: IFC_to_FRAG_Converter.md  
+      href: ifc-excel-power-bi.md  
     - name: IFC to IFCZIP optimizer
       href: IFC_to_IFCZIP_Optimizer.md
 
