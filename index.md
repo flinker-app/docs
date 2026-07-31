@@ -22,6 +22,7 @@ _disableNextArticle: true
         <form class="home-search" id="home-search" role="search" aria-label="Search documentation">
           <input id="home-search-query" type="search" autocomplete="off" placeholder="Search documentation" aria-label="Search documentation">
           <button type="submit"><i class="bi bi-search" aria-hidden="true"></i><span>Search</span></button>
+          <button class="home-chat-trigger" id="docs-chat-open" type="button"><i class="bi bi-stars" aria-hidden="true"></i><span>Ask docs</span></button>
         </form>
       </div>
       <div class="home-hero-visual" aria-hidden="true"></div>

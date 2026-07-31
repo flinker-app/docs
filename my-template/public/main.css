@@ -1,4 +1,5 @@
 @import url('https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css');
+@import url('docs-chat.css');
 
 :root {
   --theme-text: #161616;
