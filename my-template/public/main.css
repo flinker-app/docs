@@ -1,5 +1,5 @@
 @import url('https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css');
-@import url('docs-chat.css');
+@import url('docs-chat.css?v=20260802-dark-chat-buttons-1');
 
 :root {
   --theme-text: #161616;
@@ -81,6 +81,7 @@
   --theme-warning-dark: #fdcfb4;
   --theme-danger-background: #4f1113;
   --theme-danger-dark: #eeacb2;
+  --docs-rail-selected: var(--theme-body-background-accent);
 }
 
 html {

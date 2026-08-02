@@ -540,9 +540,22 @@
 
 [data-bs-theme="dark"] .docs-chat-starters button:hover,
 [data-bs-theme="dark"] .docs-chat-starters button:focus,
+[data-bs-theme="dark"] .docs-chat-starters button:active,
 [data-bs-theme="dark"] .docs-chat-quick-actions button:hover,
-[data-bs-theme="dark"] .docs-chat-quick-actions button:focus {
+[data-bs-theme="dark"] .docs-chat-quick-actions button:focus,
+[data-bs-theme="dark"] .docs-chat-quick-actions button:active,
+[data-bs-theme="dark"] .docs-chat-reset:hover,
+[data-bs-theme="dark"] .docs-chat-reset:focus,
+[data-bs-theme="dark"] .docs-chat-reset:active,
+[data-bs-theme="dark"] .docs-chat-close:hover,
+[data-bs-theme="dark"] .docs-chat-close:focus,
+[data-bs-theme="dark"] .docs-chat-close:active,
+[data-bs-theme="dark"] .docs-chat-input-footer button:hover,
+[data-bs-theme="dark"] .docs-chat-input-footer button:focus,
+[data-bs-theme="dark"] .docs-chat-input-footer button:active {
   background: #353535;
+  border-color: #5c5c5c;
+  color: #f2f2f2;
 }
 
 [data-bs-theme="dark"] .docs-chat-message a,
