@@ -99,7 +99,7 @@
   items:
     - name: Use the 3D IFC Viewer with Power BI
       href: ifc-viewer-usage-for-power-bi.md
-    - name: Load and filter multiple IFC files
+    - name: Load and filter one or multiple IFC files
       href: ifc-viewer-filter-multiple-ifc-files-power-bi.md
     - name: Color IFC elements in Power BI
       href: ifc-viewer-color-rules-for-power-bi.md

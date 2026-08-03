@@ -53,7 +53,7 @@ Folder loading requires the IFC connector (`.mez`) and Pro features. After the c
 
 For more information about the connector, see [Load complete IFC data with the Power BI data extension](ifc-viewer-data-extension-for-power-bi.md).
 
-If your report opens with an active filter, connect that filter to the IFC files by `Filepath` or `Filename`. For details, see [Load and filter multiple IFC files in Power BI](ifc-viewer-filter-multiple-ifc-files-power-bi.md).
+If your report opens with an active filter, connect that filter to the IFC files by `Filepath` or `Filename`. For details, see [Load and filter one or multiple IFC files in Power BI](ifc-viewer-filter-multiple-ifc-files-power-bi.md).
 
 
 ### 3. Apply changes

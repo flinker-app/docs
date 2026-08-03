@@ -1,20 +1,20 @@
 ---
 uid: power-bi-filter-multiple-ifc-files
-title: Load and filter multiple IFC files in Power BI
-description: Filter the IFC Viewer Visual by file name or file path so a report can load only the IFC files that match the active report context, such as project, discipline, phase, building, or file selection.
-keywords: IFC, Power BI, project filter, file filter, IFC Viewer Visual, IfcChunk, Filename, Filepath, GlobalId, multiple IFC files
+title: Load and filter one or multiple IFC files in Power BI
+description: Keep a complete IFC file available during initial loading, and filter one or multiple IFC files by file name or file path in the IFC Viewer Visual for Power BI.
+keywords: IFC, Power BI, project filter, file filter, IFC Viewer Visual, IfcChunk, Filename, Filepath, GlobalId, single IFC file, multiple IFC files
 canonical_url: https://docs.flinker.app/docs/ifc-viewer-filter-multiple-ifc-files-power-bi.html
 ---
 
-# Load and filter multiple IFC files in Power BI
+# Load and filter one or multiple IFC files in Power BI
 
-Use this setup when one Power BI report loads several IFC files and the IFC Viewer Visual should show only the files that match the current report filter.
+Use this setup when a Power BI report loads one or multiple IFC files. It explains how to keep one complete IFC file available during initial loading and how to show only the files that match the current report filter.
 
-The filter can come from a file slicer, project selection, discipline, building, phase, URL filter, or another report table.
+The same initial-loading requirement applies to both single-file and multiple-file reports. A filter can come from a file slicer, project selection, discipline, building, phase, URL filter, or another report table.
 
 Initial IFC model loading is file based. The visual needs matching rows from the `IFC` table that contain `IfcChunk`. Those rows are filtered by `Filepath` or `Filename`.
 
-For the initial load, the filter context must keep all `IfcChunk` rows for at least one IFC file. This requirement also applies when the report contains only one IFC file. If another filter removes its IFC chunks, the file is incomplete and the visual cannot load it.
+For the initial load, the filter context must keep all `IfcChunk` rows for at least one IFC file. If the report contains only one file, all required chunks for that file must remain available. If another filter removes its IFC chunks, the file is incomplete and the visual cannot load it.
 
 ![Screenshot of IFC table fields used to filter IFC files in Power BI](/_media/power-bi-ifc-fields-file-filtering.png)
 
@@ -35,7 +35,7 @@ For project-based workflows, connect each project to its IFC file names or file 
 
 ## Example data model
 
-Create a file table with one row for each complete IFC file:
+Create a file table with one row for each complete IFC file. For a single-file report, the table needs only one row.
 
 | File ID | Project | Filename | Filepath |
 | --- | --- | --- | --- |
