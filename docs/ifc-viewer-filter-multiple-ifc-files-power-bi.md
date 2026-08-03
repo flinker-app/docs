@@ -14,6 +14,8 @@ The filter can come from a file slicer, project selection, discipline, building,
 
 Initial IFC model loading is file based. The visual needs matching rows from the `IFC` table that contain `IfcChunk`. Those rows are filtered by `Filepath` or `Filename`.
 
+For the initial load, the filter context must keep all `IfcChunk` rows for at least one IFC file. This requirement also applies when the report contains only one IFC file. If another filter removes its IFC chunks, the file is incomplete and the visual cannot load it.
+
 ![Screenshot of IFC table fields used to filter IFC files in Power BI](/_media/power-bi-ifc-fields-file-filtering.png)
 
 ## Filter by file name or file path
@@ -30,6 +32,34 @@ Use the IFC file name or the full file path as the file reference.
 When a user selects a project, discipline, phase, building, or file, Power BI filters the matching `Filename` or `Filepath` values. The viewer then receives the matching `IfcChunk` rows and loads the corresponding IFC file or files.
 
 For project-based workflows, connect each project to its IFC file names or file paths. The project selection then filters those file references, and the viewer loads the related IFC models.
+
+## Example data model
+
+Create a file table with one row for each complete IFC file:
+
+| File ID | Project | Filename | Filepath |
+| --- | --- | --- | --- |
+| 1 | Project A | `architecture.ifc` | `…/architecture.ifc` |
+| 2 | Project B | `structure.ifc` | `…/structure.ifc` |
+
+The generated `IFC` table contains the IFC chunks and element data. The following table is a simplified example. The connector generates the actual `IfcChunk` values.
+
+| Filepath | Filename | GlobalId | Entity | IfcChunk |
+| --- | --- | --- | --- | --- |
+| `…/architecture.ifc` | `architecture.ifc` |  |  | `[generated chunk 1]` |
+| `…/architecture.ifc` | `architecture.ifc` |  |  | `[generated chunk 2]` |
+| `…/architecture.ifc` | `architecture.ifc` | `2abc…` | `IfcWall` |  |
+| `…/architecture.ifc` | `architecture.ifc` | `3def…` | `IfcDoor` |  |
+| `…/structure.ifc` | `structure.ifc` |  |  | `[generated chunk 1]` |
+| `…/structure.ifc` | `structure.ifc` | `4ghi…` | `IfcBeam` |  |
+
+Create a one-to-many relationship that filters the generated `IFC` table by file path:
+
+```text
+IFC files[Filepath] (1) ────── (*) IFC[Filepath]
+```
+
+Use `IFC files[Filename]` in the file slicer. When a user selects `architecture.ifc`, Power BI must keep every row for that file, including both generated chunk rows. In a report with only one file, the file table can contain one row. Do not apply an element or property filter that removes required IFC chunks during the initial load.
 
 ## Configure the viewer visual
 
@@ -57,12 +87,16 @@ No special viewer setting is required for this scenario. The important configura
 
 ### Why does the viewer fail to load the IFC file when the report is already filtered
 
-The report filter is applied before the visual renders. If that filter removes all `IfcChunk` rows from the `IFC` table, the viewer has no file data to load and shows `No IFC files found`.
+The report filter is applied before the visual renders. For the initial load, the visual must receive all `IfcChunk` rows for at least one complete IFC file. If a filter removes these rows, the file is incomplete and the visual shows `No IFC files found`. This issue can occur in reports that load one IFC file or several IFC files.
+
+![Screenshot of the message to clear filters for initial IFC file loading](/_media/power-bi-no-ifc-files-found-message.png)
+
+Clear the filters that remove the IFC chunks, and then let the visual load one complete IFC file. After the initial load finishes, apply filters to the model as needed.
 
 ### Does the viewer require IFC files to be loaded before the report filter is applied
 
-No. The IFC data must already be available in the Power BI dataset after refresh, but the report can open with filters already active. The active filter must filter the `IFC` table by `Filepath` or `Filename` so the matching `IfcChunk` rows remain visible.
+The IFC data must already be available in the Power BI dataset after refresh. During the initial visual load, the active filter context must keep all `IfcChunk` rows for at least one IFC file. A file-level filter can select that file by `Filepath` or `Filename`, but other filters must not remove any of its IFC chunks.
 
 ### What setup supports initial IFC loading under an active filter
 
-Use the existing Power BI model, and make sure the active report filter reaches the generated `IFC` table through file references. Those references must match `IFC[Filename]` or `IFC[Filepath]`. Do not use `GlobalId` as the file-loading key.
+Use the existing Power BI model, and make sure the active report filter reaches the generated `IFC` table through file references. Those references must match `IFC[Filename]` or `IFC[Filepath]` and keep one complete IFC file available to the visual. Do not use `GlobalId` as the file-loading key because it can filter out required IFC chunks.
