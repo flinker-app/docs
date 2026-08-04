@@ -1,4 +1,18 @@
- ### v3.4.6 - 2026-07-10
+ ### v3.4.7 - 2026-08-04
+
+- fix: support legacy Power BI IFC filenames
+- fix: allow Copilot file imports without a license
+- feat: support DXF loading in SDK
+- feat: support Blob sources in viewer SDK
+- Fix/filter loading indicator
+- Coordinate toolbar loading indicator
+- Fix licensing status and update alert actions
+- feat: link ISO 19650 CDE from help panel
+- fix: select visible elements in BCF views
+- feat: generate IDS BCF screenshots
+
+
+### v3.4.6 - 2026-07-10
 
 - feat: group IDS validation results into BCF topics
 - fix: make BCF viewpoint application reliable
