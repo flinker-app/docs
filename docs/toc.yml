@@ -107,6 +107,8 @@
       href: sharing-power-bi-ifc-reports-with-external-users.md
     - name: Add an Enterprise license key
       href: ifc-viewer-license-key-for-power-bi.md
+    - name: 2D Section Views
+      href: 2D-views.md
 - name: Power BI templates
   href: power-bi-report-templates.yml
   items:
@@ -215,6 +217,7 @@
           href: ifc-viewer-sdk-example-bcf-clipping.md
         - name: Validate with IDS
           href: ifc-viewer-sdk-example-ids.md
+
 - name: Copilot for IFC SDK
   href: copilot-for-ifc-api.md
 
