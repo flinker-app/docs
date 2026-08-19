@@ -89,3 +89,7 @@ For task scenarios that require granular permissions, use Microsoft Lists or Mic
 
 Use ISO 19650 to manage access to websites or web applications that are embedded in Microsoft Teams or SharePoint when access is controlled through Microsoft 365, SharePoint, or a supported URL-based configuration.
 
+## Use a custom permission model
+
+Are you an enterprise or public sector organization, or do you need a custom permission model? [Book a call with a solution expert](https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/) to discuss your requirements.
+

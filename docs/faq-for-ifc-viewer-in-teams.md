@@ -282,3 +282,9 @@ Your IT administrator can grant consent directly using this link:
 
 You can also review the full Microsoft App Compliance certification:
 [Microsoft App Compliance - Open IFC Viewer](https://learn.microsoft.com/en-us/microsoft-365-app-certification/teams/flinker-gmbh-open-ifc-viewer)
+
+## Custom permissions
+
+### Can my organization use a custom permission model?
+
+Are you an enterprise or public sector organization, or do you need a custom permission model? [Book a call with a solution expert](https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/) to discuss your requirements.

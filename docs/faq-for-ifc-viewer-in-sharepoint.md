@@ -136,3 +136,9 @@ Follow the step-by-step instructions: [Upgrade IFC Viewer to the latest version]
 
 > [!TIP]
 > Each upgrade delivers the latest features, security patches, and performance improvements. Only a SharePoint administrator can perform the upgrade.
+
+## Custom permissions
+
+### Can my organization use a custom permission model?
+
+Are you an enterprise or public sector organization, or do you need a custom permission model? [Book a call with a solution expert](https://outlook.office365.com/book/SupportConsultingonlinemeeting@flinker.app/) to discuss your requirements.
