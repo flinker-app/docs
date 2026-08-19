@@ -45,6 +45,16 @@ Use ISO 19650 to manage access to content stored in SharePoint, OneDrive, and Mi
 
 Because Teams files are stored in SharePoint, the same permission model applies to content used in Teams channels. ISO 19650 also supports external collaboration scenarios where users from other organizations need controlled access.
 
+## Filter permissions by user email
+
+To filter permissions for a specific person, first select **Load nested sharing entries**. Then enter the person's email address in the search bar.
+
+The filter currently matches only permissions assigned directly to the person. If the person has access through a group, they do not appear in the filtered results.
+
+## View files in all nested folders
+
+To see files across all folders below your current location, select **Load nested sharing entries**. You must select this option each time you want to load the nested files and their sharing entries.
+
 ## Use ISO 19650 with IFC files
 
 If your project uses IFC files in SharePoint or Teams, combine ISO 19650 with IFC Viewer for SharePoint or IFC Viewer for Microsoft Teams. The viewer shows the current IFC model from the document library, while ISO 19650 controls who can access the underlying file or folder.
