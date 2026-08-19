@@ -270,3 +270,15 @@ No. The IFC Viewer does not ship with pre-defined filter presets. Filters are cr
 The recommended approach is to create your own standard filters once and save them as a **BCF file**. Because filter state is stored inside the BCF file as part of the open BCF standard, you can load that file in any Teams channel or project to restore the full filter configuration instantly  -  without manual recreation. Store the BCF file in a shared SharePoint location to make it available across all projects that use the same filter setup.
 
 - See [IFC Filters – Reusing filters across projects](ifc-filters.md#reusing-filters-across-projects) for step-by-step instructions.
+
+## Admin approval
+
+### Why does my organization require admin approval?
+
+If you see **Admin approval required**, your organization's security policy requires an IT administrator to pre-approve third-party app permissions. This is a standard Microsoft tenant setting and is not specific to the IFC Viewer.
+
+Your IT administrator can grant consent directly using this link:
+[Grant Admin Consent](https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=c8f57ea5-d1b6-41a7-a2c2-d10e99d97a97&redirect_uri=https%3A%2F%2Fteamsifcviewer.flinker.app%2Fauth-end.html&scope=https://graph.microsoft.com/Files.Read.All%20https://graph.microsoft.com/offline_access%20openid%20profile&state=12345abc)
+
+You can also review the full Microsoft App Compliance certification:
+[Microsoft App Compliance - Open IFC Viewer](https://learn.microsoft.com/en-us/microsoft-365-app-certification/teams/flinker-gmbh-open-ifc-viewer)

@@ -55,6 +55,16 @@ The filter currently matches only permissions assigned directly to the person. I
 
 To see files across all folders below your current location, select **Load nested sharing entries**. You must select this option each time you want to load the nested files and their sharing entries.
 
+## Apply ISO policy rules to guest uploads
+
+Yes. The naming check and approval workflow also apply to files uploaded by guests. Guests follow the same validation and approval steps as internal users.
+
+## Let external guests use the apps with an Enterprise license
+
+Yes. External users with Microsoft Entra B2B guest accounts can use the Viewer and ISO 19650 apps under the organization's Enterprise license. They do not need a separate Enterprise license or a member account in the tenant. They must have access to the relevant SharePoint content and app components.
+
+For setup instructions, see [Grant guest users access to individual SharePoint solutions](enable-guest-user-access-to-sharepoint-app.md).
+
 ## Use ISO 19650 with IFC files
 
 If your project uses IFC files in SharePoint or Teams, combine ISO 19650 with IFC Viewer for SharePoint or IFC Viewer for Microsoft Teams. The viewer shows the current IFC model from the document library, while ISO 19650 controls who can access the underlying file or folder.
