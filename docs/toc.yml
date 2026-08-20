@@ -151,6 +151,8 @@
       href: use-protect-app.md
     - name: Manage ISO 19650 document names and metadata
       href: standardize-document-names-and-properties.md
+    - name: Manage ISO 19650 document approvals
+      href: manage-iso-19650-document-approvals.md
     - name: Set up permissions from a template
       href: share-app-setup.md
     - name: See who viewed files in SharePoint
