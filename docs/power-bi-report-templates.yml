@@ -32,3 +32,7 @@ items:
     thumbnail: /_media/IFC_Bi_IDS.PNG
     description: Ensure IFC models comply with IDS requirements and visualize compliance metrics.
     href: IFC_IDS_Compliance.html
+  - name: IFC version comparison dashboard
+    thumbnail: /_media/IFC_VersionCompare.png
+    description: Compare two IFC revisions side-by-side with automatic Added, Deleted, Modified, and Unchanged classification, attribute, property, and placement change breakdown, and synchronized 3D coloring.
+    href: IFC_VersionCompare.html

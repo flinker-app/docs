@@ -126,6 +126,8 @@
       href: IFC_BCF_Bi.md
     - name: IFC-IDS compliance dashboard
       href: IFC_IDS_Compliance.md
+    - name: IFC version comparison dashboard
+      href: IFC_VersionCompare.md
 - name: Excel analysis
   href: ifc-viewer-for-microsoft-excel.md
   items:
