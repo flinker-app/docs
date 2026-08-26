@@ -36,7 +36,6 @@ Only two inputs are needed — an **Old** IFC file and a **New** IFC file. Every
 | Schema | `IFC4` or `IFC2X3` (both supported) |
 | Encoding | ISO-10303-21 STEP text (`.ifc`) |
 | Source | Local path, SharePoint URL, or HTTP URL |
-| Size | Tested up to ~80 MB per file |
 
 ### Parameters
 The report exposes two parameters that drive the entire comparison:
