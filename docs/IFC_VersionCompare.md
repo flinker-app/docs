@@ -22,8 +22,6 @@ The dashboard is aimed at **BIM managers**, **design coordinators**, **contracto
 
 Everything is visual — two synchronized 3D viewers overlay the Old and New models with per-status coloring, a bar chart summarizes the change-type distribution, and a right-hand HTML detail card renders a full before-and-after comparison for any element selected in the table.
 
----
-
 ## Input data requirements
 
 Only two inputs are needed — an **Old** IFC file and a **New** IFC file. Everything else is derived automatically inside Power Query.
@@ -45,8 +43,6 @@ The report exposes two parameters that drive the entire comparison:
 | `FilePath_Old` | Full path or URL to the baseline (Old) IFC file. |
 | `FilePath_New` | Full path or URL to the revised (New) IFC file. |
 
----
-
 ## Setup and configuration guide
 
 ### How to link your two IFC files
@@ -63,8 +59,6 @@ When a new revision arrives, no report editing is needed:
 1. Save the newest IFC file to the same path (or update the path via the parameter step above).
 2. In Power BI (or the web viewer), select **Refresh**.
 3. The KPI cards, distribution chart, entity matrix, 3D viewers, and detail card all recompute against the new pair.
-
----
 
 ## Change classification
 
@@ -88,8 +82,6 @@ For elements marked **Modified**, the dashboard identifies *what kind* of change
 
 These flags combine into human-readable labels in the *Modified Elements Distribution* chart — for example **"Attribute and Property"**, **"Property and Placement"**, or **"Attribute and Property and Placement"** — so a single element that had its name renamed, its FireRating updated, and its position shifted is visible as one entry in the triple-change bar.
 
----
-
 ## Visual composition
 
 | Visual | What it shows |
@@ -99,8 +91,6 @@ These flags combine into human-readable labels in the *Modified Elements Distrib
 | **Element list** (table) | Every element with `Entity`, `Name`, `Building Storey`, and the human-readable *Change Fields Label*. Filter by SourceFile, Change Status, or Modification Type. |
 | **3D model viewer** | Two Flinker IFC Viewer instances (Old on the left, New on the right, or overlaid on a single page) colored by the `Element Color` column so blue/red/orange/grey elements pop against the greyed-out unchanged geometry. |
 | **Element detail HTML card** | Select any row in the table and a rich HTML card renders a before/after view — Old attribute values on top, New values below, with a **changed** marker on every diverging field. |
-
----
 
 ## Filters and slicers
 
@@ -112,8 +102,6 @@ The dashboard ships with three global slicers plus a hidden `Include Row` filter
 | **Change Status** | Focus on Added, Deleted, Modified, or Unchanged only. |
 | **Modification Type** | Drill into a specific change-kind combination (e.g. "Property and Placement" only). |
 | **Include Row** (visual-level filter) | Deduplicates each element to a single canonical row (New-side for Added/Modified/Unchanged, Old-side for Deleted) so the table shows every element exactly once. |
-
----
 
 ## Technical logic
 
@@ -128,8 +116,6 @@ The comparison engine lives entirely in Power Query (M) and DAX — no external 
 
 If any of the three signatures differs between the Old and New rows for the same `GlobalId`, the element is flagged **Modified** and the corresponding change kind is added to `Change_Fields`.
 
----
-
 ## Real-world use cases
 
 The dashboard is designed for the two most common IFC-diff scenarios on real projects:
@@ -138,8 +124,6 @@ The dashboard is designed for the two most common IFC-diff scenarios on real pro
 - **Contractor QA** — comparing the shop-drawing IFC against the tender IFC to isolate every value-engineered removal and every field-added element before it hits the construction sequence.
 
 Because the diff is driven purely by GlobalId matching, it works across authoring tools (Revit, ArchiCAD, Tekla) as long as the two files preserve the same IFC GUIDs — which is the industry-standard behavior.
-
----
 
 ## Testing and validation
 
