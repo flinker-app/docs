@@ -70,8 +70,8 @@ _disableNextArticle: true
         <p>Use these articles to prepare security, privacy, app approval, deployment, and upgrade reviews before you roll out to teams.</p>
         <ul>
           <li><a href="/docs/ifc-viewer-architecture-and-data-protection.html">Security and privacy</a></li>
-          <li><a href="/docs/ifc-viewer-excel-security-faq.html">Excel add-in security FAQ</a></li>
           <li><a href="/docs/it-admin-quickstart.html">Admin deployment overview</a></li>
+          <li><a href="/docs/ifc-viewer-excel-security-faq.html">Excel add-in security FAQ</a></li>
           <li><a href="/docs/viewer-app-installation-with-admin-approval.html">Install IFC Viewer for SharePoint</a></li>
           <li><a href="/docs/setting-up-the-ifc-viewer-in-microsoft-teams.html">Set up IFC Viewer in Microsoft Teams</a></li>
         </ul>
