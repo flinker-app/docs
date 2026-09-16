@@ -42,6 +42,12 @@ jobs:
       with:
         node-version: 24
 
+    # Keep the current Pages deployment if the destination is not published yet.
+    - name: Verify migrated Protect articles are live and indexable
+      run: |
+        node --test scripts/verify-protect-migration.test.js
+        node scripts/verify-protect-migration.js
+
     # Install DocFX as a global tool
     - run: dotnet tool update -g docfx
 

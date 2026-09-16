@@ -52,6 +52,21 @@ npm run watch
 
 The preview runs at `http://localhost:8080`.
 
+## Deploy the migrated SharePoint articles
+
+The following pages preserve their old URLs as immediate redirects to Protect documentation:
+
+- `docs/sharepoint-who-viewed-file.md` redirects to [See who viewed files in SharePoint](https://protect.flinker.app/docs/sharepoint-who-viewed-file/).
+- `docs/tutorial-to-share-sharepoint-folders-with-externals.md` redirects to [Share SharePoint folders with external users](https://protect.flinker.app/docs/tutorial-to-share-sharepoint-folders-with-externals/).
+
+The editable articles now live in the `permissions` repository's `docs` folder. The external-sharing screenshots are copied into its `website/public/_media` folder and remain available here at their original URLs. `.docfx` contains generated build metadata.
+
+Deploy `permissions` first, then run `node scripts/verify-protect-migration.js` before deploying this repository. The GitHub Pages workflow also runs the check and stops publication if either target is unavailable, redirects again, is not indexable, or returns a generic SPA page. Rerun the docs workflow after the Protect deployment is ready. Local DocFX builds do not require the targets to be live.
+
+Keep the old URLs working for at least one year after release, preferably indefinitely. Do not delete the redirect pages or block them in `robots.txt`. GitHub Pages serves each HTML redirect with HTTP 200; it is not an HTTP 301. Google treats the zero-second meta refresh as a permanent redirect. Use a direct 301 or 308 if the old host later supports HTTP redirects.
+
+The redirect template also provides a canonical and a visible link, and uses JavaScript to retain query parameters and fragment bookmarks. The targets retain the original section anchors. After deployment, inspect each old and new URL in Search Console, submit `https://protect.flinker.app/sitemap.xml`, and monitor their combined clicks and impressions. Only these articles are moving, so do not use a whole-site Change of Address or a URL removal request.
+
 ## Documentation style
 
 Follow the Microsoft Learn style where possible:

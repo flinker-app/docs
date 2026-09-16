@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{#title}}{{title}}{{/title}}{{^title}}Article moved{{/title}} | Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="{{redirect_url}}">
+    <meta http-equiv="refresh" content="0;URL='{{redirect_url}}'">
+    <script>
+      // Retain campaign parameters and section bookmarks; meta refresh also works without JavaScript.
+      const destination = new URL(document.querySelector('link[rel="canonical"]').href);
+      destination.search = window.location.search;
+      destination.hash = window.location.hash;
+      window.location.replace(destination.href);
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>{{#title}}{{title}}{{/title}}{{^title}}Article moved{{/title}}</h1>
+      <p>This article has moved. <a href="{{redirect_url}}">Read the article at its new address</a>.</p>
+    </main>
+  </body>
+</html>

@@ -162,7 +162,7 @@
     - name: Set up permissions from a template
       href: share-app-setup.md
     - name: See who viewed files in SharePoint
-      href: sharepoint-who-viewed-file.md
+      href: https://protect.flinker.app/docs/sharepoint-who-viewed-file/
 - name: SharePoint permissions
   href: protect-tutorials.yml
   items:
@@ -175,7 +175,7 @@
     - name: Invite users or add members to a site
       href: tutorial-to-invite-users-or-add-members-to-sharepoint-site.md
     - name: Share SharePoint folders with external users
-      href: tutorial-to-share-sharepoint-folders-with-externals.md
+      href: https://protect.flinker.app/docs/tutorial-to-share-sharepoint-folders-with-externals/
     - name: Grant guest users access to SharePoint solutions
       href: enable-guest-user-access-to-sharepoint-app.md
 
