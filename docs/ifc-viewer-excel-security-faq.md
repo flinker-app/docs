@@ -9,7 +9,7 @@ product: microsoft-excel
 ---
 # Security FAQ — Flinker IFC Viewer for Microsoft 365
 
-*Architecture summary: the IFC Viewer is a client-side Microsoft 365 add-in. IFC files, geometry, property sets and documents are processed in the browser and remain in the customer's tenant or on the user's device. Flinker operates no project-data repository and receives no model content. Full data flow:&#x20;*[https://docs.flinker.app/docs/ifc-viewer-architecture-and-data-protection.html](https://docs.flinker.app/docs/ifc-viewer-architecture-and-data-protection.html)
+Architecture summary: the IFC Viewer is a client-side Microsoft 365 add-in. IFC files, geometry, property sets and documents are processed in the browser and remain in the customer's tenant or on the user's device. Flinker operates no project-data repository and receives no model content. Full data flow: [https://docs.flinker.app/docs/ifc-viewer-architecture-and-data-protection.html](https://docs.flinker.app/docs/ifc-viewer-architecture-and-data-protection.html)
 
 ## How are updates delivered and digitally signed?
 
