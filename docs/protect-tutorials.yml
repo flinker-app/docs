@@ -20,6 +20,3 @@ items:
   - name: Invite users or add members to site
     description: Add internal users or external guests to a SharePoint site and its connected Microsoft 365 group.
     href: tutorial-to-invite-users-or-add-members-to-sharepoint-site.html
-  - name: Share specific folder with externals
-    description: Share selected folders with external users while keeping the rest of the library controlled.
-    href: https://protect.flinker.app/docs/tutorial-to-share-sharepoint-folders-with-externals/

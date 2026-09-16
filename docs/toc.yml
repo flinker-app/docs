@@ -174,8 +174,6 @@
       href: hide-sharepoint-folder-with-protect-app.md
     - name: Invite users or add members to a site
       href: tutorial-to-invite-users-or-add-members-to-sharepoint-site.md
-    - name: Share SharePoint folders with external users
-      href: https://protect.flinker.app/docs/tutorial-to-share-sharepoint-folders-with-externals/
     - name: Grant guest users access to SharePoint solutions
       href: enable-guest-user-access-to-sharepoint-app.md
 
