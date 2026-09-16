@@ -9,6 +9,8 @@ canonical_url: https://docs.flinker.app/docs/excel-ifc-viewer-guide.html
 
 Use this guide to load IFC geometry into Excel, open the model in the IFC Viewer task pane, and keep worksheet selections linked with the 3D model. The IFC Viewer Add-in for Excel works best when the workbook already contains IFC geometry and element identifiers, so Excel becomes the working surface for tables, filters, formulas, reports, and connected PivotTables while the task pane provides the linked 3D view.
 
+For a security review before deployment, see the [Excel add-in security FAQ](xref:ifc-viewer-excel-security-faq).
+
 ## Load IFC geometry in Excel
 
 For most projects, the recommended setup is to use the existing **Power Query from the Power BI sample report**. This creates a workbook structure that the add-in can read consistently and makes the overall workflow easier to maintain.

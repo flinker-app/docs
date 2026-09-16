@@ -8,6 +8,8 @@
 - name: Security and privacy
   href: ifc-viewer-architecture-and-data-protection.md
   items:
+    - name: Excel add-in security FAQ
+      href: ifc-viewer-excel-security-faq.md
     - name: SharePoint architecture and data protection
       href: ifc-viewer-sharepoint-architecture-and-data-protection.md
     - name: Microsoft Teams architecture and data protection
@@ -131,6 +133,8 @@
 - name: Excel analysis
   href: ifc-viewer-for-microsoft-excel.md
   items:
+    - name: Excel add-in security FAQ
+      href: ifc-viewer-excel-security-faq.md
     - name: IFC data integration for Microsoft Excel
       href: ifc-excel.md
     - name: Export manual measurements to Excel
@@ -231,6 +235,8 @@
 - name: FAQs
   expanded: false
   items:
+    - name: Excel add-in security FAQ
+      href: ifc-viewer-excel-security-faq.md
     - name: IFC Viewer in SharePoint FAQ
       href: faq-for-ifc-viewer-in-sharepoint.md
     - name: IFC Viewer in Microsoft Teams FAQ

@@ -13,6 +13,7 @@ Complete these checks before approving the app for production use:
 
 - Confirm the Microsoft 365 workspace where IFC files and project documents will remain.
 - Review [Architecture and data protection](./ifc-viewer-architecture-and-data-protection.md) with IT security, compliance, or procurement stakeholders.
+- For an Excel add-in assessment, review the [Excel add-in security FAQ](xref:ifc-viewer-excel-security-faq).
 - Identify the administrator role required for each app surface.
 - Test with representative IFC files, permission groups, and external-sharing settings in a controlled pilot.
 - Document the owner for ongoing app updates, support requests, and release-note review.

@@ -9,6 +9,8 @@ canonical_url: https://docs.flinker.app/docs/ifc-viewer-architecture-and-data-pr
 
 The Flinker IFC Viewer solutions for Microsoft 365 integrate with SharePoint, Teams, Power BI, and Excel. IFC files are processed in the browser or within the Microsoft 365 service context used by the solution. Flinker receives only the limited technical metadata required for authentication, licensing, support, and anonymized usage analytics.
 
+For a security assessment of the Excel add-in, see the [Excel add-in security FAQ](xref:ifc-viewer-excel-security-faq). It covers updates, penetration testing, regulatory requirements, certifications, and Copilot for IFC data flow.
+
 ## Privacy model
 
 The architecture is designed so that:

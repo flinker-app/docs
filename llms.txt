@@ -44,6 +44,7 @@
 
 ### Excel IFC Viewer
 - Overview: https://docs.flinker.app/docs/ifc-viewer-for-microsoft-excel.html
+- Security FAQ: https://docs.flinker.app/docs/ifc-viewer-excel-security-faq.html
 
 ## Model standards
 - IFC filters: https://docs.flinker.app/docs/ifc-filters.html

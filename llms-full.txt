@@ -54,6 +54,7 @@ Flinker documentation covers IFC and BCF workflows across SharePoint, Microsoft 
 - Performance and load times: https://docs.flinker.app/docs/ifc-viewer-optimization-and-load-times-for-power-bi.html
 
 ### Excel IFC Viewer
+- Security FAQ: https://docs.flinker.app/docs/ifc-viewer-excel-security-faq.html
 - Overview: https://docs.flinker.app/docs/ifc-viewer-for-microsoft-excel.html
 
 ## IFC and BCF references

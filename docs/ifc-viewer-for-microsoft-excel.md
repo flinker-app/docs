@@ -14,6 +14,8 @@ canonical_url: https://docs.flinker.app/docs/ifc-viewer-for-microsoft-excel.html
 
 Use the IFC Viewer add-in to view BIM models in Excel. Load and inspect IFC data next to workbook tables, then use Excel and Microsoft 365 workflows for analysis and reporting.
 
+For IT security, compliance, and procurement reviews, see the [Excel add-in security FAQ](xref:ifc-viewer-excel-security-faq).
+
 ## Why choose the IFC Viewer add-in for Excel?
 
 | Feature | IFC Viewer Add-in for Excel | Standard IFC Viewer |
