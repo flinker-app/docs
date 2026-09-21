@@ -1,4 +1,9 @@
- ### v3.4.8 - 2026-09-21
+ ### v3.4.9 - 2026-09-21
+
+- Expose Copilot generated files through the SDK (v3.4.9)
+
+
+### v3.4.8 - 2026-09-21
 
 - Feature/unified ifc drawing bcf workflows
 - Fix/legacy bcf orthographic scale
