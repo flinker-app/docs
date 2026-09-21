@@ -1,4 +1,19 @@
- ### v3.4.7 - 2026-08-04
+ ### v3.4.8 - 2026-09-21
+
+- Feature/unified ifc drawing bcf workflows
+- Fix/legacy bcf orthographic scale
+- Fix/drawing rendering and seo
+- Seo/dwg viewer entry page
+- feat: proxy 2D maps through Azure Maps
+- fix: keep standalone drawings within camera clipping range
+- Speed up IFC GUID lookups with a compact binary index
+- Fix IFC georeferencing and federated world map placement
+- fix: preserve PDF images through BCF export and import
+- Fix missing floor plans and properties for IFCZIP imports
+- Feat/mcp copilot and bcf feedback
+
+
+### v3.4.7 - 2026-08-04
 
 - fix: support legacy Power BI IFC filenames
 - fix: allow Copilot file imports without a license
