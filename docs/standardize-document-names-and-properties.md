@@ -29,7 +29,7 @@ Use this section if you define the project's information requirements or manage 
 ### Before you start
 
 - Install ISO 19650 on the SharePoint site.
-- Create the SharePoint columns that the project needs, such as Project, Discipline, Document type, Level, Revision, Status, Suitability, and Classification.
+- Identify the metadata that the project needs, such as Project, Discipline, Document type, Level, Revision, Status, Suitability, and Classification. You can import the columns and rules from an existing library or configure them yourself.
 - Agree the identifier structure, separators, required metadata, and accepted values with the project information manager.
 - Use an account with permission to manage the document library when you configure rules.
 
@@ -42,7 +42,21 @@ If **Manage columns** is not visible on the command bar, open the **More** (...)
 
 ![Screenshot of the SharePoint More menu showing Manage columns for the document library.](/_media/open-manage-columns-in-iso-app.png)
 
-### Configure the document names and metadata
+### Import columns and rules from an existing library
+
+Use **Import from** to reuse a library with a saved metadata policy. You do not need to create its columns first. The destination must have no saved policy, custom columns, or list validation.
+
+1. In **Manage columns**, select **Import from**.
+2. Choose the **Source site** and **Source library**.
+3. Select **Review policy**.
+4. Check the rules in **Preview** and make any project-specific changes in **JSON**.
+5. Select **Save** to copy the supported columns and apply the policy.
+
+To apply a template to several libraries, open **Manage columns** in the source library and select **Copy to**. See [Deploy library templates across SharePoint projects](deploy-sharepoint-library-templates.md).
+
+### Configure document names and metadata from scratch
+
+If you are creating a new configuration, first create the SharePoint columns that its rules will use. Then open **Manage columns**.
 
 1. Open the **JSON** tab.
 2. Enter the library configuration.
