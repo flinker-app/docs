@@ -1,4 +1,13 @@
- ### 2.1.0.0 - 2026-03-17
+ ### 2.2.16.0 - 2026-09-22
+
+* Configure document naming structures, metadata rules, accepted values, and validation.
+* Fill metadata for selected files, including extracting values from filenames.
+* Generate document names from configured metadata.
+* Configure default approvers and multi-stage approval workflows.
+* Request, approve, or reject multiple documents at once.
+
+
+### 2.1.0.0 - 2026-03-17
 
 * New protect UI
 * All sites overview
