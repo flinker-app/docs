@@ -122,3 +122,7 @@ Approvers can respond in SharePoint or in the [Approvals app in Microsoft Teams]
 5. Select **Approve** or **Reject**.
 
 SharePoint approval columns show the latest activity for a file. Use the Teams Approvals app to review the full approval history, follow up, reassign a request, or cancel a request that you created.
+
+## Related tasks
+
+For package delivery and optional receipt acknowledgment, [set up document transmittals in SharePoint](xref:configure-document-transmittals).

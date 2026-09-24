@@ -159,6 +159,8 @@
       href: standardize-document-names-and-properties.md
     - name: Manage ISO 19650 document approvals
       href: manage-iso-19650-document-approvals.md
+    - name: Document transmittals
+      href: configure-document-transmittals.md
     - name: Deploy library templates across projects
       href: deploy-sharepoint-library-templates.md
     - name: Set up permissions from a template

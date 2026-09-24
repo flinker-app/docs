@@ -13,8 +13,9 @@
       <title>{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}">
-      {{#_description}}<meta name="description" content="{{_description}}">{{/_description}}
+      {{^description}}{{#_description}}<meta name="description" content="{{_description}}">{{/_description}}{{/description}}
       {{#description}}<meta name="description" content="{{description}}">{{/description}}
+      {{#canonical_url}}<link rel="canonical" href="{{canonical_url}}">{{/canonical_url}}
       <link rel="icon" href="{{_rel}}{{{_appFaviconPath}}}{{^_appFaviconPath}}favicon.ico{{/_appFaviconPath}}">
       <link rel="stylesheet" href="{{_rel}}public/docfx.min.css">
       <link rel="stylesheet" href="{{_rel}}public/main.css?v=20260802-dark-chat-buttons-1">

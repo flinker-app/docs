@@ -57,6 +57,10 @@ Standard SharePoint includes several sharing options for collaboration and acces
 
 ISO 19650 adds access reporting, bulk permission updates, and template-based permission management for more controlled SharePoint collaboration.
 
+## Document transmittals
+
+Use SharePoint Document Sets alongside ISO 19650 to issue document packages, with optional receipt acknowledgment through Teams Approvals. See [Set up document transmittals in SharePoint](xref:configure-document-transmittals) for library setup, captured versions, and delivery records.
+
 ## Users and benefits
 
 ISO 19650 is used by project management, workspace administration, IT security, and governance teams. It helps organizations manage SharePoint sites, control access permissions, improve collaboration, and support internal data governance policies.
