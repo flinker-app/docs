@@ -1,4 +1,10 @@
- ### v3.4.9 - 2026-09-21
+ ### v3.4.10 - 2026-09-25
+
+- Update Copilot models and upgrade labels
+- Expand automated viewer regression tests and fix cleanup
+
+
+### v3.4.9 - 2026-09-21
 
 - Expose Copilot generated files through the SDK (v3.4.9)
 
