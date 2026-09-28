@@ -130,6 +130,8 @@
       href: IFC_IDS_Compliance.md
     - name: IFC version comparison dashboard
       href: IFC_VersionCompare.md
+    - name: 5D cost control dashboard
+      href: IFC_5DCostControl.md
 - name: Excel analysis
   href: ifc-viewer-for-microsoft-excel.md
   items:

@@ -36,3 +36,7 @@ items:
     thumbnail: /_media/IFC_VersionCompare.png
     description: Compare two IFC revisions side-by-side with automatic Added, Deleted, Modified, and Unchanged classification, attribute, property, and placement change breakdown, and synchronized 3D coloring.
     href: IFC_VersionCompare.html
+  - name: 5D cost control dashboard
+    thumbnail: /_media/IFC_5DCostControl.png
+    description: Price the IFC model from its quantities and track budget, actual cost, earned value, CPI, SPI, and forecast by activity with a color-coded 3D model.
+    href: IFC_5DCostControl.html
