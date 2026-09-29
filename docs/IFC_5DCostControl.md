@@ -51,13 +51,29 @@ You only change the workbook. Use this table to find the right place for each ch
 
 After each change, refresh the report. The numbers, charts, and 3D colors update together.
 
+## Tables in the report
+
+The report is built from nine tables. You edit only the five control tables from the workbook above. The dashboard builds the other four automatically from the model, and you do not edit them.
+
+| Table | You edit | Purpose |
+|---|---|---|
+| `IFC` | No | The imported IFC model, with every element and its geometry and properties. It is what the 3D viewer draws and the source of every quantity. |
+| `FactElements` | No | One row for each building element, carrying its resolved cost code, cost category, quantity, and unit. This is the priced element list that the cost figures are calculated from. |
+| `Cost_Code` | No | The cost hub. Each cost code appears once with its description, category, and rate, and it holds the calculations for budget, earned value, the performance indices, and the colors. |
+| `Calendar` | No | A continuous date table that drives the time axis of the earned value S-curve. |
+| `Cost_Code_Map` | Yes | Maps each element type to a cost code and a cost category. |
+| `Rate_Card` | Yes | The unit rate and waste allowance for each cost code. |
+| `WBS` | Yes | The work breakdown structure that the activities sit under. |
+| `Task_P6` | Yes | The schedule activities, with dates, percent complete, and actual cost. |
+| `Task_Element` | Yes | Links each cost code to the activity that delivers it. |
+
 ## What the dashboard calculates
 
 When the IFC model and the workbook are in place, the dashboard does the following:
 
 - Prices the model by multiplying each element quantity by its rate and rolling the result up to cost codes, cost categories, and activities. The grand total is the Budget at Completion (BAC).
 - Tracks earned value by calculating Earned Value (EV), Planned Value (PV), and Actual Cost (AC) from percent complete and actual cost. It also calculates the Cost Performance Index (CPI), the Schedule Performance Index (SPI), and the Estimate at Completion (EAC).
-- Colors the 3D model by cost category, and uses a red, amber, and green scale in the performance charts so over-budget work stands out.
+- Colors the 3D model and uses a red, amber, and green scale in the performance charts so over-budget work stands out.
 - Cross-filters all visuals. Select a cost category, cost code, or activity to isolate those elements in the 3D model. Select an element in the model to filter every cost chart.
 
 ## Report pages
@@ -66,15 +82,31 @@ The report has two pages.
 
 ### 5D cost control
 
-This page shows where the money is. It includes the headline figures (BAC, actual cost, variance, CPI, and percent complete), cost by category, the top cost drivers, a cost matrix from WBS down to cost code, and the 3D model colored by cost category.
+This page shows where the money is.
+
+| Visual | What it shows |
+|---|---|
+| KPI cards | The headline numbers: Budget at Completion, actual cost to date, cost variance, CPI, percent complete, and the share of elements priced. |
+| 3D model viewer | The IFC model in 3D, colored by cost category so each trade is visible in place. Selecting a category, cost code, or activity isolates its elements. |
+| Cost by category | One bar for each cost category (Structure, Envelope, Finishes, MEP, Substructure), showing its share of the budget. |
+| Top cost drivers | The largest cost items, ranked, with each bar colored red, amber, or green by its cost performance. |
+| Cost matrix (WBS to cost code) | A table that drills from the work breakdown structure down to each cost code, with quantity, rate, planned cost, and CPI. |
 
 ### Earned value and forecast
 
-This page shows how the project performs. It includes the earned value S-curve (planned, earned, and actual over time), the forecast at completion, an earned value table by activity, and CPI by activity.
+This page shows how the project is performing.
+
+| Visual | What it shows |
+|---|---|
+| KPI cards | Earned Value, Planned Value, Actual Cost, CPI, SPI, and the Estimate at Completion. |
+| Cost S-curve | Planned, earned, and actual cost accumulated over time, so plan and performance can be compared at a glance. |
+| 3D model viewer | The same IFC model, colored red, amber, or green by each element's cost performance. |
+| Earned value by activity | A table of each P6 activity with its planned cost, earned value, actual cost, and CPI. |
+| CPI by activity | A diverging bar for each activity around 1.0, colored red, amber, or green. Right of center is on or under budget; left is over budget. |
 
 ## Color scale
 
-The performance visuals use one red, amber, and green scale based on CPI:
+The performance visuals share one red, amber, and green scale based on CPI:
 
 | Color | Meaning | CPI |
 |---|---|---|
@@ -82,4 +114,4 @@ The performance visuals use one red, amber, and green scale based on CPI:
 | Amber | Slightly over budget | 0.90 to 0.99 |
 | Red | Over budget | Lower than 0.90 |
 
-On the first page, the 3D model is colored by cost category so you can see each trade in place. On the second page, the model uses one neutral color so the earned value data stays in focus.
+The 3D model can follow the same red, amber, and green scale, so you see where cost performance needs attention in place. You can also color it by cost category to see each trade across the building.
