@@ -1,4 +1,9 @@
- ### v3.4.10 - 2026-09-25
+ ### v4.0.3 - 2026-10-17
+
+- Faster model viewing, point clouds, 3D terrain maps and better issue tracking
+
+
+### v3.4.10 - 2026-09-25
 
 - Update Copilot models and upgrade labels
 - Expand automated viewer regression tests and fix cleanup
