@@ -213,24 +213,12 @@
   href: ifc-viewer-sdk.md
   items:
     - name: API reference
-      href: ifc-viewer-sdk-api.md
+      href: ../api/index.md
     - name: SDK examples
       href: ifc-viewer-sdk-examples.yml
       items:
-        - name: Display IFC models
-          href: ifc-viewer-sdk-example-ifc.md
-        - name: Load and create BCF topics
-          href: ifc-viewer-sdk-example-bcf-topics.md
-        - name: BCF selection
-          href: ifc-viewer-sdk-example-bcf-selection.md
-        - name: BCF coloring
-          href: ifc-viewer-sdk-example-bcf-coloring.md
-        - name: BCF visibility
-          href: ifc-viewer-sdk-example-bcf-visibility.md
-        - name: BCF clipping planes
-          href: ifc-viewer-sdk-example-bcf-clipping.md
-        - name: Validate with IDS
-          href: ifc-viewer-sdk-example-ids.md
+      # generated:viewer-examples:start
+      # generated:viewer-examples:end
 
 - name: Copilot for IFC SDK
   href: copilot-for-ifc-api.md

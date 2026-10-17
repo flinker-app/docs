@@ -9,7 +9,7 @@ canonical_url: https://docs.flinker.app/docs/ifc-bcf.html
 
 # Save filters and viewpoints with BCF
 
-<iframe src="https://viewer.flinker.app/examples/bcf.html" width="100%" height="500px" frameborder="0" allowfullscreen></iframe>
+Explore the [BCF examples](ifc-viewer-sdk-examples.yml).
 
 BCF (BIM Collaboration Format) simplifies capturing and sharing specific model views, including filters and viewpoints, across your project team. This ensures everyone experiences the exact scenario or issue context, improving clarity and collaboration.
 

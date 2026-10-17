@@ -173,10 +173,10 @@ _disableNextArticle: true
         <strong>Developer resources</strong>
         <span>Start here for SDKs, API reference, examples, and AI-assisted model workflow integration.</span>
       </a>
-      <a class="home-resource-link" href="/docs/ifc-viewer-sdk-api.html">
+      <a class="home-resource-link" href="/api/index.html">
         <span class="home-card-type">API reference</span>
-        <strong>IFC Viewer SDK API reference</strong>
-        <span>This reference lists constructor options, methods, runtime properties, and supported file loading APIs.</span>
+        <strong>JavaScript API reference</strong>
+        <span>Browse IFC Viewer, IFC model queries, BCF-XML and IDS XML APIs.</span>
       </a>
       <a class="home-resource-link" href="/docs/ifc-viewer-sdk-examples.html">
         <span class="home-card-type">Examples</span>
