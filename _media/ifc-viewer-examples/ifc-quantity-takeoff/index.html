@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Select spaces from a table</title><meta name="description" content="Browse space names, floors and stored areas, then click a row to select the space in the model.">
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/ifc-quantity-takeoff/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Select spaces from a table">
+  <meta property="og:description" content="Browse space names, floors and stored areas, then click a row to select the space in the model.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/ifc-quantity-takeoff/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/ifc-quantity-takeoff/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Select spaces from a table">
+  <meta name="twitter:description" content="Browse space names, floors and stored areas, then click a row to select the space in the model."><meta name="twitter:image" content="https://viewer.flinker.app/examples/ifc-quantity-takeoff/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Select spaces from a table","description":"Browse space names, floors and stored areas, then click a row to select the space in the model.","url":"https://viewer.flinker.app/examples/ifc-quantity-takeoff/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/ifc-quantity-takeoff/index.html","image":"https://viewer.flinker.app/examples/ifc-quantity-takeoff/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-results { right: 10px; bottom: 64px; width: 316px; max-width: calc(100vw - 64px); max-height: calc(100dvh - 100px); display: flex; flex-direction: column; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; }
+.example-ui :is(h2, p, fieldset) { margin: 0; }
+.example-ui h2 { font-size: 13px; }
+.example-ui p { color: #5a6575; font-size: 10px; }
+.example-ui fieldset { min-width: 0; min-height: 0; padding: 0; border: 0; overflow: auto; }
+.example-ui .table-scroll { max-height: 230px; overflow: auto; }
+.example-ui table { width: 100%; border-collapse: collapse; text-align: left; font-size: 11px; }
+.example-ui :is(th, td) { padding: 6px 3px; border-bottom: 1px solid #e5e9ee; overflow-wrap: anywhere; }
+.example-ui th { position: sticky; top: 0; background: #fff; color: #5a6575; font-weight: 500; }
+.example-ui td:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.example-ui tbody tr { cursor: pointer; }
+.example-ui tbody tr:hover, .example-ui tr[aria-selected=true] { background: #edf4ff; }
+.example-ui button { display: block; box-sizing: border-box; width: 100%; padding: 0; border: 0; background: transparent; color: #2459a0; font: inherit; text-align: left; overflow-wrap: anywhere; cursor: pointer; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: -2px; }
+.example-ui :disabled { cursor: default; }
+.example-ui.example-credit { right: 8px; bottom: 32px; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui a { color: #566171; }
+@media (max-width: 600px) { .example-ui.example-results { right: 8px; padding: 8px; } }
+</style>
+<script type="application/json" id="example-data">{
+  "category": "IFC data",
+  "formats": [
+    "IFC"
+  ],
+  "capabilities": [
+    "Space table",
+    "Selection"
+  ],
+  "audience": "BIM workflow",
+  "order": 11,
+  "viewer": {
+    "assetIds": [
+      "clinic-architectural"
+    ],
+    "presentation": "default"
+  },
+  "assets": [
+    {
+      "id": "clinic-architectural",
+      "name": "Clinic_Architectural.ifc",
+      "format": "IFC",
+      "bytes": 13003205,
+      "sha256": "2ac970ce065ecac4e0c9e5f453a257169e90d0067f419b7e33533a64ef837880",
+      "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc",
+      "sourceUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/ifc-quantity-takeoff/index.html#example-notices",
+      "attribution": "BSI (2020) “Medical-Dental Test Files,” buildingSMART International. Original project provided to the US Construction Engineering Research Laboratory; formerly hosted by the US National Institute of Building Sciences.",
+      "notes": "Original file; contents unchanged."
+    }
+  ]
+}
+</script>
+</head><body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-results" aria-label="Spaces">
+<h2>Spaces</h2>
+<fieldset id="spaces" disabled aria-label="Select a space"><div class="table-scroll" tabindex="0" aria-label="Spaces"><table><thead><tr><th scope="col">Name</th><th scope="col">Floor</th><th scope="col">Area</th></tr></thead><tbody id="space-list"></tbody></table></div></fieldset>
+<p>Click a row, then <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc" target="_blank" rel="noopener noreferrer">BSI (2020) · Medical-Dental Test Files</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
+<template id="example-guide">
+<h2 data-example-title>Select spaces from a table</h2><p data-example-description>Browse space names, floors and stored areas, then click a row to select the space in the model.</p>
+<h3>Try it</h3><p>Scroll the table of names, floors and areas, then click a row to highlight its space in the model. The selected row stays highlighted. Click 1 element selected at the top left to open Properties for that space. Pan, zoom and orbit with the viewer's controls.</p>
+<h3>Developer integration</h3><p>The public <code>viewer.IfcAPI</code> reads all 269 <code>IfcSpace</code> occurrences from the full clinic architectural model. The table shows their original room numbers and names, containing floors and stored GSA BIM Area quantities, sorted by room number. The area unit is queried from the model and explicit quantity units are honored; missing quantities are shown as Missing. The clinic provides a populated space schedule. BCF visibility exceptions and <code>SpacesVisible</code> reveal all spaces, while BCF selection highlights the clicked GlobalId. Loading and errors use the SDK message API.</p><p>Copy this HTML and serve it over HTTP. The published SDK and unchanged model download require internet access.</p>
+<p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p class="note">BSI (2020) “Medical-Dental Test Files,” buildingSMART International. Original project provided to the US Construction Engineering Research Laboratory; formerly hosted by the US National Institute of Building Sciences. <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc">Clinic architecture · 13 MB</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE">CC BY 4.0</a>. Original IFC contents are unchanged. Viewer licensing uses the SDK's existing account controls.</p>
+</template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+function createExampleProject(title, spaces, selection = [], identity = {}) {
+    const element = (name, attributes = {}, content = []) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, {}, [String(value)]);
+    const document = (name, root) => ({ document: { kind: 'xml', schema: 'bcf-2.1/' + name, root } });
+    const topicGuid = identity.topicGuid ?? crypto.randomUUID();
+    const viewpointGuid = identity.viewpointGuid ?? crypto.randomUUID();
+    const topic = element('Topic', { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }, [
+        text('Title', title), text('CreationDate', new Date().toISOString()), text('CreationAuthor', 'examples@example.com'),
+    ]);
+    const reference = element('Viewpoints', { Guid: viewpointGuid }, [text('Viewpoint', viewpointGuid + '.bcfv')]);
+    const viewpoint = element('VisualizationInfo', { Guid: viewpointGuid }, [element('Components', {}, [
+        element('ViewSetupHints', { SpacesVisible: 'true', SpaceBoundariesVisible: 'false', OpeningsVisible: 'false' }),
+        ...(selection.length ? [element('Selection', {}, selection.map(IfcGuid => element('Component', { IfcGuid })))] : []),
+        element('Visibility', { DefaultVisibility: 'false' }, [element('Exceptions', {}, spaces.map(IfcGuid => element('Component', { IfcGuid })))]),
+    ])]);
+    return { topic, project: { kind: 'archive', specification: 'bcf-2.1', entries: {
+        'bcf.version': document('version', element('Version', { VersionId: '2.1' })),
+        [topicGuid + '/markup.bcf']: document('markup', element('Markup', {}, [topic, reference])),
+        [topicGuid + '/' + viewpointGuid + '.bcfv']: document('visinfo', viewpoint),
+    } } };
+}
+
+const { assets } = JSON.parse(document.getElementById('example-data').textContent);
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const controls = document.getElementById('spaces');
+const list = document.getElementById('space-list');
+const identity = { topicGuid: crypto.randomUUID(), viewpointGuid: crypto.randomUUID() };
+let spaces = [];
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+function siFactor(unit) {
+    if (!unit) throw new Error('The model does not define the required units.');
+    if (unit.ConversionFactor) return Number(scalar(unit.ConversionFactor.ValueComponent)) * siFactor(unit.ConversionFactor.UnitComponent);
+    const prefixes = { EXA: 1e18, PETA: 1e15, TERA: 1e12, GIGA: 1e9, MEGA: 1e6, KILO: 1e3, HECTO: 1e2, DECA: 10, DECI: .1, CENTI: .01, MILLI: .001, MICRO: 1e-6, NANO: 1e-9 };
+    const power = { METRE: 1, SQUARE_METRE: 2, CUBIC_METRE: 3 }[scalar(unit.Name)];
+    const prefix = scalar(unit.Prefix);
+    if (!power || prefix && !Object.hasOwn(prefixes, prefix)) throw new Error('Unsupported model units: ' + scalar(unit.Name));
+    return (prefixes[prefix] ?? 1) ** power;
+}
+async function modelUnit(api, modelID, kind = 'LENGTHUNIT') {
+    const assignments = await queryType(api, modelID, 'IFCUNITASSIGNMENT', true);
+    return siFactor(assignments.flatMap(row => row.Units ?? []).find(unit => scalar(unit.UnitType) === kind));
+}
+
+function spatialFloors(root) {
+    const floors = new Map();
+    function visit(node, floor = '') {
+        if (String(node.type).toUpperCase() === 'IFCBUILDINGSTOREY') floor = String(scalar(node.Name) ?? 'Unnamed storey');
+        if (node.expressID !== undefined) floors.set(node.expressID, floor);
+        for (const child of node.children ?? []) visit(child, floor);
+    }
+    visit(root);
+    return floors;
+}
+function spaceArea(sets, areaScale) {
+    const set = sets.find(set => scalar(set.Name) === 'GSA Space Areas');
+    const quantity = set?.Quantities?.find(quantity => scalar(quantity.Name) === 'GSA BIM Area');
+    const value = scalar(quantity?.AreaValue);
+    return typeof value === 'number' && Number.isFinite(value) && value >= 0 ? value * (quantity.Unit ? siFactor(quantity.Unit) : areaScale) : null;
+}
+async function selectSpace(space) {
+    controls.disabled = true;
+    try {
+        const { project, topic } = createExampleProject('Spaces', spaces.map(item => item.guid), [space.guid], identity);
+        const imported = await viewer.add('spaces.bcf', await bcf.save(project));
+        if (imported?.isError) throw new Error('Could not show the spaces.');
+        const selected = await viewer.selectTopic(topic.attributes.Guid);
+        if (selected?.isError) throw new Error('Could not select the space.');
+        for (const row of list.rows) row.setAttribute('aria-selected', String(row.dataset.guid === space.guid));
+        await viewer.setMessage(null);
+    } finally { controls.disabled = false; }
+}
+async function readSpaces(api, modelID) {
+    await viewer.setMessage('Reading spaces', { type: 'loading' });
+    const areaScale = await modelUnit(api, modelID, 'AREAUNIT');
+    const lines = await queryType(api, modelID, 'IFCSPACE');
+    const floors = spatialFloors(await api.properties.getSpatialStructure(modelID, true));
+    for (let start = 0; start < lines.length; start += 24) {
+        const batch = lines.slice(start, start + 24);
+        const sets = await Promise.all(batch.map(line => api.properties.getPropertySets(modelID, line.expressID, true)));
+        for (const [index, line] of batch.entries()) spaces.push({ guid: String(scalar(line.GlobalId)),
+            name: [scalar(line.Name), scalar(line.LongName)].filter(Boolean).join(' · ') || '#' + line.expressID,
+            floor: floors.get(line.expressID) || 'Unassigned', area: spaceArea(sets[index], areaScale) });
+    }
+}
+
+async function run() {
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        await loadExampleFile(assets[0].name, assets[0].url, async blob => {
+            spaces = [];
+            await withIfcModel(blob, readSpaces);
+            await viewer.add(assets[0].name, blob);
+        }, assets[0].bytes);
+        if (!spaces.length) throw new Error('This model has no spaces.');
+        spaces.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+        list.replaceChildren(...spaces.map(space => {
+            const row = document.createElement('tr'), name = document.createElement('td'), button = document.createElement('button');
+            row.dataset.guid = space.guid; row.setAttribute('aria-selected', 'false');
+            button.type = 'button'; button.textContent = space.name; name.append(button); row.append(name);
+            for (const value of [space.floor, space.area === null ? 'Missing' : space.area.toLocaleString(undefined, { maximumFractionDigits: 1 }) + ' m²']) {
+                const cell = document.createElement('td'); cell.textContent = value; row.append(cell);
+            }
+            row.addEventListener('click', () => {
+                if (!controls.disabled) void selectSpace(space).catch(error => viewer.setMessage(error.message, { type: 'error' }));
+            });
+            return row;
+        }));
+        await selectSpace(spaces[0]);
+        document.body.dataset.exampleState = 'loaded';
+    } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        await viewer.setMessage(error.message, { type: 'error' });
+    }
+}
+void run();
+</script>
+</body>
+</html>

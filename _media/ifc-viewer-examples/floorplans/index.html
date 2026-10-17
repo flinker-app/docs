@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open saved floor plans by storey</title>
+  <meta name="description" content="Choose a storey to open its saved floor plan, then pan and zoom to inspect the layout.">
+  <style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p, fieldset) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui fieldset { display: grid; gap: 6px; min-width: 0; padding: 0; border: 0; }
+.example-ui button { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui button[aria-pressed=true] { border-color: #3568ba; background: #edf4ff; color: #174788; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui :disabled { cursor: default; opacity: .55; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-controls { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+.example-ui.example-controls { bottom: 84px; }
+.example-ui.example-credit { bottom: 52px; }
+.example-ui .floor-plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; max-height: 180px; overflow: auto; }
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/floorplans/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Open saved floor plans by storey">
+  <meta property="og:description" content="Choose a storey to open its saved floor plan, then pan and zoom to inspect the layout.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/floorplans/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/floorplans/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Open saved floor plans by storey">
+  <meta name="twitter:description" content="Choose a storey to open its saved floor plan, then pan and zoom to inspect the layout."><meta name="twitter:image" content="https://viewer.flinker.app/examples/floorplans/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Open saved floor plans by storey","description":"Choose a storey to open its saved floor plan, then pan and zoom to inspect the layout.","url":"https://viewer.flinker.app/examples/floorplans/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/floorplans/index.html","image":"https://viewer.flinker.app/examples/floorplans/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Buildings",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "Floor plans",
+    "Storey recognition",
+    "2D navigation"
+  ],
+  "audience": "BIM workflow",
+  "order": 2,
+  "assets": [
+    {
+      "id": "bim-whale-advanced",
+      "name": "AdvancedProject.ifc",
+      "format": "IFC",
+      "bytes": 44337371,
+      "sha256": "86b068a7ca6947e398c1daaa8bede9d31048c3990adc308429faeb56ee01db94",
+      "url": "https://raw.githubusercontent.com/andrewisen/bim-whale-ifc-samples/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc",
+      "sourceUrl": "https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/floorplans/index.html#example-notices",
+      "attribution": "BIM Whale Advanced Project. Copyright (c) 2020 André \"MG\" Wisén.",
+      "notes": "Original IFC2x3 file; contents unchanged."
+    }
+  ],
+  "viewer": {
+    "assetIds": [
+      "bim-whale-advanced"
+    ],
+    "presentation": "default"
+  }
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls example-toolbar" aria-label="Floor plan">
+<h2>Floor plan</h2>
+<p>Choose a storey, then pan and zoom to inspect it.</p>
+<fieldset id="view-choices" disabled aria-label="Floor plan"><div class="floor-plans"></div></fieldset>
+<p>Left toolbar: open <strong>Sections</strong> to see the recognized storey and floor cut. Select a component, then click <strong>1 element selected</strong> at the top left for Properties.</p>
+<button id="retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">BIM Whale · André Wisén</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a></div>
+<template id="example-guide">
+<h2 data-example-title>Open saved floor plans by storey</h2>
+<p data-example-description>Choose a storey to open its saved floor plan, then pan and zoom to inspect the layout.</p>
+<h2>BIM workflow</h2><p>Choose any storey returned by the model. The lowest storey opens first. Each button restores a top-down floor slice; pan and zoom to inspect the plan. The left toolbar's Sections panel shows the recognized storey and cut. Select a component and click 1 element selected at the top left to open Properties.</p>
+<h2>Developer integration</h2><p>An integration supplies each saved floor plan as a downward BCF camera and two horizontal clipping bounds. The page queries storey names and placements through <code>viewer.IfcAPI</code>. Cuts retain 0.30 m below each queried elevation and 1.50 m above it. <code>bcf.save()</code>, <code>viewer.add()</code> and <code>viewer.selectTopic()</code> handle the saved views; the model is imported once and plan changes select an existing topic.</p><p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK and sample downloads require internet access.</p>
+<p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Model source and license</h2><p>BIM Whale Advanced Project. Copyright (c) 2020 André "MG" Wisén. <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">Original IFC at the pinned revision</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>. The original IFC2x3 file is imported unchanged.</p>
+</template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+
+const { assets: [model] } = JSON.parse(document.getElementById('example-data').textContent);
+// BCF cuts use the world elevations queried from the IFC storey placements.
+// Retain 0.30 m below each floor and cut 1.50 m above it; the SDK recognizes the storey.
+let presets = [];
+
+function createBcfProject(presets, model, aspectRatio, identities = new Map()) {
+    const element = (name, content = [], attributes = {}) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, [String(value)]);
+    const vector = (name, values) => element(name, ['X', 'Y', 'Z'].map((axis, index) => text(axis, values[index])));
+    const entries = {};
+    const put = (path, schema, root) => { entries[path] = { document: { kind: 'xml', schema: 'bcf-3.0/' + schema, root } }; };
+    put('bcf.version', 'version', element('Version', [], { VersionId: '3.0' }));
+    put('extensions.xml', 'extensions', element('Extensions'));
+    const topics = new Map();
+    for (const preset of presets) {
+        if (!identities.has(preset.id)) identities.set(preset.id, { topicGuid: crypto.randomUUID(), viewpointGuid: crypto.randomUUID() });
+        const { topicGuid, viewpointGuid } = identities.get(preset.id);
+        topics.set(preset.id, topicGuid);
+        const viewpoint = element('VisualizationInfo', [
+            element('Components', [element('Visibility', [
+                element('ViewSetupHints', [], { SpacesVisible: 'false', SpaceBoundariesVisible: 'false', OpeningsVisible: 'false' }),
+            ], { DefaultVisibility: 'true' })]),
+        ], { Guid: viewpointGuid });
+        // BCF uses Z up. A downward OrthogonalCamera enables plan navigation without a mode flag.
+        const camera = element('OrthogonalCamera', [
+            vector('CameraViewPoint', [247.538, 351.281, 90]),
+            vector('CameraDirection', [0, 0, -1]),
+            vector('CameraUpVector', [0, 1, 0]),
+            // Fit BIM Whale Advanced Project in portrait as well as landscape when the archive is created.
+            text('ViewToWorldScale', 90 / Math.min(1, aspectRatio)), text('AspectRatio', aspectRatio),
+        ]);
+        viewpoint.content.push(camera);
+        viewpoint.content.push(element('ClippingPlanes', [
+            element('ClippingPlane', [vector('Location', [0, 0, preset.top]), vector('Direction', [0, 0, 1])]),
+            element('ClippingPlane', [vector('Location', [0, 0, preset.bottom]), vector('Direction', [0, 0, -1])]),
+        ]));
+        put(topicGuid + '/view.bcfv', 'visinfo', viewpoint);
+        put(topicGuid + '/markup.bcf', 'markup', element('Markup', [
+            element('Header', [element('Files', [element('File', [
+                text('Filename', model.name), text('Reference', model.url),
+            ], { IfcProject: model.projectGuid, IsExternal: 'true' })])]),
+            element('Topic', [
+                text('Title', preset.title), text('CreationDate', new Date().toISOString()),
+                text('CreationAuthor', 'examples@example.com'), text('Description', preset.description),
+                element('Viewpoints', [element('ViewPoint', [text('Viewpoint', 'view.bcfv')], { Guid: viewpointGuid })]),
+            ], { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }),
+        ]));
+    }
+    return { project: { kind: 'archive', specification: 'bcf-3.0', entries }, topics };
+}
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+function references(value) {
+    if (Array.isArray(value)) return value.flatMap(references);
+    return value?.type === 5 ? [Number(value.value)] : [];
+}
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+
+function siFactor(unit) {
+    if (!unit) throw new Error('The model does not define the required units.');
+    if (unit.ConversionFactor) return Number(scalar(unit.ConversionFactor.ValueComponent)) * siFactor(unit.ConversionFactor.UnitComponent);
+    const prefixes = { EXA: 1e18, PETA: 1e15, TERA: 1e12, GIGA: 1e9, MEGA: 1e6, KILO: 1e3, HECTO: 1e2, DECA: 10, DECI: .1, CENTI: .01, MILLI: .001, MICRO: 1e-6, NANO: 1e-9 };
+    const power = { METRE: 1, SQUARE_METRE: 2, CUBIC_METRE: 3 }[scalar(unit.Name)];
+    const prefix = scalar(unit.Prefix);
+    if (!power || prefix && !Object.hasOwn(prefixes, prefix)) throw new Error('Unsupported model units: ' + scalar(unit.Name));
+    return (prefixes[prefix] ?? 1) ** power;
+}
+async function modelUnit(api, modelID, kind = 'LENGTHUNIT') {
+    const assignments = await queryType(api, modelID, 'IFCUNITASSIGNMENT', true);
+    return siFactor(assignments.flatMap(row => row.Units ?? []).find(unit => scalar(unit.UnitType) === kind));
+}
+
+function axisPoint(axis, point = [0, 0, 0]) {
+    const coords = axis?.Location?.Coordinates?.map(scalar) ?? [0, 0, 0];
+    const normalize = values => { const length = Math.hypot(...values); if (!length) throw new Error('Invalid IFC placement axis.'); return values.map(v => v / length); };
+    const cross = (a, b) => [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]];
+    const z = normalize(axis?.Axis?.DirectionRatios?.map(scalar) ?? [0, 0, 1]);
+    const ref = axis?.RefDirection?.DirectionRatios?.map(scalar) ?? [1, 0, 0];
+    const y = normalize(cross(z, [ref[0], ref[1], ref[2] ?? 0])), x = cross(y, z);
+    return [0, 1, 2].map(i => (coords[i] ?? 0) + x[i]*(point[0]??0) + y[i]*(point[1]??0) + z[i]*(point[2]??0));
+}
+function placementPoint(placement, point = [0, 0, 0]) {
+    if (!placement) return point;
+    return placementPoint(placement.PlacementRelTo, axisPoint(placement.RelativePlacement, point));
+}
+async function objectPosition(api, modelID, line, scale) {
+    const id = references(line.ObjectPlacement)[0];
+    if (id === undefined) throw new Error('The object has no local placement.');
+    return placementPoint(await api.GetLine(modelID, id, true)).map(value => value * scale);
+}
+
+async function readProject(api, modelID) {
+    model.projectGuid = scalar((await queryType(api, modelID, 'IFCPROJECT'))[0]?.GlobalId);
+    if (!model.projectGuid) throw new Error('The model has no project identifier.');
+    return modelID;
+}
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const retry = document.getElementById('retry');
+let modelLoaded = false;
+let viewTopics = new Map();
+const viewIdentities = new Map();
+let selectedView;
+const viewChoices = document.getElementById('view-choices');
+viewChoices.addEventListener('click', async event => {
+    const button = event.target.closest('button[data-view]');
+    if (!button) return;
+    viewChoices.disabled = true;
+    try {
+        const result = await viewer.selectTopic(viewTopics.get(button.dataset.view));
+        if (result?.isError) throw new Error('Could not open the saved view.');
+        selectedView = button.dataset.view;
+        for (const option of viewChoices.querySelectorAll('button')) option.setAttribute('aria-pressed', String(option === button));
+    } catch (error) { await viewer.setMessage(error.message, { type: 'error' }); }
+    finally { viewChoices.disabled = false; }
+});
+
+async function readFloorPlans(api, modelID) {
+    const scale = await modelUnit(api, modelID);
+    const storeys = await queryType(api, modelID, 'IFCBUILDINGSTOREY');
+    const result = await Promise.all(storeys.map(async storey => {
+        const name = String(scalar(storey.Name) ?? 'Unnamed storey');
+        const elevation = (await objectPosition(api, modelID, storey, scale))[2];
+        return { id: String(storey.expressID), title: name + ' · floor plan', name, elevation,
+            bottom: elevation - .3, top: elevation + 1.5, description: 'Floor cut at the queried storey elevation.' };
+    }));
+    result.sort((a,b) => a.elevation - b.elevation || a.name.localeCompare(b.name));
+    if (!result.length) throw new Error('The model has no storeys.');
+    return result;
+}
+
+async function load() {
+    retry.hidden = true;
+    viewChoices.disabled = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        if (!modelLoaded) {
+            await loadExampleFile(model.name, model.url, async blob => {
+                presets = await withIfcModel(blob, async (api, modelID) => {
+                    await readProject(api, modelID);
+                    return readFloorPlans(api, modelID);
+                });
+                await viewer.add(model.name, blob);
+            }, model.bytes);
+            modelLoaded = true;
+        }
+        await viewer.setMessage('Reading storeys and preparing floor plans', { type: 'loading' });
+        if (!presets.some(preset => preset.id === selectedView)) selectedView = presets[0].id;
+        viewChoices.querySelector('.floor-plans').replaceChildren(...presets.map(preset => {
+            const button = document.createElement('button'); button.type = 'button'; button.dataset.view = preset.id;
+            button.textContent = preset.name; button.setAttribute('aria-pressed', String(preset.id === selectedView)); return button;
+        }));
+        const generated = createBcfProject(presets, model, innerWidth / innerHeight, viewIdentities);
+        viewTopics = generated.topics;
+        const blob = await bcf.save(generated.project);
+        const imported = await viewer.add('building-floorplans.bcf', blob);
+        if (imported?.isError) throw new Error('Could not import the floor-plan BCF project.');
+        const applied = await viewer.selectTopic(generated.topics.get(selectedView));
+        if (applied?.isError) throw new Error('Could not apply the BCF viewpoint.');
+        viewChoices.disabled = false;
+        for (const button of viewChoices.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.view === selectedView));
+        document.body.dataset.exampleState = 'loaded';
+        await viewer.setMessage(null);
+    } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        retry.hidden = false;
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+    }
+}
+
+retry.addEventListener('click', () => { void load(); });
+let resizeTimer;
+addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        if (document.body.dataset.exampleState === 'loaded') void load();
+    }, 180);
+});
+await viewer.ready;
+await load();
+  </script>
+</body>
+</html>

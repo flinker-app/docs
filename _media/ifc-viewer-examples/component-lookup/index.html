@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search component properties</title>
+<meta name="description" content="Search component names, properties, quantities, materials and classifications, then show only the matching components.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 260px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; }
+.example-ui :is(p, fieldset) { margin: 0; }
+.example-ui fieldset { display: grid; gap: 4px; min-width: 0; padding: 0; border: 0; }
+.example-ui label { font-weight: 600; }
+.example-ui .search-row { display: flex; gap: 5px; }
+.example-ui .search-row input { flex: 1; }
+.example-ui .search-row button { flex-shrink: 0; }
+.example-ui :is(button, input) { box-sizing: border-box; min-width: 0; font: inherit; padding: 5px 6px; }
+.example-ui input { width: 100%; }
+.example-ui :is(button, input):focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui .note { font-size: 10px; color: #5a6575; }
+.example-ui.example-credit { right: 8px; bottom: 32px; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) { .example-ui.example-controls { right: 8px; } .example-ui :is(button, input) { min-height: 30px; } }
+</style>
+
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/component-lookup/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Search component properties">
+  <meta property="og:description" content="Search component names, properties, quantities, materials and classifications, then show only the matching components.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/component-lookup/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/component-lookup/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Search component properties">
+  <meta name="twitter:description" content="Search component names, properties, quantities, materials and classifications, then show only the matching components."><meta name="twitter:image" content="https://viewer.flinker.app/examples/component-lookup/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Search component properties","description":"Search component names, properties, quantities, materials and classifications, then show only the matching components.","url":"https://viewer.flinker.app/examples/component-lookup/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/component-lookup/index.html","image":"https://viewer.flinker.app/examples/component-lookup/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Asset information",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "Full property search"
+  ],
+  "audience": "BIM workflow",
+  "order": 1,
+  "assets": [
+    {
+      "id": "west-riverside-arc-ifc4",
+      "name": "arc_ifc4.ifc",
+      "format": "IFC",
+      "bytes": 80937122,
+      "url": "https://huggingface.co/datasets/sylvainHellin/ifc-bench/resolve/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/arc_ifc4.ifc",
+      "sourceUrl": "https://huggingface.co/datasets/sylvainHellin/ifc-bench/blob/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/arc_ifc4.ifc",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "noticeUrl": "https://viewer.flinker.app/examples/component-lookup/index.html#example-notices",
+      "attribution": "Solihin, W. West Riverside Hospital IFC Models. OpenIFC Model Repository, University of Auckland. Distributed in IFC-Bench by Sylvain Hellin. CC BY 3.0.",
+      "notes": "Original architectural IFC4 export, imported unchanged. Only the architectural model is loaded.",
+      "sha256": "230afa4d72a59c9ce18cdd9a7bc7c5c3e409a46078de6e14b19741b4cf92cf09"
+    }
+  ],
+  "viewer": {
+    "assetIds": [
+      "west-riverside-arc-ifc4"
+    ],
+    "presentation": "default"
+  }
+}
+</script>
+</head><body data-example-state="loading">
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls" aria-label="Search IFC properties">
+<form id="search-form" role="search"><fieldset id="task" disabled>
+<label for="search">Search all properties</label>
+<div class="search-row"><input id="search" type="search" value="Width" placeholder="Name, property or value" autocomplete="off" spellcheck="false"><button type="submit">Search</button></div>
+</fieldset></form>
+<output id="result" aria-live="polite"></output>
+<p class="note">Search isolates matches. Clear the field and Search to show all. Click a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://huggingface.co/datasets/sylvainHellin/ifc-bench/blob/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/arc_ifc4.ifc" target="_blank" rel="noopener noreferrer">Wawan Solihin / OpenIFC · IFC-Bench</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a></div>
+<template id="example-guide"><h2 data-example-title>Search component properties</h2>
+<p data-example-description>Search component names, properties, quantities, materials and classifications, then show only the matching components.</p>
+<h3>Search</h3><p>Enter a name, property name or value and press Search or Enter to isolate matching components. Search is case-insensitive; every space-separated word must occur in the same component. GlobalIds remain searchable. A search with no matches hides all components; an empty search restores the full model. To inspect properties, click a visible component, then click 1 element selected at the top left to open Properties. If loading fails, click Search to retry.</p>
+<h3>Developer integration</h3><p>The page queries all products through the published <code>viewer.IfcAPI</code>, including occurrence and inherited type properties, quantities, materials and classifications. Shared definitions are read once in bounded batches. The original West Riverside Hospital architectural model is hash-verified. Search results are isolated through BCF visibility exceptions using <code>bcf.save()</code>, <code>viewer.add()</code> and <code>viewer.selectTopic()</code>. The viewpoint preserves the camera and does not select or color components. Loading and errors use the viewer message API.</p><p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2>
+<p>Solihin, W. West Riverside Hospital IFC Models. Donated by Wawan Solihin (Singapore) and hosted on the OpenIFC Model Repository by Professor Robert Amor, University of Auckland. <a href="https://openifcmodel.cs.auckland.ac.nz/" target="_blank" rel="noopener noreferrer">Original repository</a>. Distributed by Sylvain Hellin in <a href="https://huggingface.co/datasets/sylvainHellin/ifc-bench/tree/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital" target="_blank" rel="noopener noreferrer">IFC-Bench at the pinned revision</a>.</p>
+<p>The architectural IFC4 file is imported unchanged; the other discipline models are not loaded. The model-specific <a href="https://huggingface.co/datasets/sylvainHellin/ifc-bench/blob/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/license.txt" target="_blank" rel="noopener noreferrer">source license notice</a> specifies <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 3.0 Unported</a> for these models.</p>
+
+</template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+const { assets: modelFiles } = JSON.parse(document.getElementById('example-data').textContent);
+const viewer = new Viewer('#ifc-viewer');
+
+window.exampleViewer = viewer;
+
+const controls = document.getElementById('task'), status = document.getElementById('result');
+
+const search = document.getElementById('search');
+
+const identity = { topicGuid: crypto.randomUUID(), viewpointGuid: crypto.randomUUID() };
+
+const loadedSources = new Set();
+
+
+let sourcesReady = false, pendingUpdates = 0;
+
+let updates = Promise.resolve();
+
+let records = [];
+
+function createExampleProject(title, state, identity = {}) {
+    const element = (name, attributes = {}, content = []) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, {}, [String(value)]);
+    const document = (name, root) => ({ document: { kind: 'xml', schema: 'bcf-2.1/' + name, root } });
+    const topicGuid = identity.topicGuid ??= crypto.randomUUID(), viewpointGuid = identity.viewpointGuid ??= crypto.randomUUID();
+    const component = IfcGuid => element('Component', { IfcGuid });
+    const components = element('Components', {}, [
+        element('ViewSetupHints', { SpacesVisible: 'false', SpaceBoundariesVisible: 'false', OpeningsVisible: 'false' }),
+        element('Visibility', { DefaultVisibility: String(state.visibility.defaultVisibility) },
+            state.visibility.exceptions.length ? [element('Exceptions', {}, state.visibility.exceptions.map(component))] : []),
+    ]);
+    const viewpoint = element('VisualizationInfo', { Guid: viewpointGuid }, [components]);
+    const reference = element('Viewpoints', { Guid: viewpointGuid }, [text('Viewpoint', viewpointGuid + '.bcfv')]);
+    const topic = element('Topic', { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }, [
+        text('Title', title), text('CreationDate', new Date().toISOString()), text('CreationAuthor', 'examples@example.com'),
+    ]);
+    const markup = element('Markup', {}, [topic, reference]);
+    return { topic, project: { kind: 'archive', specification: 'bcf-2.1', entries: {
+        'bcf.version': document('version', element('Version', { VersionId: '2.1' })),
+        [topicGuid + '/markup.bcf']: document('markup', markup),
+        [topicGuid + '/' + viewpointGuid + '.bcfv']: document('visinfo', viewpoint),
+    } } };
+}
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+function run(task) {
+    pendingUpdates++;
+    controls.disabled = true;
+    document.body.dataset.exampleState = 'loading';
+    const next = async () => {
+        let failed = false;
+        try {
+            await viewer.ready;
+            await task();
+            await viewer.setMessage(null);
+        } catch (error) {
+            failed = true;
+            await viewer.setMessage(error.message ?? String(error), { type: 'error' });
+        } finally {
+            pendingUpdates--;
+            if (!pendingUpdates) {
+                document.body.dataset.exampleState = failed ? 'error' : 'loaded';
+                controls.disabled = false;
+            }
+        }
+    };
+    // Imports and viewpoint applications must finish before the next update.
+    updates = updates.then(next, next);
+    return updates;
+}
+
+async function sourceBlob(asset) {
+    let blob;
+    await loadExampleFile(asset.name, asset.url, async value => {
+        if (value.size !== asset.bytes) throw new Error('Incomplete source file: ' + asset.name);
+        const digest = await crypto.subtle.digest('SHA-256', await value.arrayBuffer());
+        const hash = [...new Uint8Array(digest)].map(value => value.toString(16).padStart(2, '0')).join('');
+        if (hash !== asset.sha256) throw new Error('Source revision changed: ' + asset.name);
+        blob = value;
+    }, asset.bytes);
+    return blob;
+}
+
+async function loadModels() {
+    for (const asset of modelFiles) {
+        if (loadedSources.has(asset.id)) continue;
+        const blob = await sourceBlob(asset);
+        records = await withIfcModel(blob, readSearchIndex);
+        await viewer.setMessage('Opening ' + asset.name, { type: 'loading' });
+        const result = await viewer.add(asset.name, blob);
+        if (result?.isError) throw new Error('Could not open ' + asset.name);
+        loadedSources.add(asset.id);
+    }
+}
+
+async function applyState(title, state) {
+    const { project, topic } = createExampleProject(title, state, identity);
+    const bytes = await bcf.save(project);
+    const added = await viewer.add('review-state.bcf', new Blob([bytes]));
+    if (added?.isError) throw new Error('Could not import the review state.');
+    const selected = await viewer.selectTopic(topic.attributes.Guid);
+    if (selected?.isError) throw new Error('Could not display the review state.');
+}
+
+function scalarValue(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return String(value);
+    // References are not scalar properties. Preserve false and numeric zero.
+    if (value.type === 5) return null;
+    if (Object.hasOwn(value, 'value')) return scalarValue(value.value);
+    if (Object.hasOwn(value, '_representationValue')) return scalarValue(value._representationValue);
+    return null;
+}
+function flattenValues(value, path, output) {
+    if (value && typeof value === 'object' && value.type === 5) return;
+    const scalar = scalarValue(value);
+    if (scalar !== null) { output.push([path, scalar]); return; }
+    if (Array.isArray(value)) {
+        const scalars = value.map(scalarValue);
+        if (scalars.length && scalars.every(item => item !== null)) output.push([path, scalars.join('; ')]);
+        else value.forEach(item => flattenValues(item, path, output));
+    } else if (value && typeof value === 'object') {
+        for (const [key, child] of Object.entries(value)) {
+            if (['expressID', 'type', 'OwnerHistory', 'ObjectPlacement', 'Representation', 'RepresentationMaps'].includes(key)) continue;
+            flattenValues(child, path + '.' + key, output);
+        }
+    }
+}
+function definitionEntries(definition, prefix = '') {
+    const output = [], name = prefix + (scalarValue(definition.Name) ?? 'Properties');
+    function visit(property, parent) {
+        const path = parent + '.' + (scalarValue(property.Name) ?? 'Unnamed');
+        const before = output.length;
+        for (const child of property.HasProperties ?? property.Quantities ?? []) visit(child, path);
+        for (const [key, value] of Object.entries(property)) {
+            if (['Name', 'HasProperties', 'Quantities', 'expressID', 'type'].includes(key)) continue;
+            const suffix = key === 'NominalValue' || /^(?:Length|Area|Volume|Count|Weight|Time|Number|Mass)Value$/.test(key) ? '' : '.' + key;
+            flattenValues(value, path + suffix, output);
+        }
+        if (output.length === before) output.push([path, '(not set)']);
+    }
+    for (const property of definition.HasProperties ?? definition.Quantities ?? []) visit(property, name);
+    return output;
+}
+function attributes(line, prefix) {
+    const output = [];
+    for (const [key, value] of Object.entries(line)) {
+        if (['expressID', 'type'].includes(key)) continue;
+        const text = scalarValue(value);
+        if (text !== null) output.push([prefix + '.' + key, text]);
+    }
+    return output;
+}
+function referenceIds(value) {
+    if (Array.isArray(value)) return value.flatMap(referenceIds);
+    return value && typeof value === 'object' && value.type === 5 ? [Number(value.value)] : [];
+}
+function searchRecords(records, query) {
+    const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    return records.filter(record => terms.every(term => record.searchText.includes(term)));
+}
+
+async function rowsOfType(api, modelID, name) {
+    return queryType(api, modelID, name);
+}
+async function readSearchIndex(api, modelID) {
+    await viewer.setMessage('Reading all component properties', { type: 'loading' });
+    const products = await rowsOfType(api, modelID, 'IFCPRODUCT');
+    const byId = new Map(products.map(line => [line.expressID, line]));
+    const propertyRelations = (await rowsOfType(api, modelID, 'IFCRELDEFINESBYPROPERTIES')).filter(relation => referenceIds(relation.RelatedObjects).some(id => byId.has(id)));
+    const typeRelations = (await rowsOfType(api, modelID, 'IFCRELDEFINESBYTYPE')).filter(relation => referenceIds(relation.RelatedObjects).some(id => byId.has(id)));
+    const types = await readIfcLines(api, modelID, [...new Set(typeRelations.flatMap(relation => referenceIds(relation.RelatingType)))]);
+    const typeById = new Map(types.map(type => [type.expressID, type]));
+    const definitionIds = [...new Set([
+        ...propertyRelations.flatMap(relation => referenceIds(relation.RelatingPropertyDefinition)),
+        ...types.flatMap(type => referenceIds(type.HasPropertySets)),
+    ])];
+    const definitions = new Map((await readIfcLines(api, modelID, definitionIds, true)).map(definition => [definition.expressID, definitionEntries(definition)]));
+    const entriesById = new Map(products.map(line => [line.expressID, attributes(line, 'Element')]));
+    const occurrencesByType = new Map();
+    for (const relation of propertyRelations) {
+        const entries = referenceIds(relation.RelatingPropertyDefinition).flatMap(id => definitions.get(id) ?? []);
+        for (const id of referenceIds(relation.RelatedObjects)) entriesById.get(id)?.push(...entries);
+    }
+    for (const relation of typeRelations) {
+        const entries = referenceIds(relation.RelatingType).flatMap(id => {
+            const type = typeById.get(id);
+            return type ? [...attributes(type, 'Type'), ...referenceIds(type.HasPropertySets).flatMap(id => (definitions.get(id) ?? []).map(([path, value]) => ['Type.' + path, value]))] : [];
+        });
+        for (const id of referenceIds(relation.RelatedObjects)) entriesById.get(id)?.push(...entries);
+        for (const id of referenceIds(relation.RelatingType)) {
+            occurrencesByType.set(id, [...(occurrencesByType.get(id) ?? []), ...referenceIds(relation.RelatedObjects)]);
+        }
+    }
+    for (const [relationType, key, prefix] of [
+        ['IFCRELASSOCIATESMATERIAL', 'RelatingMaterial', 'Material'],
+        ['IFCRELASSOCIATESCLASSIFICATION', 'RelatingClassification', 'Classification'],
+    ]) {
+        const relations = (await rowsOfType(api, modelID, relationType)).filter(relation => referenceIds(relation.RelatedObjects).some(id => byId.has(id) || occurrencesByType.has(id)));
+        const associated = new Map((await readIfcLines(api, modelID, [...new Set(relations.flatMap(relation => referenceIds(relation[key])))], true)).map(line => {
+            const entries = []; flattenValues(line, prefix, entries); return [line.expressID, entries];
+        }));
+        for (const relation of relations) {
+            const entries = referenceIds(relation[key]).flatMap(id => associated.get(id) ?? []);
+            for (const id of referenceIds(relation.RelatedObjects)) {
+                for (const product of byId.has(id) ? [id] : occurrencesByType.get(id) ?? []) entriesById.get(product)?.push(...entries);
+            }
+        }
+    }
+    const typeNames = new Map();
+    for (const code of new Set(products.map(line => line.type))) typeNames.set(code, await api.GetNameFromTypeCode(code));
+    return products.map(line => {
+        const guid = scalarValue(line.GlobalId), entries = entriesById.get(line.expressID);
+        const type = typeNames.get(line.type).toUpperCase();
+        entries.push(['Element.IFCClass', type]);
+        return { id: line.expressID, guid, name: scalarValue(line.Name) || guid, type, entries,
+            searchText: entries.map(([path, value]) => path + ' ' + value).join('\n').toLocaleLowerCase() };
+    }).filter(record => record.guid).sort((a, b) => a.name.localeCompare(b.name));
+}
+async function searchModel() {
+    const query = search.value.trim();
+    const matches = query ? searchRecords(records, query) : [];
+    await applyState('Property search results', { visibility: {
+        defaultVisibility: !query,
+        exceptions: matches.map(record => record.guid),
+    } });
+    status.textContent = query ? matches.length + ' matching components' : records.length + ' searchable components';
+}
+document.getElementById('search-form').addEventListener('submit', event => {
+    event.preventDefault();
+    run(async () => {
+        if (!sourcesReady) await loadSearch();
+        await searchModel();
+    });
+});
+async function loadSearch() {
+    await loadModels();
+    status.textContent = records.length + ' searchable components';
+    sourcesReady = true;
+}
+await run(async () => { await loadSearch(); await searchModel(); });
+
+</script></body></html>

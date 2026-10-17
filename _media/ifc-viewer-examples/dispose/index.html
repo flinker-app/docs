@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Switch between projects on a map</title>
+<meta name="description" content="Choose a project to replace the loaded model and move the map to its location in the same viewer.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p, fieldset) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui fieldset { display: grid; gap: 6px; min-width: 0; padding: 0; border: 0; }
+.example-ui legend { margin-bottom: 4px; font-weight: 600; }
+.example-ui button { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui button[aria-pressed=true] { border-color: #3568ba; background: #edf4ff; color: #174788; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui :disabled { cursor: default; opacity: .55; }
+.example-ui output { font-variant-numeric: tabular-nums; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-controls { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/dispose/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Switch between projects on a map">
+  <meta property="og:description" content="Choose a project to replace the loaded model and move the map to its location in the same viewer.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/dispose/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/dispose/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Switch between projects on a map">
+  <meta name="twitter:description" content="Choose a project to replace the loaded model and move the map to its location in the same viewer."><meta name="twitter:image" content="https://viewer.flinker.app/examples/dispose/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Switch between projects on a map","description":"Choose a project to replace the loaded model and move the map to its location in the same viewer.","url":"https://viewer.flinker.app/examples/dispose/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/dispose/index.html","image":"https://viewer.flinker.app/examples/dispose/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Host integration",
+  "formats": [
+    "IFC"
+  ],
+  "capabilities": [
+    "Model lifecycle",
+    "Project switching",
+    "Georeferencing",
+    "Maps"
+  ],
+  "audience": "Developer integration",
+  "order": 27,
+  "viewer": {
+    "assetIds": [
+      "zurich-district"
+    ],
+    "presentation": "map"
+  },
+  "projects": [
+    {
+      "id": "zurich",
+      "label": "Zürich district",
+      "assetId": "zurich-district"
+    },
+    {
+      "id": "rotterdam",
+      "label": "Rotterdam bridge",
+      "assetId": "rotterdam-project"
+    }
+  ],
+  "assets": [
+    {
+      "id": "zurich-district",
+      "name": "showcase_zurich_paradeplatz.ifc",
+      "format": "IFC",
+      "bytes": 90774981,
+      "url": "https://media.githubusercontent.com/media/louistrue/ifc-site/675ff0afe440f5390a66c2bb170bd381e7d9053e/results/showcase_zurich_paradeplatz.ifc",
+      "sourceUrl": "https://github.com/louistrue/ifc-site/blob/675ff0afe440f5390a66c2bb170bd381e7d9053e/results/showcase_zurich_paradeplatz.ifc",
+      "license": "AGPL-3.0 / swisstopo OGD / ODbL-1.0",
+      "licenseUrl": "https://github.com/louistrue/ifc-site/blob/675ff0afe440f5390a66c2bb170bd381e7d9053e/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/dispose/index.html#example-notices",
+      "attribution": "Original IFC exports by louistrue / Swiss Site Boundaries Tool (AGPL-3.0). Source: Federal Office of Topography swisstopo (free geodata, attribution required). © OpenStreetMap contributors (ODbL-1.0).",
+      "notes": "Complete original published IFC4 urban geodata export; contents unchanged. Buildings, terrain and mapped infrastructure use Swiss LV95 (EPSG:2056), metre units and the declared LN02 height datum. The model includes its own IFC terrain; the optional 30 m Copernicus surface includes roofs and vegetation. This is geographic context data, not a detailed construction-design model."
+    },
+    {
+      "id": "rotterdam-project",
+      "name": "Van Brienenoordbrug-IFC4X3.ifc",
+      "format": "IFC",
+      "bytes": 1319501,
+      "url": "https://raw.githubusercontent.com/Geonovum/GeoBIM_Georefereren/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_Infra/Van%20Brienenoordbrug-IFC4X3.ifc",
+      "sourceUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_Infra/Van%20Brienenoordbrug-IFC4X3.ifc",
+      "license": "W3C",
+      "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/dispose/index.html#example-notices",
+      "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository.",
+      "notes": "Original IFC4X3 source imported unchanged, including its EPSG:28992 map conversion and heights. The source does not declare a vertical datum; no survey-grade terrain alignment is claimed.",
+      "placementSourceUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/09%20Praktijktoets%20georefereren.md"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls" aria-label="Switch projects">
+<h2>Switch projects on the map</h2>
+<p>Choose a project. Its models replace the previous project and the map moves to its location. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
+<fieldset id="model-controls" disabled>
+  <legend>Project</legend>
+  <button type="button" data-project="zurich" aria-pressed="false">Zürich district · Switzerland</button>
+  <button type="button" data-project="rotterdam" aria-pressed="false">Rotterdam bridge · Netherlands</button>
+</fieldset>
+<output id="model-state" aria-live="polite"></output>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample sources and licenses"><a href="https://github.com/louistrue/ifc-site/blob/675ff0afe440f5390a66c2bb170bd381e7d9053e/results/showcase_zurich_paradeplatz.ifc" target="_blank" rel="noopener noreferrer">Zürich · louistrue / swisstopo / © OSM</a> · <a href="https://github.com/louistrue/ifc-site/blob/675ff0afe440f5390a66c2bb170bd381e7d9053e/LICENSE" target="_blank" rel="noopener noreferrer">Licenses</a><br><a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_Infra/Van%20Brienenoordbrug-IFC4X3.ifc" target="_blank" rel="noopener noreferrer">Rotterdam · Geonovum</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C license</a></div>
+<template id="example-guide">
+<h2 data-example-title>Switch between projects on a map</h2><p data-example-description>Choose a project to replace the loaded model and move the map to its location in the same viewer.</p>
+<h3>Try it</h3><ol><li>Zürich district opens with the map enabled. Choose Rotterdam bridge to replace it and move to the Netherlands.</li><li>Choose Zürich district to switch back. Only the selected project's model is loaded.</li><li>Open View at the top right → Layers and choose Street or Satellite.</li><li>Select a component, then click 1 element selected at the top left to open Properties.</li></ol>
+<h2>Developer integration</h2><p>Create one <code>Viewer</code> and await <code>viewer.ready</code>. For each project change, await <code>viewer.clear()</code>, download the selected IFC, await <code>viewer.add()</code>, then await <code>viewer.toggleMap(true)</code>. Clearing releases the previous project's models and geographic context; enabling the map after import uses the new project's coordinates. The host never disables the map between projects or creates another viewer. Project controls are disabled during the transition to prevent overlapping imports. Download, import and map errors use the SDK message API; choose either project to retry.</p>
+<h3>Geographic placement</h3><p>Both complete IFC files are imported unchanged and have native map conversions. Zürich uses Swiss LV95 (EPSG:2056) and LN02 heights, including model terrain. Rotterdam's Van Brienenoord bridge uses Amersfoort / RD New (EPSG:28992). The bridge source does not declare a vertical datum; this example retains its original heights and does not claim survey-grade terrain alignment. The SDK owns map layers, attribution and geographic placement.</p>
+<p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK, models and map tiles require internet access.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p><a href="https://github.com/louistrue/ifc-site/blob/675ff0afe440f5390a66c2bb170bd381e7d9053e/results/showcase_zurich_paradeplatz.ifc" target="_blank" rel="noopener noreferrer">louistrue</a> · <a href="https://www.swisstopo.admin.ch/en/faq-free-geodata" target="_blank" rel="noopener noreferrer">swisstopo</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · <a href="https://github.com/louistrue/ifc-site/blob/675ff0afe440f5390a66c2bb170bd381e7d9053e/LICENSE" target="_blank" rel="noopener noreferrer">AGPL-3.0 / OGD / ODbL-1.0</a></p><p>CHGeo2004 / HTRANS ETRS89-LN02 · <a href="https://www.swisstopo.admin.ch/en/geoid-en" target="_blank" rel="noopener noreferrer">swisstopo (CC0)</a> · <a href="https://cms.geo.admin.ch/ogd/geodesy/Geoid_OGD.zip" target="_blank" rel="noopener noreferrer">Original grid</a>. The grid is unchanged.</p>
+<h2>Rotterdam bridge</h2><p>Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_Infra/Van%20Brienenoordbrug-IFC4X3.ifc" target="_blank" rel="noopener noreferrer">Original IFC at the pinned revision</a>. <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C Software and Document license</a>. The IFC bytes are unchanged. The source's projected CRS does not declare a vertical datum; no terrain height correction is applied. The publisher reports a small XYZ offset against AHN. This is geographic context, not a certified survey overlay. <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/09%20Praktijktoets%20georefereren.md" target="_blank" rel="noopener noreferrer">Publisher's placement validation</a>.</p>
+<p>Complete original published IFC4 urban geodata export; contents unchanged. Buildings, terrain and mapped infrastructure use Swiss LV95 (EPSG:2056), metre units and the declared LN02 height datum. The model includes its own IFC terrain; the optional 30 m Copernicus surface includes roofs and vegetation. This is geographic context data, not a detailed construction-design model.</p>
+</template>
+<script type="module">
+import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+document.body.dataset.exampleState = 'loading';
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+const controls = document.getElementById('model-controls');
+const status = document.getElementById('model-state');
+const projectButtons = [...document.querySelectorAll('[data-project]')];
+const { assets, projects } = JSON.parse(document.getElementById('example-data').textContent);
+let running = false;
+async function run(project) {
+    if (running) return;
+    running = true;
+    controls.disabled = true;
+    status.textContent = '';
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        await viewer.clear();
+        for (const button of projectButtons) button.setAttribute('aria-pressed', 'false');
+        const asset = assets.find(asset => asset.id === project.assetId);
+        await loadExampleFile(asset.name, asset.url, blob => viewer.add(asset.name, blob), asset.bytes);
+        await viewer.setMessage('Opening ' + project.label + ' on the map', { type: 'loading' });
+        if (!await viewer.toggleMap(true)) throw new Error('The project map could not be enabled.');
+        for (const button of projectButtons) button.setAttribute('aria-pressed', String(button.dataset.project === project.id));
+        await viewer.setMessage(null);
+        status.textContent = project.label + ' · Map enabled';
+        document.body.dataset.exampleState = 'loaded';
+    }
+    catch (error) {
+        status.textContent = 'Choose a project to retry.';
+        document.body.dataset.exampleState = 'error';
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+    }
+    finally {
+        controls.disabled = false;
+        running = false;
+    }
+}
+
+for (const button of projectButtons) button.addEventListener('click', () => { void run(projects.find(project => project.id === button.dataset.project)); });
+await run(projects[0]);
+  </script>
+</body>
+</html>

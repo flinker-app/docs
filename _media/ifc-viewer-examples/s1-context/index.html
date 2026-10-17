@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Edit IFC georeferencing with web-ifc</title>
+  <meta name="description" content="Use the native IFC API to position the S1 building and 3DBAG surroundings, then display the edited models on a map.">
+
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui button { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-task { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/s1-context/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Edit IFC georeferencing with web-ifc">
+  <meta property="og:description" content="Use the native IFC API to position the S1 building and 3DBAG surroundings, then display the edited models on a map.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/s1-context/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/s1-context/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Edit IFC georeferencing with web-ifc">
+  <meta name="twitter:description" content="Use the native IFC API to position the S1 building and 3DBAG surroundings, then display the edited models on a map."><meta name="twitter:image" content="https://viewer.flinker.app/examples/s1-context/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Edit IFC georeferencing with web-ifc","description":"Use the native IFC API to position the S1 building and 3DBAG surroundings, then display the edited models on a map.","url":"https://viewer.flinker.app/examples/s1-context/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/s1-context/index.html","image":"https://viewer.flinker.app/examples/s1-context/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "SDK integration",
+  "formats": [
+    "IFC"
+  ],
+  "capabilities": [
+    "Native IFC editing",
+    "Georeferencing",
+    "Federation"
+  ],
+  "audience": "Developer integration",
+  "order": 10,
+  "viewer": {
+    "assetIds": [
+      "s1-structure",
+      "s1-facade",
+      "s1-environment"
+    ],
+    "presentation": "map"
+  },
+  "assets": [
+    {
+      "id": "s1-structure",
+      "name": "O-S1-CON-Structural engineering - Constructie.ifc",
+      "format": "IFC",
+      "bytes": 7305371,
+      "url": "https://raw.githubusercontent.com/Geonovum/GeoBIM_Georefereren/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-CON-Structural%20engineering%20-%20Constructie.ifc",
+      "sourceUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-CON-Structural%20engineering%20-%20Constructie.ifc",
+      "license": "W3C",
+      "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/s1-context/index.html#example-notices",
+      "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Sixty5 / Building Field S1, Strijp-S.",
+      "notes": "The example corrects IFC georeferencing metadata using the published S1 horizontal placement before normal import. Original geometry is retained. Local model heights are used; no surveyed elevation is claimed.",
+      "georeference": {
+        "eastings": 160071.5,
+        "northings": 384156.5,
+        "xAxisAbscissa": 0.6379617540893054,
+        "xAxisOrdinate": -0.7700680491484481,
+        "scale": 0.001,
+        "latitude": 51.44647556666666,
+        "longitude": 5.460151696111112
+      },
+      "placementSourceUrl": "https://github.com/bedrock-engineer/ifc-georeferencer-workshop"
+    },
+    {
+      "id": "s1-facade",
+      "name": "O-S1-BWK-BIM prefab facade - BIM prefabgevel.ifc",
+      "format": "IFC",
+      "bytes": 5984438,
+      "url": "https://raw.githubusercontent.com/Geonovum/GeoBIM_Georefereren/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-BWK-BIM%20prefab%20facade%20-%20BIM%20prefabgevel.ifc",
+      "sourceUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-BWK-BIM%20prefab%20facade%20-%20BIM%20prefabgevel.ifc",
+      "license": "W3C",
+      "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/s1-context/index.html#example-notices",
+      "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Sixty5 / Building Field S1, Strijp-S.",
+      "notes": "The example corrects IFC georeferencing metadata using the published S1 horizontal placement before normal import. Original geometry is retained. Local model heights are used; no surveyed elevation is claimed.",
+      "georeference": {
+        "eastings": 160071.5,
+        "northings": 384156.5,
+        "xAxisAbscissa": 0.6379617540893054,
+        "xAxisOrdinate": -0.7700680491484481,
+        "scale": 0.001,
+        "latitude": 51.44647556666666,
+        "longitude": 5.460151696111112
+      },
+      "placementSourceUrl": "https://github.com/bedrock-engineer/ifc-georeferencer-workshop"
+    },
+    {
+      "id": "s1-environment",
+      "name": "OMG_KS_3dBAG.ifc",
+      "format": "IFC",
+      "bytes": 15667440,
+      "url": "https://raw.githubusercontent.com/Geonovum/GeoBIM_Georefereren/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/OMG_KS_3dBAG.ifc",
+      "sourceUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/OMG_KS_3dBAG.ifc",
+      "license": "W3C / CC BY 4.0 (3DBAG data)",
+      "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/s1-context/index.html#example-notices",
+      "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Underlying data: © 3DBAG by tudelft3d and 3DGI, CC BY 4.0. https://docs.3dbag.nl/en/copyright/",
+      "notes": "The example writes the published GIS origin into standard IFC2X3 georeferencing metadata before normal import. Original geometry and local model heights are retained.",
+      "georeference": {
+        "eastings": 159860.987,
+        "northings": 384230.208,
+        "xAxisAbscissa": 1,
+        "xAxisOrdinate": 0,
+        "scale": 1,
+        "latitude": 51.44714029715481,
+        "longitude": 5.457125826791071
+      },
+      "placementSourceUrl": "https://github.com/bedrock-engineer/ifc-georeferencer-workshop"
+    }
+  ],
+  "placementEvidence": {
+    "formatVersion": 1,
+    "app": {
+      "name": "ifcgref",
+      "version": "1.0.0"
+    },
+    "exportedAt": "2026-07-06T12:47:11.465Z",
+    "source": {
+      "filename": "O-S1-BWK-BIM architectural - BIM bouwkundig.ifc",
+      "schema": "IFC2X3",
+      "localOrigin": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "projectedCrs": {
+      "epsg": 7415,
+      "name": "Amersfoort / RD New + NAP height",
+      "description": "Netherlands - onshore, including Waddenzee, Dutch Wadden Islands and 12-mile offshore coastal zone.",
+      "verticalDatum": null
+    },
+    "mapConversion": {
+      "eastings": 160071.5,
+      "northings": 384156.5,
+      "orthogonalHeight": 0,
+      "xAxisAbscissa": 0.6379617540893054,
+      "xAxisOrdinate": -0.7700680491484481,
+      "horizontalXScale": 1,
+      "horizontalYScale": 1,
+      "verticalScale": 1
+    }
+  }
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-task" aria-label="Edit IFC placement">
+<h2>Edit IFC placement</h2>
+<p>The native IFC API edits georeferencing in memory before the models are displayed.</p>
+<p>Open <strong>Files</strong> (folder) on the left toolbar. Toggle the checkbox beside <strong>OMG_KS_3dBAG.ifc</strong> to show or hide the neighbouring buildings. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
+<button id="sample-retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-CON-Structural%20engineering%20-%20Constructie.ifc" target="_blank" rel="noopener noreferrer">Geonovum / W3C</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C</a><br><a href="https://docs.3dbag.nl/en/copyright/" target="_blank" rel="noopener noreferrer">© 3DBAG by tudelft3d and 3DGI</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
+<template id="example-guide">
+<h2 data-example-title>Edit IFC georeferencing with web-ifc</h2>
+<p data-example-description>Use the native IFC API to position the S1 building and 3DBAG surroundings, then display the edited models on a map.</p>
+<h3>Try it</h3><ol><li>Compare the building with the surrounding buildings and street map.</li><li>Open Files (folder) on the left toolbar and toggle the checkbox beside OMG_KS_3dBAG.ifc to distinguish project geometry from its neighbours.</li><li>Zoom to the project boundary to inspect its relationship to the nearby buildings.</li></ol><h2>Developer integration</h2>
+<p>Use <code>const api = await viewer.IfcAPI</code> to obtain the complete native web-ifc instance supplied by the SDK. Call <code>Init()</code> and <code>OpenModel()</code> for each downloaded IFC. This API runs on the main thread and owns its models independently of the viewer.</p>
+<p>This example reads the project, site and geometric contexts through web-ifc. It updates the site coordinates and true north, writes the IFC2X3 <code>ePSet_ProjectedCRS</code> and <code>ePSet_MapConversion</code> property sets with <code>CreateIfcEntity()</code>, <code>CreateIfcType()</code> and <code>WriteLine()</code>, then saves the edited bytes with <code>SaveModel()</code>.</p>
+<p>The native model is closed and WASM disposed before the saved bytes are passed to <code>viewer.add()</code>. After all three files load, <code>viewer.toggleMap(true)</code> displays their corrected placement. Native vectors are released explicitly. Repeated access to <code>viewer.IfcAPI</code> returns the same instance, which is initialized again for the next file. Geometry and local heights are retained, and the original downloads are not overwritten.</p>
+<p>See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a> for all native methods.</p><p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK and sample downloads require internet access.</p>
+<h3>Model notes</h3><p>Georeferencing corrected; geometry retained. Heights are local.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p><a href="https://github.com/Geonovum/GeoBIM_Georefereren/tree/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1" target="_blank" rel="noopener noreferrer">Geonovum and original model authors</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C</a></p>
+<h3>3DBAG surroundings</h3><p>The neighbouring buildings in <code>OMG_KS_3dBAG.ifc</code> are derived from 3DBAG. <a href="https://docs.3dbag.nl/en/copyright/" target="_blank" rel="noopener noreferrer">© 3DBAG by tudelft3d and 3DGI</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Geonovum distributes the IFC conversion. This example corrects its IFC georeferencing metadata before import; original geometry and local model heights are retained.</p>
+<p>The example corrects IFC georeferencing metadata using the published S1 horizontal placement before normal import. Original geometry is retained. Local model heights are used; no surveyed elevation is claimed.</p>
+</template>
+<script type="module">
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+async function correctSampleGeoreference(file, geo) {
+    return withIfcModel(file, async (api, modelID) => {
+        if (api.GetModelSchema(modelID) !== 'IFC2X3') throw new Error('The S1 correction requires the pinned IFC2X3 source.');
+        const project = (await queryType(api, modelID, 'IFCPROJECT'))[0];
+        if (!project) throw new Error('The S1 source project metadata is missing.');
+        const type = (name, value) => api.CreateIfcType(modelID, api.GetTypeCodeFromName(name), value);
+        const entity = (name, ...args) => api.CreateIfcEntity(modelID, api.GetTypeCodeFromName(name), ...args);
+        const north = entity('IFCDIRECTION', [-geo.xAxisOrdinate, geo.xAxisAbscissa]);
+        for (const site of await queryType(api, modelID, 'IFCSITE')) {
+            site.RefLatitude = dms(geo.latitude).map(value => type('IFCINTEGER', value));
+            site.RefLongitude = dms(geo.longitude).map(value => type('IFCINTEGER', value));
+            site.RefElevation = type('IFCLENGTHMEASURE', 0);
+            api.WriteLine(modelID, site);
+        }
+        for (const context of await queryType(api, modelID, 'IFCGEOMETRICREPRESENTATIONCONTEXT')) {
+            // Subcontexts inherit this attribute; only the parent context owns it.
+            if (context.type !== api.GetTypeCodeFromName('IFCGEOMETRICREPRESENTATIONCONTEXT')) continue;
+            context.TrueNorth = north;
+            // Read values may retain their STEP spelling; browser writes need numbers.
+            context.CoordinateSpaceDimension = type('IFCDIMENSIONCOUNT', Number(context.CoordinateSpaceDimension.value));
+            if (context.Precision !== null) context.Precision = type('IFCREAL', Number(context.Precision.value));
+            api.WriteLine(modelID, context);
+        }
+        // SaveModel double-escapes existing apostrophes in typed text values in
+        // this web-ifc release. Native WriteLine preserves their original text.
+        for (const property of await queryType(api, modelID, 'IFCPROPERTYSINGLEVALUE')) {
+            if (typeof property.NominalValue?.value === 'string' && property.NominalValue.value.includes("'"))
+                api.WriteLine(modelID, property);
+        }
+        const pset = (name, properties) => {
+            const values = Object.entries(properties).map(([key, value]) =>
+                entity('IFCPROPERTYSINGLEVALUE', type('IFCIDENTIFIER', key), null, value, null));
+            const set = entity('IFCPROPERTYSET', api.CreateIFCGloballyUniqueId(modelID), project.OwnerHistory,
+                type('IFCLABEL', name), type('IFCTEXT', 'Corrected S1 example georeferencing'), values);
+            const relation = entity('IFCRELDEFINESBYPROPERTIES', api.CreateIFCGloballyUniqueId(modelID),
+                project.OwnerHistory, null, null, [project], set);
+            api.WriteLine(modelID, relation);
+        };
+        pset('ePSet_ProjectedCRS', {
+            Name: type('IFCLABEL', 'EPSG:28992'), MapUnit: type('IFCLABEL', 'METRE'),
+            Description: type('IFCTEXT', 'S1 example: published RD New horizontal placement; local model heights, no surveyed elevation'),
+            VerticalDatum: type('IFCLABEL', 'LOCAL'),
+        });
+        pset('ePSet_MapConversion', Object.fromEntries(Object.entries({
+            Eastings: geo.eastings, Northings: geo.northings, OrthogonalHeight: 0,
+            XAxisAbscissa: geo.xAxisAbscissa, XAxisOrdinate: geo.xAxisOrdinate, Scale: geo.scale,
+        }).map(([key, value]) => [key, type('IFCREAL', value)])));
+        return api.SaveModel(modelID);
+    });
+}
+// Example-only download feedback. All file parsing remains in the published SDK.
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+function dms(value) {
+    const degrees = Math.floor(Math.abs(value));
+    const minutes = Math.floor((Math.abs(value) - degrees) * 60);
+    const microseconds = Math.round(((Math.abs(value) - degrees) * 60 - minutes) * 60 * 1e6);
+    const sign = value < 0 ? -1 : 1;
+    return [degrees, minutes, Math.floor(microseconds / 1e6), microseconds % 1e6].map(part => part * sign);
+}
+
+
+const { assets } = JSON.parse(document.getElementById("example-data").textContent);
+
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+document.body.dataset.exampleState = 'loading';
+const imported = new Set();
+const retry = document.querySelector('#sample-retry');
+let running = false;
+async function load() {
+    if (running)
+        return;
+    running = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        for (const asset of assets) {
+            if (imported.has(asset.id))
+                continue;
+            await loadExampleFile(asset.name, asset.url, async (blob, stage) => {
+                await stage('Preparing coordinates');
+                blob = await correctSampleGeoreference(blob, asset.georeference);
+                return viewer.add(asset.name, blob);
+            }, asset.bytes);
+            imported.add(asset.id);
+        }
+        await viewer.toggleMap(true);
+        document.body.dataset.exampleState = 'loaded';
+    }
+    catch (error) {
+        document.body.dataset.exampleState = 'error';
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+        retry.hidden = false;
+    }
+    finally {
+        running = false;
+    }
+}
+retry.addEventListener('click', () => { void load(); });
+void load();
+  </script>
+</body>
+</html>

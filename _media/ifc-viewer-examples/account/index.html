@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Show messages in the viewer</title>
+<meta name="description" content="Choose a message type, enter your own text and preview information, success, warning, error or loading messages in the viewer.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p, fieldset) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui fieldset { display: grid; gap: 6px; min-width: 0; padding: 0; border: 0; }
+.example-ui label { display: grid; gap: 3px; }
+.example-ui :is(button, input) { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; }
+.example-ui input:not([type=checkbox]):not([type=radio]) { width: 100%; padding: 5px 6px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: inherit; }
+.example-ui button { padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui :is(button, input):focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui :disabled { cursor: default; opacity: .55; }
+.example-ui .checkbox-row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.example-ui .example-option { display: flex; gap: 6px; align-items: center; padding: 3px 0; cursor: pointer; }
+.example-ui input:is([type=checkbox], [type=radio]) { flex: 0 0 auto; width: 14px; height: 14px; margin: 0; accent-color: #3568ba; }
+@media (max-width: 600px) {
+  .example-ui.example-controls { right: 8px; padding: 8px; }
+  .example-ui .example-option { min-height: 24px; }
+  .example-ui :is(button, input:not([type=checkbox]):not([type=radio])) { min-height: 30px; }
+}
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/account/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Show messages in the viewer">
+  <meta property="og:description" content="Choose a message type, enter your own text and preview information, success, warning, error or loading messages in the viewer.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/account/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/account/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Show messages in the viewer">
+  <meta name="twitter:description" content="Choose a message type, enter your own text and preview information, success, warning, error or loading messages in the viewer."><meta name="twitter:image" content="https://viewer.flinker.app/examples/account/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Show messages in the viewer","description":"Choose a message type, enter your own text and preview information, success, warning, error or loading messages in the viewer.","url":"https://viewer.flinker.app/examples/account/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/account/index.html","image":"https://viewer.flinker.app/examples/account/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Host integration",
+  "formats": [],
+  "capabilities": [
+    "Messages"
+  ],
+  "audience": "Developer integration",
+  "order": 28
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls" aria-label="Viewer messages">
+<h2>Viewer messages</h2>
+<p>Choose a message type, enter your text and click Display message.</p>
+<fieldset id="host-controls" disabled>
+      <div id="message-type" class="checkbox-row" role="group" aria-label="Message type"><label class="example-option"><input type="radio" name="message-type" value="Info" checked>Info</label><label class="example-option"><input type="radio" name="message-type" value="Success">Success</label><label class="example-option"><input type="radio" name="message-type" value="Warning">Warning</label><label class="example-option"><input type="radio" name="message-type" value="Error">Error</label><label class="example-option"><input type="radio" name="message-type" value="Loading">Loading</label><label class="example-option"><input type="radio" name="message-type" value="Hidden">Hidden</label></div>
+      <label>Message text <input id="message-text" value="Project information is available for review."></label>
+      <button id="show-message" type="button">Display message</button>
+    </fieldset>
+</aside>
+<template id="example-guide">
+<h2 data-example-title>Show messages in the viewer</h2>
+<p data-example-description>Choose a message type, enter your own text and preview information, success, warning, error or loading messages in the viewer.</p>
+<h2>Developer integration</h2><p>Use <code>viewer.setMessage(textOrNull, options?)</code> for project notices. Pass a string to show a message or <code>null</code> to dismiss it. These are message previews; no project data is saved or imported by this page.</p><p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK and sample downloads require internet access.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p>No third-party model data is used by this example.</p>
+</template>
+<script type="module">
+import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+document.body.dataset.exampleState = 'loading';
+const controls = document.getElementById('host-controls');
+const types = document.getElementById('message-type');
+let messageType = 'Info';
+const text = document.getElementById('message-text');
+const messages = {
+    Info: 'Project information is available for review.',
+    Success: 'Your changes are ready.',
+    Warning: 'Please review the highlighted item.',
+    Error: 'The action could not be completed. Try again.',
+    Loading: 'Preparing project data…',
+};
+async function run(action) {
+    controls.disabled = true;
+    try {
+        await action();
+    }
+    catch (error) {
+        await viewer.setMessage(error.message, { type: 'error' });
+    }
+    finally {
+        controls.disabled = false;
+    }
+}
+function applyMessage() {
+    return viewer.setMessage(messageType === 'Hidden' ? null : text.value,
+        messageType === 'Info' ? undefined : { type: messageType.toLowerCase() });
+}
+types.addEventListener('change', event => {
+    messageType = event.target.value;
+    text.value = messages[messageType] ?? text.value;
+    void run(applyMessage);
+});
+document.getElementById('show-message').addEventListener('click', () => { void run(applyMessage); });
+await viewer.ready;
+controls.disabled = false;
+await applyMessage();
+document.body.dataset.exampleState = 'loaded';
+  </script>
+</body>
+</html>

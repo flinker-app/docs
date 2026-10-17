@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Color components by type</title>
+<meta name="description" content="Use different colors for walls, slabs, doors, windows and rooms so each group is easy to identify.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; }
+.example-ui p { color: #5a6575; }
+.example-ui .note { font-size: 10px; }
+.example-ui .legend { display: flex; flex-wrap: wrap; gap: 4px 8px; font-size: 10px; }
+.example-ui .legend span { display: inline-flex; gap: 4px; align-items: center; }
+.example-ui .swatch { width: 8px; height: 8px; border-radius: 2px; background: var(--swatch); }
+.example-ui button { font: inherit; padding: 5px 7px; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) { .example-ui.example-controls { right: 8px; padding: 8px; } }
+</style><!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/bcf-coloring/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Color components by type">
+  <meta property="og:description" content="Use different colors for walls, slabs, doors, windows and rooms so each group is easy to identify.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/bcf-coloring/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/bcf-coloring/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Color components by type">
+  <meta name="twitter:description" content="Use different colors for walls, slabs, doors, windows and rooms so each group is easy to identify."><meta name="twitter:image" content="https://viewer.flinker.app/examples/bcf-coloring/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Color components by type","description":"Use different colors for walls, slabs, doors, windows and rooms so each group is easy to identify.","url":"https://viewer.flinker.app/examples/bcf-coloring/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/bcf-coloring/index.html","image":"https://viewer.flinker.app/examples/bcf-coloring/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Coordination",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "BCF",
+    "coloring",
+    "Viewpoints"
+  ],
+  "audience": "Developer integration",
+  "order": 26
+}
+</script>
+</head><body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls" aria-label="Color component groups">
+<h2>Color component groups</h2>
+<p>Saved BCF colors identify walls, slabs, doors/windows and rooms.</p>
+<div id="color-legend" class="legend" aria-label="Component colors"></div><p class="note">Click a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p><button id="retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic" target="_blank" rel="noopener noreferrer">BSI (2020) · Medical-Dental Test Files</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
+<template id="example-guide">
+<h2 data-example-title>Color components by type</h2>
+<p data-example-description>Use different colors for walls, slabs, doors, windows and rooms so each group is easy to identify.</p>
+<h2>Developer integration</h2><p>The architectural clinic model opens with red walls, purple slabs, amber doors/windows and green rooms. BCF coloring assigns each group of IFC GlobalIds a color; eight-digit colors use ARGB, including transparency. The page writes one viewpoint with <code>bcf.save()</code> and applies it with <code>viewer.add()</code> and <code>viewer.selectTopic()</code>.</p>
+<p>Click a colored component, then click 1 element selected at the top left to open Properties.</p>
+<p>Component groups and project identifiers are queried from source bytes through the native <code>viewer.IfcAPI</code>. Colors, camera poses and cutting planes are authored BCF inputs.</p><p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic" target="_blank" rel="noopener noreferrer">BSI (2020) “Medical-Dental Test Files,” buildingSMART International</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p></template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+
+// GlobalIds, cameras and planes belong to these exact upstream IFC revisions.
+const model = {
+  "filename": "Clinic_Architectural.ifc",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc"
+};
+const preset = {
+  "label": "Architecture · walls, floors, openings and rooms",
+  "state": {
+    "coloring": [
+      {
+        "color": "80E11D48",
+        "types": [
+          "IFCWALL"
+        ]
+      },
+      {
+        "color": "668B5CF6",
+        "types": [
+          "IFCSLAB"
+        ]
+      },
+      {
+        "color": "BFF59E0B",
+        "types": [
+          "IFCDOOR",
+          "IFCWINDOW"
+        ]
+      },
+      {
+        "color": "4D22C55E",
+        "types": [
+          "IFCSPACE"
+        ]
+      }
+    ]
+  },
+  "camera": {
+    "cameraViewPoint": {
+      "x": 37.642639815278,
+      "y": -39.90335183347133,
+      "z": 48.24069821410594
+    },
+    "cameraDirection": {
+      "x": -0.640056007351072,
+      "y": 0.640056007351072,
+      "z": -0.4250371923815713
+    },
+    "cameraUpVector": {
+      "x": -0.30054668098950027,
+      "y": 0.30054668098950027,
+      "z": 0.9051758862742596
+    },
+    "fieldOfView": 45,
+    "aspectRatio": 1.6
+  }
+};
+
+function createExampleProject(title, state, camera, file, identity = {}) {
+    const element = (name, attributes = {}, content = []) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, {}, [String(value)]);
+    const document = (name, root) => ({ document: { kind: 'xml', schema: 'bcf-3.0/' + name, root } });
+    const topicGuid = identity.topicGuid ??= crypto.randomUUID(), viewpointGuid = identity.viewpointGuid ??= crypto.randomUUID();
+    const component = IfcGuid => element('Component', { IfcGuid });
+    const components = element('Components', {}, [element('Visibility', { DefaultVisibility: 'true' }, [
+        element('ViewSetupHints', { SpacesVisible: 'false', SpaceBoundariesVisible: 'false', OpeningsVisible: 'false' }),
+    ])]);
+    const colors = state.coloring.filter(group => group.ids.length).map(group =>
+        element('Color', { Color: group.color }, [element('Components', {}, group.ids.map(component))]));
+    if (colors.length) components.content.push(element('Coloring', {}, colors));
+    const viewpoint = element('VisualizationInfo', { Guid: viewpointGuid }, [components]);
+    const vector = (name, value) => element(name, {}, ['x', 'y', 'z'].map(axis => text(axis.toUpperCase(), value[axis])));
+    viewpoint.content.push(element('PerspectiveCamera', {}, [
+        vector('CameraViewPoint', camera.cameraViewPoint), vector('CameraDirection', camera.cameraDirection), vector('CameraUpVector', camera.cameraUpVector),
+        text('FieldOfView', camera.fieldOfView),
+        text('AspectRatio', camera.aspectRatio),
+    ]));
+    const reference = element('ViewPoint', { Guid: viewpointGuid }, [text('Viewpoint', viewpointGuid + '.bcfv')]);
+    const topic = element('Topic', { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }, [
+        text('Title', title), text('CreationDate', new Date().toISOString()), text('CreationAuthor', 'examples@example.com'), element('Viewpoints', {}, [reference]),
+    ]);
+    const markup = element('Markup', {}, [element('Header', {}, [element('Files', {}, [element('File', { IfcProject: file.projectGuid, IsExternal: 'true' }, [
+        text('Filename', file.filename), text('Reference', file.url),
+    ])])]), topic]);
+    return { topic, project: { kind: 'archive', specification: 'bcf-3.0', entries: {
+        'bcf.version': document('version', element('Version', { VersionId: '3.0' })),
+        'extensions.xml': document('extensions', element('Extensions')),
+        [topicGuid + '/markup.bcf']: document('markup', markup),
+        [topicGuid + '/' + viewpointGuid + '.bcfv']: document('visinfo', viewpoint),
+    } } };
+}
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+async function addExampleProject(project, name = 'generated-viewpoint.bcf') {
+    const blob = new Blob([await bcf.save(project)], { type: 'application/octet-stream' });
+    const result = await viewer.add(name, blob);
+    if (result?.isError) throw new Error('The viewer could not import the BCF file.');
+    return blob;
+}
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+
+async function modelState(preset, api, modelID) {
+    model.projectGuid = scalar((await queryType(api, modelID, 'IFCPROJECT'))[0]?.GlobalId);
+    if (!model.projectGuid) throw new Error('The model has no project identifier.');
+    return { coloring: await Promise.all(preset.state.coloring.map(async group => ({ ...group,
+        ids: [...new Set((await Promise.all(group.types.map(name => queryType(api, modelID, name)))).flat().map(row => scalar(row.GlobalId)).filter(Boolean))],
+    }))) };
+}
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const retry = document.getElementById('retry');
+
+const identity = { topicGuid: crypto.randomUUID(), viewpointGuid: crypto.randomUUID() };
+let modelLoaded = false, topicId, nativeState;
+
+const names = ['Walls', 'Slabs', 'Openings', 'Rooms'];
+document.getElementById('color-legend').replaceChildren(...preset.state.coloring.map((group, index) => {
+    const label = document.createElement('span'), swatch = document.createElement('i');
+    swatch.className = 'swatch'; swatch.setAttribute('aria-hidden', 'true');
+    swatch.style.setProperty('--swatch', '#' + group.color.slice(-6));
+    label.append(swatch, names[index]); return label;
+}));
+
+async function run() {
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        if (!modelLoaded) {
+            await loadExampleFile(model.filename, model.url, async blob => {
+                nativeState = await withIfcModel(blob, (api, modelID) => modelState(preset, api, modelID));
+                await viewer.add(model.filename, blob);
+            });
+            modelLoaded = true;
+        }
+        if (!topicId) {
+            await viewer.setMessage('Preparing BCF colors', { type: 'loading' });
+            const camera = { ...preset.camera, aspectRatio: innerWidth / innerHeight };
+            const { project, topic } = createExampleProject(preset.label, nativeState, camera, model, identity);
+            await addExampleProject(project, 'bcf-coloring.bcf');
+            topicId = topic.attributes.Guid;
+        }
+        const applied = await viewer.selectTopic(topicId);
+        if (applied?.isError) throw new Error('The viewer could not apply the BCF colors.');
+        await viewer.setMessage(null);
+        document.body.dataset.exampleState = 'loaded';
+    } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        retry.hidden = false;
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+    }
+}
+retry.addEventListener('click', () => { void run(); });
+await run();
+</script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Switch between top-down and 3D views</title>
+  <meta name="description" content="View the whole building from above, choose a north-up or rotated view, then return to 3D.">
+  <style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p, fieldset) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui fieldset { display: grid; gap: 6px; min-width: 0; padding: 0; border: 0; }
+.example-ui button { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui button[aria-pressed=true] { border-color: #3568ba; background: #edf4ff; color: #174788; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui :disabled { cursor: default; opacity: .55; }
+.example-ui .button-row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.example-ui .button-row > button { flex: 1; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-controls { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+.example-ui.example-controls { bottom: 84px; }
+.example-ui.example-credit { bottom: 52px; }
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/bcf-2d/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Switch between top-down and 3D views">
+  <meta property="og:description" content="View the whole building from above, choose a north-up or rotated view, then return to 3D.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/bcf-2d/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/bcf-2d/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Switch between top-down and 3D views">
+  <meta name="twitter:description" content="View the whole building from above, choose a north-up or rotated view, then return to 3D."><meta name="twitter:image" content="https://viewer.flinker.app/examples/bcf-2d/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Switch between top-down and 3D views","description":"View the whole building from above, choose a north-up or rotated view, then return to 3D.","url":"https://viewer.flinker.app/examples/bcf-2d/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/bcf-2d/index.html","image":"https://viewer.flinker.app/examples/bcf-2d/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Buildings",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "2D views"
+  ],
+  "audience": "Developer integration",
+  "order": 24,
+  "assets": [
+    {
+      "id": "bim-whale-advanced",
+      "name": "AdvancedProject.ifc",
+      "format": "IFC",
+      "bytes": 44337371,
+      "sha256": "86b068a7ca6947e398c1daaa8bede9d31048c3990adc308429faeb56ee01db94",
+      "url": "https://raw.githubusercontent.com/andrewisen/bim-whale-ifc-samples/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc",
+      "sourceUrl": "https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/bcf-2d/index.html#example-notices",
+      "attribution": "BIM Whale Advanced Project. Copyright (c) 2020 André \"MG\" Wisén.",
+      "notes": "Original IFC2x3 file; contents unchanged."
+    }
+  ],
+  "viewer": {
+    "assetIds": [
+      "bim-whale-advanced"
+    ],
+    "presentation": "default"
+  }
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls example-toolbar" aria-label="View orientation">
+<h2>View orientation</h2>
+<p>Switch between a top-down view and 3D.</p>
+<fieldset id="view-choices" disabled aria-label="View orientation"><div class="button-row"><button type="button" data-view="top-down" aria-pressed="false">North up</button><button type="button" data-view="rotated-plan" aria-pressed="false">30°</button><button type="button" data-view="overview" aria-pressed="false">3D</button></div></fieldset><button id="retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">BIM Whale · André Wisén</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a></div>
+<template id="example-guide">
+<h2 data-example-title>Switch between top-down and 3D views</h2>
+<p data-example-description>View the whole building from above, choose a north-up or rotated view, then return to 3D.</p>
+<h2>Developer integration</h2><p>An integration can open a saved overview using a BCF camera instead of implementing its own navigation controls. The downward orthographic cameras enable 2D panning, with north-up and 30° orientations. A perspective camera restores 3D navigation. These are whole-model views without floor cuts. The page writes camera data with <code>bcf.save()</code>, imports it with <code>viewer.add()</code> and applies it with <code>viewer.selectTopic()</code>.</p><p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK and sample downloads require internet access.</p>
+<p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Model source and license</h2><p>BIM Whale Advanced Project. Copyright (c) 2020 André "MG" Wisén. <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">Original IFC at the pinned revision</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>. The original IFC2x3 file is imported unchanged.</p>
+</template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+
+const { assets: [model] } = JSON.parse(document.getElementById('example-data').textContent);
+// Navigation comes from the BCF camera. These whole-model views have no clipping planes.
+const presets = [
+    {
+        "id": "top-down",
+        "title": "Top-down · 2D",
+        "description": "A downward orthographic BCF camera enables 2D navigation for the whole model without selecting a storey."
+    },
+    {
+        "id": "rotated-plan",
+        "title": "Top-down · rotated 30°",
+        "rotation": 0.5235987755982988,
+        "description": "The same uncut model, with screen up rotated by 30°. Panning follows the authored camera orientation."
+    },
+    {
+        "id": "overview",
+        "title": "3D overview",
+        "perspective": true,
+        "description": "A perspective BCF camera returns to 3D navigation. Orbit to inspect the whole building."
+    }
+];
+
+function createBcfProject(presets, model, aspectRatio) {
+    const element = (name, content = [], attributes = {}) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, [String(value)]);
+    const vector = (name, values) => element(name, ['X', 'Y', 'Z'].map((axis, index) => text(axis, values[index])));
+    const entries = {};
+    const put = (path, schema, root) => { entries[path] = { document: { kind: 'xml', schema: 'bcf-3.0/' + schema, root } }; };
+    put('bcf.version', 'version', element('Version', [], { VersionId: '3.0' }));
+    put('extensions.xml', 'extensions', element('Extensions'));
+    const topics = new Map();
+    for (const preset of presets) {
+        const topicGuid = crypto.randomUUID(), viewpointGuid = crypto.randomUUID();
+        topics.set(preset.id, topicGuid);
+        const viewpoint = element('VisualizationInfo', [
+            element('Components', [element('Visibility', [
+                element('ViewSetupHints', [], { SpacesVisible: 'false', SpaceBoundariesVisible: 'false', OpeningsVisible: 'false' }),
+            ], { DefaultVisibility: 'true' })]),
+        ], { Guid: viewpointGuid });
+        // BCF uses Z up. A downward OrthogonalCamera enables plan navigation without a mode flag.
+        const distance = 90 / Math.min(1, aspectRatio);
+        const camera = preset.perspective ? element('PerspectiveCamera', [
+            vector('CameraViewPoint', [247.538 + distance, 351.281 - distance, 9.8 + distance]),
+            vector('CameraDirection', [-1 / Math.sqrt(3), 1 / Math.sqrt(3), -1 / Math.sqrt(3)]),
+            vector('CameraUpVector', [-1 / Math.sqrt(6), 1 / Math.sqrt(6), 2 / Math.sqrt(6)]),
+            text('FieldOfView', 45), text('AspectRatio', aspectRatio),
+        ]) : element('OrthogonalCamera', [
+            vector('CameraViewPoint', [247.538, 351.281, 90]),
+            vector('CameraDirection', [0, 0, -1]),
+            vector('CameraUpVector', [Math.sin(preset.rotation ?? 0), Math.cos(preset.rotation ?? 0), 0]),
+            // Fit BIM Whale Advanced Project in portrait as well as landscape when the archive is created.
+            text('ViewToWorldScale', (preset.rotation ? 108 : 90) / Math.min(1, aspectRatio)), text('AspectRatio', aspectRatio),
+        ]);
+        viewpoint.content.push(camera);
+        put(topicGuid + '/view.bcfv', 'visinfo', viewpoint);
+        put(topicGuid + '/markup.bcf', 'markup', element('Markup', [
+            element('Header', [element('Files', [element('File', [
+                text('Filename', model.name), text('Reference', model.url),
+            ], { IfcProject: model.projectGuid, IsExternal: 'true' })])]),
+            element('Topic', [
+                text('Title', preset.title), text('CreationDate', new Date().toISOString()),
+                text('CreationAuthor', 'examples@example.com'), text('Description', preset.description),
+                element('Viewpoints', [element('ViewPoint', [text('Viewpoint', 'view.bcfv')], { Guid: viewpointGuid })]),
+            ], { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }),
+        ]));
+    }
+    return { project: { kind: 'archive', specification: 'bcf-3.0', entries }, topics };
+}
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+
+async function readProject(api, modelID) {
+    model.projectGuid = scalar((await queryType(api, modelID, 'IFCPROJECT'))[0]?.GlobalId);
+    if (!model.projectGuid) throw new Error('The model has no project identifier.');
+    return modelID;
+}
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const retry = document.getElementById('retry');
+let modelLoaded = false;
+let viewTopics = new Map();
+const viewChoices = document.getElementById('view-choices');
+viewChoices.addEventListener('click', async event => {
+    const button = event.target.closest('button[data-view]');
+    if (!button) return;
+    viewChoices.disabled = true;
+    try {
+        const result = await viewer.selectTopic(viewTopics.get(button.dataset.view));
+        if (result?.isError) throw new Error('Could not open the saved view.');
+        for (const option of viewChoices.querySelectorAll('button')) option.setAttribute('aria-pressed', String(option === button));
+    } catch (error) { await viewer.setMessage(error.message, { type: 'error' }); }
+    finally { viewChoices.disabled = false; }
+});
+
+async function load() {
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        if (!modelLoaded) {
+            await loadExampleFile(model.name, model.url, async blob => {
+                await withIfcModel(blob, readProject);
+                await viewer.add(model.name, blob);
+            }, model.bytes);
+            modelLoaded = true;
+        }
+        await viewer.setMessage('Preparing BCF camera views', { type: 'loading' });
+        const generated = createBcfProject(presets, model, innerWidth / innerHeight);
+        viewTopics = generated.topics;
+        const blob = await bcf.save(generated.project);
+        const imported = await viewer.add('building-top-down.bcf', blob);
+        if (imported?.isError) throw new Error('Could not import the BCF camera project.');
+        const applied = await viewer.selectTopic(generated.topics.get(presets[0].id));
+        if (applied?.isError) throw new Error('Could not apply the BCF viewpoint.');
+        viewChoices.disabled = false;
+        for (const button of viewChoices.querySelectorAll('button')) button.setAttribute('aria-pressed', String(button.dataset.view === presets[0].id));
+        document.body.dataset.exampleState = 'loaded';
+        await viewer.setMessage(null);
+    } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        retry.hidden = false;
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+    }
+}
+
+retry.addEventListener('click', () => { void load(); });
+await viewer.ready;
+await load();
+  </script>
+</body>
+</html>

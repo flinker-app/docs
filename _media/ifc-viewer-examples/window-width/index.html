@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find windows by width</title>
+<meta name="description" content="Compare window widths against a nominal size threshold and highlight the matching windows.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p, fieldset) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui fieldset { display: grid; gap: 6px; min-width: 0; padding: 0; border: 0; }
+.example-ui :is(button, input) { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; }
+.example-ui input:not([type=checkbox]) { width: 100%; padding: 5px 6px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: inherit; }
+.example-ui button { padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui :is(button, input):focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui :disabled { cursor: default; opacity: .55; }
+.example-ui output { font-variant-numeric: tabular-nums; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-controls { right: 8px; padding: 8px; }
+  .example-ui :is(button, input:not([type=checkbox])) { min-height: 30px; }
+}
+.example-ui input[type=range] { margin: 0; padding: 0; border: 0; accent-color: #3568ba; }
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/window-width/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Find windows by width">
+  <meta property="og:description" content="Compare window widths against a nominal size threshold and highlight the matching windows.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/window-width/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/window-width/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Find windows by width">
+  <meta name="twitter:description" content="Compare window widths against a nominal size threshold and highlight the matching windows."><meta name="twitter:image" content="https://viewer.flinker.app/examples/window-width/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Find windows by width","description":"Compare window widths against a nominal size threshold and highlight the matching windows.","url":"https://viewer.flinker.app/examples/window-width/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/window-width/index.html","image":"https://viewer.flinker.app/examples/window-width/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Buildings",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "Window dimensions"
+  ],
+  "audience": "BIM workflow",
+  "order": 17,
+  "assets": [
+    {
+      "id": "bim-whale-advanced",
+      "name": "AdvancedProject.ifc",
+      "format": "IFC",
+      "bytes": 44337371,
+      "sha256": "86b068a7ca6947e398c1daaa8bede9d31048c3990adc308429faeb56ee01db94",
+      "url": "https://raw.githubusercontent.com/andrewisen/bim-whale-ifc-samples/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc",
+      "sourceUrl": "https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/window-width/index.html#example-notices",
+      "attribution": "BIM Whale Advanced Project. Copyright (c) 2020 André \"MG\" Wisén.",
+      "notes": "Original IFC2x3 file; contents unchanged."
+    }
+  ],
+  "viewer": {
+    "assetIds": [
+      "bim-whale-advanced"
+    ],
+    "presentation": "default"
+  }
+}
+</script>
+</head><body data-example-state="loading">
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls" aria-label="Window width review"><h2>Window width review</h2><p>Amber windows meet the width threshold. Blue windows are narrower.</p><fieldset id="task" disabled aria-label="Window width controls"><label for="threshold">Width ≥ <output id="threshold-label">1200</output> mm</label><input id="threshold" type="range" min="500" max="2500" step="100" value="1200"></fieldset><output id="result" aria-live="polite"></output><p>Select a window, then click <strong>1 element selected</strong> at the top left for Properties.</p><button id="retry" type="button" hidden>Retry</button></aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">BIM Whale · André Wisén</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a></div>
+<template id="example-guide"><h2 data-example-title>Find windows by width</h2><p data-example-description>Compare window widths against a nominal size threshold and highlight the matching windows.</p><h3>Review widths</h3><p>Move the width slider. Amber windows meet the threshold; blue windows are narrower. Select a window, then click <strong>1 element selected</strong> at the top left for Properties.</p><h3>Developer integration</h3><p>The component identifiers, names, dimensions and memberships are queried through the native <code>viewer.IfcAPI</code>. The original IFC2x3 file is hash-verified and imported unchanged. BCF views are written with <code>bcf.save()</code>, imported with <code>viewer.add()</code>, and applied with <code>viewer.selectTopic()</code>. Open <strong>Topics</strong> (speech bubble) on the left toolbar to inspect the generated viewpoint.</p><p>The page reads each window’s OverallWidth attribute and the project length unit, converts widths to millimetres, then builds the two color sets at runtime.</p><p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Model source and license</h2><p>BIM Whale Advanced Project. Copyright (c) 2020 André "MG" Wisén. <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">Original IFC at the pinned revision</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>. The original IFC2x3 file is imported unchanged.</p>
+</template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+const { assets: modelFiles } = JSON.parse(document.getElementById('example-data').textContent);
+let windows = [];
+function createExampleProject(title, state, camera, identity = {}) {
+    const element = (name, attributes = {}, content = []) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, {}, [String(value)]);
+    const document = (name, root) => ({ document: { kind: 'xml', schema: 'bcf-3.0/' + name, root } });
+    const topicGuid = identity.topicGuid ??= crypto.randomUUID(), viewpointGuid = identity.viewpointGuid ??= crypto.randomUUID();
+    const component = IfcGuid => element('Component', { IfcGuid });
+    const components = element('Components', {}, [element('Visibility', { DefaultVisibility: String(state.visibility.defaultVisibility) }, [
+        element('ViewSetupHints', { SpacesVisible: String(state.visibility.hints?.spacesVisible ?? false), SpaceBoundariesVisible: String(state.visibility.hints?.spaceBoundariesVisible ?? false), OpeningsVisible: String(state.visibility.hints?.openingsVisible ?? false) }),
+        ...(state.visibility.exceptions.length ? [element('Exceptions', {}, state.visibility.exceptions.map(component))] : []),
+    ])]);
+    const colors = state.coloring.filter(group => group.ids.length).map(group =>
+        element('Color', { Color: group.color }, [element('Components', {}, group.ids.map(component))]));
+    if (colors.length) components.content.push(element('Coloring', {}, colors));
+    const viewpoint = element('VisualizationInfo', { Guid: viewpointGuid }, [components]);
+    const vector = (name, value) => element(name, {}, ['x', 'y', 'z'].map(axis => text(axis.toUpperCase(), value[axis])));
+    viewpoint.content.push(element('OrthogonalCamera', {}, [
+        vector('CameraViewPoint', camera.cameraViewPoint), vector('CameraDirection', camera.cameraDirection), vector('CameraUpVector', camera.cameraUpVector),
+        text('ViewToWorldScale', camera.viewToWorldScale / Math.min(1, camera.aspectRatio)),
+        text('AspectRatio', camera.aspectRatio),
+    ]));
+    const reference = element('ViewPoint', { Guid: viewpointGuid }, [text('Viewpoint', viewpointGuid + '.bcfv')]);
+    const topic = element('Topic', { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }, [
+        text('Title', title), text('CreationDate', new Date().toISOString()), text('CreationAuthor', 'examples@example.com'), element('Viewpoints', {}, [reference]),
+    ]);
+    const markup = element('Markup', {}, [topic]);
+    return { topic, project: { kind: 'archive', specification: 'bcf-3.0', entries: {
+        'bcf.version': document('version', element('Version', { VersionId: '3.0' })),
+        'extensions.xml': document('extensions', element('Extensions')),
+        [topicGuid + '/markup.bcf']: document('markup', markup),
+        [topicGuid + '/' + viewpointGuid + '.bcfv']: document('visinfo', viewpoint),
+    } } };
+}
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+
+function siFactor(unit) {
+    if (!unit) throw new Error('The model does not define the required units.');
+    if (unit.ConversionFactor) return Number(scalar(unit.ConversionFactor.ValueComponent)) * siFactor(unit.ConversionFactor.UnitComponent);
+    const prefixes = { EXA: 1e18, PETA: 1e15, TERA: 1e12, GIGA: 1e9, MEGA: 1e6, KILO: 1e3, HECTO: 1e2, DECA: 10, DECI: .1, CENTI: .01, MILLI: .001, MICRO: 1e-6, NANO: 1e-9 };
+    const power = { METRE: 1, SQUARE_METRE: 2, CUBIC_METRE: 3 }[scalar(unit.Name)];
+    const prefix = scalar(unit.Prefix);
+    if (!power || prefix && !Object.hasOwn(prefixes, prefix)) throw new Error('Unsupported model units: ' + scalar(unit.Name));
+    return (prefixes[prefix] ?? 1) ** power;
+}
+async function modelUnit(api, modelID, kind = 'LENGTHUNIT') {
+    const assignments = await queryType(api, modelID, 'IFCUNITASSIGNMENT', true);
+    return siFactor(assignments.flatMap(row => row.Units ?? []).find(unit => scalar(unit.UnitType) === kind));
+}
+
+
+
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const controls = document.getElementById('task');
+const retry = document.getElementById('retry');
+const status = document.getElementById('result');
+const identity = { topicGuid: crypto.randomUUID(), viewpointGuid: crypto.randomUUID() };
+const loadedSources = new Set();
+let retryTask;
+let sourcesReady = false;
+let updates = Promise.resolve();
+let pendingUpdates = 0;
+function run(task) {
+    retryTask = task;
+    pendingUpdates++;
+    controls.disabled = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    const next = async () => {
+        let failed = false;
+        try {
+            await viewer.ready;
+            await task();
+            await viewer.setMessage(null);
+        } catch (error) {
+            failed = true;
+            await viewer.setMessage(error.message ?? String(error), { type: 'error' });
+        } finally {
+            pendingUpdates--;
+            if (!pendingUpdates) {
+                document.body.dataset.exampleState = failed ? 'error' : 'loaded';
+                retry.hidden = !failed;
+                controls.disabled = failed && !sourcesReady;
+            }
+        }
+    };
+    // Imports and viewpoint applications must finish before the next update.
+    updates = updates.then(next, next);
+    return updates;
+}
+retry.addEventListener('click', () => run(retryTask));
+let resizeTimer;
+addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        if (retryTask && document.body.dataset.exampleState === 'loaded') run(retryTask);
+    }, 180);
+});
+async function sourceBlob(asset) {
+    let blob;
+    await loadExampleFile(asset.name, asset.url, async value => {
+        if (value.size !== asset.bytes) throw new Error('Incomplete source file: ' + asset.name);
+        const digest = await crypto.subtle.digest('SHA-256', await value.arrayBuffer());
+        const hash = [...new Uint8Array(digest)].map(value => value.toString(16).padStart(2, '0')).join('');
+        if (hash !== asset.sha256) throw new Error('Source revision changed: ' + asset.name);
+        blob = value;
+    }, asset.bytes);
+    return blob;
+}
+
+
+
+async function loadModels() {
+    for (const asset of modelFiles) {
+        if (loadedSources.has(asset.id)) continue;
+        const blob = await sourceBlob(asset);
+        await withIfcModel(blob, readWindows);
+        await viewer.setMessage('Opening ' + asset.name, { type: 'loading' });
+        const result = await viewer.add(asset.name, blob);
+        if (result?.isError) throw new Error('Could not open ' + asset.name);
+        loadedSources.add(asset.id);
+    }
+    sourcesReady = true;
+}
+async function applyState(title, state, camera) {
+    const { project, topic } = createExampleProject(title, state, camera, identity);
+    const bytes = await bcf.save(project);
+    const added = await viewer.add('review-state.bcf', new Blob([bytes]));
+    if (added?.isError) throw new Error('Could not import the review state.');
+    const selected = await viewer.selectTopic(topic.attributes.Guid);
+    if (selected?.isError) throw new Error('Could not display the review state.');
+}
+function focusCamera(position, scale = 25) {
+    const [x, y, z] = position;
+    const aspect = innerWidth / innerHeight;
+    if (scale >= 80) scale = Math.max(48, 76 / aspect) * Math.min(1, aspect);
+    const directionLength = Math.hypot(3, 4, 2.75);
+    const direction = { x: -3 / directionLength, y: 4 / directionLength, z: -2.75 / directionLength };
+    const horizontal = Math.hypot(direction.x, direction.y);
+    const distance = scale * 2.5;
+    return {
+        cameraViewPoint: { x: x - direction.x * distance, y: y - direction.y * distance, z: z - direction.z * distance },
+        cameraDirection: direction,
+        cameraUpVector: { x: -direction.x * direction.z / horizontal, y: -direction.y * direction.z / horizontal, z: horizontal },
+        viewToWorldScale: scale, aspectRatio: innerWidth / innerHeight,
+    };
+}
+
+async function readWindows(api, modelID) {
+    await viewer.setMessage('Reading window widths and units', { type: 'loading' });
+    const scale = await modelUnit(api, modelID);
+    windows = (await queryType(api, modelID, 'IFCWINDOW')).flatMap(row => {
+        const width = Number(scalar(row.OverallWidth)), guid = scalar(row.GlobalId);
+        return guid && Number.isFinite(width) && width > 0 ? [{ guid, widthMm: width * scale * 1000 }] : [];
+    });
+    if (!windows.length) throw new Error('The model has no windows with nominal widths.');
+}
+function sizeState(threshold) {
+    const large = [], small = [];
+    for (const item of windows) (item.widthMm >= threshold ? large : small).push(item.guid);
+    return { visibility: { defaultVisibility: false, exceptions: windows.map(item => item.guid) }, coloring: [{ color: 'FFF59E0B', ids: large }, { color: 'FF60A5FA', ids: small }] };
+}
+async function showSizes() {
+    const value = Number(document.getElementById('threshold').value);
+    document.getElementById('threshold-label').textContent = value;
+    const state = sizeState(value);
+    await applyState('Window width review', state, focusCamera([247.538, 351.281, 9.8], 110));
+    status.textContent = state.coloring[0].ids.length + ' of ' + windows.length + ' windows ≥ ' + value + ' mm';
+}
+document.getElementById('threshold').addEventListener('input', event => { document.getElementById('threshold-label').textContent = event.target.value; });
+document.getElementById('threshold').addEventListener('change', () => run(showSizes));
+await run(async () => { await loadModels(); await showSizes(); });
+
+</script></body></html>

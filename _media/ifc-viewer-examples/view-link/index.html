@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Share a model view with a link</title><meta name="description" content="Create a BCF topic from the model view, then share its link or download the BCF file.">
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/view-link/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Share a model view with a link">
+  <meta property="og:description" content="Create a BCF topic from the model view, then share its link or download the BCF file.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/view-link/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/view-link/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Share a model view with a link">
+  <meta name="twitter:description" content="Create a BCF topic from the model view, then share its link or download the BCF file."><meta name="twitter:image" content="https://viewer.flinker.app/examples/view-link/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Share a model view with a link","description":"Create a BCF topic from the model view, then share its link or download the BCF file.","url":"https://viewer.flinker.app/examples/view-link/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/view-link/index.html","image":"https://viewer.flinker.app/examples/view-link/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui label { display: grid; gap: 3px; }
+.example-ui :is(button, input) { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; }
+.example-ui input:not([type=checkbox]) { width: 100%; padding: 5px 6px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: inherit; }
+.example-ui button { padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui :is(button, input):focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui :disabled { cursor: default; opacity: .55; }
+.example-ui .actions { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.example-ui output { font-variant-numeric: tabular-nums; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-controls { right: 8px; padding: 8px; }
+  .example-ui :is(button, input:not([type=checkbox])) { min-height: 30px; }
+}
+</style>
+<script type="application/json" id="example-data">{
+  "category": "Integration",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "Create BCF topic",
+    "Share link",
+    "Restore view"
+  ],
+  "audience": "Developer integration",
+  "order": 8,
+  "viewer": {
+    "assetIds": [
+      "esplan"
+    ],
+    "presentation": "default"
+  },
+  "assets": [
+    {
+      "id": "esplan",
+      "name": "1807_EP_AR_v18.ifc",
+      "format": "IFC",
+      "bytes": 12109172,
+      "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Esplanades/1807_EP_AR_v18.ifc",
+      "sourceUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Esplanades/1807_EP_AR_v18.ifc",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/view-link/index.html#example-notices",
+      "attribution": "© Esplan. Estonian architectural project, published by buildingSMART community.",
+      "notes": "Original file; contents unchanged."
+    }
+  ]
+}</script>
+</head><body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls" aria-label="Share this view">
+<h2>Share this view</h2>
+<p>Adjust the model, then create a link or download its BCF topic.</p><button id="create-link" type="button" disabled>Create link</button>
+<label>Link to this view<input id="view-link" type="text" readonly placeholder="Create a link to the current view"></label><div class="actions"><button id="copy-link" type="button" disabled>Copy link</button><a id="open-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Open view</a><a id="download-bcf" href="#" download="shared-view.bcf" hidden>Download BCF</a><output id="copy-status" aria-live="polite"></output></div><button id="retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Esplanades/1807_EP_AR_v18.ifc" target="_blank" rel="noopener noreferrer">© Esplan · Esplanades</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
+<template id="example-guide">
+<h2 data-example-title>Share a model view with a link</h2>
+<p data-example-description>Create a BCF topic from the model view, then share its link or download the BCF file.</p>
+<h3>Try it</h3><ol><li>Orbit, pan or zoom to the view you want to share.</li><li>Click Create link, then Copy link or Download BCF. Open view reopens the shared BCF topic.</li><li>The same pinned model loads and the saved BCF view is restored.</li></ol>
+<h3>Developer integration</h3><p><code>viewer.createTopic(undefined, { snapshot: false })</code> captures the current view in a BCF 3.0 archive. <code>bcf.save()</code> writes the same standard BCF bytes used by the download and the URL fragment. The optional snapshot is omitted to keep links smaller. <code>bcf.load()</code> validates the archive before <code>viewer.add()</code> and <code>viewer.selectTopic(id)</code> restore it. The URL encoding belongs to this page; the BCF payload follows buildingSMART BCF-XML. Large selections or image attachments can exceed the link limit; download the BCF file in that case.</p><p>Copy this HTML and serve it over HTTP. The pinned SDK and model download require internet access.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p class="note"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Esplanades/1807_EP_AR_v18.ifc" target="_blank" rel="noopener noreferrer">© Esplan · 12 MB</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p>
+</template>
+<script type="module">
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+
+const { assets } = JSON.parse(document.getElementById('example-data').textContent);
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+let running = false, modelLoaded = false;
+const retry = document.getElementById('retry');
+async function run() {
+    if (running) return;
+    running = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        if (typeof viewer.createTopic !== 'function') throw new Error('This SDK version does not support creating BCF topics.');
+        if (!modelLoaded) {
+            await loadExampleFile(assets[0].name, assets[0].url, undefined, assets[0].bytes);
+            modelLoaded = true;
+        }
+        await restoreInitialLink();
+        create.disabled = false;
+        document.body.dataset.exampleState = 'loaded';
+    } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        retry.hidden = false;
+        await viewer.setMessage(error.message, { type: 'error' });
+    } finally { running = false; }
+}
+retry.addEventListener('click', () => { void run(); });
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+const input = document.getElementById('view-link');
+const create = document.getElementById('create-link');
+const copy = document.getElementById('copy-link');
+const open = document.getElementById('open-link');
+const download = document.getElementById('download-bcf');
+const status = document.getElementById('copy-status');
+const initialHash = location.hash;
+let restored = false, downloadUrl;
+function encodeBcf(bytes) {
+    const value = btoa(Array.from(bytes, byte => String.fromCharCode(byte)).join('')).replaceAll('+','-').replaceAll('/','_').replace(/=+$/, '');
+    if (value.length > 24000) throw new Error('This BCF is too large for a link. Download the BCF file instead.');
+    return '#bcf=' + value;
+}
+async function decodeBcf(hash) {
+    if (!/^#bcf=[A-Za-z0-9_-]+$/.test(hash) || hash.length > 24005) throw new Error('This BCF link is invalid or too large.');
+    const bytes = Uint8Array.from(atob(hash.slice(5).replaceAll('-','+').replaceAll('_','/')), c => c.charCodeAt(0));
+    if (bytes[0] !== 80 || bytes[1] !== 75) throw new Error('This link must contain a BCF archive.');
+    const archive = await bcf.load(bytes, { limits: { maxInputBytes: 18000, maxEntryBytes: 2 * 1024 * 1024, maxTotalBytes: 2 * 1024 * 1024 } });
+    if (archive.kind !== 'archive') throw new Error('This link must contain a BCF archive.');
+    const topic = Object.values(archive.entries).find(entry => entry.document?.root.name === 'Markup')
+        ?.document.root.content.find(node => node.name === 'Topic');
+    if (!topic) throw new Error('This BCF archive contains no topic.');
+    return { bytes, topicGuid: topic.attributes.Guid };
+}
+function showBcf(bytes) {
+    if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+    downloadUrl = URL.createObjectURL(new Blob([bytes], { type: 'application/octet-stream' }));
+    download.href = downloadUrl; download.hidden = false;
+    input.value = ''; copy.disabled = true; open.hidden = true; status.textContent = '';
+    const hash = encodeBcf(bytes);
+    history.replaceState(null, '', hash);
+    input.value = location.href; open.href = location.href;
+    copy.disabled = false; open.hidden = false;
+}
+async function restoreInitialLink() {
+    if (restored) return;
+    restored = true;
+    if (!initialHash) return;
+    try {
+        await viewer.setMessage('Opening the shared BCF topic', { type: 'loading' });
+        const { bytes, topicGuid } = await decodeBcf(initialHash);
+        const imported = await viewer.add('shared-view.bcf', bytes);
+        if (imported?.isError) throw new Error('The shared BCF topic could not be opened.');
+        const selected = await viewer.selectTopic(topicGuid);
+        if (selected?.isError) throw new Error('The shared BCF view could not be restored.');
+        showBcf(bytes);
+        await viewer.setMessage(null);
+    } catch (error) {
+        await viewer.setMessage(error.message + ' You can create a new link from the model.', { type: 'error' });
+    }
+}
+create.addEventListener('click', async () => {
+    create.disabled = true;
+    try {
+        await viewer.setMessage('Creating the BCF topic', { type: 'loading' });
+        const archive = await viewer.createTopic(undefined, { snapshot: false });
+        showBcf(await bcf.save(archive));
+        await viewer.setMessage(null);
+    } catch (error) { await viewer.setMessage(error.message, { type: 'error' }); }
+    finally { create.disabled = false; }
+});
+input.addEventListener('click', () => input.select());
+copy.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(input.value); status.textContent = 'Copied'; }
+    catch { input.focus(); input.select(); status.textContent = 'Press Ctrl+C / ⌘C to copy.'; }
+});
+window.addEventListener('pagehide', () => { if (downloadUrl) URL.revokeObjectURL(downloadUrl); });
+void run();
+</script>
+</body>
+</html>

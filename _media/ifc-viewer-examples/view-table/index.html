@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Show selected components in a table</title><meta name="description" content="Click a duct or fitting to see its name, floor and system in a table. Select more components to compare their records.">
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/view-table/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Show selected components in a table">
+  <meta property="og:description" content="Click a duct or fitting to see its name, floor and system in a table. Select more components to compare their records.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/view-table/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/view-table/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Show selected components in a table">
+  <meta name="twitter:description" content="Click a duct or fitting to see its name, floor and system in a table. Select more components to compare their records."><meta name="twitter:image" content="https://viewer.flinker.app/examples/view-table/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Show selected components in a table","description":"Click a duct or fitting to see its name, floor and system in a table. Select more components to compare their records.","url":"https://viewer.flinker.app/examples/view-table/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/view-table/index.html","image":"https://viewer.flinker.app/examples/view-table/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-results { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui button { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui [role=status] { font-variant-numeric: tabular-nums; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-results { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+.example-ui.example-results { width: 316px; max-height: calc(100dvh - 100px); display: flex; flex-direction: column; }
+.example-ui .table-scroll { min-height: 0; max-height: 112px; overflow: auto; }
+.example-ui table { width: 100%; border-collapse: collapse; text-align: left; font-size: 11px; }
+.example-ui :is(th, td) { padding: 5px 3px; border-bottom: 1px solid #e5e9ee; overflow-wrap: anywhere; }
+.example-ui th { position: sticky; top: 0; background: #fff; color: #5a6575; font-size: 10px; font-weight: 500; }
+.example-ui td button { padding: 0; border: 0; background: transparent; text-align: left; color: #2459a0; }
+.example-ui tr[aria-selected=true] { background: #edf4ff; }
+</style>
+<script type="application/json" id="example-data">{
+  "category": "Integration",
+  "formats": [
+    "IFC"
+  ],
+  "capabilities": [
+    "Selection",
+    "Linked table"
+  ],
+  "audience": "Developer integration",
+  "order": 18,
+  "viewer": {
+    "assetIds": [
+      "clinic-hvac"
+    ],
+    "presentation": "default"
+  },
+  "assets": [
+    {
+      "id": "clinic-hvac",
+      "name": "Clinic_HVAC.ifc",
+      "format": "IFC",
+      "bytes": 26914597,
+      "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_HVAC.ifc",
+      "sourceUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_HVAC.ifc",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/view-table/index.html#example-notices",
+      "attribution": "BSI (2020) “Medical-Dental Test Files,” buildingSMART International. Original project provided to the US Construction Engineering Research Laboratory; formerly hosted by the US National Institute of Building Sciences.",
+      "notes": "Original file; contents unchanged."
+    }
+  ]
+}
+</script>
+</head><body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-results" aria-label="Selected components">
+<h2>Selected components</h2>
+<p>Click a duct or fitting. Ctrl/⌘+click adds components. Click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
+<strong id="selection-count" role="status">0 selected</strong><div class="table-scroll" tabindex="0" aria-label="Selected element records"><table><thead><tr><th scope="col">Component</th><th scope="col">Floor</th><th scope="col">System</th></tr></thead><tbody id="element-rows"></tbody></table></div><button id="retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_HVAC.ifc" target="_blank" rel="noopener noreferrer">BSI (2020) · Medical-Dental Test Files</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
+<template id="example-guide">
+<h2 data-example-title>Show selected components in a table</h2><p data-example-description>Click a duct or fitting to see its name, floor and system in a table. Select more components to compare their records.</p><h3>Try it</h3><p>Click a duct or fitting. Ctrl/⌘+click adds components to the selection and table.</p><h3>Developer integration</h3><p><code>viewer.onViewChange</code> provides selected GlobalIds. The page resolves them through <code>viewer.IfcAPI.GetExpressIdFromGuid</code>, then queries entity names, storeys and property sets from its independently opened native model. It does not ship a cached property table. An outdated query cannot replace a newer selection.</p><p>The page keeps its native IFC model open for selection queries and closes it when the page is unloaded. <code>viewer.clear()</code> controls only the rendered model. Native calls run on the main thread. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p class="note"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_HVAC.ifc" target="_blank" rel="noopener noreferrer">buildingSMART clinic HVAC · 27 MB</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p>
+<p>BSI (2020) “Medical-Dental Test Files,” buildingSMART International. Original project provided to the US Construction Engineering Research Laboratory; formerly hosted by the US National Institute of Building Sciences. The HVAC IFC is imported unchanged.</p>
+</template>
+<script type="module">
+import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+
+const { assets } = JSON.parse(document.getElementById('example-data').textContent);
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+let unsubscribe = () => {};
+let running = false, modelID = -1, nativeApi;
+const retry = document.getElementById('retry');
+async function run() {
+    if (running) return;
+    running = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        if (typeof viewer.onViewChange !== 'function') throw new Error('This SDK version does not support live view events.');
+        if (modelID < 0) await loadExampleFile(assets[0].name, assets[0].url, async blob => {
+            nativeApi = await viewer.IfcAPI;
+            try {
+                await nativeApi.Init();
+                modelID = nativeApi.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+                if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+                await viewer.add(assets[0].name, blob);
+            } catch (error) {
+                if (modelID >= 0) nativeApi.CloseModel(modelID);
+                nativeApi.Dispose(); modelID = -1; throw error;
+            }
+        }, assets[0].bytes);
+        subscribe();
+        document.body.dataset.exampleState = 'loaded';
+    } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        retry.hidden = false;
+        await viewer.setMessage(error.message, { type: 'error' });
+    } finally { running = false; }
+}
+retry.addEventListener('click', () => { void run(); });
+window.addEventListener('pagehide', event => {
+    unsubscribe();
+    if (!event.persisted && nativeApi) {
+        if (modelID >= 0) nativeApi.CloseModel(modelID);
+        nativeApi.Dispose();
+    }
+});
+window.addEventListener('pageshow', event => {
+    if (event.persisted && document.body.dataset.exampleState === 'loaded') subscribe();
+});
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+const records = new Map();
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+
+function storeyIndex(root) {
+    const result = new Map();
+    function visit(node, floor = '') {
+        if (String(node.type).toUpperCase() === 'IFCBUILDINGSTOREY') floor = String(scalar(node.Name) ?? 'Unnamed storey');
+        if (node.expressID !== undefined) result.set(node.expressID, floor);
+        for (const child of node.children ?? []) visit(child, floor);
+    }
+    visit(root); return result;
+}
+
+async function readSelectedRecords(ids) {
+    if (!ids.length) return new Map();
+    const api = nativeApi;
+    const next = new Map();
+    const floors = storeyIndex(await api.properties.getSpatialStructure(modelID, true));
+    for (const guid of ids) {
+        const id = await api.GetExpressIdFromGuid(modelID, guid);
+        if (typeof id !== 'number' || id < 1) continue;
+        const line = await api.GetLine(modelID, id);
+        if (!line || scalar(line.GlobalId) !== guid) continue;
+        const sets = await api.properties.getPropertySets(modelID, id, true);
+        const properties = sets.flatMap(set => set.HasProperties ?? []);
+        const property = name => scalar(properties.find(item => scalar(item.Name) === name)?.NominalValue) ?? '';
+        next.set(guid, [String(scalar(line.Name) ?? guid), String(property('Level') || floors.get(id) || ''), String(property('System Classification'))]);
+    }
+    return next;
+}
+const tbody = document.getElementById('element-rows');
+let selection = [], selectionKey = '';
+function selectedIds(view) {
+    const components = view.root.content.find(node => node.name === 'Components');
+    const selection = components?.content.find(node => node.name === 'Selection');
+    return [...new Set((selection?.content ?? [])
+        .filter(node => node.name === 'Component')
+        .map(node => node.attributes.IfcGuid).filter(Boolean))];
+}
+function recordFor(id) { return records.get(id) ?? ['Element ' + id, '', '']; }
+function renderRows() {
+    const rows = selection.map(id => {
+        const row = document.createElement('tr');
+        row.dataset.ifcGuid = id;
+        row.setAttribute('aria-selected', 'true');
+        row.title = 'IFC GlobalId: ' + id;
+        for (const value of recordFor(id)) {
+            const cell = document.createElement('td');
+            cell.textContent = value || '—';
+            row.append(cell);
+        }
+        return row;
+    });
+    if (!rows.length) {
+        const row = document.createElement('tr'), cell = document.createElement('td');
+        cell.colSpan = 3; cell.textContent = 'No elements selected. Click one in the model.';
+        row.append(cell); rows.push(row);
+    }
+    tbody.replaceChildren(...rows);
+    document.querySelector('.table-scroll').scrollTop = 0;
+    document.getElementById('selection-count').textContent = selection.length + ' selected';
+}
+function subscribe() {
+    unsubscribe();
+    unsubscribe = viewer.onViewChange(view => {
+        const ids = selectedIds(view), key = JSON.stringify(ids.slice().sort());
+        if (key === selectionKey) return;
+        selectionKey = key;
+        // A later selection supersedes any unfinished property request.
+        void readSelectedRecords(ids).then(next => {
+            if (selectionKey !== key) return;
+            records.clear(); for (const [id, record] of next) records.set(id, record);
+            selection = ids; renderRows();
+        }).catch(error => {
+            if (selectionKey !== key) return;
+            selectionKey = ''; void viewer.setMessage(error.message, { type: 'error' });
+        });
+    });
+}
+renderRows();
+void run();
+</script>
+</body>
+</html>

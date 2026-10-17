@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Read room labels on a floor plan</title>
+<meta name="description" content="Read room numbers, names and areas for all 154 rooms on the clinic’s first floor.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-task { right: 10px; bottom: 64px; width: 220px; max-width: calc(100vw - 64px); display: grid; gap: 5px; padding: 9px; background: #fffffff0; border: 1px solid #dfe3e8; border-radius: 4px; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; }
+.example-ui p { color: #5a6575; }
+.example-ui button { font: inherit; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 34px; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; font-size: 9px; text-align: right; }
+.example-ui a { color: #566171; }
+@media (max-width: 600px) { .example-ui.example-task { right: 8px; width: 210px; padding: 8px; } }
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/room-info/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Read room labels on a floor plan">
+  <meta property="og:description" content="Read room numbers, names and areas for all 154 rooms on the clinic’s first floor.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/room-info/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/room-info/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Read room labels on a floor plan">
+  <meta name="twitter:description" content="Read room numbers, names and areas for all 154 rooms on the clinic’s first floor."><meta name="twitter:image" content="https://viewer.flinker.app/examples/room-info/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Read room labels on a floor plan","description":"Read room numbers, names and areas for all 154 rooms on the clinic’s first floor.","url":"https://viewer.flinker.app/examples/room-info/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/room-info/index.html","image":"https://viewer.flinker.app/examples/room-info/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">{
+  "category": "Buildings",
+  "formats": [
+    "IFC",
+    "BCF",
+    "PNG"
+  ],
+  "capabilities": [
+    "Floor plans",
+    "Room labels"
+  ],
+  "audience": "BIM workflow",
+  "order": 14,
+  "assets": [
+    {
+      "id": "clinic-architectural",
+      "name": "Clinic_Architectural.ifc",
+      "format": "IFC",
+      "bytes": 13003205,
+      "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc",
+      "sourceUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/room-info/index.html#example-notices",
+      "attribution": "BSI (2020) “Medical-Dental Test Files,” buildingSMART International. Original project provided to the US Construction Engineering Research Laboratory; formerly hosted by the US National Institute of Building Sciences.",
+      "notes": "Original file; contents unchanged.",
+      "sha256": "2ac970ce065ecac4e0c9e5f453a257169e90d0067f419b7e33533a64ef837880"
+    }
+  ],
+  "viewer": {
+    "assetIds": [
+      "clinic-architectural"
+    ],
+    "presentation": "default"
+  }
+}</script>
+</head>
+<body data-example-state="loading">
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-task" aria-label="Room labels">
+<h2>First floor · Room labels</h2>
+<p>Room number, name and area. Pan and zoom to read every room.</p>
+<p>Left toolbar: <strong>Sections</strong> shows the floor cut; <strong>Topics</strong> restores this plan. Select a component, then click <strong>1 element selected</strong> at the top left for Properties.</p>
+<button id="retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc" target="_blank" rel="noopener noreferrer">Medical-Dental Clinic · buildingSMART</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
+<template id="example-guide">
+<h2 data-example-title>Read room labels on a floor plan</h2>
+<p data-example-description>Read room numbers, names and areas for all 154 rooms on the clinic’s first floor.</p>
+<h3>Use the plan</h3><p>The opening view shows a dense group of rooms on the first floor. Pan across the floor and zoom to read the other labels. Every first-floor IfcSpace has a label, including circulation and support spaces. The left toolbar’s Topics panel restores the opening plan; Sections shows its floor cut. Select a component and click 1 element selected at the top left for Properties.</p>
+<h3>Developer integration</h3><p><code>viewer.IfcAPI</code> queries the storey, spaces, identifiers, names, units, placements and swept footprint profiles from the source IFC. Label positions and footprint areas are calculated from those returned profiles; no room schedule or label coordinates are embedded. Labels fit inside the footprint, and the BCF camera opens a readable view centred on its queried bounds. The clinic model supplies a populated space schedule.</p><p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices"><h2>Sources and license notices</h2><p>BSI (2020) “Medical-Dental Test Files,” buildingSMART International. Original project provided to the US Construction Engineering Research Laboratory; formerly hosted by the US National Institute of Building Sciences. <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc" target="_blank" rel="noopener noreferrer">Original architectural IFC at the pinned revision</a>. <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. The model is unchanged. The embedded room labels are derived from its first-floor spaces; areas are calculated from their footprints.</p></template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+
+const { assets: [model] } = JSON.parse(document.getElementById('example-data').textContent);
+let floor;
+// Room data is read from the loaded IFC.
+let rooms = [];
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+function references(value) {
+    if (Array.isArray(value)) return value.flatMap(references);
+    return value?.type === 5 ? [Number(value.value)] : [];
+}
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+
+function storeyIndex(root) {
+    const result = new Map();
+    function visit(node, floor = '') {
+        if (String(node.type).toUpperCase() === 'IFCBUILDINGSTOREY') floor = String(scalar(node.Name) ?? 'Unnamed storey');
+        if (node.expressID !== undefined) result.set(node.expressID, floor);
+        for (const child of node.children ?? []) visit(child, floor);
+    }
+    visit(root); return result;
+}
+
+function siFactor(unit) {
+    if (!unit) throw new Error('The model does not define the required units.');
+    if (unit.ConversionFactor) return Number(scalar(unit.ConversionFactor.ValueComponent)) * siFactor(unit.ConversionFactor.UnitComponent);
+    const prefixes = { EXA: 1e18, PETA: 1e15, TERA: 1e12, GIGA: 1e9, MEGA: 1e6, KILO: 1e3, HECTO: 1e2, DECA: 10, DECI: .1, CENTI: .01, MILLI: .001, MICRO: 1e-6, NANO: 1e-9 };
+    const power = { METRE: 1, SQUARE_METRE: 2, CUBIC_METRE: 3 }[scalar(unit.Name)];
+    const prefix = scalar(unit.Prefix);
+    if (!power || prefix && !Object.hasOwn(prefixes, prefix)) throw new Error('Unsupported model units: ' + scalar(unit.Name));
+    return (prefixes[prefix] ?? 1) ** power;
+}
+async function modelUnit(api, modelID, kind = 'LENGTHUNIT') {
+    const assignments = await queryType(api, modelID, 'IFCUNITASSIGNMENT', true);
+    return siFactor(assignments.flatMap(row => row.Units ?? []).find(unit => scalar(unit.UnitType) === kind));
+}
+
+function axisPoint(axis, point = [0, 0, 0]) {
+    const coords = axis?.Location?.Coordinates?.map(scalar) ?? [0, 0, 0];
+    const normalize = values => { const length = Math.hypot(...values); if (!length) throw new Error('Invalid IFC placement axis.'); return values.map(v => v / length); };
+    const cross = (a, b) => [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]];
+    const z = normalize(axis?.Axis?.DirectionRatios?.map(scalar) ?? [0, 0, 1]);
+    const ref = axis?.RefDirection?.DirectionRatios?.map(scalar) ?? [1, 0, 0];
+    const y = normalize(cross(z, [ref[0], ref[1], ref[2] ?? 0])), x = cross(y, z);
+    return [0, 1, 2].map(i => (coords[i] ?? 0) + x[i]*(point[0]??0) + y[i]*(point[1]??0) + z[i]*(point[2]??0));
+}
+function placementPoint(placement, point = [0, 0, 0]) {
+    if (!placement) return point;
+    return placementPoint(placement.PlacementRelTo, axisPoint(placement.RelativePlacement, point));
+}
+async function objectPosition(api, modelID, line, scale) {
+    const id = references(line.ObjectPlacement)[0];
+    if (id === undefined) throw new Error('The object has no local placement.');
+    return placementPoint(await api.GetLine(modelID, id, true)).map(value => value * scale);
+}
+
+function polygonInfo(points) {
+    const polygon = points.map(point => [Number(point[0]), Number(point[1])]);
+    if (polygon.length < 3 || polygon.flat().some(value => !Number.isFinite(value))) throw new Error('Invalid room footprint.');
+    let twiceArea = 0;
+    for (let i=0;i<polygon.length;i++) { const a=polygon[i],b=polygon[(i+1)%polygon.length]; twiceArea += a[0]*b[1]-b[0]*a[1]; }
+    function clearance(x,y) {
+        let inside=false, distance=Infinity;
+        for(let i=0,j=polygon.length-1;i<polygon.length;j=i++) {
+            const a=polygon[j],b=polygon[i];
+            if ((a[1]>y)!==(b[1]>y) && x < (b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0]) inside=!inside;
+            const dx=b[0]-a[0],dy=b[1]-a[1], length=dx*dx+dy*dy;
+            const t=length?Math.max(0,Math.min(1,((x-a[0])*dx+(y-a[1])*dy)/length)):0;
+            distance=Math.min(distance,Math.hypot(x-a[0]-t*dx,y-a[1]-t*dy));
+        }
+        return inside?distance:-distance;
+    }
+    const min=[0,1].map(i=>Math.min(...polygon.map(p=>p[i]))),max=[0,1].map(i=>Math.max(...polygon.map(p=>p[i])));
+    let best={point:min,distance:-Infinity}, low=min,high=max;
+    for(let pass=0;pass<4;pass++) {
+        const step=high.map((v,i)=>(v-low[i])/24);
+        for(let x=0;x<=24;x++)for(let y=0;y<=24;y++) {
+            const point=[low[0]+x*step[0],low[1]+y*step[1]],distance=clearance(...point);
+            if(distance>best.distance)best={point,distance};
+        }
+        low=best.point.map((v,i)=>v-step[i]);high=best.point.map((v,i)=>v+step[i]);
+    }
+    if (!(Math.abs(twiceArea)>0) || !(best.distance>0)) throw new Error('The room footprint has no interior.');
+    return { area:Math.abs(twiceArea)/2, position:best.point, radius:best.distance, min,max };
+}
+async function readRooms(api, modelID) {
+    const scale=await modelUnit(api,modelID);
+    await viewer.setMessage('Reading room names and footprints', { type:'loading' });
+    model.projectGuid=scalar((await queryType(api,modelID,'IFCPROJECT'))[0]?.GlobalId);
+    const storeys=await queryType(api,modelID,'IFCBUILDINGSTOREY');
+    const storey=storeys.find(row=>String(scalar(row.Name)).toLowerCase()==='first floor');
+    if(!storey)throw new Error('The model has no First Floor storey.');
+    floor={guid:scalar(storey.GlobalId),name:scalar(storey.Name),elevation:(await objectPosition(api,modelID,storey,scale))[2]};
+    const floors=storeyIndex(await api.properties.getSpatialStructure(modelID,true)),found=[];
+    for(const line of await queryType(api,modelID,'IFCSPACE')) {
+        if(floors.get(line.expressID)!==floor.name)continue;
+        const representation=await api.GetLine(modelID,references(line.Representation)[0],true);
+        const solid=representation.Representations.flatMap(row=>row.Items??[]).find(item=>item.SweptArea);
+        if(!solid)throw new Error('Room '+scalar(line.Name)+' has no supported swept footprint.');
+        const placement=await api.GetLine(modelID,references(line.ObjectPlacement)[0],true);
+        const profile=solid.SweptArea;
+        let vertices;
+        if(profile.OuterCurve?.Points) vertices=profile.OuterCurve.Points.map(point=>point.Coordinates.map(scalar));
+        else if(profile.XDim && profile.YDim) {
+            const x=Number(scalar(profile.XDim))/2,y=Number(scalar(profile.YDim))/2;
+            vertices=[[-x,-y],[x,-y],[x,y],[-x,y]].map(point=>axisPoint(profile.Position,point));
+        } else throw new Error('Room '+scalar(line.Name)+' has an unsupported profile.');
+        const points=vertices.map(point=>placementPoint(placement,axisPoint(solid.Position,point)).map(value=>value*scale));
+        const info=polygonInfo(points);
+        found.push({guid:scalar(line.GlobalId),id:String(scalar(line.Name)??line.expressID),name:String(scalar(line.LongName)??scalar(line.Name)??''),area:info.area,position:info.position,radius:info.radius,min:info.min,max:info.max});
+    }
+    rooms=found.sort((a,b)=>a.id.localeCompare(b.id,undefined,{numeric:true}));
+    if(!rooms.length)throw new Error('The selected storey has no spaces.');
+    document.querySelector('.example-task h2').textContent=floor.name+' · '+rooms.length+' rooms';
+}
+function labelLines(room) {
+    const words = room.name.replace(/\s+/g, ' ').trim().split(' ');
+    const lines = []; let line = '';
+    for (const word of words) {
+        if (line && (line + ' ' + word).length > 16) { lines.push(line); line = word; }
+        else line += (line ? ' ' : '') + word;
+    }
+    if (line) lines.push(line);
+    return [room.id, ...lines, room.area.toFixed(1) + ' m²'];
+}
+
+async function createRoomLabel(room) {
+    const lines = labelLines(room);
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    if (!context) throw new Error('Could not create room labels.');
+    // A shared scale keeps every label compact and the text size consistent.
+    const font = '600 72px system-ui, sans-serif', lineHeight = 86, padding = 14;
+    context.font = font;
+    canvas.width = Math.ceil(Math.max(...lines.map(line => context.measureText(line).width))) + padding * 2;
+    canvas.height = lines.length * lineHeight + padding * 2;
+    context.font = font; context.textAlign = 'center'; context.textBaseline = 'middle';
+    context.lineJoin = 'round'; context.lineWidth = 12;
+    context.strokeStyle = '#ffffff'; context.fillStyle = '#20252b';
+    for (const [index, line] of lines.entries()) {
+        const y = padding + (index + .5) * lineHeight;
+        context.strokeText(line, canvas.width / 2, y);
+        context.fillText(line, canvas.width / 2, y);
+    }
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+    if (!blob) throw new Error('Could not encode a room label.');
+    // Fit each label within the interior radius measured from its queried footprint.
+    const fit = Math.min(1, room.radius * 1.8 * 300 / Math.hypot(canvas.width, canvas.height));
+    return { bytes: new Uint8Array(await blob.arrayBuffer()), height: canvas.height / 300 * fit };
+}
+
+function createRoomProject(rooms, labels, model, options) {
+    const element = (name, content = [], attributes = {}) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, [String(value)]);
+    const vector = (name, values) => element(name, ['X', 'Y', 'Z'].map((axis, index) => text(axis, values[index])));
+    const entries = {};
+    const put = (path, schema, root) => { entries[path] = { document: { kind: 'xml', schema: 'bcf-3.0/' + schema, root } }; };
+    const { topicGuid, viewpointGuid, aspectRatio, floor } = options;
+    const min=[0,1].map(i=>Math.min(...rooms.map(room=>room.min[i]))),max=[0,1].map(i=>Math.max(...rooms.map(room=>room.max[i])));
+    const center=min.map((value,i)=>(value+max[i])/2),viewScale=Math.min(26,Math.max(max[1]-min[1],(max[0]-min[0])/aspectRatio)*1.1);
+    const viewpoint = element('VisualizationInfo', [
+        element('Components', [element('Visibility', [element('ViewSetupHints', [], {
+            SpacesVisible: 'false', SpaceBoundariesVisible: 'false', OpeningsVisible: 'false',
+        }), element('Exceptions', rooms.map(room => element('Component', [], { IfcGuid: room.guid })))], { DefaultVisibility: 'true' })]),
+        element('OrthogonalCamera', [
+            vector('CameraViewPoint', [...center, floor.elevation + 80]), vector('CameraDirection', [0, 0, -1]),
+            vector('CameraUpVector', [0, 1, 0]),
+            text('ViewToWorldScale', viewScale), text('AspectRatio', aspectRatio),
+        ]),
+        element('ClippingPlanes', [
+            element('ClippingPlane', [vector('Location', [0, 0, floor.elevation + 1.5]), vector('Direction', [0, 0, 1])]),
+            element('ClippingPlane', [vector('Location', [0, 0, floor.elevation - .2]), vector('Direction', [0, 0, -1])]),
+        ]),
+        element('Bitmaps', rooms.map(room => {
+            const label = labels.get(room.guid), filename = room.id + '.png';
+            entries[topicGuid + '/' + filename] = { bytes: label.bytes };
+            return element('Bitmap', [
+                text('Format', 'png'), text('Reference', filename),
+                vector('Location', [...room.position, floor.elevation + 1.48]), vector('Normal', [0, 0, -1]),
+                vector('Up', [0, 1, 0]), text('Height', label.height),
+            ]);
+        })),
+    ], { Guid: viewpointGuid });
+    put('bcf.version', 'version', element('Version', [], { VersionId: '3.0' }));
+    put('extensions.xml', 'extensions', element('Extensions'));
+    put(topicGuid + '/view.bcfv', 'visinfo', viewpoint);
+    put(topicGuid + '/markup.bcf', 'markup', element('Markup', [
+        element('Header', [element('Files', [element('File', [text('Filename', model.name), text('Reference', model.url)], {
+            IfcProject: model.projectGuid, IsExternal: 'true',
+        })])]),
+        element('Topic', [
+            text('Title', floor.name + ' · Room labels'),
+            text('CreationDate', new Date().toISOString()), text('CreationAuthor', 'examples@example.com'),
+            text('Description', 'Room number, name and footprint area for every first-floor space.'),
+            element('Viewpoints', [element('ViewPoint', [text('Viewpoint', 'view.bcfv')], { Guid: viewpointGuid })]),
+        ], { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }),
+    ]));
+    return { kind: 'archive', specification: 'bcf-3.0', entries };
+}
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const retry = document.getElementById('retry');
+const identity = { topicGuid: crypto.randomUUID(), viewpointGuid: crypto.randomUUID() };
+const labels = new Map();
+let modelLoaded = false, running = false;
+async function load() {
+    if (running) return;
+    running = true; retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        if (!modelLoaded) {
+            await loadExampleFile(model.name, model.url, async blob => {
+                await withIfcModel(blob, readRooms);
+                await viewer.add(model.name, blob);
+            }, model.bytes);
+            modelLoaded = true;
+        }
+        await viewer.setMessage('Preparing floor labels', { type: 'loading' });
+        await document.fonts.ready;
+        for (const room of rooms) if (!labels.has(room.guid)) labels.set(room.guid, await createRoomLabel(room));
+        const project = createRoomProject(rooms, labels, model, { ...identity, floor, aspectRatio: innerWidth / innerHeight });
+        const imported = await viewer.add('first-floor-room-labels.bcf', await bcf.save(project));
+        if (imported?.isError) throw new Error('Could not import the floor labels.');
+        const applied = await viewer.selectTopic(identity.topicGuid);
+        if (applied?.isError) throw new Error('Could not open the floor plan.');
+        await viewer.setMessage(null); document.body.dataset.exampleState = 'loaded';
+    } catch (error) {
+        document.body.dataset.exampleState = 'error'; retry.hidden = false;
+        await viewer.setMessage(error.message ?? String(error), { type: 'error' });
+    } finally { running = false; }
+}
+retry.addEventListener('click', () => { void load(); });
+await load();
+</script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>See inside a building with sections</title>
+<meta name="description" content="Choose a saved floor cut, side section or section box to reveal rooms and components inside a building.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p, fieldset) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui fieldset { display: grid; gap: 6px; min-width: 0; padding: 0; border: 0; }
+.example-ui legend { margin-bottom: 4px; font-weight: 600; }
+.example-ui label { display: grid; gap: 3px; }
+.example-ui :is(button, input) { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; }
+.example-ui input:not([type=checkbox]):not([type=radio]) { width: 100%; padding: 5px 6px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: inherit; }
+.example-ui button { padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui :is(button, input):focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui :disabled { cursor: default; opacity: .55; }
+.example-ui .example-option { display: flex; gap: 6px; align-items: center; padding: 3px 0; cursor: pointer; }
+.example-ui input:is([type=checkbox], [type=radio]) { flex: 0 0 auto; width: 14px; height: 14px; margin: 0; accent-color: #3568ba; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-controls { right: 8px; padding: 8px; }
+  .example-ui .example-option { min-height: 24px; }
+  .example-ui :is(button, input:not([type=checkbox]):not([type=radio])) { min-height: 30px; }
+}
+.example-ui.example-controls { bottom: 84px; }
+.example-ui.example-credit { bottom: 52px; }
+</style><!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/bcf-clipping/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="See inside a building with sections">
+  <meta property="og:description" content="Choose a saved floor cut, side section or section box to reveal rooms and components inside a building.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/bcf-clipping/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/bcf-clipping/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="See inside a building with sections">
+  <meta name="twitter:description" content="Choose a saved floor cut, side section or section box to reveal rooms and components inside a building."><meta name="twitter:image" content="https://viewer.flinker.app/examples/bcf-clipping/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"See inside a building with sections","description":"Choose a saved floor cut, side section or section box to reveal rooms and components inside a building.","url":"https://viewer.flinker.app/examples/bcf-clipping/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/bcf-clipping/index.html","image":"https://viewer.flinker.app/examples/bcf-clipping/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Coordination",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "BCF",
+    "clipping",
+    "Viewpoints"
+  ],
+  "audience": "Developer integration",
+  "order": 7
+}
+</script>
+</head><body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls" aria-label="See inside the building">
+<h2>See inside the building</h2>
+<p>Choose a cut to reveal the rooms inside.</p>
+<fieldset id="preset-choice" disabled><legend>Saved view</legend><label class="example-option"><input type="radio" name="preset" value="bcf-clipping-section">Floor cut</label><label class="example-option"><input type="radio" name="preset" value="bcf-clipping">Side section</label><label class="example-option"><input type="radio" name="preset" value="bcf-clipping-section-box">Section box</label></fieldset><button id="retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic" target="_blank" rel="noopener noreferrer">BSI (2020) · Medical-Dental Test Files</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
+<template id="example-guide">
+<h2 data-example-title>See inside a building with sections</h2>
+<p data-example-description>Choose a saved floor cut, side section or section box to reveal rooms and components inside a building.</p>
+<h2>Developer integration</h2><p>Share the same cut with another reviewer by storing clipping planes in BCF. This page embeds three cuts in the pinned clinic's Z-up IFC coordinates and writes them with <code>bcf.save()</code>. <code>viewer.add()</code> imports each viewpoint; <code>viewer.selectTopic()</code> opens it. Use the Saved view options to switch cuts; one saved view is active at a time. Each example state demonstrates clipping, with a camera suited to its cut.</p><p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK and sample downloads require internet access.</p>
+<p>Component groups and project identifiers are queried from source bytes through the native <code>viewer.IfcAPI</code>. Colors, camera poses and cutting planes are authored BCF inputs.</p><p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic" target="_blank" rel="noopener noreferrer">BSI (2020) “Medical-Dental Test Files,” buildingSMART International</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p></template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+
+// GlobalIds, cameras and planes belong to these exact upstream IFC revisions.
+const model = {
+  "filename": "Clinic_Architectural.ifc",
+  "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_Architectural.ifc"
+};
+const presetDefinitions = {
+  "bcf-clipping-section": {
+    "label": "Inspect the upper-floor layout",
+    "state": {
+      "clipping": [
+        {
+          "location": {
+            "x": -25.729131147541672,
+            "y": 23.46841912934834,
+            "z": 6.1578815591085005
+          },
+          "direction": {
+            "x": 0,
+            "y": 0,
+            "z": 1
+          }
+        }
+      ]
+    },
+    "camera": {
+      "cameraViewPoint": {
+        "x": -25.729131147541672,
+        "y": 23.46841912934834,
+        "z": 96.1578815591085
+      },
+      "cameraDirection": {
+        "x": 0,
+        "y": 0,
+        "z": -1
+      },
+      "cameraUpVector": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "viewToWorldScale": 80,
+      "aspectRatio": 1.6
+    }
+  },
+  "bcf-clipping": {
+    "label": "Inspect vertical relationships",
+    "state": {
+      "clipping": [
+        {
+          "location": {
+            "x": -25.729131147541672,
+            "y": 23.46841912934834,
+            "z": 6.1578815591085005
+          },
+          "direction": {
+            "x": 1,
+            "y": 0,
+            "z": 0
+          }
+        }
+      ]
+    },
+    "camera": {
+      "cameraViewPoint": {
+        "x": 64.27086885245834,
+        "y": 23.46841912934834,
+        "z": 6.1578815591085005
+      },
+      "cameraDirection": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+      "cameraUpVector": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      },
+      "viewToWorldScale": 80,
+      "aspectRatio": 1.6
+    }
+  },
+  "bcf-clipping-section-box": {
+    "label": "Inspect a bounded area",
+    "state": {
+      "clipping": [
+        {
+          "location": {
+            "x": -42.73768721311545,
+            "y": 23.46841912934834,
+            "z": 6.1578815591085005
+          },
+          "direction": {
+            "x": -1,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "location": {
+            "x": -8.72057508196789,
+            "y": 23.46841912934834,
+            "z": 6.1578815591085005
+          },
+          "direction": {
+            "x": 1,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "location": {
+            "x": -25.729131147541672,
+            "y": 2.315407372131748,
+            "z": 6.1578815591085005
+          },
+          "direction": {
+            "x": 0,
+            "y": -1,
+            "z": 0
+          }
+        },
+        {
+          "location": {
+            "x": -25.729131147541672,
+            "y": 44.62143088656494,
+            "z": 6.1578815591085005
+          },
+          "direction": {
+            "x": 0,
+            "y": 1,
+            "z": 0
+          }
+        },
+        {
+          "location": {
+            "x": -25.729131147541672,
+            "y": 23.46841912934834,
+            "z": 1.436549361279063
+          },
+          "direction": {
+            "x": 0,
+            "y": 0,
+            "z": -1
+          }
+        },
+        {
+          "location": {
+            "x": -25.729131147541672,
+            "y": 23.46841912934834,
+            "z": 10.879213756937938
+          },
+          "direction": {
+            "x": 0,
+            "y": 0,
+            "z": 1
+          }
+        }
+      ]
+    },
+    "camera": {
+      "cameraViewPoint": {
+        "x": 37.642639815278,
+        "y": -39.90335183347133,
+        "z": 48.24069821410594
+      },
+      "cameraDirection": {
+        "x": -0.640056007351072,
+        "y": 0.640056007351072,
+        "z": -0.4250371923815713
+      },
+      "cameraUpVector": {
+        "x": -0.30054668098950027,
+        "y": 0.30054668098950027,
+        "z": 0.9051758862742596
+      },
+      "fieldOfView": 45,
+      "aspectRatio": 1.6
+    }
+  }
+};
+
+function createExampleProject(title, state, camera, file, identity = {}) {
+    const element = (name, attributes = {}, content = []) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, {}, [String(value)]);
+    const document = (name, root) => ({ document: { kind: 'xml', schema: 'bcf-3.0/' + name, root } });
+    const topicGuid = identity.topicGuid ??= crypto.randomUUID(), viewpointGuid = identity.viewpointGuid ??= crypto.randomUUID();
+    const components = element('Components', {}, [element('Visibility', { DefaultVisibility: 'true' }, [
+        element('ViewSetupHints', { SpacesVisible: 'false', SpaceBoundariesVisible: 'false', OpeningsVisible: 'false' }),
+        element('Exceptions', {}, state.hidden.map(IfcGuid => element('Component', { IfcGuid }))),
+    ])]);
+    const viewpoint = element('VisualizationInfo', { Guid: viewpointGuid }, [components]);
+    const vector = (name, value) => element(name, {}, ['x', 'y', 'z'].map(axis => text(axis.toUpperCase(), value[axis])));
+    viewpoint.content.push(element(camera.viewToWorldScale ? 'OrthogonalCamera' : 'PerspectiveCamera', {}, [
+        vector('CameraViewPoint', camera.cameraViewPoint), vector('CameraDirection', camera.cameraDirection), vector('CameraUpVector', camera.cameraUpVector),
+        ...(camera.viewToWorldScale ? [text('ViewToWorldScale', camera.viewToWorldScale / Math.min(1, camera.aspectRatio))] : [text('FieldOfView', camera.fieldOfView)]),
+        text('AspectRatio', camera.aspectRatio),
+    ]));
+    viewpoint.content.push(element('ClippingPlanes', {}, state.clipping.map(plane =>
+        element('ClippingPlane', {}, [vector('Location', plane.location), vector('Direction', plane.direction)]))));
+    const reference = element('ViewPoint', { Guid: viewpointGuid }, [text('Viewpoint', viewpointGuid + '.bcfv')]);
+    const topic = element('Topic', { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }, [
+        text('Title', title), text('CreationDate', new Date().toISOString()), text('CreationAuthor', 'examples@example.com'), element('Viewpoints', {}, [reference]),
+    ]);
+    const markup = element('Markup', {}, [element('Header', {}, [element('Files', {}, [element('File', { IfcProject: file.projectGuid, IsExternal: 'true' }, [
+        text('Filename', file.filename), text('Reference', file.url),
+    ])])]), topic]);
+    return { topic, project: { kind: 'archive', specification: 'bcf-3.0', entries: {
+        'bcf.version': document('version', element('Version', { VersionId: '3.0' })),
+        'extensions.xml': document('extensions', element('Extensions')),
+        [topicGuid + '/markup.bcf']: document('markup', markup),
+        [topicGuid + '/' + viewpointGuid + '.bcfv']: document('visinfo', viewpoint),
+    } } };
+}
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+async function addExampleProject(project, name = 'generated-viewpoint.bcf') {
+    const blob = new Blob([await bcf.save(project)], { type: 'application/octet-stream' });
+    const result = await viewer.add(name, blob);
+    if (result?.isError) throw new Error('The viewer could not import the BCF file.');
+    return blob;
+}
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+
+async function modelState(preset, api, modelID) {
+    model.projectGuid = scalar((await queryType(api, modelID, 'IFCPROJECT'))[0]?.GlobalId);
+    if (!model.projectGuid) throw new Error('The model has no project identifier.');
+    return { ...preset.state, hidden: (await queryType(api, modelID, 'IFCSPACE')).map(row => scalar(row.GlobalId)).filter(Boolean) };
+}
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const retry = document.getElementById('retry');
+const presetChoice = document.getElementById('preset-choice');
+
+let modelLoaded = false;
+const topics = new Map(), nativeStates = new Map();
+
+const requested = new URLSearchParams(location.search).get('preset');
+const initial = Object.hasOwn(presetDefinitions, requested) ? requested : Object.keys(presetDefinitions)[0];
+
+async function loadPreset(key) {
+    if (topics.has(key)) return;
+    const preset = presetDefinitions[key];
+    if (!modelLoaded) {
+        await loadExampleFile(model.filename, model.url, async blob => {
+            await withIfcModel(blob, async (api, modelID) => {
+                for (const [id, definition] of Object.entries(presetDefinitions))
+                    nativeStates.set(id, await modelState(definition, api, modelID));
+            });
+            await viewer.add(model.filename, blob);
+        });
+        modelLoaded = true;
+    }
+    await viewer.setMessage('Preparing BCF views', { type: 'loading' });
+    const camera = { ...preset.camera, aspectRatio: innerWidth / innerHeight };
+    const { project, topic } = createExampleProject(preset.label, nativeStates.get(key), camera, model, preset);
+    await addExampleProject(project, key + '.bcf');
+    topics.set(key, topic.attributes.Guid);
+    await viewer.setMessage(null);
+}
+async function run() {
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await loadPreset(initial);
+        const applied = await viewer.selectTopic(topics.get(initial));
+        if (applied?.isError) throw new Error('The viewer could not apply the BCF viewpoint.');
+        for (const input of presetChoice.querySelectorAll('input')) input.checked = input.value === initial;
+        presetChoice.disabled = false;
+
+        document.body.dataset.exampleState = 'loaded';
+    } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        retry.hidden = false;
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+    }
+}
+
+presetChoice.addEventListener('change', async event => {
+    // Each choice opens one saved viewpoint.
+    const key = event.target.value;
+    presetChoice.disabled = true;
+    try {
+        await loadPreset(key);
+        const result = await viewer.selectTopic(topics.get(key));
+        if (result?.isError) throw new Error('Could not open the saved view.');
+
+    } catch (error) { await viewer.setMessage(error.message, { type: 'error' }); }
+    finally { presetChoice.disabled = false; }
+});
+retry.addEventListener('click', () => { void run(); });
+document.body.dataset.exampleState = 'loading';
+await viewer.ready;
+await run();
+</script>
+</body>
+</html>

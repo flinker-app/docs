@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review saved annotations at a stair opening</title>
+<meta name="description" content="Open an existing BCF outline and arrow in a close section view to review the stair opening and its approach.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui button { box-sizing: border-box; max-width: 100%; padding: 5px 7px; font: inherit; color: inherit; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui button:disabled { cursor: default; opacity: .55; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-task { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+</style><!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/bcf-annotations/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Review saved annotations at a stair opening">
+  <meta property="og:description" content="Open an existing BCF outline and arrow in a close section view to review the stair opening and its approach.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/bcf-annotations/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/bcf-annotations/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Review saved annotations at a stair opening">
+  <meta name="twitter:description" content="Open an existing BCF outline and arrow in a close section view to review the stair opening and its approach."><meta name="twitter:image" content="https://viewer.flinker.app/examples/bcf-annotations/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Review saved annotations at a stair opening","description":"Open an existing BCF outline and arrow in a close section view to review the stair opening and its approach.","url":"https://viewer.flinker.app/examples/bcf-annotations/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/bcf-annotations/index.html","image":"https://viewer.flinker.app/examples/bcf-annotations/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">{
+  "category": "Coordination",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "Annotations",
+    "Viewpoints"
+  ],
+  "audience": "BIM workflow",
+  "order": 23,
+  "assets": [
+    {
+      "id": "bim-whale-advanced",
+      "name": "AdvancedProject.ifc",
+      "format": "IFC",
+      "bytes": 44337371,
+      "sha256": "86b068a7ca6947e398c1daaa8bede9d31048c3990adc308429faeb56ee01db94",
+      "url": "https://raw.githubusercontent.com/andrewisen/bim-whale-ifc-samples/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc",
+      "sourceUrl": "https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/bcf-annotations/index.html#example-notices",
+      "attribution": "BIM Whale Advanced Project. Copyright (c) 2020 André \"MG\" Wisén.",
+      "notes": "Original IFC2x3 file; contents unchanged."
+    }
+  ],
+  "viewer": {
+    "assetIds": [
+      "bim-whale-advanced"
+    ],
+    "presentation": "default"
+  },
+  "annotation": {
+    "name": "stair-opening-review.bcf",
+    "data": "data:application/octet-stream;base64,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"
+  }
+}</script>
+</head><body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-task" aria-label="Review the annotated stair opening">
+<h2>Review the stair opening</h2>
+<p>The saved BCF outline and arrow mark the stair opening and its approach. Review how the guarding meets the landing.</p>
+<button id="restore-view" type="button" disabled>Restore annotated view</button>
+<p>Open <strong>Topics</strong> (speech bubble) on the left toolbar, then select <strong>Review stair opening protection</strong> to read the note. Select a component, then click <strong>1 element selected</strong> at the top left for <strong>Properties</strong>.</p>
+<button id="retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">BIM Whale · André Wisén</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a></div>
+<template id="example-guide">
+<h2 data-example-title>Review saved annotations at a stair opening</h2>
+<p data-example-description>Open an existing BCF outline and arrow in a close section view to review the stair opening and its approach.</p>
+<h3>Try it</h3>
+<p>The saved viewpoint opens automatically. A rectangle marks the stair opening and an arrow leads from the approach toward the landing. The close oblique section exposes the stair flight, handrail and neighboring rooms. Orbit or zoom to inspect the relationship, then click Restore annotated view to return to the review camera.</p>
+<p>Open Topics (speech bubble) on the left toolbar and select Review stair opening protection to read the coordination note. Select a component, then click 1 element selected at the top left to open Properties.</p>
+<h3>Developer integration</h3>
+<p>This page imports the full BIM Whale Advanced Project and an existing BCF 3.0 archive embedded in the inline configuration. The archive already contains a bold closed rectangle and arrow built from closely spaced BCF line segments, an orthogonal camera and six clipping planes. The review geometry uses the pinned model's Z-up world coordinates in meters. The lines and saved camera are authored inputs; the page does not generate annotations from IFC properties.</p>
+<p><code>bcf.load()</code> reads the saved topic identifier, <code>viewer.add()</code> imports the original archive bytes, and <code>viewer.selectTopic()</code> restores the annotated view. The SDK renders the model and annotations together. Restoring the view reuses the imported topic. Retry sample retains completed imports.</p>
+<p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. The published SDK and full model download require internet access.</p>
+</template>
+<template id="example-notices">
+<h2>Model source and license</h2><p>BIM Whale Advanced Project. Copyright (c) 2020 André "MG" Wisén. <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">Original IFC at the pinned revision</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>. The original IFC2x3 file is imported unchanged.</p>
+
+<h2>Saved coordination markup</h2><p>The review note, outline, arrow, camera and section box were authored for this example and saved in the embedded BCF archive. They illustrate a guarding review at the stair opening; they are not an issue report from the model author.</p>
+</template>
+<script type="module">
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+
+const { assets: [model], annotation } = JSON.parse(document.getElementById('example-data').textContent);
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const restore = document.getElementById('restore-view');
+const retry = document.getElementById('retry');
+let modelLoaded = false, topicId;
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+async function restoreView() {
+    const result = await viewer.selectTopic(topicId);
+    if (result?.isError) throw new Error('Could not restore the annotated view.');
+}
+
+async function load() {
+    restore.disabled = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        if (!modelLoaded) {
+            await loadExampleFile(model.name, model.url, undefined, model.bytes);
+            modelLoaded = true;
+        }
+        if (!topicId) {
+            await viewer.setMessage('Opening saved BCF annotations', { type: 'loading' });
+            const blob = await (await fetch(annotation.data)).blob();
+            const archive = await bcf.load(blob);
+            const markup = Object.values(archive.entries).find(entry => entry.document?.root.name === 'Markup');
+            const topic = markup?.document.root.content.find(node => node.name === 'Topic');
+            if (!topic) throw new Error('The annotation archive has no review topic.');
+            const result = await viewer.add(annotation.name, blob);
+            if (result?.isError) throw new Error('Could not open the saved BCF annotations.');
+            topicId = topic.attributes.Guid;
+        }
+        await restoreView();
+        await viewer.setMessage(null);
+        restore.disabled = false;
+        document.body.dataset.exampleState = 'loaded';
+    } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        retry.hidden = false;
+        await viewer.setMessage(error.message ?? String(error), { type: 'error' });
+    }
+}
+restore.addEventListener('click', async () => {
+    restore.disabled = true;
+    try { await restoreView(); }
+    catch (error) { await viewer.setMessage(error.message ?? String(error), { type: 'error' }); }
+    finally { restore.disabled = false; }
+});
+retry.addEventListener('click', () => { void load(); });
+await viewer.ready;
+await load();
+</script>
+</body></html>

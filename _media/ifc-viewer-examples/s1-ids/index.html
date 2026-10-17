@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Check wall names and fire-rating information</title>
+  <meta name="description" content="Run IDS checks to find walls with missing names or fire-rating values, then highlight passing or failing components.">
+
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui button { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui .note { font-size: 10px; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-task { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/s1-ids/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Check wall names and fire-rating information">
+  <meta property="og:description" content="Run IDS checks to find walls with missing names or fire-rating values, then highlight passing or failing components.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/s1-ids/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/s1-ids/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Check wall names and fire-rating information">
+  <meta name="twitter:description" content="Run IDS checks to find walls with missing names or fire-rating values, then highlight passing or failing components."><meta name="twitter:image" content="https://viewer.flinker.app/examples/s1-ids/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Check wall names and fire-rating information","description":"Run IDS checks to find walls with missing names or fire-rating values, then highlight passing or failing components.","url":"https://viewer.flinker.app/examples/s1-ids/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/s1-ids/index.html","image":"https://viewer.flinker.app/examples/s1-ids/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Validation",
+  "formats": [
+    "IFC",
+    "IDS"
+  ],
+  "capabilities": [
+    "IDS",
+    "2 specifications",
+    "Federation",
+    "Information quality",
+    "Fire-rating information"
+  ],
+  "audience": "BIM workflow",
+  "order": 5,
+  "viewer": {
+    "assetIds": [
+      "s1-structure",
+      "s1-facade",
+      "s1-stairs",
+      "s1-information-quality"
+    ],
+    "presentation": "default"
+  },
+  "assets": [
+    {
+      "id": "s1-structure",
+      "name": "O-S1-CON-Structural engineering - Constructie.ifc",
+      "format": "IFC",
+      "bytes": 7305371,
+      "url": "https://raw.githubusercontent.com/Geonovum/GeoBIM_Georefereren/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-CON-Structural%20engineering%20-%20Constructie.ifc",
+      "sourceUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-CON-Structural%20engineering%20-%20Constructie.ifc",
+      "license": "W3C",
+      "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/s1-ids/index.html#example-notices",
+      "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Sixty5 / Building Field S1, Strijp-S.",
+      "notes": "Original source bytes; contents unchanged."
+    },
+    {
+      "id": "s1-facade",
+      "name": "O-S1-BWK-BIM prefab facade - BIM prefabgevel.ifc",
+      "format": "IFC",
+      "bytes": 5984438,
+      "url": "https://raw.githubusercontent.com/Geonovum/GeoBIM_Georefereren/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-BWK-BIM%20prefab%20facade%20-%20BIM%20prefabgevel.ifc",
+      "sourceUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-BWK-BIM%20prefab%20facade%20-%20BIM%20prefabgevel.ifc",
+      "license": "W3C",
+      "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/s1-ids/index.html#example-notices",
+      "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Sixty5 / Building Field S1, Strijp-S.",
+      "notes": "Original source bytes; contents unchanged."
+    },
+    {
+      "id": "s1-stairs",
+      "name": "E-S1-AFB-JONKERS-TRAPPEN EN BALUSTRADEN.IFC",
+      "format": "IFC",
+      "bytes": 11680774,
+      "url": "https://raw.githubusercontent.com/Geonovum/GeoBIM_Georefereren/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/E-S1-AFB-JONKERS-TRAPPEN%20EN%20BALUSTRADEN.IFC",
+      "sourceUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/E-S1-AFB-JONKERS-TRAPPEN%20EN%20BALUSTRADEN.IFC",
+      "license": "W3C",
+      "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/s1-ids/index.html#example-notices",
+      "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Sixty5 / Building Field S1, Strijp-S.",
+      "notes": "Original source bytes; contents unchanged."
+    },
+    {
+      "id": "s1-information-quality",
+      "name": "s1-information-quality.ids",
+      "format": "IDS",
+      "bytes": 2660,
+      "origin": "viewer",
+      "url": "data:application/xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Cids%20xmlns%3D%22http%3A%2F%2Fstandards.buildingsmart.org%2FIDS%22%20xmlns%3Axs%3D%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%22%20xmlns%3Axsi%3D%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema-instance%22%20xsi%3AschemaLocation%3D%22http%3A%2F%2Fstandards.buildingsmart.org%2FIDS%20https%3A%2F%2Fstandards.buildingsmart.org%2FIDS%2F1.0%2Fids.xsd%22%3E%0A%20%20%3Cinfo%3E%0A%20%20%20%20%3Ctitle%3ESixty5%20%C2%B7%20wall%20information%3C%2Ftitle%3E%0A%20%20%20%20%3Ccopyright%3EFlinker%20sample%20library%20contributors.%20CC0%201.0%20for%20this%20independently%20authored%20sample%20IDS.%3C%2Fcopyright%3E%0A%20%20%20%20%3Cversion%3E1.1%3C%2Fversion%3E%0A%20%20%20%20%3Cdescription%3EIllustrative%20information%20requirements%20for%20walls%20across%20the%20S1%20structural%2C%20facade%20and%20stairs%20models.%20Walls%20must%20have%20a%20name%20and%20a%20non-empty%20Pset_WallCommon.FireRating.%20These%20exports%20contain%20both%20populated%20and%20missing%20values.%20This%20is%20not%20a%20contractual%20S1%20delivery%20specification%20or%20a%20fire-safety%20compliance%20assessment.%3C%2Fdescription%3E%0A%20%20%20%20%3Cdate%3E2026-10-16%3C%2Fdate%3E%0A%20%20%20%20%3Cpurpose%3EReview%20missing%20wall%20identification%20and%20fire-rating%20information%20across%20discipline%20models%3C%2Fpurpose%3E%0A%20%20%3C%2Finfo%3E%0A%20%20%3Cspecifications%3E%0A%20%20%20%20%3Cspecification%20name%3D%22Walls%20%C2%B7%20fire-rating%20information%22%20ifcVersion%3D%22IFC2X3%22%20identifier%3D%22S1-WALL-FIRE-RATING%22%20description%3D%22Check%20that%20walls%20carry%20non-empty%20fire-rating%20information.%22%20instructions%3D%22Provide%20Pset_WallCommon.FireRating.%20This%20checks%20information%20completeness%2C%20not%20whether%20a%20rating%20meets%20fire-safety%20requirements.%22%3E%0A%20%20%20%20%20%20%3Capplicability%20minOccurs%3D%220%22%20maxOccurs%3D%22unbounded%22%3E%0A%20%20%20%20%20%20%20%20%3Centity%3E%3Cname%3E%3Cxs%3Arestriction%20base%3D%22xs%3Astring%22%3E%3Cxs%3Apattern%20value%3D%22IFCWALL(STANDARDCASE)%3F%22%2F%3E%3C%2Fxs%3Arestriction%3E%3C%2Fname%3E%3C%2Fentity%3E%0A%20%20%20%20%20%20%3C%2Fapplicability%3E%0A%20%20%20%20%20%20%3Crequirements%3E%0A%20%20%20%20%20%20%20%20%3Cproperty%20dataType%3D%22IFCLABEL%22%20cardinality%3D%22required%22%3E%3CpropertySet%3E%3CsimpleValue%3EPset_WallCommon%3C%2FsimpleValue%3E%3C%2FpropertySet%3E%3CbaseName%3E%3CsimpleValue%3EFireRating%3C%2FsimpleValue%3E%3C%2FbaseName%3E%3Cvalue%3E%3Cxs%3Arestriction%20base%3D%22xs%3Astring%22%3E%3Cxs%3AminLength%20value%3D%221%22%2F%3E%3C%2Fxs%3Arestriction%3E%3C%2Fvalue%3E%3C%2Fproperty%3E%0A%20%20%20%20%20%20%3C%2Frequirements%3E%0A%20%20%20%20%3C%2Fspecification%3E%0A%20%20%20%20%3Cspecification%20name%3D%2203.05%20%C2%B7%20Walls%20%C2%B7%20names%22%20ifcVersion%3D%22IFC2X3%22%20identifier%3D%22S1-WALL-NAMES%22%20description%3D%22Check%20that%20walls%20have%20names%20for%20coordination.%22%20instructions%3D%22Provide%20a%20meaningful%20non-empty%20wall%20name.%20Naming%20conventions%20are%20project-specific.%22%3E%0A%20%20%20%20%20%20%3Capplicability%20minOccurs%3D%220%22%20maxOccurs%3D%22unbounded%22%3E%0A%20%20%20%20%20%20%20%20%3Centity%3E%3Cname%3E%3Cxs%3Arestriction%20base%3D%22xs%3Astring%22%3E%3Cxs%3Apattern%20value%3D%22IFCWALL(STANDARDCASE)%3F%22%2F%3E%3C%2Fxs%3Arestriction%3E%3C%2Fname%3E%3C%2Fentity%3E%0A%20%20%20%20%20%20%3C%2Fapplicability%3E%0A%20%20%20%20%20%20%3Crequirements%3E%0A%20%20%20%20%20%20%20%20%3Cattribute%20cardinality%3D%22required%22%3E%3Cname%3E%3CsimpleValue%3EName%3C%2FsimpleValue%3E%3C%2Fname%3E%3Cvalue%3E%3Cxs%3Arestriction%20base%3D%22xs%3Astring%22%3E%3Cxs%3AminLength%20value%3D%221%22%2F%3E%3C%2Fxs%3Arestriction%3E%3C%2Fvalue%3E%3C%2Fattribute%3E%0A%20%20%20%20%20%20%3C%2Frequirements%3E%0A%20%20%20%20%3C%2Fspecification%3E%0A%20%20%3C%2Fspecifications%3E%0A%3C%2Fids%3E%0A",
+      "sourceUrl": "https://viewer.flinker.app/examples/s1-ids/index.html#example-requirements",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "noticeUrl": "https://viewer.flinker.app/examples/s1-ids/index.html#example-notices",
+      "attribution": "Independently authored by Flinker sample library contributors for the published S1 / Sixty5 exports. XML follows buildingSMART IDS 1.0.",
+      "notes": "Two independently authored wall-information requirements, embedded in this HTML. The fire-rating check requires a non-empty value, not a particular safety rating.",
+      "basisUrls": [
+        {
+          "title": "buildingSMART IDS standard",
+          "url": "https://github.com/buildingSMART/IDS"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-task" aria-label="Check wall information">
+<h2>Check wall information</h2>
+<p>Open <strong>IDS</strong> (circled check) on the left toolbar → <strong>Run All Checks</strong>. Expand <strong>Walls · fire-rating information</strong> and click <strong>Apply</strong> beside a failed or passed finding.</p>
+<p class="note">Click a wall, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
+<button id="sample-retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-CON-Structural%20engineering%20-%20Constructie.ifc" target="_blank" rel="noopener noreferrer">Geonovum / W3C</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C</a></div>
+<template id="example-guide"><h2 data-example-title>Check wall names and fire-rating information</h2><p data-example-description>Run IDS checks to find walls with missing names or fire-rating values, then highlight passing or failing components.</p><h3>Try it</h3><p>The example opens the three discipline models with their original appearance and loads the two IDS specifications, ready for you to run.</p><p>Open IDS (circled check) on the left toolbar and click Run All Checks. Expand Walls · fire-rating information, then click Apply beside a failed finding to highlight those walls in red, or beside Passed elements to highlight passing walls in green. The SDK applies each finding separately. Click a wall, then click 1 element selected at the top left to open Properties and inspect Pset_WallCommon.FireRating.</p><h3>Expected results</h3><p>The fire-rating information check finds 299 passing structural walls with FireRating = 120, and 353 failing facade walls: 351 have no FireRating property and two have an empty value. The wall-name check finds 301 passing and 351 failing walls. The stairs model contains no applicable walls. These results come from the unchanged source exports.</p><h3>Developer integration</h3><p>Two IDS specifications are embedded alongside the three original IFC discipline models. The SDK runs the IDS checks. Use Run All Checks in the IDS panel to evaluate the loaded models, then Apply on a finding to visualize its results. The example does not calculate separate results or create a BCF overview at startup. Both checks review information completeness. The fire-rating check requires a non-empty Pset_WallCommon.FireRating, not a particular rating; it does not assess fire-safety compliance or represent the project contract.</p><p>Serve this folder over HTTP. The published SDK and source downloads require internet access.</p><h3>Model notes</h3><p>The original IFC source is imported unchanged.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p><a href="https://github.com/Geonovum/GeoBIM_Georefereren/tree/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1" target="_blank" rel="noopener noreferrer">Geonovum and original model authors</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C</a></p><p><a id="example-requirements" href="data:application/xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Cids%20xmlns%3D%22http%3A%2F%2Fstandards.buildingsmart.org%2FIDS%22%20xmlns%3Axs%3D%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%22%20xmlns%3Axsi%3D%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema-instance%22%20xsi%3AschemaLocation%3D%22http%3A%2F%2Fstandards.buildingsmart.org%2FIDS%20https%3A%2F%2Fstandards.buildingsmart.org%2FIDS%2F1.0%2Fids.xsd%22%3E%0A%20%20%3Cinfo%3E%0A%20%20%20%20%3Ctitle%3ESixty5%20%C2%B7%20wall%20information%3C%2Ftitle%3E%0A%20%20%20%20%3Ccopyright%3EFlinker%20sample%20library%20contributors.%20CC0%201.0%20for%20this%20independently%20authored%20sample%20IDS.%3C%2Fcopyright%3E%0A%20%20%20%20%3Cversion%3E1.1%3C%2Fversion%3E%0A%20%20%20%20%3Cdescription%3EIllustrative%20information%20requirements%20for%20walls%20across%20the%20S1%20structural%2C%20facade%20and%20stairs%20models.%20Walls%20must%20have%20a%20name%20and%20a%20non-empty%20Pset_WallCommon.FireRating.%20These%20exports%20contain%20both%20populated%20and%20missing%20values.%20This%20is%20not%20a%20contractual%20S1%20delivery%20specification%20or%20a%20fire-safety%20compliance%20assessment.%3C%2Fdescription%3E%0A%20%20%20%20%3Cdate%3E2026-10-16%3C%2Fdate%3E%0A%20%20%20%20%3Cpurpose%3EReview%20missing%20wall%20identification%20and%20fire-rating%20information%20across%20discipline%20models%3C%2Fpurpose%3E%0A%20%20%3C%2Finfo%3E%0A%20%20%3Cspecifications%3E%0A%20%20%20%20%3Cspecification%20name%3D%22Walls%20%C2%B7%20fire-rating%20information%22%20ifcVersion%3D%22IFC2X3%22%20identifier%3D%22S1-WALL-FIRE-RATING%22%20description%3D%22Check%20that%20walls%20carry%20non-empty%20fire-rating%20information.%22%20instructions%3D%22Provide%20Pset_WallCommon.FireRating.%20This%20checks%20information%20completeness%2C%20not%20whether%20a%20rating%20meets%20fire-safety%20requirements.%22%3E%0A%20%20%20%20%20%20%3Capplicability%20minOccurs%3D%220%22%20maxOccurs%3D%22unbounded%22%3E%0A%20%20%20%20%20%20%20%20%3Centity%3E%3Cname%3E%3Cxs%3Arestriction%20base%3D%22xs%3Astring%22%3E%3Cxs%3Apattern%20value%3D%22IFCWALL(STANDARDCASE)%3F%22%2F%3E%3C%2Fxs%3Arestriction%3E%3C%2Fname%3E%3C%2Fentity%3E%0A%20%20%20%20%20%20%3C%2Fapplicability%3E%0A%20%20%20%20%20%20%3Crequirements%3E%0A%20%20%20%20%20%20%20%20%3Cproperty%20dataType%3D%22IFCLABEL%22%20cardinality%3D%22required%22%3E%3CpropertySet%3E%3CsimpleValue%3EPset_WallCommon%3C%2FsimpleValue%3E%3C%2FpropertySet%3E%3CbaseName%3E%3CsimpleValue%3EFireRating%3C%2FsimpleValue%3E%3C%2FbaseName%3E%3Cvalue%3E%3Cxs%3Arestriction%20base%3D%22xs%3Astring%22%3E%3Cxs%3AminLength%20value%3D%221%22%2F%3E%3C%2Fxs%3Arestriction%3E%3C%2Fvalue%3E%3C%2Fproperty%3E%0A%20%20%20%20%20%20%3C%2Frequirements%3E%0A%20%20%20%20%3C%2Fspecification%3E%0A%20%20%20%20%3Cspecification%20name%3D%2203.05%20%C2%B7%20Walls%20%C2%B7%20names%22%20ifcVersion%3D%22IFC2X3%22%20identifier%3D%22S1-WALL-NAMES%22%20description%3D%22Check%20that%20walls%20have%20names%20for%20coordination.%22%20instructions%3D%22Provide%20a%20meaningful%20non-empty%20wall%20name.%20Naming%20conventions%20are%20project-specific.%22%3E%0A%20%20%20%20%20%20%3Capplicability%20minOccurs%3D%220%22%20maxOccurs%3D%22unbounded%22%3E%0A%20%20%20%20%20%20%20%20%3Centity%3E%3Cname%3E%3Cxs%3Arestriction%20base%3D%22xs%3Astring%22%3E%3Cxs%3Apattern%20value%3D%22IFCWALL(STANDARDCASE)%3F%22%2F%3E%3C%2Fxs%3Arestriction%3E%3C%2Fname%3E%3C%2Fentity%3E%0A%20%20%20%20%20%20%3C%2Fapplicability%3E%0A%20%20%20%20%20%20%3Crequirements%3E%0A%20%20%20%20%20%20%20%20%3Cattribute%20cardinality%3D%22required%22%3E%3Cname%3E%3CsimpleValue%3EName%3C%2FsimpleValue%3E%3C%2Fname%3E%3Cvalue%3E%3Cxs%3Arestriction%20base%3D%22xs%3Astring%22%3E%3Cxs%3AminLength%20value%3D%221%22%2F%3E%3C%2Fxs%3Arestriction%3E%3C%2Fvalue%3E%3C%2Fattribute%3E%0A%20%20%20%20%20%20%3C%2Frequirements%3E%0A%20%20%20%20%3C%2Fspecification%3E%0A%20%20%3C%2Fspecifications%3E%0A%3C%2Fids%3E%0A" download="s1-information-quality.ids" title="s1-information-quality.ids">IDS</a> · Flinker sample library contributors · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a></p><p>The wall-name and fire-rating checks were independently authored by Flinker sample library contributors under CC0 1.0. Their XML follows <a href="https://github.com/buildingSMART/IDS" target="_blank" rel="noopener noreferrer">buildingSMART IDS 1.0</a>.</p><p>These are information-completeness checks, not a contractual S1 delivery specification, fire-safety assessment or endorsement by the source organisations. A populated fire rating passes regardless of its value. Original geometry and properties are retained.</p>
+<p>The original source files are imported unchanged.</p>
+</template>
+<script type="module">
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+// Example-only download feedback. All file parsing remains in the published SDK.
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+
+const { assets } = JSON.parse(document.getElementById("example-data").textContent);
+
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+document.body.dataset.exampleState = 'loading';
+const imported = new Set();
+const retry = document.querySelector('#sample-retry');
+let running = false;
+
+async function load() {
+    if (running)
+        return;
+    running = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        for (const asset of assets) {
+            if (imported.has(asset.id))
+                continue;
+            await loadExampleFile(asset.name, asset.url, blob => {
+                return viewer.add(asset.name, blob);
+            }, asset.bytes);
+            imported.add(asset.id);
+        }
+        document.body.dataset.exampleState = 'loaded';
+    }
+    catch (error) {
+        document.body.dataset.exampleState = 'error';
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+        retry.hidden = false;
+    }
+    finally {
+        running = false;
+    }
+}
+retry.addEventListener('click', () => { void load(); });
+void load();
+  </script>
+</body>
+</html>

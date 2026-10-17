@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inspect component classifications</title>
+  <meta name="description" content="Select a building component to read its properties and classification references, then compare it with another component.">
+
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui button { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-task { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/sixty5/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Inspect component classifications">
+  <meta property="og:description" content="Select a building component to read its properties and classification references, then compare it with another component.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/sixty5/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/sixty5/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Inspect component classifications">
+  <meta name="twitter:description" content="Select a building component to read its properties and classification references, then compare it with another component."><meta name="twitter:image" content="https://viewer.flinker.app/examples/sixty5/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Inspect component classifications","description":"Select a building component to read its properties and classification references, then compare it with another component.","url":"https://viewer.flinker.app/examples/sixty5/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/sixty5/index.html","image":"https://viewer.flinker.app/examples/sixty5/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Buildings",
+  "formats": [
+    "IFC"
+  ],
+  "capabilities": [
+    "Large models",
+    "Properties",
+    "Classification",
+    "Search"
+  ],
+  "audience": "BIM workflow",
+  "order": 13,
+  "viewer": {
+    "assetIds": [
+      "s1"
+    ],
+    "presentation": "default"
+  },
+  "assets": [
+    {
+      "id": "s1",
+      "name": "bSDD_references_example.ifc",
+      "format": "IFC",
+      "bytes": 394697402,
+      "url": "https://media.githubusercontent.com/media/buildingsmart-community/Community-Sample-Test-Files/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/SDK%20-%20S1/bSDD_references_example.ifc",
+      "sourceUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/SDK%20-%20S1/bSDD_references_example.ifc",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/sixty5/index.html#example-notices",
+      "attribution": "Sixty5 / Building Field S1, Strijp-S. Stam + De Koning and original model authors; published by buildingSMART community.",
+      "notes": "Original source bytes; contents unchanged."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-task" aria-label="Read a classification">
+<h2>Read a classification</h2>
+<p>Select a component, then click <strong>1 element selected</strong> at the top left to open Properties. Expand <strong>Associations</strong> to inspect its classification references.</p>
+<button id="sample-retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/SDK%20-%20S1/bSDD_references_example.ifc" target="_blank" rel="noopener noreferrer">Stam + De Koning</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
+<template id="example-guide">
+<h2 data-example-title>Inspect component classifications</h2>
+<p data-example-description>Select a building component to read its properties and classification references, then compare it with another component.</p>
+<h3>Try it</h3><ol><li>Select a component, then click 1 element selected at the top left to open Properties. Expand Associations to inspect its classification references.</li><li>Use Search properties at the top of the Properties panel to filter its values.</li><li>Compare the classification references of two components.</li></ol><h2>Developer integration</h2><p>Import the original classification example with <code>viewer.add()</code>. Search and property inspection remain SDK controls. This page demonstrates reading the model's classifications, not editing them. The source model is about 395 MB.</p><p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK and sample downloads require internet access.</p>
+<h3>Model notes</h3><p>The original IFC source is imported unchanged.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/SDK%20-%20S1/bSDD_references_example.ifc" target="_blank" rel="noopener noreferrer">Stam + De Koning and original model authors</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p><p>The original classification model is imported unchanged.</p>
+</template>
+<script type="module">
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+// Example-only download feedback. All file parsing remains in the published SDK.
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+
+const { assets } = JSON.parse(document.getElementById("example-data").textContent);
+
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+document.body.dataset.exampleState = 'loading';
+const imported = new Set();
+const retry = document.querySelector('#sample-retry');
+let running = false;
+async function load() {
+    if (running)
+        return;
+    running = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        for (const asset of assets) {
+            if (imported.has(asset.id))
+                continue;
+            await loadExampleFile(asset.name, asset.url, blob => {
+                return viewer.add(asset.name, blob);
+            }, asset.bytes);
+            imported.add(asset.id);
+        }
+        document.body.dataset.exampleState = 'loaded';
+    }
+    catch (error) {
+        document.body.dataset.exampleState = 'error';
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+        retry.hidden = false;
+    }
+    finally {
+        running = false;
+    }
+}
+retry.addEventListener('click', () => { void load(); });
+void load();
+  </script>
+</body>
+</html>

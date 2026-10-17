@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Explore bridge cross-sections</title>
+  <meta name="description" content="Move a section cut along a bridge alignment to inspect the structure at different distances along the route.">
+
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-task { right: 8px; padding: 8px; }
+}
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/infra/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Explore bridge cross-sections">
+  <meta property="og:description" content="Move a section cut along a bridge alignment to inspect the structure at different distances along the route.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/infra/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/infra/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Explore bridge cross-sections">
+  <meta name="twitter:description" content="Move a section cut along a bridge alignment to inspect the structure at different distances along the route."><meta name="twitter:image" content="https://viewer.flinker.app/examples/infra/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Explore bridge cross-sections","description":"Move a section cut along a bridge alignment to inspect the structure at different distances along the route.","url":"https://viewer.flinker.app/examples/infra/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/infra/index.html","image":"https://viewer.flinker.app/examples/infra/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Infrastructure",
+  "formats": [
+    "IFC"
+  ],
+  "capabilities": [
+    "Alignments",
+    "Bridges",
+    "Sections"
+  ],
+  "audience": "BIM workflow",
+  "order": 21
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-task" aria-label="Inspect a bridge cross-section">
+<h2>Inspect a bridge cross-section</h2>
+<p>Open <strong>Sections</strong> (scissors) on the left toolbar → <strong>Bridge</strong> under Alignments. Enable <strong>Cross-section at station</strong>, then enter <strong>Station / KP (m)</strong> or use <strong>Next station</strong> to move the cut. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
+
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingSMART/IFC4.x-IF/blob/75c7c7aa6c523e76a01cb4cf9542f896956fb92d/IFC-files/ACCA/Bridge-for-MINnD/Viadotto%20Acerno.zip" target="_blank" rel="noopener noreferrer">buildingSMART infrastructure samples</a> · <a href="https://github.com/buildingSMART/IFC4.x-IF/tree/75c7c7aa6c523e76a01cb4cf9542f896956fb92d/IFC-files" target="_blank" rel="noopener noreferrer">Source documentation</a></div>
+<template id="example-guide">
+<h2 data-example-title>Explore bridge cross-sections</h2>
+<p data-example-description>Move a section cut along a bridge alignment to inspect the structure at different distances along the route.</p>
+<h3>Try it</h3><ol><li>Open Sections (scissors) on the left toolbar and click Bridge under Alignments.</li><li>Enable Cross-section at station, then enter a distance in Station / KP (m) to move the cut along the bridge. KP is distance along the alignment.</li><li>Use Next station or enter another distance to compare cross-sections.</li></ol><h2>Developer integration</h2><p>Pass the published bridge sample to <code>viewer.add()</code>. Alignment navigation and KP sections are SDK controls; the host does not implement route navigation.</p><p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK and sample downloads require internet access.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2><p><a href="https://github.com/buildingSMART/IFC4.x-IF/blob/75c7c7aa6c523e76a01cb4cf9542f896956fb92d/IFC-files/ACCA/Bridge-for-MINnD/Viadotto%20Acerno.zip" target="_blank" rel="noopener noreferrer" title="Viadotto Acerno.zip">buildingSMART infrastructure samples</a></p>
+<p>ACCA software, published by buildingSMART International. The archive is downloaded from the pinned upstream revision; the extracted IFC is imported unchanged. <a href="https://github.com/buildingSMART/IFC4.x-IF/tree/75c7c7aa6c523e76a01cb4cf9542f896956fb92d/IFC-files" target="_blank" rel="noopener noreferrer">Source documentation</a>. No dataset license is stated in the repository documentation.</p>
+</template>
+<script type="module">
+// Example-only download feedback. All file parsing remains in the published SDK.
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+import JSZip from "https://cdn.jsdelivr.net/npm/jszip@3.10.1/+esm";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+const viewer = new Viewer("#ifc-viewer");
+window.exampleViewer = viewer;
+document.body.dataset.exampleState = 'loading';
+const BRIDGE_ZIP_URL = "https://raw.githubusercontent.com/buildingSMART/IFC4.x-IF/75c7c7aa6c523e76a01cb4cf9542f896956fb92d/IFC-files/ACCA/Bridge-for-MINnD/Viadotto%20Acerno.zip";
+await viewer.ready;
+try {
+    await loadExampleFile("Viadotto Acerno.zip", BRIDGE_ZIP_URL, async (blob, stage) => {
+        stage("Extracting archive");
+        const zip = await JSZip.loadAsync(await blob.arrayBuffer());
+        const ifcEntry = Object.values(zip.files).find(f => !f.dir && f.name.toLowerCase().endsWith(".ifc"));
+        if (!ifcEntry)
+            throw new Error("No IFC file found in the bridge zip archive.");
+        const ifcBuffer = await ifcEntry.async("uint8array");
+        const fileName = ifcEntry.name.split("/").pop() || "Viadotto Acerno.ifc";
+        await stage("Opening file");
+        return await viewer.add(fileName, ifcBuffer);
+    });
+
+    document.body.dataset.exampleState = 'loaded';
+}
+catch (error) {
+    document.body.dataset.exampleState = 'error';
+    await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+}
+  </script>
+</body>
+</html>

@@ -218,6 +218,62 @@
       href: ifc-viewer-sdk-examples.yml
       items:
       # generated:viewer-examples:start
+        - name: "Search component properties"
+          href: ifc-viewer-sdk-example-component-lookup.md
+        - name: "Open saved floor plans by storey"
+          href: ifc-viewer-sdk-example-floorplans.md
+        - name: "Explore Architectural and MEP BCF issues"
+          href: ifc-viewer-sdk-example-bcf.md
+        - name: "Federate West Riverside Hospital"
+          href: ifc-viewer-sdk-example-west-riverside-hospital.md
+        - name: "Check wall names and fire-rating information"
+          href: ifc-viewer-sdk-example-s1-ids.md
+        - name: "Compare a building model with its scan"
+          href: ifc-viewer-sdk-example-building-scan.md
+        - name: "See inside a building with sections"
+          href: ifc-viewer-sdk-example-bcf-clipping.md
+        - name: "Share a model view with a link"
+          href: ifc-viewer-sdk-example-view-link.md
+        - name: "Explore road cross-sections"
+          href: ifc-viewer-sdk-example-infra_Road.md
+        - name: "Edit IFC georeferencing with web-ifc"
+          href: ifc-viewer-sdk-example-s1-context.md
+        - name: "Select spaces from a table"
+          href: ifc-viewer-sdk-example-ifc-quantity-takeoff.md
+        - name: "Show or hide building storeys"
+          href: ifc-viewer-sdk-example-storey-visibility.md
+        - name: "Inspect component classifications"
+          href: ifc-viewer-sdk-example-sixty5.md
+        - name: "Read room labels on a floor plan"
+          href: ifc-viewer-sdk-example-room-info.md
+        - name: "Measure and section a point cloud"
+          href: ifc-viewer-sdk-example-autzen.md
+        - name: "Select elements from a work schedule"
+          href: ifc-viewer-sdk-example-selection.md
+        - name: "Find windows by width"
+          href: ifc-viewer-sdk-example-window-width.md
+        - name: "Show selected components in a table"
+          href: ifc-viewer-sdk-example-view-table.md
+        - name: "View a district with buildings and terrain"
+          href: ifc-viewer-sdk-example-zurich-district.md
+        - name: "Inspect connections between building models"
+          href: ifc-viewer-sdk-example-s1-structure.md
+        - name: "Explore bridge cross-sections"
+          href: ifc-viewer-sdk-example-infra.md
+        - name: "View a bridge on a map"
+          href: ifc-viewer-sdk-example-rotterdam-bridge.md
+        - name: "Review saved annotations at a stair opening"
+          href: ifc-viewer-sdk-example-bcf-annotations.md
+        - name: "Switch between top-down and 3D views"
+          href: ifc-viewer-sdk-example-bcf-2d.md
+        - name: "Show or hide component groups"
+          href: ifc-viewer-sdk-example-bcf-visibility.md
+        - name: "Color components by type"
+          href: ifc-viewer-sdk-example-bcf-coloring.md
+        - name: "Switch between projects on a map"
+          href: ifc-viewer-sdk-example-dispose.md
+        - name: "Show messages in the viewer"
+          href: ifc-viewer-sdk-example-account.md
       # generated:viewer-examples:end
 
 - name: Copilot for IFC SDK

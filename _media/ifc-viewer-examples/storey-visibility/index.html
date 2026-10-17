@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Show or hide building storeys</title>
+<meta name="description" content="Choose which storeys to display using the building components assigned to each level.">
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui :is(h2, p, fieldset) { margin: 0; }
+.example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { color: #5a6575; }
+.example-ui fieldset { max-height: 180px; overflow: auto; display: grid; gap: 6px; min-width: 0; padding: 0; border: 0; }
+.example-ui label { display: grid; gap: 3px; }
+.example-ui :is(button, input) { box-sizing: border-box; min-width: 0; max-width: 100%; font: inherit; }
+.example-ui input:not([type=checkbox]) { width: 100%; padding: 5px 6px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: inherit; }
+.example-ui button { padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: #253041; cursor: pointer; }
+.example-ui button:hover { background: #f3f6fa; }
+.example-ui :is(button, input):focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui :disabled { cursor: default; opacity: .55; }
+.example-ui .example-option { display: flex; gap: 6px; align-items: center; padding: 3px 0; cursor: pointer; }
+.example-ui input[type=checkbox] { flex: 0 0 auto; width: 14px; height: 14px; margin: 0; accent-color: #3568ba; }
+.example-ui output { font-variant-numeric: tabular-nums; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-controls { right: 8px; padding: 8px; }
+  .example-ui .example-option { min-height: 24px; }
+  .example-ui :is(button, input:not([type=checkbox])) { min-height: 30px; }
+}
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/storey-visibility/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Show or hide building storeys">
+  <meta property="og:description" content="Choose which storeys to display using the building components assigned to each level.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/storey-visibility/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/storey-visibility/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Show or hide building storeys">
+  <meta name="twitter:description" content="Choose which storeys to display using the building components assigned to each level."><meta name="twitter:image" content="https://viewer.flinker.app/examples/storey-visibility/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Show or hide building storeys","description":"Choose which storeys to display using the building components assigned to each level.","url":"https://viewer.flinker.app/examples/storey-visibility/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/storey-visibility/index.html","image":"https://viewer.flinker.app/examples/storey-visibility/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Buildings",
+  "formats": [
+    "IFC",
+    "BCF"
+  ],
+  "capabilities": [
+    "Storey visibility"
+  ],
+  "audience": "BIM workflow",
+  "order": 12,
+  "assets": [
+    {
+      "id": "west-riverside-arc-ifc4",
+      "name": "arc_ifc4.ifc",
+      "format": "IFC",
+      "bytes": 80937122,
+      "url": "https://huggingface.co/datasets/sylvainHellin/ifc-bench/resolve/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/arc_ifc4.ifc",
+      "sourceUrl": "https://huggingface.co/datasets/sylvainHellin/ifc-bench/blob/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/arc_ifc4.ifc",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+      "noticeUrl": "https://viewer.flinker.app/examples/storey-visibility/index.html#example-notices",
+      "attribution": "Solihin, W. West Riverside Hospital IFC Models. OpenIFC Model Repository, University of Auckland. Distributed in IFC-Bench by Sylvain Hellin. CC BY 3.0.",
+      "notes": "Original architectural IFC4 export, imported unchanged. Only the architectural model is loaded.",
+      "sha256": "230afa4d72a59c9ce18cdd9a7bc7c5c3e409a46078de6e14b19741b4cf92cf09"
+    }
+  ],
+  "viewer": {
+    "assetIds": [
+      "west-riverside-arc-ifc4"
+    ],
+    "presentation": "default"
+  }
+}
+</script>
+</head><body data-example-state="loading">
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-controls" aria-label="Building storeys"><h2>Building storeys</h2><p>Choose the levels you want to inspect. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p><fieldset id="task" disabled aria-label="Storey visibility controls"></fieldset><output id="result" aria-live="polite"></output><button id="retry" type="button" hidden>Retry</button></aside>
+<div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://huggingface.co/datasets/sylvainHellin/ifc-bench/blob/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/arc_ifc4.ifc" target="_blank" rel="noopener noreferrer">Wawan Solihin / OpenIFC · IFC-Bench</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a></div>
+<template id="example-guide"><h2 data-example-title>Show or hide building storeys</h2><p data-example-description>Choose which storeys to display using the building components assigned to each level.</p><h3>Inspect levels</h3><p>Toggle a storey to show or hide its components. Unassigned components have their own option. This example changes visibility; it does not cut the model. Select a component, then click <strong>1 element selected</strong> at the top left to open Properties.</p><h3>Developer integration</h3><p>The component identifiers, names and storey memberships are queried through the native <code>viewer.IfcAPI</code>. The original architectural IFC4 file is hash-verified and imported unchanged. BCF views are written with <code>bcf.save()</code>, imported with <code>viewer.add()</code>, and applied with <code>viewer.selectTopic()</code>. Open <strong>Topics</strong> (speech bubble) on the left toolbar to inspect the generated viewpoint.</p><p>The spatial tree supplies level names and element membership. Components nested in spaces or assemblies inherit the enclosing storey.</p><p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and license notices</h2>
+<p>Solihin, W. West Riverside Hospital IFC Models. Donated by Wawan Solihin (Singapore) and hosted on the OpenIFC Model Repository by Professor Robert Amor, University of Auckland. <a href="https://openifcmodel.cs.auckland.ac.nz/" target="_blank" rel="noopener noreferrer">Original repository</a>. Distributed by Sylvain Hellin in <a href="https://huggingface.co/datasets/sylvainHellin/ifc-bench/tree/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital" target="_blank" rel="noopener noreferrer">IFC-Bench at the pinned revision</a>.</p>
+<p>The architectural IFC4 file is imported unchanged; the other discipline models are not loaded. The model-specific <a href="https://huggingface.co/datasets/sylvainHellin/ifc-bench/blob/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/license.txt" target="_blank" rel="noopener noreferrer">source license notice</a> specifies <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 3.0 Unported</a> for these models.</p>
+
+</template>
+<script type="module">
+async function withIfcModel(blob, read) {
+    const api = await viewer.IfcAPI;
+    await api.Init();
+    let modelID = -1;
+    try {
+        modelID = api.OpenModel(new Uint8Array(await blob.arrayBuffer()));
+        if (modelID < 0) throw new Error('The native IFC API could not open the model.');
+        return await read(api, modelID);
+    } finally {
+        if (modelID >= 0) api.CloseModel(modelID);
+        api.Dispose();
+    }
+}
+
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+const { assets: modelFiles } = JSON.parse(document.getElementById('example-data').textContent);
+let storeys = [];
+function createExampleProject(title, state, identity = {}) {
+    const element = (name, attributes = {}, content = []) => ({ name, namespaceURI: '', attributes, content });
+    const text = (name, value) => element(name, {}, [String(value)]);
+    const document = (name, root) => ({ document: { kind: 'xml', schema: 'bcf-2.1/' + name, root } });
+    const topicGuid = identity.topicGuid ??= crypto.randomUUID(), viewpointGuid = identity.viewpointGuid ??= crypto.randomUUID();
+    const component = IfcGuid => element('Component', { IfcGuid });
+    const components = element('Components', {}, [
+        element('ViewSetupHints', { SpacesVisible: 'false', SpaceBoundariesVisible: 'false', OpeningsVisible: 'false' }),
+        element('Visibility', { DefaultVisibility: String(state.visibility.defaultVisibility) },
+            state.visibility.exceptions.length ? [element('Exceptions', {}, state.visibility.exceptions.map(component))] : []),
+    ]);
+    const viewpoint = element('VisualizationInfo', { Guid: viewpointGuid }, [components]);
+    const reference = element('Viewpoints', { Guid: viewpointGuid }, [text('Viewpoint', viewpointGuid + '.bcfv')]);
+    const topic = element('Topic', { Guid: topicGuid, TopicType: 'Coordination', TopicStatus: 'Open' }, [
+        text('Title', title), text('CreationDate', new Date().toISOString()), text('CreationAuthor', 'examples@example.com'),
+    ]);
+    const markup = element('Markup', {}, [topic, reference]);
+    return { topic, project: { kind: 'archive', specification: 'bcf-2.1', entries: {
+        'bcf.version': document('version', element('Version', { VersionId: '2.1' })),
+        [topicGuid + '/markup.bcf']: document('markup', markup),
+        [topicGuid + '/' + viewpointGuid + '.bcfv']: document('visinfo', viewpoint),
+    } } };
+}
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+function scalar(value) {
+    if (value === null || value === undefined) return null;
+    if (typeof value !== 'object') return value;
+    return scalar(Object.hasOwn(value, 'value') ? value.value : value._representationValue);
+}
+
+async function readIfcLines(api, modelID, ids, recursive = false) {
+    const rows = [];
+    for (let start = 0; start < ids.length; start += 96) {
+        rows.push(...api.GetLines(modelID, ids.slice(start, start + 96), recursive));
+    }
+    return rows;
+}
+async function queryType(api, modelID, name, recursive = false) {
+    const vector = api.GetLineIDsWithType(modelID, api.GetTypeCodeFromName(name), true);
+    try {
+        const ids = Array.from({ length: vector.size() }, (_, index) => vector.get(index));
+        return await readIfcLines(api, modelID, ids, recursive);
+    } finally { vector.delete(); }
+}
+
+
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+const controls = document.getElementById('task');
+const retry = document.getElementById('retry');
+const status = document.getElementById('result');
+const identity = { topicGuid: crypto.randomUUID(), viewpointGuid: crypto.randomUUID() };
+const loadedSources = new Set();
+let retryTask;
+let sourcesReady = false;
+let updates = Promise.resolve();
+let pendingUpdates = 0;
+function run(task) {
+    retryTask = task;
+    pendingUpdates++;
+    controls.disabled = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    const next = async () => {
+        let failed = false;
+        try {
+            await viewer.ready;
+            await task();
+            await viewer.setMessage(null);
+        } catch (error) {
+            failed = true;
+            await viewer.setMessage(error.message ?? String(error), { type: 'error' });
+        } finally {
+            pendingUpdates--;
+            if (!pendingUpdates) {
+                document.body.dataset.exampleState = failed ? 'error' : 'loaded';
+                retry.hidden = !failed;
+                controls.disabled = failed && !sourcesReady;
+            }
+        }
+    };
+    // Imports and viewpoint applications must finish before the next update.
+    updates = updates.then(next, next);
+    return updates;
+}
+retry.addEventListener('click', () => run(retryTask));
+let resizeTimer;
+addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        if (retryTask && document.body.dataset.exampleState === 'loaded') run(retryTask);
+    }, 180);
+});
+async function sourceBlob(asset) {
+    let blob;
+    await loadExampleFile(asset.name, asset.url, async value => {
+        if (value.size !== asset.bytes) throw new Error('Incomplete source file: ' + asset.name);
+        const digest = await crypto.subtle.digest('SHA-256', await value.arrayBuffer());
+        const hash = [...new Uint8Array(digest)].map(value => value.toString(16).padStart(2, '0')).join('');
+        if (hash !== asset.sha256) throw new Error('Source revision changed: ' + asset.name);
+        blob = value;
+    }, asset.bytes);
+    return blob;
+}
+
+
+async function loadModels() {
+    for (const asset of modelFiles) {
+        if (loadedSources.has(asset.id)) continue;
+        const blob = await sourceBlob(asset);
+        await withIfcModel(blob, readStoreys);
+        await viewer.setMessage('Opening ' + asset.name, { type: 'loading' });
+        const result = await viewer.add(asset.name, blob);
+        if (result?.isError) throw new Error('Could not open ' + asset.name);
+        loadedSources.add(asset.id);
+    }
+    sourcesReady = true;
+}
+async function applyState(title, state) {
+    const { project, topic } = createExampleProject(title, state, identity);
+    const bytes = await bcf.save(project);
+    const added = await viewer.add('review-state.bcf', new Blob([bytes]));
+    if (added?.isError) throw new Error('Could not import the review state.');
+    const selected = await viewer.selectTopic(topic.attributes.Guid);
+    if (selected?.isError) throw new Error('Could not display the review state.');
+}
+
+async function readStoreys(api, modelID) {
+    await viewer.setMessage('Reading storeys and their components', { type: 'loading' });
+    const elements = new Map((await queryType(api, modelID, 'IFCELEMENT')).map(row => [row.expressID, scalar(row.GlobalId)]));
+    const groups = new Map(), assigned = new Set();
+    function visit(node, floor) {
+        if (String(node.type).toUpperCase() === 'IFCBUILDINGSTOREY') {
+            floor = { id: node.expressID, name: String(scalar(node.Name) ?? 'Unnamed storey'), ids: [] };
+            groups.set(floor.id, floor);
+        }
+        const guid = elements.get(node.expressID);
+        if (floor && guid) { floor.ids.push(guid); assigned.add(guid); }
+        for (const child of node.children ?? []) visit(child, floor);
+    }
+    visit(await api.properties.getSpatialStructure(modelID, true));
+    const unassigned = [...elements.values()].filter(guid => guid && !assigned.has(guid));
+    storeys = [...groups.values()].filter(item => item.ids.length).map(item => ({ ...item, ids: [...new Set(item.ids)] }));
+    if (unassigned.length) storeys.push({ name: 'Unassigned', ids: [...new Set(unassigned)] });
+    if (!storeys.length) throw new Error('The model has no building components.');
+    controls.replaceChildren(...storeys.map((item,index) => {
+        const label = document.createElement('label'), input = document.createElement('input');
+        label.className = 'example-option'; input.type = 'checkbox'; input.value = index; input.checked = index === 0;
+        label.append(input, document.createTextNode(item.name)); return label;
+    }));
+}
+function storeyState(indices) {
+    return { visibility: { defaultVisibility: false, exceptions: [...new Set(indices.flatMap(index => storeys[index].ids))] } };
+}
+async function showStoreys() {
+    const indices = [...controls.querySelectorAll('input:checked')].map(input => Number(input.value));
+    const state = storeyState(indices);
+    await applyState('Building storey visibility', state);
+    status.textContent = state.visibility.exceptions.length + ' components visible';
+}
+controls.addEventListener('change', () => run(showStoreys));
+await run(async () => { await loadModels(); await showStoreys(); });
+
+</script></body></html>

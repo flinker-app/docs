@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Compare a building model with its scan</title>
+  <meta name="description" content="Compare a building IFC with its matching colour point cloud to inspect façades, balconies and roof edges.">
+
+<style>
+html, body { height: 100%; margin: 0; }
+#example-viewer-mount { position: fixed; inset: 0; }
+bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
+.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui.example-task { right: 10px; bottom: 84px; width: 224px; max-width: calc(100vw - 64px); padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
+.example-ui h2 { margin: 0; font-size: 13px; line-height: 1.3; font-weight: 650; }
+.example-ui p { margin: 6px 0 0; color: #5a6575; }
+.example-ui button { margin-top: 6px; padding: 5px 7px; border: 1px solid #cbd2dc; border-radius: 3px; background: #fff; color: inherit; font: inherit; cursor: pointer; }
+.example-ui button:focus-visible { outline: 2px solid #3568ba; outline-offset: 2px; }
+.example-ui [hidden] { display: none; }
+.example-ui.example-credit { right: 8px; bottom: 32px; width: max-content; max-width: calc(100vw - 64px); padding: 2px 5px; background: #ffffffdf; border-radius: 2px; font-size: 9px; text-align: right; overflow-wrap: anywhere; }
+.example-ui.example-credit a { color: #566171; }
+@media (max-width: 600px) {
+  .example-ui.example-task { right: 8px; padding: 8px; }
+  .example-ui button { min-height: 30px; }
+}
+</style>
+<!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/building-scan/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Compare a building model with its scan">
+  <meta property="og:description" content="Compare a building IFC with its matching colour point cloud to inspect façades, balconies and roof edges.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/building-scan/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/building-scan/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Compare a building model with its scan">
+  <meta name="twitter:description" content="Compare a building IFC with its matching colour point cloud to inspect façades, balconies and roof edges."><meta name="twitter:image" content="https://viewer.flinker.app/examples/building-scan/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Compare a building model with its scan","description":"Compare a building IFC with its matching colour point cloud to inspect façades, balconies and roof edges.","url":"https://viewer.flinker.app/examples/building-scan/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/building-scan/index.html","image":"https://viewer.flinker.app/examples/building-scan/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+<script type="application/json" id="example-data">
+{
+  "category": "Reality capture",
+  "formats": [
+    "IFC",
+    "LAZ"
+  ],
+  "capabilities": [
+    "Model and point cloud",
+    "Scan comparison"
+  ],
+  "audience": "BIM workflow",
+  "order": 6,
+  "viewer": {
+    "assetIds": [
+      "creoox-building",
+      "creoox-building-scan"
+    ],
+    "presentation": "default"
+  },
+  "assets": [
+    {
+      "id": "creoox-building",
+      "name": "example-no-1.ifc",
+      "format": "IFC",
+      "bytes": 30272200,
+      "sha256": "6d508cd61a93b30eef567b4bcf82fc54b8af98ff99b7dee9c0c57af8383834dc",
+      "url": "https://raw.githubusercontent.com/xeokit/examples/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las/example-no-1.ifc",
+      "sourceUrl": "https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las/example-no-1.ifc",
+      "license": "Repository AGPL-3.0; no separate dataset licence stated",
+      "licenseUrl": "https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/building-scan/index.html#example-notices",
+      "attribution": "Creoox / xeokit example data. Original data rights remain with their owners.",
+      "notes": "Original file unchanged. The IFC and LAZ share local metre coordinates; this example adds no CRS, offset, rotation or scale."
+    },
+    {
+      "id": "creoox-building-scan",
+      "name": "example-no-1.laz",
+      "format": "LAZ",
+      "bytes": 91248439,
+      "sha256": "50f2a941ff9afe0390da3542ed7b5b576cf5cceb71eecea0955b74fc0bdf015a",
+      "url": "https://raw.githubusercontent.com/xeokit/examples/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las/example-no-1.laz",
+      "sourceUrl": "https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las/example-no-1.laz",
+      "license": "Repository AGPL-3.0; no separate dataset licence stated",
+      "licenseUrl": "https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/LICENSE",
+      "noticeUrl": "https://viewer.flinker.app/examples/building-scan/index.html#example-notices",
+      "attribution": "Creoox / xeokit example data. Original data rights remain with their owners.",
+      "notes": "Original file unchanged. The IFC and LAZ share local metre coordinates; this example adds no CRS, offset, rotation or scale.",
+      "points": 9265546
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
+<aside class="example-ui example-task" aria-label="Compare model and scan">
+<h2>Compare model and scan</h2>
+<p>Open <strong>Files</strong> (folder) on the left toolbar. Toggle the checkbox beside each IFC or LAZ file to compare façades, balconies and roof edges. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
+<p>For a cut, open <strong>Sections</strong> (scissors) → <strong>Add clipping plane</strong>, then click a surface.</p>
+<button id="sample-retry" type="button" hidden>Retry sample</button>
+</aside>
+<div class="example-ui example-credit" aria-label="Sample source and licence"><a href="https://github.com/xeokit/examples/tree/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las" target="_blank" rel="noopener noreferrer">Creoox / xeokit sample data</a> · <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/LICENSE" target="_blank" rel="noopener noreferrer">Repository licence</a></div>
+<template id="example-guide">
+<h2 data-example-title>Compare a building model with its scan</h2>
+<p data-example-description>Compare a building IFC with its matching colour point cloud to inspect façades, balconies and roof edges.</p>
+<h3>Try it</h3><ol><li>Orbit around the building and inspect roof edges, balconies and end walls.</li><li>Open Files (folder) on the left toolbar. Toggle the checkboxes beside the IFC and LAZ files to compare each source with their overlay.</li><li>Open Sections (scissors) on the left toolbar → Add clipping plane, then click a surface to inspect the relationship between model and scan.</li></ol>
+<h3>Source alignment</h3><p>The pair is <code>example-no-1.ifc</code> and <code>example-no-1.laz</code> from the xeokit examples repository. The scan has 9,265,546 points, including surrounding ground and parked cars. Both files use shared local metre coordinates. The IFC bounds are approximately X 705.512–793.626 m, Y 84.995–109.509 m, Z 82.083–106.356 m, inside the scan bounds X 694.785–802.589 m, Y 78.559–114.389 m, Z 78.515–106.567 m. Rooflines, façades and balconies visually overlap without a translation, rotation or scale correction. This visual check does not certify survey accuracy or model deviations.</p>
+<h3>Developer integration</h3><p>The page checks each source’s byte length and SHA-256 before passing the original Blob to <code>viewer.add(name, blob)</code>. It loads the IFC first, then the LAZ, retaining successful imports when a later download needs a retry. The SDK handles parsing, point-cloud storage, visibility, sections and navigation. Neither file declares a projected CRS, so the example adds no geographic location or map conversion. The IFC is about 30 MB and the LAZ about 91 MB.</p><p>Copy this folder and serve it over HTTP. The published SDK and remote sample downloads require internet access.</p>
+</template>
+<template id="example-notices">
+<h2>Sources and licence notices</h2><p>Both files are downloaded directly from the official <a href="https://github.com/xeokit/examples/tree/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las">xeokit/examples GitHub repository</a>, pinned to revision <code>eedeb4dca756d56c7703b312daff22fa31643fef</code>: <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las/example-no-1.ifc">example-no-1.ifc</a> and <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las/example-no-1.laz">example-no-1.laz</a>. The repository’s <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/lidar/las_Example1_alignPointCloud.html">model and point-cloud alignment example</a> uses the same pair.</p><p>Attribution: Creoox / xeokit example data. Copyright and other rights in the data remain with their original owners. The repository contains an <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/LICENSE">AGPL-3.0 licence</a>; no separate dataset licence is stated for these files. This page downloads the pinned source bytes without modifying or redistributing the model and scan.</p><p>Source checksums: IFC SHA-256 <code>6d508cd61a93b30eef567b4bcf82fc54b8af98ff99b7dee9c0c57af8383834dc</code>; LAZ SHA-256 <code>50f2a941ff9afe0390da3542ed7b5b576cf5cceb71eecea0955b74fc0bdf015a</code>.</p>
+</template>
+<script type="module">
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+// Example-only download feedback. All file parsing remains in the published SDK.
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+// Preserve the publisher’s shared local coordinates and reject changed sources.
+async function verifySampleAsset(asset, blob) {
+    if (blob.size !== asset.bytes) throw new Error('The download of ' + asset.name + ' is incomplete.');
+    const digest = await crypto.subtle.digest('SHA-256', await blob.arrayBuffer());
+    const hash = [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('');
+    if (hash !== asset.sha256) throw new Error('The source of ' + asset.name + ' differs from the verified model and scan pair.');
+    return blob;
+}
+const { assets } = JSON.parse(document.getElementById("example-data").textContent);
+
+const viewer = new Viewer('#ifc-viewer');
+window.exampleViewer = viewer;
+document.body.dataset.exampleState = 'loading';
+const imported = new Set();
+const retry = document.querySelector('#sample-retry');
+let running = false;
+async function load() {
+    if (running)
+        return;
+    running = true;
+    retry.hidden = true;
+    document.body.dataset.exampleState = 'loading';
+    try {
+        await viewer.ready;
+        for (const asset of assets) {
+            if (imported.has(asset.id))
+                continue;
+            await loadExampleFile(asset.name, asset.url, async blob => {
+                return viewer.add(asset.name, await verifySampleAsset(asset, blob));
+            }, asset.bytes);
+            imported.add(asset.id);
+        }
+        document.body.dataset.exampleState = 'loaded';
+    }
+    catch (error) {
+        document.body.dataset.exampleState = 'error';
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+        retry.hidden = false;
+    }
+    finally {
+        running = false;
+    }
+}
+retry.addEventListener('click', () => { void load(); });
+void load();
+  </script>
+</body>
+</html>

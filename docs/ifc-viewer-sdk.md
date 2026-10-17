@@ -22,7 +22,7 @@ The SDK is built for production integrations:
 - loads files from a file input, URL, signed URL, SharePoint link, object storage, or your own API
 - includes model viewing, element selection, model tree, properties, visibility, coloring, clipping, viewpoints, and validation workflows
 
-The examples on this page use IFC Viewer SDK `v4.0.2`.
+The examples on this page use IFC Viewer SDK `v4.0.3`.
 
 > [!NOTE]
 > Your application passes bytes to the viewer. IFC parsing and WebGPU or WebGL2 rendering happen inside the visitor's browser. Optional maps and connected services make their own network requests.
@@ -51,7 +51,7 @@ This is a complete embedded IFC viewer. Give the host element a visible size, im
   <div id="ifc-viewer"></div>
 
   <script type="module">
-    import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
+    import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
 
     const viewer = new Viewer("#ifc-viewer");
     await viewer.ready;
@@ -127,7 +127,7 @@ Convert the source file to `Uint8Array` and pass it to `viewer.add(filename, byt
 <bim-grid id="ifc-viewer"></bim-grid>
 
 <script type="module">
-  import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
+  import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
 
   const viewer = new Viewer("#ifc-viewer");
   await viewer.ready;
@@ -164,7 +164,7 @@ for (const file of ["architecture.ifc", "structure.ifc", "mep.ifc"]) {
 The SDK mounts into a DOM element, so it fits normal frontend component lifecycles. Create the element in your component, initialize the viewer after the element exists, and call `viewer.add()` when your app has file bytes.
 
 ```js
-import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
 
 let viewer;
 
@@ -254,7 +254,7 @@ Copy this into your coding assistant:
 ```text
 Add a fully working browser IFC viewer with the Flinker IFC Viewer SDK.
 Use this import:
-import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
 
 Mount it into a <div id="ifc-viewer"></div> element with a visible width and height.
 Create the viewer with new Viewer("#ifc-viewer").
@@ -268,7 +268,7 @@ Do not upload the IFC file to a backend just to view it.
 Minimal JavaScript:
 
 ```js
-import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
 
 const viewer = new Viewer("#ifc-viewer");
 await viewer.ready;
