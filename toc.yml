@@ -1,5 +1,7 @@
 - name: Documentation
   href: docs/
+- name: API reference
+  href: api/
 
 # - name: Website
 #   href: https://www.flinker.app/

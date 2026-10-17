@@ -12,6 +12,14 @@ exports.postTransform = function (model) {
   model.lastUpdatedText = formatLastUpdatedText(model.lastUpdated);
   model.conceptual = removeManualLastUpdated(model.conceptual);
 
+  if (model.exampleUrl && /^\/_media\/ifc-viewer-examples\/[\w-]+\/index\.html$/.test(model.exampleUrl)) {
+    // Keep this native link outside DocFX's tab list, which expects a panel for every item.
+    model.conceptual = model.conceptual.replace(
+      /(<div class="tabGroup"[^>]*>\s*<ul role="tablist">[\s\S]*?<\/ul>)/,
+      '$1\n<a class="example-open-tab" href="' + model.exampleUrl + '" target="_blank" rel="noopener">Open in new tab</a>'
+    );
+  }
+
   return model;
 };
 

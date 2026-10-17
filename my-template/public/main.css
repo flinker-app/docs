@@ -1782,7 +1782,8 @@ article table td {
   padding: 0;
 }
 
-.tabGroup ul[role="tablist"] a[role="tab"] {
+.tabGroup ul[role="tablist"] a[role="tab"],
+.tabGroup > .example-open-tab {
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -1798,7 +1799,8 @@ article table td {
   transition: color .1s, border-color .1s;
 }
 
-.tabGroup ul[role="tablist"] a[role="tab"]:hover {
+.tabGroup ul[role="tablist"] a[role="tab"]:hover,
+.tabGroup > .example-open-tab:hover {
   color: var(--docs-text);
   text-decoration: none;
 }
@@ -1807,6 +1809,20 @@ article table td {
   border-bottom-color: var(--docs-accent);
   color: var(--docs-accent);
   font-weight: 600;
+}
+
+.tabGroup:has(> .example-open-tab) {
+  position: relative;
+}
+
+.tabGroup:has(> .example-open-tab) > ul {
+  padding-right: 150px;
+}
+
+.tabGroup > .example-open-tab {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .tabGroup section[role="tabpanel"] {

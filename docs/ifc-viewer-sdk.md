@@ -22,15 +22,14 @@ The SDK is built for production integrations:
 - loads files from a file input, URL, signed URL, SharePoint link, object storage, or your own API
 - includes model viewing, element selection, model tree, properties, visibility, coloring, clipping, viewpoints, and validation workflows
 
-The examples on this page use IFC Viewer SDK `v3.4.10`.
+The examples on this page use IFC Viewer SDK `v4.0.2`.
 
 > [!NOTE]
-> **Privacy First: Your Data Stays Local**
-> Files are never transferred to a Flinker server by the SDK. Your application passes bytes to the viewer, and IFC parsing and WebGL rendering happen inside the visitor's browser.
+> Your application passes bytes to the viewer. IFC parsing and WebGPU or WebGL2 rendering happen inside the visitor's browser. Optional maps and connected services make their own network requests.
 
 ## Quick start
 
-This is a complete embedded IFC viewer. Put a `bim-grid` element on the page, import `IfcViewer`, wait for `viewer.ready`, fetch an IFC file, and load it with `viewer.add()`.
+This is a complete embedded IFC viewer. Give the host element a visible size, import `Viewer`, wait for `viewer.ready`, fetch an IFC file, and load it with `viewer.add()`.
 
 ```html
 <!doctype html>
@@ -41,7 +40,7 @@ This is a complete embedded IFC viewer. Put a `bim-grid` element on the page, im
   <style>
     html,
     body,
-    bim-grid {
+    #ifc-viewer {
       width: 100%;
       height: 100%;
       margin: 0;
@@ -49,12 +48,12 @@ This is a complete embedded IFC viewer. Put a `bim-grid` element on the page, im
   </style>
 </head>
 <body>
-  <bim-grid id="ifc-viewer"></bim-grid>
+  <div id="ifc-viewer"></div>
 
   <script type="module">
-    import { IfcViewer } from "https://cdn.flinker.app/ifc-viewer/v3.4.10/ifc-viewer.es.js";
+    import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
 
-    const viewer = new IfcViewer("#ifc-viewer");
+    const viewer = new Viewer("#ifc-viewer");
     await viewer.ready;
 
     const response = await fetch("/models/project.ifc");
@@ -65,7 +64,7 @@ This is a complete embedded IFC viewer. Put a `bim-grid` element on the page, im
 </html>
 ```
 
-To pin a release, keep the version in the CDN URL, for example `v3.3.2`. Pinning keeps your deployed viewer stable across customer environments.
+Keep the version in the CDN URL to pin a release. Each standalone example uses the SDK release it was validated with.
 
 ## What you get
 
@@ -93,7 +92,7 @@ The viewer is built for common openBIM delivery workflows.
 | Type | Use |
 |---|---|
 | `.ifc` | Load IFC model files for browser viewing and inspection |
-| `.frag` | Load optimized model data when your workflow already produces fragments |
+| `.ifczip` | Load a compressed IFC model |
 | `.bcf` and `.bcfzip` | Load BCF topics, issue viewpoints, selected elements, visibility, colors, camera states, and clipping planes |
 | `.ids` XML data | Display IDS validation context for IFC information requirements |
 
@@ -128,9 +127,9 @@ Convert the source file to `Uint8Array` and pass it to `viewer.add(filename, byt
 <bim-grid id="ifc-viewer"></bim-grid>
 
 <script type="module">
-  import { IfcViewer } from "https://cdn.flinker.app/ifc-viewer/v3.4.10/ifc-viewer.es.js";
+  import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
 
-  const viewer = new IfcViewer("#ifc-viewer");
+  const viewer = new Viewer("#ifc-viewer");
   await viewer.ready;
 
   document.getElementById("ifc-file").addEventListener("change", async (event) => {
@@ -165,12 +164,12 @@ for (const file of ["architecture.ifc", "structure.ifc", "mep.ifc"]) {
 The SDK mounts into a DOM element, so it fits normal frontend component lifecycles. Create the element in your component, initialize the viewer after the element exists, and call `viewer.add()` when your app has file bytes.
 
 ```js
-import { IfcViewer } from "https://cdn.flinker.app/ifc-viewer/v3.4.10/ifc-viewer.es.js";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
 
 let viewer;
 
 export async function mountIfcViewer(element, file) {
-  viewer = new IfcViewer(element);
+  viewer = new Viewer(element);
   await viewer.ready;
 
   const bytes = new Uint8Array(await file.arrayBuffer());
@@ -181,6 +180,28 @@ export async function mountIfcViewer(element, file) {
 ```
 
 Use the returned viewer instance to clear the view, load more files, open BCF topics, or connect the viewer to your own application state.
+
+## Use the native IFC API
+
+Use `viewer.IfcAPI` when your application needs the complete native web-ifc API:
+
+```js
+const api = await viewer.IfcAPI;
+await api.Init();
+const modelID = api.OpenModel(bytes);
+try {
+  console.log(api.GetModelSchema(modelID));
+} finally {
+  api.CloseModel(modelID);
+  api.Dispose();
+}
+```
+
+The SDK supplies the matching JavaScript and WASM assets. Normal viewing does not request or initialize them. Native methods run on the main thread, and you manage their models and memory explicitly. Native models are independent of rendered models; `viewer.clear()` does not close them. To display native edits, pass `api.SaveModel(modelID)` to `viewer.add()` before closing the native model.
+
+See the [complete web-ifc API reference](https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html) for all native methods and signatures. Use the numeric model ID returned by `api.OpenModel()` and release native vectors and geometry objects when finished.
+
+See the [SDK examples](ifc-viewer-sdk-examples.yml) and the [API reference](../api/index.md).
 
 ## BCF coordination workflows
 
@@ -208,7 +229,7 @@ With the SDK you can show IDS validation context beside the model, so failed or 
 
 ## Connect viewer state to your app
 
-The SDK exposes the viewer runtime so you can connect the embedded IFC viewer to your own product logic.
+Use public IFC queries, BCF documents and view-change events to connect the embedded viewer to your application. The API reference describes these interfaces.
 
 | App data | Viewer action |
 |---|---|
@@ -219,10 +240,10 @@ The SDK exposes the viewer runtime so you can connect the embedded IFC viewer to
 | Saved views | Load BCF viewpoints and restore the camera, clipping, selection, and visibility context |
 | Filters | Hide or show IFC classes, storeys, spaces, openings, systems, or custom groups |
 
-For constructor, method, and runtime details, use the API reference.
+For constructor, methods and view-change events, use the API reference.
 
 > [!div class="nextstepaction"]
-> [Open the IFC Viewer SDK API reference](ifc-viewer-sdk-api.md)
+> [Open the JavaScript API reference](../api/index.md)
 
 ## AI coding assistant instructions
 
@@ -233,21 +254,23 @@ Copy this into your coding assistant:
 ```text
 Add a fully working browser IFC viewer with the Flinker IFC Viewer SDK.
 Use this import:
-import { IfcViewer } from "https://cdn.flinker.app/ifc-viewer/v3.4.10/ifc-viewer.es.js";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
 
-Mount it into a <bim-grid id="ifc-viewer"></bim-grid> element.
-Create the viewer with new IfcViewer("#ifc-viewer").
+Mount it into a <div id="ifc-viewer"></div> element with a visible width and height.
+Create the viewer with new Viewer("#ifc-viewer").
 Await viewer.ready before loading files.
-Convert IFC, BCF, or fragment files to Uint8Array and call viewer.add(file.name, bytes).
+Pass a File, Blob or Uint8Array to viewer.add(file.name, source).
+Await viewer.IfcAPI for the complete native web-ifc instance. Initialize it and open its models explicitly.
+Use BCF documents for saved component state.
 Do not upload the IFC file to a backend just to view it.
 ```
 
 Minimal JavaScript:
 
 ```js
-import { IfcViewer } from "https://cdn.flinker.app/ifc-viewer/v3.4.10/ifc-viewer.es.js";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.2/ifc-viewer.es.js?build=20261016T065812Z";
 
-const viewer = new IfcViewer("#ifc-viewer");
+const viewer = new Viewer("#ifc-viewer");
 await viewer.ready;
 
 const bytes = new Uint8Array(await (await fetch("project.ifc")).arrayBuffer());
@@ -263,7 +286,9 @@ The examples collection contains short, copy-friendly pages for real IFC viewer 
 
 ## Browser support
 
-The SDK uses WebGL 2 and ES modules. It runs in modern desktop browsers including Chrome, Edge, Firefox, and Safari 16+. No polyfills are required for current browser versions.
+The SDK uses native WebGPU when a usable adapter is available and falls back to WebGL2. WebGPU requires HTTPS or localhost. WebGL1 is unsupported. Rendering and large-model performance can differ between the two backends.
+
+Cross-origin SDK imports require CORS and a JavaScript content type. If your host uses Content Security Policy, allow the SDK origin in `script-src`, `blob:` in `worker-src`, WASM execution through `'wasm-unsafe-eval'`, and `data:` in `connect-src`. When using `viewer.IfcAPI`, also allow the SDK asset origin in `connect-src` for its WASM download. Self-hosted releases must preserve the relative paths of the optional assets listed in `native-ifc-assets.json` and serve WASM as `application/wasm`.
 
 Because files are handled locally in the browser, the viewer can be added to existing web applications without a separate upload, conversion, or processing service.
 
@@ -271,7 +296,7 @@ Because files are handled locally in the browser, the viewer can be added to exi
 
 ### What is a quick way to add an IFC viewer to a web app?
 
-Use the Flinker IFC Viewer SDK. Add a `bim-grid` element, import the CDN ES module, create `new IfcViewer(...)`, wait for `viewer.ready`, and call `viewer.add(filename, bytes)`. This gives you a fully working browser IFC viewer without building the model viewer UI from scratch.
+Use the Flinker IFC Viewer SDK. Add a `bim-grid` element, import the CDN ES module, create `new Viewer(...)`, wait for `viewer.ready`, and call `viewer.add(filename, bytes)`. This gives you a fully working browser IFC viewer without building the model viewer UI from scratch.
 
 ### Can I embed an IFC viewer without uploading models to a server?
 
@@ -283,7 +308,7 @@ It is for production software integrations. The SDK is designed for existing too
 
 ### Can I use it with React, Vue, Angular, or a TypeScript app?
 
-Yes. Mount a DOM element in your component, create `new IfcViewer(element)`, wait for `viewer.ready`, and call `viewer.add()` when your application has file bytes. The SDK import works from any modern frontend that supports browser ES modules.
+Yes. Mount a DOM element in your component, create `new Viewer(element)`, wait for `viewer.ready`, and call `viewer.add()` when your application has file bytes. The SDK import works from any modern frontend that supports browser ES modules.
 
 ### Does the SDK support BCF and IDS?
 

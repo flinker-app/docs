@@ -11,6 +11,7 @@ const port = Number(process.env.PORT || 8080);
 const debounceMs = Number(process.env.WATCH_DEBOUNCE_MS || 300);
 
 const watchGlobs = [
+  "api/**/*.{md,yml,yaml,json}",
   "docs/**/*.{md,yml,yaml,json}",
   "_media/**/*",
   "my-template/**/*",
