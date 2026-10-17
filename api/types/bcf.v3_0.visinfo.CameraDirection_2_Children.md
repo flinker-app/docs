@@ -1,0 +1,41 @@
+# Type Alias: CameraDirection\_2$Children
+
+```ts
+type CameraDirection_2$Children = {
+  X: X_2;
+  Y: Y_2;
+  Z: Z_2;
+};
+```
+
+Named children generated from the XSD particle.
+
+## Properties
+
+<a id="x"></a>
+
+### X
+
+```ts
+X: X_2;
+```
+
+***
+
+<a id="y"></a>
+
+### Y
+
+```ts
+Y: Y_2;
+```
+
+***
+
+<a id="z"></a>
+
+### Z
+
+```ts
+Z: Z_2;
+```

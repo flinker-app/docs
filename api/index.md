@@ -1,7 +1,10 @@
----
-title: JavaScript API reference
-description: IFC Viewer SDK API reference.
----
 # JavaScript API reference
 
-We're updating the API reference. Please check back soon.
+## Namespaces
+
+- [bcf](modules/bcf.md)
+- [ids](modules/ids.md)
+
+## Classes
+
+- [Viewer](classes/Viewer.md)

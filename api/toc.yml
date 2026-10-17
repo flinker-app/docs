@@ -1,2 +1,3578 @@
-- name: Overview
-  href: index.md
+[
+  {
+    "name": "Overview",
+    "href": "index.md"
+  },
+  {
+    "name": "Viewer",
+    "href": "classes/Viewer.md"
+  },
+  {
+    "name": "BCF",
+    "href": "modules/bcf.md",
+    "items": [
+      {
+        "name": "v2_1",
+        "href": "modules/bcf.v2_1.md",
+        "items": [
+          {
+            "name": "markup",
+            "href": "modules/bcf.v2_1.markup.md",
+            "items": [
+              {
+                "name": "AssignedTo",
+                "href": "interfaces/bcf.v2_1.markup.AssignedTo.md"
+              },
+              {
+                "name": "Author",
+                "href": "interfaces/bcf.v2_1.markup.Author.md"
+              },
+              {
+                "name": "BimSnippet",
+                "href": "interfaces/bcf.v2_1.markup.BimSnippet.md"
+              },
+              {
+                "name": "BimSnippet_Element",
+                "href": "interfaces/bcf.v2_1.markup.BimSnippet_Element.md"
+              },
+              {
+                "name": "Comment",
+                "href": "interfaces/bcf.v2_1.markup.Comment.md"
+              },
+              {
+                "name": "Comment_Element",
+                "href": "interfaces/bcf.v2_1.markup.Comment_Element.md"
+              },
+              {
+                "name": "Comment_Element_2",
+                "href": "interfaces/bcf.v2_1.markup.Comment_Element_2.md"
+              },
+              {
+                "name": "CreationAuthor",
+                "href": "interfaces/bcf.v2_1.markup.CreationAuthor.md"
+              },
+              {
+                "name": "CreationDate",
+                "href": "interfaces/bcf.v2_1.markup.CreationDate.md"
+              },
+              {
+                "name": "Date",
+                "href": "interfaces/bcf.v2_1.markup.Date.md"
+              },
+              {
+                "name": "Date_2",
+                "href": "interfaces/bcf.v2_1.markup.Date_2.md"
+              },
+              {
+                "name": "Description",
+                "href": "interfaces/bcf.v2_1.markup.Description.md"
+              },
+              {
+                "name": "Description_2",
+                "href": "interfaces/bcf.v2_1.markup.Description_2.md"
+              },
+              {
+                "name": "DocumentReference",
+                "href": "interfaces/bcf.v2_1.markup.DocumentReference.md"
+              },
+              {
+                "name": "DocumentReference_Type",
+                "href": "interfaces/bcf.v2_1.markup.DocumentReference_Type.md"
+              },
+              {
+                "name": "DueDate",
+                "href": "interfaces/bcf.v2_1.markup.DueDate.md"
+              },
+              {
+                "name": "File",
+                "href": "interfaces/bcf.v2_1.markup.File.md"
+              },
+              {
+                "name": "File_Type",
+                "href": "interfaces/bcf.v2_1.markup.File_Type.md"
+              },
+              {
+                "name": "Filename",
+                "href": "interfaces/bcf.v2_1.markup.Filename.md"
+              },
+              {
+                "name": "Header",
+                "href": "interfaces/bcf.v2_1.markup.Header.md"
+              },
+              {
+                "name": "Header_Element",
+                "href": "interfaces/bcf.v2_1.markup.Header_Element.md"
+              },
+              {
+                "name": "Index",
+                "href": "interfaces/bcf.v2_1.markup.Index.md"
+              },
+              {
+                "name": "Index_2",
+                "href": "interfaces/bcf.v2_1.markup.Index_2.md"
+              },
+              {
+                "name": "Labels",
+                "href": "interfaces/bcf.v2_1.markup.Labels.md"
+              },
+              {
+                "name": "Markup",
+                "href": "interfaces/bcf.v2_1.markup.Markup.md"
+              },
+              {
+                "name": "Markup_Type",
+                "href": "interfaces/bcf.v2_1.markup.Markup_Type.md"
+              },
+              {
+                "name": "ModifiedAuthor",
+                "href": "interfaces/bcf.v2_1.markup.ModifiedAuthor.md"
+              },
+              {
+                "name": "ModifiedAuthor_2",
+                "href": "interfaces/bcf.v2_1.markup.ModifiedAuthor_2.md"
+              },
+              {
+                "name": "ModifiedDate",
+                "href": "interfaces/bcf.v2_1.markup.ModifiedDate.md"
+              },
+              {
+                "name": "ModifiedDate_2",
+                "href": "interfaces/bcf.v2_1.markup.ModifiedDate_2.md"
+              },
+              {
+                "name": "Priority",
+                "href": "interfaces/bcf.v2_1.markup.Priority.md"
+              },
+              {
+                "name": "Reference",
+                "href": "interfaces/bcf.v2_1.markup.Reference.md"
+              },
+              {
+                "name": "Reference_2",
+                "href": "interfaces/bcf.v2_1.markup.Reference_2.md"
+              },
+              {
+                "name": "ReferencedDocument",
+                "href": "interfaces/bcf.v2_1.markup.ReferencedDocument.md"
+              },
+              {
+                "name": "ReferenceLink",
+                "href": "interfaces/bcf.v2_1.markup.ReferenceLink.md"
+              },
+              {
+                "name": "ReferenceSchema",
+                "href": "interfaces/bcf.v2_1.markup.ReferenceSchema.md"
+              },
+              {
+                "name": "RelatedTopic",
+                "href": "interfaces/bcf.v2_1.markup.RelatedTopic.md"
+              },
+              {
+                "name": "RelatedTopic_Type",
+                "href": "interfaces/bcf.v2_1.markup.RelatedTopic_Type.md"
+              },
+              {
+                "name": "Snapshot",
+                "href": "interfaces/bcf.v2_1.markup.Snapshot.md"
+              },
+              {
+                "name": "Stage",
+                "href": "interfaces/bcf.v2_1.markup.Stage.md"
+              },
+              {
+                "name": "Title",
+                "href": "interfaces/bcf.v2_1.markup.Title.md"
+              },
+              {
+                "name": "Topic",
+                "href": "interfaces/bcf.v2_1.markup.Topic.md"
+              },
+              {
+                "name": "Topic_Element",
+                "href": "interfaces/bcf.v2_1.markup.Topic_Element.md"
+              },
+              {
+                "name": "Viewpoint",
+                "href": "interfaces/bcf.v2_1.markup.Viewpoint.md"
+              },
+              {
+                "name": "ViewPoint",
+                "href": "interfaces/bcf.v2_1.markup.ViewPoint-1.md"
+              },
+              {
+                "name": "Viewpoint_2",
+                "href": "interfaces/bcf.v2_1.markup.Viewpoint_2.md"
+              },
+              {
+                "name": "Viewpoint_Type",
+                "href": "interfaces/bcf.v2_1.markup.Viewpoint_Type.md"
+              },
+              {
+                "name": "Viewpoints",
+                "href": "interfaces/bcf.v2_1.markup.Viewpoints.md"
+              },
+              {
+                "name": "BimSnippet_Element$Children",
+                "href": "types/bcf.v2_1.markup.BimSnippet_Element_Children.md"
+              },
+              {
+                "name": "Comment_Element$Children",
+                "href": "types/bcf.v2_1.markup.Comment_Element_Children.md"
+              },
+              {
+                "name": "DocumentReference$Children",
+                "href": "types/bcf.v2_1.markup.DocumentReference_Children.md"
+              },
+              {
+                "name": "File$Children",
+                "href": "types/bcf.v2_1.markup.File_Children.md"
+              },
+              {
+                "name": "Guid",
+                "href": "types/bcf.v2_1.markup.Guid.md"
+              },
+              {
+                "name": "Header_Element$Children",
+                "href": "types/bcf.v2_1.markup.Header_Element_Children.md"
+              },
+              {
+                "name": "IfcGuid",
+                "href": "types/bcf.v2_1.markup.IfcGuid.md"
+              },
+              {
+                "name": "Markup$Children",
+                "href": "types/bcf.v2_1.markup.Markup_Children.md"
+              },
+              {
+                "name": "Priority_2",
+                "href": "types/bcf.v2_1.markup.Priority_2.md"
+              },
+              {
+                "name": "RelatedTopic$Children",
+                "href": "types/bcf.v2_1.markup.RelatedTopic_Children.md"
+              },
+              {
+                "name": "Stage_2",
+                "href": "types/bcf.v2_1.markup.Stage_2.md"
+              },
+              {
+                "name": "Topic_Element$Children",
+                "href": "types/bcf.v2_1.markup.Topic_Element_Children.md"
+              },
+              {
+                "name": "TopicLabel",
+                "href": "types/bcf.v2_1.markup.TopicLabel.md"
+              },
+              {
+                "name": "TopicStatus",
+                "href": "types/bcf.v2_1.markup.TopicStatus.md"
+              },
+              {
+                "name": "TopicType",
+                "href": "types/bcf.v2_1.markup.TopicType.md"
+              },
+              {
+                "name": "UserIdType",
+                "href": "types/bcf.v2_1.markup.UserIdType.md"
+              },
+              {
+                "name": "Viewpoint$Children",
+                "href": "types/bcf.v2_1.markup.Viewpoint_Children.md"
+              },
+              {
+                "name": "Viewpoints$Children",
+                "href": "types/bcf.v2_1.markup.Viewpoints_Children.md"
+              },
+              {
+                "name": "createAssignedTo",
+                "href": "variables/bcf.v2_1.markup.createAssignedTo.md"
+              },
+              {
+                "name": "createAuthor",
+                "href": "variables/bcf.v2_1.markup.createAuthor.md"
+              },
+              {
+                "name": "createBimSnippet",
+                "href": "variables/bcf.v2_1.markup.createBimSnippet.md"
+              },
+              {
+                "name": "createComment",
+                "href": "variables/bcf.v2_1.markup.createComment.md"
+              },
+              {
+                "name": "createComment_2",
+                "href": "variables/bcf.v2_1.markup.createComment_2.md"
+              },
+              {
+                "name": "createCreationAuthor",
+                "href": "variables/bcf.v2_1.markup.createCreationAuthor.md"
+              },
+              {
+                "name": "createCreationDate",
+                "href": "variables/bcf.v2_1.markup.createCreationDate.md"
+              },
+              {
+                "name": "createDate",
+                "href": "variables/bcf.v2_1.markup.createDate.md"
+              },
+              {
+                "name": "createDate_2",
+                "href": "variables/bcf.v2_1.markup.createDate_2.md"
+              },
+              {
+                "name": "createDescription",
+                "href": "variables/bcf.v2_1.markup.createDescription.md"
+              },
+              {
+                "name": "createDescription_2",
+                "href": "variables/bcf.v2_1.markup.createDescription_2.md"
+              },
+              {
+                "name": "createDocumentReference",
+                "href": "variables/bcf.v2_1.markup.createDocumentReference.md"
+              },
+              {
+                "name": "createDueDate",
+                "href": "variables/bcf.v2_1.markup.createDueDate.md"
+              },
+              {
+                "name": "createFile",
+                "href": "variables/bcf.v2_1.markup.createFile.md"
+              },
+              {
+                "name": "createFilename",
+                "href": "variables/bcf.v2_1.markup.createFilename.md"
+              },
+              {
+                "name": "createHeader",
+                "href": "variables/bcf.v2_1.markup.createHeader.md"
+              },
+              {
+                "name": "createIndex",
+                "href": "variables/bcf.v2_1.markup.createIndex.md"
+              },
+              {
+                "name": "createIndex_2",
+                "href": "variables/bcf.v2_1.markup.createIndex_2.md"
+              },
+              {
+                "name": "createLabels",
+                "href": "variables/bcf.v2_1.markup.createLabels.md"
+              },
+              {
+                "name": "createMarkup",
+                "href": "variables/bcf.v2_1.markup.createMarkup.md"
+              },
+              {
+                "name": "createModifiedAuthor",
+                "href": "variables/bcf.v2_1.markup.createModifiedAuthor.md"
+              },
+              {
+                "name": "createModifiedAuthor_2",
+                "href": "variables/bcf.v2_1.markup.createModifiedAuthor_2.md"
+              },
+              {
+                "name": "createModifiedDate",
+                "href": "variables/bcf.v2_1.markup.createModifiedDate.md"
+              },
+              {
+                "name": "createModifiedDate_2",
+                "href": "variables/bcf.v2_1.markup.createModifiedDate_2.md"
+              },
+              {
+                "name": "createPriority",
+                "href": "variables/bcf.v2_1.markup.createPriority.md"
+              },
+              {
+                "name": "createReference",
+                "href": "variables/bcf.v2_1.markup.createReference.md"
+              },
+              {
+                "name": "createReference_2",
+                "href": "variables/bcf.v2_1.markup.createReference_2.md"
+              },
+              {
+                "name": "createReferencedDocument",
+                "href": "variables/bcf.v2_1.markup.createReferencedDocument.md"
+              },
+              {
+                "name": "createReferenceLink",
+                "href": "variables/bcf.v2_1.markup.createReferenceLink.md"
+              },
+              {
+                "name": "createReferenceSchema",
+                "href": "variables/bcf.v2_1.markup.createReferenceSchema.md"
+              },
+              {
+                "name": "createRelatedTopic",
+                "href": "variables/bcf.v2_1.markup.createRelatedTopic.md"
+              },
+              {
+                "name": "createSnapshot",
+                "href": "variables/bcf.v2_1.markup.createSnapshot.md"
+              },
+              {
+                "name": "createStage",
+                "href": "variables/bcf.v2_1.markup.createStage.md"
+              },
+              {
+                "name": "createTitle",
+                "href": "variables/bcf.v2_1.markup.createTitle.md"
+              },
+              {
+                "name": "createTopic",
+                "href": "variables/bcf.v2_1.markup.createTopic.md"
+              },
+              {
+                "name": "createViewpoint",
+                "href": "variables/bcf.v2_1.markup.createViewpoint.md"
+              },
+              {
+                "name": "createViewpoint_2",
+                "href": "variables/bcf.v2_1.markup.createViewpoint_2.md"
+              },
+              {
+                "name": "createViewpoints",
+                "href": "variables/bcf.v2_1.markup.createViewpoints.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v2_1.markup.createXmlFile.md"
+              }
+            ]
+          },
+          {
+            "name": "project",
+            "href": "modules/bcf.v2_1.project.md",
+            "items": [
+              {
+                "name": "ExtensionSchema",
+                "href": "interfaces/bcf.v2_1.project.ExtensionSchema.md"
+              },
+              {
+                "name": "Name",
+                "href": "interfaces/bcf.v2_1.project.Name.md"
+              },
+              {
+                "name": "Project",
+                "href": "interfaces/bcf.v2_1.project.Project.md"
+              },
+              {
+                "name": "Project_Element",
+                "href": "interfaces/bcf.v2_1.project.Project_Element.md"
+              },
+              {
+                "name": "ProjectExtension",
+                "href": "interfaces/bcf.v2_1.project.ProjectExtension.md"
+              },
+              {
+                "name": "ProjectExtension_Type",
+                "href": "interfaces/bcf.v2_1.project.ProjectExtension_Type.md"
+              },
+              {
+                "name": "Project_Element$Children",
+                "href": "types/bcf.v2_1.project.Project_Element_Children.md"
+              },
+              {
+                "name": "ProjectExtension$Children",
+                "href": "types/bcf.v2_1.project.ProjectExtension_Children.md"
+              },
+              {
+                "name": "createExtensionSchema",
+                "href": "variables/bcf.v2_1.project.createExtensionSchema.md"
+              },
+              {
+                "name": "createName",
+                "href": "variables/bcf.v2_1.project.createName.md"
+              },
+              {
+                "name": "createProject",
+                "href": "variables/bcf.v2_1.project.createProject.md"
+              },
+              {
+                "name": "createProjectExtension",
+                "href": "variables/bcf.v2_1.project.createProjectExtension.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v2_1.project.createXmlFile.md"
+              }
+            ]
+          },
+          {
+            "name": "version",
+            "href": "modules/bcf.v2_1.version.md",
+            "items": [
+              {
+                "name": "DetailedVersion",
+                "href": "interfaces/bcf.v2_1.version.DetailedVersion.md"
+              },
+              {
+                "name": "Version",
+                "href": "interfaces/bcf.v2_1.version.Version.md"
+              },
+              {
+                "name": "Version_Type",
+                "href": "interfaces/bcf.v2_1.version.Version_Type.md"
+              },
+              {
+                "name": "Version$Children",
+                "href": "types/bcf.v2_1.version.Version_Children.md"
+              },
+              {
+                "name": "createDetailedVersion",
+                "href": "variables/bcf.v2_1.version.createDetailedVersion.md"
+              },
+              {
+                "name": "createVersion",
+                "href": "variables/bcf.v2_1.version.createVersion.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v2_1.version.createXmlFile.md"
+              }
+            ]
+          },
+          {
+            "name": "visinfo",
+            "href": "modules/bcf.v2_1.visinfo.md",
+            "items": [
+              {
+                "name": "AuthoringToolId",
+                "href": "interfaces/bcf.v2_1.visinfo.AuthoringToolId.md"
+              },
+              {
+                "name": "Bitmap",
+                "href": "interfaces/bcf.v2_1.visinfo.Bitmap.md"
+              },
+              {
+                "name": "Bitmap_2",
+                "href": "interfaces/bcf.v2_1.visinfo.Bitmap_2.md"
+              },
+              {
+                "name": "Bitmap_Type",
+                "href": "interfaces/bcf.v2_1.visinfo.Bitmap_Type.md"
+              },
+              {
+                "name": "CameraDirection",
+                "href": "interfaces/bcf.v2_1.visinfo.CameraDirection.md"
+              },
+              {
+                "name": "CameraDirection_2",
+                "href": "interfaces/bcf.v2_1.visinfo.CameraDirection_2.md"
+              },
+              {
+                "name": "CameraUpVector",
+                "href": "interfaces/bcf.v2_1.visinfo.CameraUpVector.md"
+              },
+              {
+                "name": "CameraUpVector_2",
+                "href": "interfaces/bcf.v2_1.visinfo.CameraUpVector_2.md"
+              },
+              {
+                "name": "CameraViewPoint",
+                "href": "interfaces/bcf.v2_1.visinfo.CameraViewPoint.md"
+              },
+              {
+                "name": "CameraViewPoint_2",
+                "href": "interfaces/bcf.v2_1.visinfo.CameraViewPoint_2.md"
+              },
+              {
+                "name": "ClippingPlane",
+                "href": "interfaces/bcf.v2_1.visinfo.ClippingPlane.md"
+              },
+              {
+                "name": "ClippingPlane_Element",
+                "href": "interfaces/bcf.v2_1.visinfo.ClippingPlane_Element.md"
+              },
+              {
+                "name": "ClippingPlanes",
+                "href": "interfaces/bcf.v2_1.visinfo.ClippingPlanes.md"
+              },
+              {
+                "name": "ClippingPlanes_Type",
+                "href": "interfaces/bcf.v2_1.visinfo.ClippingPlanes_Type.md"
+              },
+              {
+                "name": "Color",
+                "href": "interfaces/bcf.v2_1.visinfo.Color.md"
+              },
+              {
+                "name": "Color_Type",
+                "href": "interfaces/bcf.v2_1.visinfo.Color_Type.md"
+              },
+              {
+                "name": "Coloring",
+                "href": "interfaces/bcf.v2_1.visinfo.Coloring.md"
+              },
+              {
+                "name": "Component",
+                "href": "interfaces/bcf.v2_1.visinfo.Component.md"
+              },
+              {
+                "name": "Component_Element",
+                "href": "interfaces/bcf.v2_1.visinfo.Component_Element.md"
+              },
+              {
+                "name": "Component_Element_2",
+                "href": "interfaces/bcf.v2_1.visinfo.Component_Element_2.md"
+              },
+              {
+                "name": "Component_Element_3",
+                "href": "interfaces/bcf.v2_1.visinfo.Component_Element_3.md"
+              },
+              {
+                "name": "ComponentColoring",
+                "href": "interfaces/bcf.v2_1.visinfo.ComponentColoring.md"
+              },
+              {
+                "name": "Components",
+                "href": "interfaces/bcf.v2_1.visinfo.Components.md"
+              },
+              {
+                "name": "Components_Element",
+                "href": "interfaces/bcf.v2_1.visinfo.Components_Element.md"
+              },
+              {
+                "name": "ComponentSelection",
+                "href": "interfaces/bcf.v2_1.visinfo.ComponentSelection.md"
+              },
+              {
+                "name": "ComponentVisibility",
+                "href": "interfaces/bcf.v2_1.visinfo.ComponentVisibility.md"
+              },
+              {
+                "name": "Direction",
+                "href": "interfaces/bcf.v2_1.visinfo.Direction.md"
+              },
+              {
+                "name": "Direction_Element",
+                "href": "interfaces/bcf.v2_1.visinfo.Direction_Element.md"
+              },
+              {
+                "name": "EndPoint",
+                "href": "interfaces/bcf.v2_1.visinfo.EndPoint.md"
+              },
+              {
+                "name": "Exceptions",
+                "href": "interfaces/bcf.v2_1.visinfo.Exceptions.md"
+              },
+              {
+                "name": "Exceptions_Type",
+                "href": "interfaces/bcf.v2_1.visinfo.Exceptions_Type.md"
+              },
+              {
+                "name": "FieldOfView",
+                "href": "interfaces/bcf.v2_1.visinfo.FieldOfView.md"
+              },
+              {
+                "name": "Height",
+                "href": "interfaces/bcf.v2_1.visinfo.Height.md"
+              },
+              {
+                "name": "Line",
+                "href": "interfaces/bcf.v2_1.visinfo.Line.md"
+              },
+              {
+                "name": "Line_Element",
+                "href": "interfaces/bcf.v2_1.visinfo.Line_Element.md"
+              },
+              {
+                "name": "Lines",
+                "href": "interfaces/bcf.v2_1.visinfo.Lines.md"
+              },
+              {
+                "name": "Lines_Type",
+                "href": "interfaces/bcf.v2_1.visinfo.Lines_Type.md"
+              },
+              {
+                "name": "Location",
+                "href": "interfaces/bcf.v2_1.visinfo.Location.md"
+              },
+              {
+                "name": "Location_2",
+                "href": "interfaces/bcf.v2_1.visinfo.Location_2.md"
+              },
+              {
+                "name": "Normal",
+                "href": "interfaces/bcf.v2_1.visinfo.Normal.md"
+              },
+              {
+                "name": "OriginatingSystem",
+                "href": "interfaces/bcf.v2_1.visinfo.OriginatingSystem.md"
+              },
+              {
+                "name": "OrthogonalCamera",
+                "href": "interfaces/bcf.v2_1.visinfo.OrthogonalCamera.md"
+              },
+              {
+                "name": "OrthogonalCamera_Element",
+                "href": "interfaces/bcf.v2_1.visinfo.OrthogonalCamera_Element.md"
+              },
+              {
+                "name": "PerspectiveCamera",
+                "href": "interfaces/bcf.v2_1.visinfo.PerspectiveCamera.md"
+              },
+              {
+                "name": "PerspectiveCamera_Element",
+                "href": "interfaces/bcf.v2_1.visinfo.PerspectiveCamera_Element.md"
+              },
+              {
+                "name": "Point",
+                "href": "interfaces/bcf.v2_1.visinfo.Point.md"
+              },
+              {
+                "name": "Reference",
+                "href": "interfaces/bcf.v2_1.visinfo.Reference.md"
+              },
+              {
+                "name": "Selection",
+                "href": "interfaces/bcf.v2_1.visinfo.Selection.md"
+              },
+              {
+                "name": "StartPoint",
+                "href": "interfaces/bcf.v2_1.visinfo.StartPoint.md"
+              },
+              {
+                "name": "Up",
+                "href": "interfaces/bcf.v2_1.visinfo.Up.md"
+              },
+              {
+                "name": "ViewSetupHints",
+                "href": "interfaces/bcf.v2_1.visinfo.ViewSetupHints.md"
+              },
+              {
+                "name": "ViewSetupHints_Element",
+                "href": "interfaces/bcf.v2_1.visinfo.ViewSetupHints_Element.md"
+              },
+              {
+                "name": "ViewToWorldScale",
+                "href": "interfaces/bcf.v2_1.visinfo.ViewToWorldScale.md"
+              },
+              {
+                "name": "Visibility",
+                "href": "interfaces/bcf.v2_1.visinfo.Visibility.md"
+              },
+              {
+                "name": "VisualizationInfo",
+                "href": "interfaces/bcf.v2_1.visinfo.VisualizationInfo.md"
+              },
+              {
+                "name": "VisualizationInfo_Type",
+                "href": "interfaces/bcf.v2_1.visinfo.VisualizationInfo_Type.md"
+              },
+              {
+                "name": "X",
+                "href": "interfaces/bcf.v2_1.visinfo.X.md"
+              },
+              {
+                "name": "X_2",
+                "href": "interfaces/bcf.v2_1.visinfo.X_2.md"
+              },
+              {
+                "name": "Y",
+                "href": "interfaces/bcf.v2_1.visinfo.Y.md"
+              },
+              {
+                "name": "Y_2",
+                "href": "interfaces/bcf.v2_1.visinfo.Y_2.md"
+              },
+              {
+                "name": "Z",
+                "href": "interfaces/bcf.v2_1.visinfo.Z.md"
+              },
+              {
+                "name": "Z_2",
+                "href": "interfaces/bcf.v2_1.visinfo.Z_2.md"
+              },
+              {
+                "name": "Bitmap$Children",
+                "href": "types/bcf.v2_1.visinfo.Bitmap_Children.md"
+              },
+              {
+                "name": "BitmapFormat",
+                "href": "types/bcf.v2_1.visinfo.BitmapFormat.md"
+              },
+              {
+                "name": "CameraDirection_2$Children",
+                "href": "types/bcf.v2_1.visinfo.CameraDirection_2_Children.md"
+              },
+              {
+                "name": "CameraDirection$Children",
+                "href": "types/bcf.v2_1.visinfo.CameraDirection_Children.md"
+              },
+              {
+                "name": "CameraUpVector_2$Children",
+                "href": "types/bcf.v2_1.visinfo.CameraUpVector_2_Children.md"
+              },
+              {
+                "name": "CameraUpVector$Children",
+                "href": "types/bcf.v2_1.visinfo.CameraUpVector_Children.md"
+              },
+              {
+                "name": "CameraViewPoint_2$Children",
+                "href": "types/bcf.v2_1.visinfo.CameraViewPoint_2_Children.md"
+              },
+              {
+                "name": "CameraViewPoint$Children",
+                "href": "types/bcf.v2_1.visinfo.CameraViewPoint_Children.md"
+              },
+              {
+                "name": "ClippingPlane_Element$Children",
+                "href": "types/bcf.v2_1.visinfo.ClippingPlane_Element_Children.md"
+              },
+              {
+                "name": "ClippingPlanes$Children",
+                "href": "types/bcf.v2_1.visinfo.ClippingPlanes_Children.md"
+              },
+              {
+                "name": "Color_Value",
+                "href": "types/bcf.v2_1.visinfo.Color_Value.md"
+              },
+              {
+                "name": "Color$Children",
+                "href": "types/bcf.v2_1.visinfo.Color_Children.md"
+              },
+              {
+                "name": "Coloring$Children",
+                "href": "types/bcf.v2_1.visinfo.Coloring_Children.md"
+              },
+              {
+                "name": "Component_Element_2$Children",
+                "href": "types/bcf.v2_1.visinfo.Component_Element_2_Children.md"
+              },
+              {
+                "name": "Component_Element_3$Children",
+                "href": "types/bcf.v2_1.visinfo.Component_Element_3_Children.md"
+              },
+              {
+                "name": "Component_Element$Children",
+                "href": "types/bcf.v2_1.visinfo.Component_Element_Children.md"
+              },
+              {
+                "name": "Components_Element$Children",
+                "href": "types/bcf.v2_1.visinfo.Components_Element_Children.md"
+              },
+              {
+                "name": "Direction_Element$Children",
+                "href": "types/bcf.v2_1.visinfo.Direction_Element_Children.md"
+              },
+              {
+                "name": "EndPoint$Children",
+                "href": "types/bcf.v2_1.visinfo.EndPoint_Children.md"
+              },
+              {
+                "name": "Exceptions$Children",
+                "href": "types/bcf.v2_1.visinfo.Exceptions_Children.md"
+              },
+              {
+                "name": "FieldOfView_2",
+                "href": "types/bcf.v2_1.visinfo.FieldOfView_2.md"
+              },
+              {
+                "name": "Guid",
+                "href": "types/bcf.v2_1.visinfo.Guid.md"
+              },
+              {
+                "name": "IfcGuid_Value",
+                "href": "types/bcf.v2_1.visinfo.IfcGuid_Value.md"
+              },
+              {
+                "name": "Line_Element$Children",
+                "href": "types/bcf.v2_1.visinfo.Line_Element_Children.md"
+              },
+              {
+                "name": "Lines$Children",
+                "href": "types/bcf.v2_1.visinfo.Lines_Children.md"
+              },
+              {
+                "name": "Location_2$Children",
+                "href": "types/bcf.v2_1.visinfo.Location_2_Children.md"
+              },
+              {
+                "name": "Location$Children",
+                "href": "types/bcf.v2_1.visinfo.Location_Children.md"
+              },
+              {
+                "name": "Normal$Children",
+                "href": "types/bcf.v2_1.visinfo.Normal_Children.md"
+              },
+              {
+                "name": "OrthogonalCamera_Element$Children",
+                "href": "types/bcf.v2_1.visinfo.OrthogonalCamera_Element_Children.md"
+              },
+              {
+                "name": "PerspectiveCamera_Element$Children",
+                "href": "types/bcf.v2_1.visinfo.PerspectiveCamera_Element_Children.md"
+              },
+              {
+                "name": "Selection$Children",
+                "href": "types/bcf.v2_1.visinfo.Selection_Children.md"
+              },
+              {
+                "name": "StartPoint$Children",
+                "href": "types/bcf.v2_1.visinfo.StartPoint_Children.md"
+              },
+              {
+                "name": "Up$Children",
+                "href": "types/bcf.v2_1.visinfo.Up_Children.md"
+              },
+              {
+                "name": "ViewSetupHints_Element$Children",
+                "href": "types/bcf.v2_1.visinfo.ViewSetupHints_Element_Children.md"
+              },
+              {
+                "name": "Visibility$Children",
+                "href": "types/bcf.v2_1.visinfo.Visibility_Children.md"
+              },
+              {
+                "name": "VisualizationInfo$Children",
+                "href": "types/bcf.v2_1.visinfo.VisualizationInfo_Children.md"
+              },
+              {
+                "name": "createAuthoringToolId",
+                "href": "variables/bcf.v2_1.visinfo.createAuthoringToolId.md"
+              },
+              {
+                "name": "createBitmap",
+                "href": "variables/bcf.v2_1.visinfo.createBitmap.md"
+              },
+              {
+                "name": "createBitmap_2",
+                "href": "variables/bcf.v2_1.visinfo.createBitmap_2.md"
+              },
+              {
+                "name": "createCameraDirection",
+                "href": "variables/bcf.v2_1.visinfo.createCameraDirection.md"
+              },
+              {
+                "name": "createCameraDirection_2",
+                "href": "variables/bcf.v2_1.visinfo.createCameraDirection_2.md"
+              },
+              {
+                "name": "createCameraUpVector",
+                "href": "variables/bcf.v2_1.visinfo.createCameraUpVector.md"
+              },
+              {
+                "name": "createCameraUpVector_2",
+                "href": "variables/bcf.v2_1.visinfo.createCameraUpVector_2.md"
+              },
+              {
+                "name": "createCameraViewPoint",
+                "href": "variables/bcf.v2_1.visinfo.createCameraViewPoint.md"
+              },
+              {
+                "name": "createCameraViewPoint_2",
+                "href": "variables/bcf.v2_1.visinfo.createCameraViewPoint_2.md"
+              },
+              {
+                "name": "createClippingPlane",
+                "href": "variables/bcf.v2_1.visinfo.createClippingPlane.md"
+              },
+              {
+                "name": "createClippingPlanes",
+                "href": "variables/bcf.v2_1.visinfo.createClippingPlanes.md"
+              },
+              {
+                "name": "createColor",
+                "href": "variables/bcf.v2_1.visinfo.createColor.md"
+              },
+              {
+                "name": "createColoring",
+                "href": "variables/bcf.v2_1.visinfo.createColoring.md"
+              },
+              {
+                "name": "createComponent",
+                "href": "variables/bcf.v2_1.visinfo.createComponent.md"
+              },
+              {
+                "name": "createComponent_2",
+                "href": "variables/bcf.v2_1.visinfo.createComponent_2.md"
+              },
+              {
+                "name": "createComponent_3",
+                "href": "variables/bcf.v2_1.visinfo.createComponent_3.md"
+              },
+              {
+                "name": "createComponents",
+                "href": "variables/bcf.v2_1.visinfo.createComponents.md"
+              },
+              {
+                "name": "createDirection",
+                "href": "variables/bcf.v2_1.visinfo.createDirection.md"
+              },
+              {
+                "name": "createEndPoint",
+                "href": "variables/bcf.v2_1.visinfo.createEndPoint.md"
+              },
+              {
+                "name": "createExceptions",
+                "href": "variables/bcf.v2_1.visinfo.createExceptions.md"
+              },
+              {
+                "name": "createFieldOfView",
+                "href": "variables/bcf.v2_1.visinfo.createFieldOfView.md"
+              },
+              {
+                "name": "createHeight",
+                "href": "variables/bcf.v2_1.visinfo.createHeight.md"
+              },
+              {
+                "name": "createLine",
+                "href": "variables/bcf.v2_1.visinfo.createLine.md"
+              },
+              {
+                "name": "createLines",
+                "href": "variables/bcf.v2_1.visinfo.createLines.md"
+              },
+              {
+                "name": "createLocation",
+                "href": "variables/bcf.v2_1.visinfo.createLocation.md"
+              },
+              {
+                "name": "createLocation_2",
+                "href": "variables/bcf.v2_1.visinfo.createLocation_2.md"
+              },
+              {
+                "name": "createNormal",
+                "href": "variables/bcf.v2_1.visinfo.createNormal.md"
+              },
+              {
+                "name": "createOriginatingSystem",
+                "href": "variables/bcf.v2_1.visinfo.createOriginatingSystem.md"
+              },
+              {
+                "name": "createOrthogonalCamera",
+                "href": "variables/bcf.v2_1.visinfo.createOrthogonalCamera.md"
+              },
+              {
+                "name": "createPerspectiveCamera",
+                "href": "variables/bcf.v2_1.visinfo.createPerspectiveCamera.md"
+              },
+              {
+                "name": "createReference",
+                "href": "variables/bcf.v2_1.visinfo.createReference.md"
+              },
+              {
+                "name": "createSelection",
+                "href": "variables/bcf.v2_1.visinfo.createSelection.md"
+              },
+              {
+                "name": "createStartPoint",
+                "href": "variables/bcf.v2_1.visinfo.createStartPoint.md"
+              },
+              {
+                "name": "createUp",
+                "href": "variables/bcf.v2_1.visinfo.createUp.md"
+              },
+              {
+                "name": "createViewSetupHints",
+                "href": "variables/bcf.v2_1.visinfo.createViewSetupHints.md"
+              },
+              {
+                "name": "createViewToWorldScale",
+                "href": "variables/bcf.v2_1.visinfo.createViewToWorldScale.md"
+              },
+              {
+                "name": "createVisibility",
+                "href": "variables/bcf.v2_1.visinfo.createVisibility.md"
+              },
+              {
+                "name": "createVisualizationInfo",
+                "href": "variables/bcf.v2_1.visinfo.createVisualizationInfo.md"
+              },
+              {
+                "name": "createX",
+                "href": "variables/bcf.v2_1.visinfo.createX.md"
+              },
+              {
+                "name": "createX_2",
+                "href": "variables/bcf.v2_1.visinfo.createX_2.md"
+              },
+              {
+                "name": "createY",
+                "href": "variables/bcf.v2_1.visinfo.createY.md"
+              },
+              {
+                "name": "createY_2",
+                "href": "variables/bcf.v2_1.visinfo.createY_2.md"
+              },
+              {
+                "name": "createZ",
+                "href": "variables/bcf.v2_1.visinfo.createZ.md"
+              },
+              {
+                "name": "createZ_2",
+                "href": "variables/bcf.v2_1.visinfo.createZ_2.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v2_1.visinfo.createXmlFile.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "v3_0",
+        "href": "modules/bcf.v3_0.md",
+        "items": [
+          {
+            "name": "documents",
+            "href": "modules/bcf.v3_0.documents.md",
+            "items": [
+              {
+                "name": "Description",
+                "href": "interfaces/bcf.v3_0.documents.Description.md"
+              },
+              {
+                "name": "Document",
+                "href": "interfaces/bcf.v3_0.documents.Document.md"
+              },
+              {
+                "name": "Document_Element",
+                "href": "interfaces/bcf.v3_0.documents.Document_Element.md"
+              },
+              {
+                "name": "DocumentInfo",
+                "href": "interfaces/bcf.v3_0.documents.DocumentInfo.md"
+              },
+              {
+                "name": "DocumentInfo_Type",
+                "href": "interfaces/bcf.v3_0.documents.DocumentInfo_Type.md"
+              },
+              {
+                "name": "Documents",
+                "href": "interfaces/bcf.v3_0.documents.Documents.md"
+              },
+              {
+                "name": "Documents_Type",
+                "href": "interfaces/bcf.v3_0.documents.Documents_Type.md"
+              },
+              {
+                "name": "Filename",
+                "href": "interfaces/bcf.v3_0.documents.Filename.md"
+              },
+              {
+                "name": "Document_Element$Children",
+                "href": "types/bcf.v3_0.documents.Document_Element_Children.md"
+              },
+              {
+                "name": "DocumentInfo$Children",
+                "href": "types/bcf.v3_0.documents.DocumentInfo_Children.md"
+              },
+              {
+                "name": "Documents$Children",
+                "href": "types/bcf.v3_0.documents.Documents_Children.md"
+              },
+              {
+                "name": "Guid",
+                "href": "types/bcf.v3_0.documents.Guid.md"
+              },
+              {
+                "name": "NonEmptyOrBlankString",
+                "href": "types/bcf.v3_0.documents.NonEmptyOrBlankString.md"
+              },
+              {
+                "name": "createDescription",
+                "href": "variables/bcf.v3_0.documents.createDescription.md"
+              },
+              {
+                "name": "createDocument",
+                "href": "variables/bcf.v3_0.documents.createDocument.md"
+              },
+              {
+                "name": "createDocumentInfo",
+                "href": "variables/bcf.v3_0.documents.createDocumentInfo.md"
+              },
+              {
+                "name": "createDocuments",
+                "href": "variables/bcf.v3_0.documents.createDocuments.md"
+              },
+              {
+                "name": "createFilename",
+                "href": "variables/bcf.v3_0.documents.createFilename.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v3_0.documents.createXmlFile.md"
+              }
+            ]
+          },
+          {
+            "name": "extensions",
+            "href": "modules/bcf.v3_0.extensions.md",
+            "items": [
+              {
+                "name": "Extensions",
+                "href": "interfaces/bcf.v3_0.extensions.Extensions.md"
+              },
+              {
+                "name": "Extensions_Type",
+                "href": "interfaces/bcf.v3_0.extensions.Extensions_Type.md"
+              },
+              {
+                "name": "Priorities",
+                "href": "interfaces/bcf.v3_0.extensions.Priorities.md"
+              },
+              {
+                "name": "Priorities_Type",
+                "href": "interfaces/bcf.v3_0.extensions.Priorities_Type.md"
+              },
+              {
+                "name": "Priority",
+                "href": "interfaces/bcf.v3_0.extensions.Priority.md"
+              },
+              {
+                "name": "SnippetType",
+                "href": "interfaces/bcf.v3_0.extensions.SnippetType.md"
+              },
+              {
+                "name": "SnippetTypes",
+                "href": "interfaces/bcf.v3_0.extensions.SnippetTypes.md"
+              },
+              {
+                "name": "SnippetTypes_Type",
+                "href": "interfaces/bcf.v3_0.extensions.SnippetTypes_Type.md"
+              },
+              {
+                "name": "Stage",
+                "href": "interfaces/bcf.v3_0.extensions.Stage.md"
+              },
+              {
+                "name": "Stages",
+                "href": "interfaces/bcf.v3_0.extensions.Stages.md"
+              },
+              {
+                "name": "Stages_Type",
+                "href": "interfaces/bcf.v3_0.extensions.Stages_Type.md"
+              },
+              {
+                "name": "TopicLabel",
+                "href": "interfaces/bcf.v3_0.extensions.TopicLabel.md"
+              },
+              {
+                "name": "TopicLabels",
+                "href": "interfaces/bcf.v3_0.extensions.TopicLabels.md"
+              },
+              {
+                "name": "TopicLabels_Type",
+                "href": "interfaces/bcf.v3_0.extensions.TopicLabels_Type.md"
+              },
+              {
+                "name": "TopicStatus",
+                "href": "interfaces/bcf.v3_0.extensions.TopicStatus.md"
+              },
+              {
+                "name": "TopicStatuses",
+                "href": "interfaces/bcf.v3_0.extensions.TopicStatuses.md"
+              },
+              {
+                "name": "TopicStatuses_Type",
+                "href": "interfaces/bcf.v3_0.extensions.TopicStatuses_Type.md"
+              },
+              {
+                "name": "TopicType",
+                "href": "interfaces/bcf.v3_0.extensions.TopicType.md"
+              },
+              {
+                "name": "TopicTypes",
+                "href": "interfaces/bcf.v3_0.extensions.TopicTypes.md"
+              },
+              {
+                "name": "TopicTypes_Type",
+                "href": "interfaces/bcf.v3_0.extensions.TopicTypes_Type.md"
+              },
+              {
+                "name": "User",
+                "href": "interfaces/bcf.v3_0.extensions.User.md"
+              },
+              {
+                "name": "Users",
+                "href": "interfaces/bcf.v3_0.extensions.Users.md"
+              },
+              {
+                "name": "Users_Type",
+                "href": "interfaces/bcf.v3_0.extensions.Users_Type.md"
+              },
+              {
+                "name": "Extensions$Children",
+                "href": "types/bcf.v3_0.extensions.Extensions_Children.md"
+              },
+              {
+                "name": "NonEmptyOrBlankString",
+                "href": "types/bcf.v3_0.extensions.NonEmptyOrBlankString.md"
+              },
+              {
+                "name": "Priorities$Children",
+                "href": "types/bcf.v3_0.extensions.Priorities_Children.md"
+              },
+              {
+                "name": "SnippetTypes$Children",
+                "href": "types/bcf.v3_0.extensions.SnippetTypes_Children.md"
+              },
+              {
+                "name": "Stages$Children",
+                "href": "types/bcf.v3_0.extensions.Stages_Children.md"
+              },
+              {
+                "name": "TopicLabels$Children",
+                "href": "types/bcf.v3_0.extensions.TopicLabels_Children.md"
+              },
+              {
+                "name": "TopicStatuses$Children",
+                "href": "types/bcf.v3_0.extensions.TopicStatuses_Children.md"
+              },
+              {
+                "name": "TopicTypes$Children",
+                "href": "types/bcf.v3_0.extensions.TopicTypes_Children.md"
+              },
+              {
+                "name": "Users$Children",
+                "href": "types/bcf.v3_0.extensions.Users_Children.md"
+              },
+              {
+                "name": "createExtensions",
+                "href": "variables/bcf.v3_0.extensions.createExtensions.md"
+              },
+              {
+                "name": "createPriorities",
+                "href": "variables/bcf.v3_0.extensions.createPriorities.md"
+              },
+              {
+                "name": "createPriority",
+                "href": "variables/bcf.v3_0.extensions.createPriority.md"
+              },
+              {
+                "name": "createSnippetType",
+                "href": "variables/bcf.v3_0.extensions.createSnippetType.md"
+              },
+              {
+                "name": "createSnippetTypes",
+                "href": "variables/bcf.v3_0.extensions.createSnippetTypes.md"
+              },
+              {
+                "name": "createStage",
+                "href": "variables/bcf.v3_0.extensions.createStage.md"
+              },
+              {
+                "name": "createStages",
+                "href": "variables/bcf.v3_0.extensions.createStages.md"
+              },
+              {
+                "name": "createTopicLabel",
+                "href": "variables/bcf.v3_0.extensions.createTopicLabel.md"
+              },
+              {
+                "name": "createTopicLabels",
+                "href": "variables/bcf.v3_0.extensions.createTopicLabels.md"
+              },
+              {
+                "name": "createTopicStatus",
+                "href": "variables/bcf.v3_0.extensions.createTopicStatus.md"
+              },
+              {
+                "name": "createTopicStatuses",
+                "href": "variables/bcf.v3_0.extensions.createTopicStatuses.md"
+              },
+              {
+                "name": "createTopicType",
+                "href": "variables/bcf.v3_0.extensions.createTopicType.md"
+              },
+              {
+                "name": "createTopicTypes",
+                "href": "variables/bcf.v3_0.extensions.createTopicTypes.md"
+              },
+              {
+                "name": "createUser",
+                "href": "variables/bcf.v3_0.extensions.createUser.md"
+              },
+              {
+                "name": "createUsers",
+                "href": "variables/bcf.v3_0.extensions.createUsers.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v3_0.extensions.createXmlFile.md"
+              }
+            ]
+          },
+          {
+            "name": "markup",
+            "href": "modules/bcf.v3_0.markup.md",
+            "items": [
+              {
+                "name": "AssignedTo",
+                "href": "interfaces/bcf.v3_0.markup.AssignedTo.md"
+              },
+              {
+                "name": "Author",
+                "href": "interfaces/bcf.v3_0.markup.Author.md"
+              },
+              {
+                "name": "BimSnippet",
+                "href": "interfaces/bcf.v3_0.markup.BimSnippet.md"
+              },
+              {
+                "name": "BimSnippet_Element",
+                "href": "interfaces/bcf.v3_0.markup.BimSnippet_Element.md"
+              },
+              {
+                "name": "Comment",
+                "href": "interfaces/bcf.v3_0.markup.Comment.md"
+              },
+              {
+                "name": "Comment_Element",
+                "href": "interfaces/bcf.v3_0.markup.Comment_Element.md"
+              },
+              {
+                "name": "Comment_Element_2",
+                "href": "interfaces/bcf.v3_0.markup.Comment_Element_2.md"
+              },
+              {
+                "name": "Comments",
+                "href": "interfaces/bcf.v3_0.markup.Comments.md"
+              },
+              {
+                "name": "Comments_Type",
+                "href": "interfaces/bcf.v3_0.markup.Comments_Type.md"
+              },
+              {
+                "name": "CreationAuthor",
+                "href": "interfaces/bcf.v3_0.markup.CreationAuthor.md"
+              },
+              {
+                "name": "CreationDate",
+                "href": "interfaces/bcf.v3_0.markup.CreationDate.md"
+              },
+              {
+                "name": "Date",
+                "href": "interfaces/bcf.v3_0.markup.Date.md"
+              },
+              {
+                "name": "Date_2",
+                "href": "interfaces/bcf.v3_0.markup.Date_2.md"
+              },
+              {
+                "name": "Description",
+                "href": "interfaces/bcf.v3_0.markup.Description.md"
+              },
+              {
+                "name": "Description_2",
+                "href": "interfaces/bcf.v3_0.markup.Description_2.md"
+              },
+              {
+                "name": "DocumentGuid",
+                "href": "interfaces/bcf.v3_0.markup.DocumentGuid.md"
+              },
+              {
+                "name": "DocumentReference",
+                "href": "interfaces/bcf.v3_0.markup.DocumentReference.md"
+              },
+              {
+                "name": "DocumentReference_Element",
+                "href": "interfaces/bcf.v3_0.markup.DocumentReference_Element.md"
+              },
+              {
+                "name": "DocumentReferences",
+                "href": "interfaces/bcf.v3_0.markup.DocumentReferences.md"
+              },
+              {
+                "name": "DocumentReferences_Type",
+                "href": "interfaces/bcf.v3_0.markup.DocumentReferences_Type.md"
+              },
+              {
+                "name": "DueDate",
+                "href": "interfaces/bcf.v3_0.markup.DueDate.md"
+              },
+              {
+                "name": "File",
+                "href": "interfaces/bcf.v3_0.markup.File.md"
+              },
+              {
+                "name": "File_Element",
+                "href": "interfaces/bcf.v3_0.markup.File_Element.md"
+              },
+              {
+                "name": "Filename",
+                "href": "interfaces/bcf.v3_0.markup.Filename.md"
+              },
+              {
+                "name": "Files",
+                "href": "interfaces/bcf.v3_0.markup.Files.md"
+              },
+              {
+                "name": "Files_Type",
+                "href": "interfaces/bcf.v3_0.markup.Files_Type.md"
+              },
+              {
+                "name": "Header",
+                "href": "interfaces/bcf.v3_0.markup.Header.md"
+              },
+              {
+                "name": "Header_Element",
+                "href": "interfaces/bcf.v3_0.markup.Header_Element.md"
+              },
+              {
+                "name": "Index",
+                "href": "interfaces/bcf.v3_0.markup.Index.md"
+              },
+              {
+                "name": "Index_2",
+                "href": "interfaces/bcf.v3_0.markup.Index_2.md"
+              },
+              {
+                "name": "Label",
+                "href": "interfaces/bcf.v3_0.markup.Label.md"
+              },
+              {
+                "name": "Labels",
+                "href": "interfaces/bcf.v3_0.markup.Labels.md"
+              },
+              {
+                "name": "Labels_Type",
+                "href": "interfaces/bcf.v3_0.markup.Labels_Type.md"
+              },
+              {
+                "name": "Markup",
+                "href": "interfaces/bcf.v3_0.markup.Markup.md"
+              },
+              {
+                "name": "Markup_Type",
+                "href": "interfaces/bcf.v3_0.markup.Markup_Type.md"
+              },
+              {
+                "name": "ModifiedAuthor",
+                "href": "interfaces/bcf.v3_0.markup.ModifiedAuthor.md"
+              },
+              {
+                "name": "ModifiedAuthor_2",
+                "href": "interfaces/bcf.v3_0.markup.ModifiedAuthor_2.md"
+              },
+              {
+                "name": "ModifiedDate",
+                "href": "interfaces/bcf.v3_0.markup.ModifiedDate.md"
+              },
+              {
+                "name": "ModifiedDate_2",
+                "href": "interfaces/bcf.v3_0.markup.ModifiedDate_2.md"
+              },
+              {
+                "name": "Priority",
+                "href": "interfaces/bcf.v3_0.markup.Priority.md"
+              },
+              {
+                "name": "Reference",
+                "href": "interfaces/bcf.v3_0.markup.Reference.md"
+              },
+              {
+                "name": "Reference_2",
+                "href": "interfaces/bcf.v3_0.markup.Reference_2.md"
+              },
+              {
+                "name": "ReferenceLink",
+                "href": "interfaces/bcf.v3_0.markup.ReferenceLink.md"
+              },
+              {
+                "name": "ReferenceLinks",
+                "href": "interfaces/bcf.v3_0.markup.ReferenceLinks.md"
+              },
+              {
+                "name": "ReferenceLinks_Type",
+                "href": "interfaces/bcf.v3_0.markup.ReferenceLinks_Type.md"
+              },
+              {
+                "name": "ReferenceSchema",
+                "href": "interfaces/bcf.v3_0.markup.ReferenceSchema.md"
+              },
+              {
+                "name": "RelatedTopic",
+                "href": "interfaces/bcf.v3_0.markup.RelatedTopic.md"
+              },
+              {
+                "name": "RelatedTopic_Type",
+                "href": "interfaces/bcf.v3_0.markup.RelatedTopic_Type.md"
+              },
+              {
+                "name": "RelatedTopics",
+                "href": "interfaces/bcf.v3_0.markup.RelatedTopics.md"
+              },
+              {
+                "name": "RelatedTopics_Type",
+                "href": "interfaces/bcf.v3_0.markup.RelatedTopics_Type.md"
+              },
+              {
+                "name": "Snapshot",
+                "href": "interfaces/bcf.v3_0.markup.Snapshot.md"
+              },
+              {
+                "name": "Stage",
+                "href": "interfaces/bcf.v3_0.markup.Stage.md"
+              },
+              {
+                "name": "Title",
+                "href": "interfaces/bcf.v3_0.markup.Title.md"
+              },
+              {
+                "name": "Topic",
+                "href": "interfaces/bcf.v3_0.markup.Topic.md"
+              },
+              {
+                "name": "Topic_Element",
+                "href": "interfaces/bcf.v3_0.markup.Topic_Element.md"
+              },
+              {
+                "name": "Url",
+                "href": "interfaces/bcf.v3_0.markup.Url.md"
+              },
+              {
+                "name": "Viewpoint",
+                "href": "interfaces/bcf.v3_0.markup.Viewpoint.md"
+              },
+              {
+                "name": "ViewPoint",
+                "href": "interfaces/bcf.v3_0.markup.ViewPoint-1.md"
+              },
+              {
+                "name": "Viewpoint_2",
+                "href": "interfaces/bcf.v3_0.markup.Viewpoint_2.md"
+              },
+              {
+                "name": "ViewPoint_Element",
+                "href": "interfaces/bcf.v3_0.markup.ViewPoint_Element.md"
+              },
+              {
+                "name": "Viewpoint_Type",
+                "href": "interfaces/bcf.v3_0.markup.Viewpoint_Type.md"
+              },
+              {
+                "name": "Viewpoints",
+                "href": "interfaces/bcf.v3_0.markup.Viewpoints.md"
+              },
+              {
+                "name": "Viewpoints_Type",
+                "href": "interfaces/bcf.v3_0.markup.Viewpoints_Type.md"
+              },
+              {
+                "name": "BimSnippet_Element$Children",
+                "href": "types/bcf.v3_0.markup.BimSnippet_Element_Children.md"
+              },
+              {
+                "name": "Comment_Element$Children",
+                "href": "types/bcf.v3_0.markup.Comment_Element_Children.md"
+              },
+              {
+                "name": "Comments$Children",
+                "href": "types/bcf.v3_0.markup.Comments_Children.md"
+              },
+              {
+                "name": "DocumentReference_Element$Children",
+                "href": "types/bcf.v3_0.markup.DocumentReference_Element_Children.md"
+              },
+              {
+                "name": "DocumentReferences$Children",
+                "href": "types/bcf.v3_0.markup.DocumentReferences_Children.md"
+              },
+              {
+                "name": "File_Element$Children",
+                "href": "types/bcf.v3_0.markup.File_Element_Children.md"
+              },
+              {
+                "name": "Files$Children",
+                "href": "types/bcf.v3_0.markup.Files_Children.md"
+              },
+              {
+                "name": "Guid",
+                "href": "types/bcf.v3_0.markup.Guid.md"
+              },
+              {
+                "name": "Header_Element$Children",
+                "href": "types/bcf.v3_0.markup.Header_Element_Children.md"
+              },
+              {
+                "name": "IfcGuid",
+                "href": "types/bcf.v3_0.markup.IfcGuid.md"
+              },
+              {
+                "name": "Labels$Children",
+                "href": "types/bcf.v3_0.markup.Labels_Children.md"
+              },
+              {
+                "name": "Markup$Children",
+                "href": "types/bcf.v3_0.markup.Markup_Children.md"
+              },
+              {
+                "name": "NonEmptyOrBlankString",
+                "href": "types/bcf.v3_0.markup.NonEmptyOrBlankString.md"
+              },
+              {
+                "name": "ReferenceLinks$Children",
+                "href": "types/bcf.v3_0.markup.ReferenceLinks_Children.md"
+              },
+              {
+                "name": "RelatedTopic$Children",
+                "href": "types/bcf.v3_0.markup.RelatedTopic_Children.md"
+              },
+              {
+                "name": "RelatedTopics$Children",
+                "href": "types/bcf.v3_0.markup.RelatedTopics_Children.md"
+              },
+              {
+                "name": "Topic_Element$Children",
+                "href": "types/bcf.v3_0.markup.Topic_Element_Children.md"
+              },
+              {
+                "name": "ViewPoint_Element$Children",
+                "href": "types/bcf.v3_0.markup.ViewPoint_Element_Children.md"
+              },
+              {
+                "name": "Viewpoint$Children",
+                "href": "types/bcf.v3_0.markup.Viewpoint_Children.md"
+              },
+              {
+                "name": "Viewpoints$Children",
+                "href": "types/bcf.v3_0.markup.Viewpoints_Children.md"
+              },
+              {
+                "name": "createAssignedTo",
+                "href": "variables/bcf.v3_0.markup.createAssignedTo.md"
+              },
+              {
+                "name": "createAuthor",
+                "href": "variables/bcf.v3_0.markup.createAuthor.md"
+              },
+              {
+                "name": "createBimSnippet",
+                "href": "variables/bcf.v3_0.markup.createBimSnippet.md"
+              },
+              {
+                "name": "createComment",
+                "href": "variables/bcf.v3_0.markup.createComment.md"
+              },
+              {
+                "name": "createComment_2",
+                "href": "variables/bcf.v3_0.markup.createComment_2.md"
+              },
+              {
+                "name": "createComments",
+                "href": "variables/bcf.v3_0.markup.createComments.md"
+              },
+              {
+                "name": "createCreationAuthor",
+                "href": "variables/bcf.v3_0.markup.createCreationAuthor.md"
+              },
+              {
+                "name": "createCreationDate",
+                "href": "variables/bcf.v3_0.markup.createCreationDate.md"
+              },
+              {
+                "name": "createDate",
+                "href": "variables/bcf.v3_0.markup.createDate.md"
+              },
+              {
+                "name": "createDate_2",
+                "href": "variables/bcf.v3_0.markup.createDate_2.md"
+              },
+              {
+                "name": "createDescription",
+                "href": "variables/bcf.v3_0.markup.createDescription.md"
+              },
+              {
+                "name": "createDescription_2",
+                "href": "variables/bcf.v3_0.markup.createDescription_2.md"
+              },
+              {
+                "name": "createDocumentGuid",
+                "href": "variables/bcf.v3_0.markup.createDocumentGuid.md"
+              },
+              {
+                "name": "createDocumentReference",
+                "href": "variables/bcf.v3_0.markup.createDocumentReference.md"
+              },
+              {
+                "name": "createDocumentReferences",
+                "href": "variables/bcf.v3_0.markup.createDocumentReferences.md"
+              },
+              {
+                "name": "createDueDate",
+                "href": "variables/bcf.v3_0.markup.createDueDate.md"
+              },
+              {
+                "name": "createFile",
+                "href": "variables/bcf.v3_0.markup.createFile.md"
+              },
+              {
+                "name": "createFilename",
+                "href": "variables/bcf.v3_0.markup.createFilename.md"
+              },
+              {
+                "name": "createFiles",
+                "href": "variables/bcf.v3_0.markup.createFiles.md"
+              },
+              {
+                "name": "createHeader",
+                "href": "variables/bcf.v3_0.markup.createHeader.md"
+              },
+              {
+                "name": "createIndex",
+                "href": "variables/bcf.v3_0.markup.createIndex.md"
+              },
+              {
+                "name": "createIndex_2",
+                "href": "variables/bcf.v3_0.markup.createIndex_2.md"
+              },
+              {
+                "name": "createLabel",
+                "href": "variables/bcf.v3_0.markup.createLabel.md"
+              },
+              {
+                "name": "createLabels",
+                "href": "variables/bcf.v3_0.markup.createLabels.md"
+              },
+              {
+                "name": "createMarkup",
+                "href": "variables/bcf.v3_0.markup.createMarkup.md"
+              },
+              {
+                "name": "createModifiedAuthor",
+                "href": "variables/bcf.v3_0.markup.createModifiedAuthor.md"
+              },
+              {
+                "name": "createModifiedAuthor_2",
+                "href": "variables/bcf.v3_0.markup.createModifiedAuthor_2.md"
+              },
+              {
+                "name": "createModifiedDate",
+                "href": "variables/bcf.v3_0.markup.createModifiedDate.md"
+              },
+              {
+                "name": "createModifiedDate_2",
+                "href": "variables/bcf.v3_0.markup.createModifiedDate_2.md"
+              },
+              {
+                "name": "createPriority",
+                "href": "variables/bcf.v3_0.markup.createPriority.md"
+              },
+              {
+                "name": "createReference",
+                "href": "variables/bcf.v3_0.markup.createReference.md"
+              },
+              {
+                "name": "createReference_2",
+                "href": "variables/bcf.v3_0.markup.createReference_2.md"
+              },
+              {
+                "name": "createReferenceLink",
+                "href": "variables/bcf.v3_0.markup.createReferenceLink.md"
+              },
+              {
+                "name": "createReferenceLinks",
+                "href": "variables/bcf.v3_0.markup.createReferenceLinks.md"
+              },
+              {
+                "name": "createReferenceSchema",
+                "href": "variables/bcf.v3_0.markup.createReferenceSchema.md"
+              },
+              {
+                "name": "createRelatedTopic",
+                "href": "variables/bcf.v3_0.markup.createRelatedTopic.md"
+              },
+              {
+                "name": "createRelatedTopics",
+                "href": "variables/bcf.v3_0.markup.createRelatedTopics.md"
+              },
+              {
+                "name": "createSnapshot",
+                "href": "variables/bcf.v3_0.markup.createSnapshot.md"
+              },
+              {
+                "name": "createStage",
+                "href": "variables/bcf.v3_0.markup.createStage.md"
+              },
+              {
+                "name": "createTitle",
+                "href": "variables/bcf.v3_0.markup.createTitle.md"
+              },
+              {
+                "name": "createTopic",
+                "href": "variables/bcf.v3_0.markup.createTopic.md"
+              },
+              {
+                "name": "createUrl",
+                "href": "variables/bcf.v3_0.markup.createUrl.md"
+              },
+              {
+                "name": "createViewpoint",
+                "href": "variables/bcf.v3_0.markup.createViewpoint.md"
+              },
+              {
+                "name": "createViewPoint",
+                "href": "variables/bcf.v3_0.markup.createViewPoint-1.md"
+              },
+              {
+                "name": "createViewpoint_2",
+                "href": "variables/bcf.v3_0.markup.createViewpoint_2.md"
+              },
+              {
+                "name": "createViewpoints",
+                "href": "variables/bcf.v3_0.markup.createViewpoints.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v3_0.markup.createXmlFile.md"
+              }
+            ]
+          },
+          {
+            "name": "project",
+            "href": "modules/bcf.v3_0.project.md",
+            "items": [
+              {
+                "name": "Name",
+                "href": "interfaces/bcf.v3_0.project.Name.md"
+              },
+              {
+                "name": "Project",
+                "href": "interfaces/bcf.v3_0.project.Project.md"
+              },
+              {
+                "name": "Project_Element",
+                "href": "interfaces/bcf.v3_0.project.Project_Element.md"
+              },
+              {
+                "name": "ProjectInfo",
+                "href": "interfaces/bcf.v3_0.project.ProjectInfo.md"
+              },
+              {
+                "name": "ProjectInfo_Type",
+                "href": "interfaces/bcf.v3_0.project.ProjectInfo_Type.md"
+              },
+              {
+                "name": "NonEmptyOrBlankString",
+                "href": "types/bcf.v3_0.project.NonEmptyOrBlankString.md"
+              },
+              {
+                "name": "Project_Element$Children",
+                "href": "types/bcf.v3_0.project.Project_Element_Children.md"
+              },
+              {
+                "name": "ProjectInfo$Children",
+                "href": "types/bcf.v3_0.project.ProjectInfo_Children.md"
+              },
+              {
+                "name": "createName",
+                "href": "variables/bcf.v3_0.project.createName.md"
+              },
+              {
+                "name": "createProject",
+                "href": "variables/bcf.v3_0.project.createProject.md"
+              },
+              {
+                "name": "createProjectInfo",
+                "href": "variables/bcf.v3_0.project.createProjectInfo.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v3_0.project.createXmlFile.md"
+              }
+            ]
+          },
+          {
+            "name": "shared_types",
+            "href": "modules/bcf.v3_0.shared_types.md",
+            "items": [
+              {
+                "name": "Guid",
+                "href": "types/bcf.v3_0.shared_types.Guid.md"
+              },
+              {
+                "name": "NonEmptyOrBlankString",
+                "href": "types/bcf.v3_0.shared_types.NonEmptyOrBlankString.md"
+              }
+            ]
+          },
+          {
+            "name": "version",
+            "href": "modules/bcf.v3_0.version.md",
+            "items": [
+              {
+                "name": "Version",
+                "href": "interfaces/bcf.v3_0.version.Version.md"
+              },
+              {
+                "name": "Version_Type",
+                "href": "interfaces/bcf.v3_0.version.Version_Type.md"
+              },
+              {
+                "name": "Version$Children",
+                "href": "types/bcf.v3_0.version.Version_Children.md"
+              },
+              {
+                "name": "createVersion",
+                "href": "variables/bcf.v3_0.version.createVersion.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v3_0.version.createXmlFile.md"
+              }
+            ]
+          },
+          {
+            "name": "visinfo",
+            "href": "modules/bcf.v3_0.visinfo.md",
+            "items": [
+              {
+                "name": "AspectRatio",
+                "href": "interfaces/bcf.v3_0.visinfo.AspectRatio.md"
+              },
+              {
+                "name": "AspectRatio_2",
+                "href": "interfaces/bcf.v3_0.visinfo.AspectRatio_2.md"
+              },
+              {
+                "name": "AuthoringToolId",
+                "href": "interfaces/bcf.v3_0.visinfo.AuthoringToolId.md"
+              },
+              {
+                "name": "Bitmap",
+                "href": "interfaces/bcf.v3_0.visinfo.Bitmap.md"
+              },
+              {
+                "name": "Bitmap_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.Bitmap_Element.md"
+              },
+              {
+                "name": "Bitmaps",
+                "href": "interfaces/bcf.v3_0.visinfo.Bitmaps.md"
+              },
+              {
+                "name": "Bitmaps_Type",
+                "href": "interfaces/bcf.v3_0.visinfo.Bitmaps_Type.md"
+              },
+              {
+                "name": "CameraDirection",
+                "href": "interfaces/bcf.v3_0.visinfo.CameraDirection.md"
+              },
+              {
+                "name": "CameraDirection_2",
+                "href": "interfaces/bcf.v3_0.visinfo.CameraDirection_2.md"
+              },
+              {
+                "name": "CameraUpVector",
+                "href": "interfaces/bcf.v3_0.visinfo.CameraUpVector.md"
+              },
+              {
+                "name": "CameraUpVector_2",
+                "href": "interfaces/bcf.v3_0.visinfo.CameraUpVector_2.md"
+              },
+              {
+                "name": "CameraViewPoint",
+                "href": "interfaces/bcf.v3_0.visinfo.CameraViewPoint.md"
+              },
+              {
+                "name": "CameraViewPoint_2",
+                "href": "interfaces/bcf.v3_0.visinfo.CameraViewPoint_2.md"
+              },
+              {
+                "name": "ClippingPlane",
+                "href": "interfaces/bcf.v3_0.visinfo.ClippingPlane.md"
+              },
+              {
+                "name": "ClippingPlane_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.ClippingPlane_Element.md"
+              },
+              {
+                "name": "ClippingPlanes",
+                "href": "interfaces/bcf.v3_0.visinfo.ClippingPlanes.md"
+              },
+              {
+                "name": "ClippingPlanes_Type",
+                "href": "interfaces/bcf.v3_0.visinfo.ClippingPlanes_Type.md"
+              },
+              {
+                "name": "Color",
+                "href": "interfaces/bcf.v3_0.visinfo.Color.md"
+              },
+              {
+                "name": "Color_Type",
+                "href": "interfaces/bcf.v3_0.visinfo.Color_Type.md"
+              },
+              {
+                "name": "Coloring",
+                "href": "interfaces/bcf.v3_0.visinfo.Coloring.md"
+              },
+              {
+                "name": "Component",
+                "href": "interfaces/bcf.v3_0.visinfo.Component.md"
+              },
+              {
+                "name": "Component_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.Component_Element.md"
+              },
+              {
+                "name": "Component_Element_2",
+                "href": "interfaces/bcf.v3_0.visinfo.Component_Element_2.md"
+              },
+              {
+                "name": "Component_Element_3",
+                "href": "interfaces/bcf.v3_0.visinfo.Component_Element_3.md"
+              },
+              {
+                "name": "ComponentColoring",
+                "href": "interfaces/bcf.v3_0.visinfo.ComponentColoring.md"
+              },
+              {
+                "name": "Components",
+                "href": "interfaces/bcf.v3_0.visinfo.Components.md"
+              },
+              {
+                "name": "Components_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.Components_Element.md"
+              },
+              {
+                "name": "Components_Element_2",
+                "href": "interfaces/bcf.v3_0.visinfo.Components_Element_2.md"
+              },
+              {
+                "name": "Components_Element_2_Type",
+                "href": "interfaces/bcf.v3_0.visinfo.Components_Element_2_Type.md"
+              },
+              {
+                "name": "ComponentSelection",
+                "href": "interfaces/bcf.v3_0.visinfo.ComponentSelection.md"
+              },
+              {
+                "name": "ComponentVisibility",
+                "href": "interfaces/bcf.v3_0.visinfo.ComponentVisibility.md"
+              },
+              {
+                "name": "Direction",
+                "href": "interfaces/bcf.v3_0.visinfo.Direction.md"
+              },
+              {
+                "name": "Direction_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.Direction_Element.md"
+              },
+              {
+                "name": "EndPoint",
+                "href": "interfaces/bcf.v3_0.visinfo.EndPoint.md"
+              },
+              {
+                "name": "Exceptions",
+                "href": "interfaces/bcf.v3_0.visinfo.Exceptions.md"
+              },
+              {
+                "name": "Exceptions_Type",
+                "href": "interfaces/bcf.v3_0.visinfo.Exceptions_Type.md"
+              },
+              {
+                "name": "FieldOfView",
+                "href": "interfaces/bcf.v3_0.visinfo.FieldOfView.md"
+              },
+              {
+                "name": "Format",
+                "href": "interfaces/bcf.v3_0.visinfo.Format.md"
+              },
+              {
+                "name": "Height",
+                "href": "interfaces/bcf.v3_0.visinfo.Height.md"
+              },
+              {
+                "name": "Line",
+                "href": "interfaces/bcf.v3_0.visinfo.Line.md"
+              },
+              {
+                "name": "Line_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.Line_Element.md"
+              },
+              {
+                "name": "Lines",
+                "href": "interfaces/bcf.v3_0.visinfo.Lines.md"
+              },
+              {
+                "name": "Lines_Type",
+                "href": "interfaces/bcf.v3_0.visinfo.Lines_Type.md"
+              },
+              {
+                "name": "Location",
+                "href": "interfaces/bcf.v3_0.visinfo.Location.md"
+              },
+              {
+                "name": "Location_2",
+                "href": "interfaces/bcf.v3_0.visinfo.Location_2.md"
+              },
+              {
+                "name": "Normal",
+                "href": "interfaces/bcf.v3_0.visinfo.Normal.md"
+              },
+              {
+                "name": "OriginatingSystem",
+                "href": "interfaces/bcf.v3_0.visinfo.OriginatingSystem.md"
+              },
+              {
+                "name": "OrthogonalCamera",
+                "href": "interfaces/bcf.v3_0.visinfo.OrthogonalCamera.md"
+              },
+              {
+                "name": "OrthogonalCamera_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.OrthogonalCamera_Element.md"
+              },
+              {
+                "name": "PerspectiveCamera",
+                "href": "interfaces/bcf.v3_0.visinfo.PerspectiveCamera.md"
+              },
+              {
+                "name": "PerspectiveCamera_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.PerspectiveCamera_Element.md"
+              },
+              {
+                "name": "Point",
+                "href": "interfaces/bcf.v3_0.visinfo.Point.md"
+              },
+              {
+                "name": "Reference",
+                "href": "interfaces/bcf.v3_0.visinfo.Reference.md"
+              },
+              {
+                "name": "Selection",
+                "href": "interfaces/bcf.v3_0.visinfo.Selection.md"
+              },
+              {
+                "name": "StartPoint",
+                "href": "interfaces/bcf.v3_0.visinfo.StartPoint.md"
+              },
+              {
+                "name": "Up",
+                "href": "interfaces/bcf.v3_0.visinfo.Up.md"
+              },
+              {
+                "name": "ViewSetupHints",
+                "href": "interfaces/bcf.v3_0.visinfo.ViewSetupHints.md"
+              },
+              {
+                "name": "ViewSetupHints_Element",
+                "href": "interfaces/bcf.v3_0.visinfo.ViewSetupHints_Element.md"
+              },
+              {
+                "name": "ViewToWorldScale",
+                "href": "interfaces/bcf.v3_0.visinfo.ViewToWorldScale.md"
+              },
+              {
+                "name": "Visibility",
+                "href": "interfaces/bcf.v3_0.visinfo.Visibility.md"
+              },
+              {
+                "name": "VisualizationInfo",
+                "href": "interfaces/bcf.v3_0.visinfo.VisualizationInfo.md"
+              },
+              {
+                "name": "VisualizationInfo_Type",
+                "href": "interfaces/bcf.v3_0.visinfo.VisualizationInfo_Type.md"
+              },
+              {
+                "name": "X",
+                "href": "interfaces/bcf.v3_0.visinfo.X.md"
+              },
+              {
+                "name": "X_2",
+                "href": "interfaces/bcf.v3_0.visinfo.X_2.md"
+              },
+              {
+                "name": "Y",
+                "href": "interfaces/bcf.v3_0.visinfo.Y.md"
+              },
+              {
+                "name": "Y_2",
+                "href": "interfaces/bcf.v3_0.visinfo.Y_2.md"
+              },
+              {
+                "name": "Z",
+                "href": "interfaces/bcf.v3_0.visinfo.Z.md"
+              },
+              {
+                "name": "Z_2",
+                "href": "interfaces/bcf.v3_0.visinfo.Z_2.md"
+              },
+              {
+                "name": "Bitmap_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.Bitmap_Element_Children.md"
+              },
+              {
+                "name": "BitmapFormat",
+                "href": "types/bcf.v3_0.visinfo.BitmapFormat.md"
+              },
+              {
+                "name": "Bitmaps$Children",
+                "href": "types/bcf.v3_0.visinfo.Bitmaps_Children.md"
+              },
+              {
+                "name": "CameraDirection_2$Children",
+                "href": "types/bcf.v3_0.visinfo.CameraDirection_2_Children.md"
+              },
+              {
+                "name": "CameraDirection$Children",
+                "href": "types/bcf.v3_0.visinfo.CameraDirection_Children.md"
+              },
+              {
+                "name": "CameraUpVector_2$Children",
+                "href": "types/bcf.v3_0.visinfo.CameraUpVector_2_Children.md"
+              },
+              {
+                "name": "CameraUpVector$Children",
+                "href": "types/bcf.v3_0.visinfo.CameraUpVector_Children.md"
+              },
+              {
+                "name": "CameraViewPoint_2$Children",
+                "href": "types/bcf.v3_0.visinfo.CameraViewPoint_2_Children.md"
+              },
+              {
+                "name": "CameraViewPoint$Children",
+                "href": "types/bcf.v3_0.visinfo.CameraViewPoint_Children.md"
+              },
+              {
+                "name": "ClippingPlane_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.ClippingPlane_Element_Children.md"
+              },
+              {
+                "name": "ClippingPlanes$Children",
+                "href": "types/bcf.v3_0.visinfo.ClippingPlanes_Children.md"
+              },
+              {
+                "name": "Color_Value",
+                "href": "types/bcf.v3_0.visinfo.Color_Value.md"
+              },
+              {
+                "name": "Color$Children",
+                "href": "types/bcf.v3_0.visinfo.Color_Children.md"
+              },
+              {
+                "name": "Coloring$Children",
+                "href": "types/bcf.v3_0.visinfo.Coloring_Children.md"
+              },
+              {
+                "name": "Component_Element_2$Children",
+                "href": "types/bcf.v3_0.visinfo.Component_Element_2_Children.md"
+              },
+              {
+                "name": "Component_Element_3$Children",
+                "href": "types/bcf.v3_0.visinfo.Component_Element_3_Children.md"
+              },
+              {
+                "name": "Component_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.Component_Element_Children.md"
+              },
+              {
+                "name": "Components_Element_2$Children",
+                "href": "types/bcf.v3_0.visinfo.Components_Element_2_Children.md"
+              },
+              {
+                "name": "Components_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.Components_Element_Children.md"
+              },
+              {
+                "name": "Direction_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.Direction_Element_Children.md"
+              },
+              {
+                "name": "EndPoint$Children",
+                "href": "types/bcf.v3_0.visinfo.EndPoint_Children.md"
+              },
+              {
+                "name": "Exceptions$Children",
+                "href": "types/bcf.v3_0.visinfo.Exceptions_Children.md"
+              },
+              {
+                "name": "FieldOfView_2",
+                "href": "types/bcf.v3_0.visinfo.FieldOfView_2.md"
+              },
+              {
+                "name": "Guid",
+                "href": "types/bcf.v3_0.visinfo.Guid.md"
+              },
+              {
+                "name": "IfcGuid_Value",
+                "href": "types/bcf.v3_0.visinfo.IfcGuid_Value.md"
+              },
+              {
+                "name": "Line_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.Line_Element_Children.md"
+              },
+              {
+                "name": "Lines$Children",
+                "href": "types/bcf.v3_0.visinfo.Lines_Children.md"
+              },
+              {
+                "name": "Location_2$Children",
+                "href": "types/bcf.v3_0.visinfo.Location_2_Children.md"
+              },
+              {
+                "name": "Location$Children",
+                "href": "types/bcf.v3_0.visinfo.Location_Children.md"
+              },
+              {
+                "name": "NonEmptyOrBlankString",
+                "href": "types/bcf.v3_0.visinfo.NonEmptyOrBlankString.md"
+              },
+              {
+                "name": "Normal$Children",
+                "href": "types/bcf.v3_0.visinfo.Normal_Children.md"
+              },
+              {
+                "name": "OrthogonalCamera_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.OrthogonalCamera_Element_Children.md"
+              },
+              {
+                "name": "PerspectiveCamera_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.PerspectiveCamera_Element_Children.md"
+              },
+              {
+                "name": "PositiveDouble",
+                "href": "types/bcf.v3_0.visinfo.PositiveDouble.md"
+              },
+              {
+                "name": "Selection$Children",
+                "href": "types/bcf.v3_0.visinfo.Selection_Children.md"
+              },
+              {
+                "name": "StartPoint$Children",
+                "href": "types/bcf.v3_0.visinfo.StartPoint_Children.md"
+              },
+              {
+                "name": "Up$Children",
+                "href": "types/bcf.v3_0.visinfo.Up_Children.md"
+              },
+              {
+                "name": "ViewSetupHints_Element$Children",
+                "href": "types/bcf.v3_0.visinfo.ViewSetupHints_Element_Children.md"
+              },
+              {
+                "name": "Visibility$Children",
+                "href": "types/bcf.v3_0.visinfo.Visibility_Children.md"
+              },
+              {
+                "name": "VisualizationInfo$Children",
+                "href": "types/bcf.v3_0.visinfo.VisualizationInfo_Children.md"
+              },
+              {
+                "name": "createAspectRatio",
+                "href": "variables/bcf.v3_0.visinfo.createAspectRatio.md"
+              },
+              {
+                "name": "createAspectRatio_2",
+                "href": "variables/bcf.v3_0.visinfo.createAspectRatio_2.md"
+              },
+              {
+                "name": "createAuthoringToolId",
+                "href": "variables/bcf.v3_0.visinfo.createAuthoringToolId.md"
+              },
+              {
+                "name": "createBitmap",
+                "href": "variables/bcf.v3_0.visinfo.createBitmap.md"
+              },
+              {
+                "name": "createBitmaps",
+                "href": "variables/bcf.v3_0.visinfo.createBitmaps.md"
+              },
+              {
+                "name": "createCameraDirection",
+                "href": "variables/bcf.v3_0.visinfo.createCameraDirection.md"
+              },
+              {
+                "name": "createCameraDirection_2",
+                "href": "variables/bcf.v3_0.visinfo.createCameraDirection_2.md"
+              },
+              {
+                "name": "createCameraUpVector",
+                "href": "variables/bcf.v3_0.visinfo.createCameraUpVector.md"
+              },
+              {
+                "name": "createCameraUpVector_2",
+                "href": "variables/bcf.v3_0.visinfo.createCameraUpVector_2.md"
+              },
+              {
+                "name": "createCameraViewPoint",
+                "href": "variables/bcf.v3_0.visinfo.createCameraViewPoint.md"
+              },
+              {
+                "name": "createCameraViewPoint_2",
+                "href": "variables/bcf.v3_0.visinfo.createCameraViewPoint_2.md"
+              },
+              {
+                "name": "createClippingPlane",
+                "href": "variables/bcf.v3_0.visinfo.createClippingPlane.md"
+              },
+              {
+                "name": "createClippingPlanes",
+                "href": "variables/bcf.v3_0.visinfo.createClippingPlanes.md"
+              },
+              {
+                "name": "createColor",
+                "href": "variables/bcf.v3_0.visinfo.createColor.md"
+              },
+              {
+                "name": "createColoring",
+                "href": "variables/bcf.v3_0.visinfo.createColoring.md"
+              },
+              {
+                "name": "createComponent",
+                "href": "variables/bcf.v3_0.visinfo.createComponent.md"
+              },
+              {
+                "name": "createComponent_2",
+                "href": "variables/bcf.v3_0.visinfo.createComponent_2.md"
+              },
+              {
+                "name": "createComponent_3",
+                "href": "variables/bcf.v3_0.visinfo.createComponent_3.md"
+              },
+              {
+                "name": "createComponents",
+                "href": "variables/bcf.v3_0.visinfo.createComponents.md"
+              },
+              {
+                "name": "createComponents_2",
+                "href": "variables/bcf.v3_0.visinfo.createComponents_2.md"
+              },
+              {
+                "name": "createDirection",
+                "href": "variables/bcf.v3_0.visinfo.createDirection.md"
+              },
+              {
+                "name": "createEndPoint",
+                "href": "variables/bcf.v3_0.visinfo.createEndPoint.md"
+              },
+              {
+                "name": "createExceptions",
+                "href": "variables/bcf.v3_0.visinfo.createExceptions.md"
+              },
+              {
+                "name": "createFieldOfView",
+                "href": "variables/bcf.v3_0.visinfo.createFieldOfView.md"
+              },
+              {
+                "name": "createFormat",
+                "href": "variables/bcf.v3_0.visinfo.createFormat.md"
+              },
+              {
+                "name": "createHeight",
+                "href": "variables/bcf.v3_0.visinfo.createHeight.md"
+              },
+              {
+                "name": "createLine",
+                "href": "variables/bcf.v3_0.visinfo.createLine.md"
+              },
+              {
+                "name": "createLines",
+                "href": "variables/bcf.v3_0.visinfo.createLines.md"
+              },
+              {
+                "name": "createLocation",
+                "href": "variables/bcf.v3_0.visinfo.createLocation.md"
+              },
+              {
+                "name": "createLocation_2",
+                "href": "variables/bcf.v3_0.visinfo.createLocation_2.md"
+              },
+              {
+                "name": "createNormal",
+                "href": "variables/bcf.v3_0.visinfo.createNormal.md"
+              },
+              {
+                "name": "createOriginatingSystem",
+                "href": "variables/bcf.v3_0.visinfo.createOriginatingSystem.md"
+              },
+              {
+                "name": "createOrthogonalCamera",
+                "href": "variables/bcf.v3_0.visinfo.createOrthogonalCamera.md"
+              },
+              {
+                "name": "createPerspectiveCamera",
+                "href": "variables/bcf.v3_0.visinfo.createPerspectiveCamera.md"
+              },
+              {
+                "name": "createReference",
+                "href": "variables/bcf.v3_0.visinfo.createReference.md"
+              },
+              {
+                "name": "createSelection",
+                "href": "variables/bcf.v3_0.visinfo.createSelection.md"
+              },
+              {
+                "name": "createStartPoint",
+                "href": "variables/bcf.v3_0.visinfo.createStartPoint.md"
+              },
+              {
+                "name": "createUp",
+                "href": "variables/bcf.v3_0.visinfo.createUp.md"
+              },
+              {
+                "name": "createViewSetupHints",
+                "href": "variables/bcf.v3_0.visinfo.createViewSetupHints.md"
+              },
+              {
+                "name": "createViewToWorldScale",
+                "href": "variables/bcf.v3_0.visinfo.createViewToWorldScale.md"
+              },
+              {
+                "name": "createVisibility",
+                "href": "variables/bcf.v3_0.visinfo.createVisibility.md"
+              },
+              {
+                "name": "createVisualizationInfo",
+                "href": "variables/bcf.v3_0.visinfo.createVisualizationInfo.md"
+              },
+              {
+                "name": "createX",
+                "href": "variables/bcf.v3_0.visinfo.createX.md"
+              },
+              {
+                "name": "createX_2",
+                "href": "variables/bcf.v3_0.visinfo.createX_2.md"
+              },
+              {
+                "name": "createY",
+                "href": "variables/bcf.v3_0.visinfo.createY.md"
+              },
+              {
+                "name": "createY_2",
+                "href": "variables/bcf.v3_0.visinfo.createY_2.md"
+              },
+              {
+                "name": "createZ",
+                "href": "variables/bcf.v3_0.visinfo.createZ.md"
+              },
+              {
+                "name": "createZ_2",
+                "href": "variables/bcf.v3_0.visinfo.createZ_2.md"
+              },
+              {
+                "name": "createXmlFile",
+                "href": "functions/bcf.v3_0.visinfo.createXmlFile.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "createArchive",
+        "href": "functions/bcf.createArchive.md"
+      },
+      {
+        "name": "load",
+        "href": "functions/bcf.load.md"
+      },
+      {
+        "name": "save",
+        "href": "functions/bcf.save.md"
+      },
+      {
+        "name": "validate",
+        "href": "functions/bcf.validate.md"
+      }
+    ]
+  },
+  {
+    "name": "IDS",
+    "href": "modules/ids.md",
+    "items": [
+      {
+        "name": "v1_0",
+        "href": "modules/ids.v1_0.md",
+        "items": [
+          {
+            "name": "applicability",
+            "href": "interfaces/ids.v1_0.applicability.md"
+          },
+          {
+            "name": "applicabilityType",
+            "href": "interfaces/ids.v1_0.applicabilityType.md"
+          },
+          {
+            "name": "attribute",
+            "href": "interfaces/ids.v1_0.attribute.md"
+          },
+          {
+            "name": "attribute_2",
+            "href": "interfaces/ids.v1_0.attribute_2.md"
+          },
+          {
+            "name": "attribute_2_Type",
+            "href": "interfaces/ids.v1_0.attribute_2_Type.md"
+          },
+          {
+            "name": "attributeType",
+            "href": "interfaces/ids.v1_0.attributeType.md"
+          },
+          {
+            "name": "author",
+            "href": "interfaces/ids.v1_0.author.md"
+          },
+          {
+            "name": "baseName",
+            "href": "interfaces/ids.v1_0.baseName.md"
+          },
+          {
+            "name": "classification",
+            "href": "interfaces/ids.v1_0.classification.md"
+          },
+          {
+            "name": "classification_2",
+            "href": "interfaces/ids.v1_0.classification_2.md"
+          },
+          {
+            "name": "classification_2_Type",
+            "href": "interfaces/ids.v1_0.classification_2_Type.md"
+          },
+          {
+            "name": "classificationType",
+            "href": "interfaces/ids.v1_0.classificationType.md"
+          },
+          {
+            "name": "copyright",
+            "href": "interfaces/ids.v1_0.copyright.md"
+          },
+          {
+            "name": "date",
+            "href": "interfaces/ids.v1_0.date.md"
+          },
+          {
+            "name": "description",
+            "href": "interfaces/ids.v1_0.description.md"
+          },
+          {
+            "name": "entity",
+            "href": "interfaces/ids.v1_0.entity.md"
+          },
+          {
+            "name": "entity_2",
+            "href": "interfaces/ids.v1_0.entity_2.md"
+          },
+          {
+            "name": "entity_3",
+            "href": "interfaces/ids.v1_0.entity_3.md"
+          },
+          {
+            "name": "entity_3_Type",
+            "href": "interfaces/ids.v1_0.entity_3_Type.md"
+          },
+          {
+            "name": "entityType",
+            "href": "interfaces/ids.v1_0.entityType.md"
+          },
+          {
+            "name": "IDS",
+            "href": "interfaces/ids.v1_0.ids.md"
+          },
+          {
+            "name": "ids_Type",
+            "href": "interfaces/ids.v1_0.ids_Type.md"
+          },
+          {
+            "name": "idsValue",
+            "href": "interfaces/ids.v1_0.idsValue.md"
+          },
+          {
+            "name": "info",
+            "href": "interfaces/ids.v1_0.info.md"
+          },
+          {
+            "name": "info_Type",
+            "href": "interfaces/ids.v1_0.info_Type.md"
+          },
+          {
+            "name": "material",
+            "href": "interfaces/ids.v1_0.material.md"
+          },
+          {
+            "name": "material_2",
+            "href": "interfaces/ids.v1_0.material_2.md"
+          },
+          {
+            "name": "material_2_Type",
+            "href": "interfaces/ids.v1_0.material_2_Type.md"
+          },
+          {
+            "name": "materialType",
+            "href": "interfaces/ids.v1_0.materialType.md"
+          },
+          {
+            "name": "milestone",
+            "href": "interfaces/ids.v1_0.milestone.md"
+          },
+          {
+            "name": "name",
+            "href": "interfaces/ids.v1_0.name.md"
+          },
+          {
+            "name": "name_2",
+            "href": "interfaces/ids.v1_0.name_2.md"
+          },
+          {
+            "name": "partOf",
+            "href": "interfaces/ids.v1_0.partOf.md"
+          },
+          {
+            "name": "partOf_2",
+            "href": "interfaces/ids.v1_0.partOf_2.md"
+          },
+          {
+            "name": "partOf_2_Type",
+            "href": "interfaces/ids.v1_0.partOf_2_Type.md"
+          },
+          {
+            "name": "partOfType",
+            "href": "interfaces/ids.v1_0.partOfType.md"
+          },
+          {
+            "name": "predefinedType",
+            "href": "interfaces/ids.v1_0.predefinedType.md"
+          },
+          {
+            "name": "property",
+            "href": "interfaces/ids.v1_0.property.md"
+          },
+          {
+            "name": "property_2",
+            "href": "interfaces/ids.v1_0.property_2.md"
+          },
+          {
+            "name": "property_2_Type",
+            "href": "interfaces/ids.v1_0.property_2_Type.md"
+          },
+          {
+            "name": "propertySet",
+            "href": "interfaces/ids.v1_0.propertySet.md"
+          },
+          {
+            "name": "propertyType",
+            "href": "interfaces/ids.v1_0.propertyType.md"
+          },
+          {
+            "name": "purpose",
+            "href": "interfaces/ids.v1_0.purpose.md"
+          },
+          {
+            "name": "requirements",
+            "href": "interfaces/ids.v1_0.requirements.md"
+          },
+          {
+            "name": "requirements_Type",
+            "href": "interfaces/ids.v1_0.requirements_Type.md"
+          },
+          {
+            "name": "requirementsType",
+            "href": "interfaces/ids.v1_0.requirementsType.md"
+          },
+          {
+            "name": "simpleValue",
+            "href": "interfaces/ids.v1_0.simpleValue.md"
+          },
+          {
+            "name": "specification",
+            "href": "interfaces/ids.v1_0.specification.md"
+          },
+          {
+            "name": "specifications",
+            "href": "interfaces/ids.v1_0.specifications.md"
+          },
+          {
+            "name": "specificationsType",
+            "href": "interfaces/ids.v1_0.specificationsType.md"
+          },
+          {
+            "name": "specificationType",
+            "href": "interfaces/ids.v1_0.specificationType.md"
+          },
+          {
+            "name": "system",
+            "href": "interfaces/ids.v1_0.system.md"
+          },
+          {
+            "name": "title",
+            "href": "interfaces/ids.v1_0.title.md"
+          },
+          {
+            "name": "value",
+            "href": "interfaces/ids.v1_0.value.md"
+          },
+          {
+            "name": "value_2",
+            "href": "interfaces/ids.v1_0.value_2.md"
+          },
+          {
+            "name": "value_3",
+            "href": "interfaces/ids.v1_0.value_3.md"
+          },
+          {
+            "name": "value_4",
+            "href": "interfaces/ids.v1_0.value_4.md"
+          },
+          {
+            "name": "version",
+            "href": "interfaces/ids.v1_0.version.md"
+          },
+          {
+            "name": "Xs_annotated",
+            "href": "interfaces/ids.v1_0.Xs_annotated.md"
+          },
+          {
+            "name": "Xs_annotation",
+            "href": "interfaces/ids.v1_0.Xs_annotation.md"
+          },
+          {
+            "name": "Xs_appinfo",
+            "href": "interfaces/ids.v1_0.Xs_appinfo.md"
+          },
+          {
+            "name": "Xs_documentation",
+            "href": "interfaces/ids.v1_0.Xs_documentation.md"
+          },
+          {
+            "name": "Xs_enumeration",
+            "href": "interfaces/ids.v1_0.Xs_enumeration.md"
+          },
+          {
+            "name": "Xs_facet",
+            "href": "interfaces/ids.v1_0.Xs_facet.md"
+          },
+          {
+            "name": "Xs_fractionDigits",
+            "href": "interfaces/ids.v1_0.Xs_fractionDigits.md"
+          },
+          {
+            "name": "Xs_length",
+            "href": "interfaces/ids.v1_0.Xs_length.md"
+          },
+          {
+            "name": "Xs_list",
+            "href": "interfaces/ids.v1_0.Xs_list.md"
+          },
+          {
+            "name": "Xs_localSimpleType",
+            "href": "interfaces/ids.v1_0.Xs_localSimpleType.md"
+          },
+          {
+            "name": "Xs_maxExclusive",
+            "href": "interfaces/ids.v1_0.Xs_maxExclusive.md"
+          },
+          {
+            "name": "Xs_maxInclusive",
+            "href": "interfaces/ids.v1_0.Xs_maxInclusive.md"
+          },
+          {
+            "name": "Xs_maxLength",
+            "href": "interfaces/ids.v1_0.Xs_maxLength.md"
+          },
+          {
+            "name": "Xs_minExclusive",
+            "href": "interfaces/ids.v1_0.Xs_minExclusive.md"
+          },
+          {
+            "name": "Xs_minInclusive",
+            "href": "interfaces/ids.v1_0.Xs_minInclusive.md"
+          },
+          {
+            "name": "Xs_minLength",
+            "href": "interfaces/ids.v1_0.Xs_minLength.md"
+          },
+          {
+            "name": "Xs_noFixedFacet",
+            "href": "interfaces/ids.v1_0.Xs_noFixedFacet.md"
+          },
+          {
+            "name": "Xs_numFacet",
+            "href": "interfaces/ids.v1_0.Xs_numFacet.md"
+          },
+          {
+            "name": "Xs_openAttrs",
+            "href": "interfaces/ids.v1_0.Xs_openAttrs.md"
+          },
+          {
+            "name": "Xs_pattern",
+            "href": "interfaces/ids.v1_0.Xs_pattern.md"
+          },
+          {
+            "name": "Xs_restriction",
+            "href": "interfaces/ids.v1_0.Xs_restriction.md"
+          },
+          {
+            "name": "Xs_simpleType",
+            "href": "interfaces/ids.v1_0.Xs_simpleType.md"
+          },
+          {
+            "name": "Xs_simpleType_Element",
+            "href": "interfaces/ids.v1_0.Xs_simpleType_Element.md"
+          },
+          {
+            "name": "Xs_simpleType_Element_2",
+            "href": "interfaces/ids.v1_0.Xs_simpleType_Element_2.md"
+          },
+          {
+            "name": "Xs_simpleType_Element_3",
+            "href": "interfaces/ids.v1_0.Xs_simpleType_Element_3.md"
+          },
+          {
+            "name": "Xs_totalDigits",
+            "href": "interfaces/ids.v1_0.Xs_totalDigits.md"
+          },
+          {
+            "name": "Xs_union",
+            "href": "interfaces/ids.v1_0.Xs_union.md"
+          },
+          {
+            "name": "Xs_whiteSpace",
+            "href": "interfaces/ids.v1_0.Xs_whiteSpace.md"
+          },
+          {
+            "name": "Xs_Xs_annotation_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_annotation_Type.md"
+          },
+          {
+            "name": "Xs_Xs_appinfo_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_appinfo_Type.md"
+          },
+          {
+            "name": "Xs_Xs_documentation_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_documentation_Type.md"
+          },
+          {
+            "name": "Xs_Xs_list_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_list_Type.md"
+          },
+          {
+            "name": "Xs_Xs_pattern_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_pattern_Type.md"
+          },
+          {
+            "name": "Xs_Xs_restriction_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_restriction_Type.md"
+          },
+          {
+            "name": "Xs_Xs_totalDigits_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_totalDigits_Type.md"
+          },
+          {
+            "name": "Xs_Xs_union_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_union_Type.md"
+          },
+          {
+            "name": "Xs_Xs_whiteSpace_Type",
+            "href": "interfaces/ids.v1_0.Xs_Xs_whiteSpace_Type.md"
+          },
+          {
+            "name": "applicability$Children",
+            "href": "types/ids.v1_0.applicability_Children.md"
+          },
+          {
+            "name": "attribute_2$Children",
+            "href": "types/ids.v1_0.attribute_2_Children.md"
+          },
+          {
+            "name": "attribute$Children",
+            "href": "types/ids.v1_0.attribute_Children.md"
+          },
+          {
+            "name": "author_Value",
+            "href": "types/ids.v1_0.author_Value.md"
+          },
+          {
+            "name": "baseName$Children",
+            "href": "types/ids.v1_0.baseName_Children.md"
+          },
+          {
+            "name": "classification_2$Children",
+            "href": "types/ids.v1_0.classification_2_Children.md"
+          },
+          {
+            "name": "classification$Children",
+            "href": "types/ids.v1_0.classification_Children.md"
+          },
+          {
+            "name": "conditionalCardinality",
+            "href": "types/ids.v1_0.conditionalCardinality.md"
+          },
+          {
+            "name": "entity_2$Children",
+            "href": "types/ids.v1_0.entity_2_Children.md"
+          },
+          {
+            "name": "entity_3$Children",
+            "href": "types/ids.v1_0.entity_3_Children.md"
+          },
+          {
+            "name": "entity$Children",
+            "href": "types/ids.v1_0.entity_Children.md"
+          },
+          {
+            "name": "ids$Children",
+            "href": "types/ids.v1_0.ids_Children.md"
+          },
+          {
+            "name": "ifcVersion_Value",
+            "href": "types/ids.v1_0.ifcVersion_Value.md"
+          },
+          {
+            "name": "info$Children",
+            "href": "types/ids.v1_0.info_Children.md"
+          },
+          {
+            "name": "material_2$Children",
+            "href": "types/ids.v1_0.material_2_Children.md"
+          },
+          {
+            "name": "material$Children",
+            "href": "types/ids.v1_0.material_Children.md"
+          },
+          {
+            "name": "name_2$Children",
+            "href": "types/ids.v1_0.name_2_Children.md"
+          },
+          {
+            "name": "name$Children",
+            "href": "types/ids.v1_0.name_Children.md"
+          },
+          {
+            "name": "partOf_2$Children",
+            "href": "types/ids.v1_0.partOf_2_Children.md"
+          },
+          {
+            "name": "partOf$Children",
+            "href": "types/ids.v1_0.partOf_Children.md"
+          },
+          {
+            "name": "predefinedType$Children",
+            "href": "types/ids.v1_0.predefinedType_Children.md"
+          },
+          {
+            "name": "property_2$Children",
+            "href": "types/ids.v1_0.property_2_Children.md"
+          },
+          {
+            "name": "property$Children",
+            "href": "types/ids.v1_0.property_Children.md"
+          },
+          {
+            "name": "propertySet$Children",
+            "href": "types/ids.v1_0.propertySet_Children.md"
+          },
+          {
+            "name": "relations",
+            "href": "types/ids.v1_0.relations.md"
+          },
+          {
+            "name": "requirements$Children",
+            "href": "types/ids.v1_0.requirements_Children.md"
+          },
+          {
+            "name": "simpleCardinality",
+            "href": "types/ids.v1_0.simpleCardinality.md"
+          },
+          {
+            "name": "specification$Children",
+            "href": "types/ids.v1_0.specification_Children.md"
+          },
+          {
+            "name": "specifications$Children",
+            "href": "types/ids.v1_0.specifications_Children.md"
+          },
+          {
+            "name": "system$Children",
+            "href": "types/ids.v1_0.system_Children.md"
+          },
+          {
+            "name": "upperCaseName",
+            "href": "types/ids.v1_0.upperCaseName.md"
+          },
+          {
+            "name": "value_2$Children",
+            "href": "types/ids.v1_0.value_2_Children.md"
+          },
+          {
+            "name": "value_3$Children",
+            "href": "types/ids.v1_0.value_3_Children.md"
+          },
+          {
+            "name": "value_4$Children",
+            "href": "types/ids.v1_0.value_4_Children.md"
+          },
+          {
+            "name": "value$Children",
+            "href": "types/ids.v1_0.value_Children.md"
+          },
+          {
+            "name": "Xml_lang_Value",
+            "href": "types/ids.v1_0.Xml_lang_Value.md"
+          },
+          {
+            "name": "Xml_Xml_lang_Value_Member",
+            "href": "types/ids.v1_0.Xml_Xml_lang_Value_Member.md"
+          },
+          {
+            "name": "Xs_allNNI",
+            "href": "types/ids.v1_0.Xs_allNNI.md"
+          },
+          {
+            "name": "Xs_annotation$Children",
+            "href": "types/ids.v1_0.Xs_annotation_Children.md"
+          },
+          {
+            "name": "Xs_appinfo$Children",
+            "href": "types/ids.v1_0.Xs_appinfo_Children.md"
+          },
+          {
+            "name": "Xs_documentation$Children",
+            "href": "types/ids.v1_0.Xs_documentation_Children.md"
+          },
+          {
+            "name": "Xs_enumeration$Children",
+            "href": "types/ids.v1_0.Xs_enumeration_Children.md"
+          },
+          {
+            "name": "Xs_fractionDigits$Children",
+            "href": "types/ids.v1_0.Xs_fractionDigits_Children.md"
+          },
+          {
+            "name": "Xs_length$Children",
+            "href": "types/ids.v1_0.Xs_length_Children.md"
+          },
+          {
+            "name": "Xs_list$Children",
+            "href": "types/ids.v1_0.Xs_list_Children.md"
+          },
+          {
+            "name": "Xs_maxExclusive$Children",
+            "href": "types/ids.v1_0.Xs_maxExclusive_Children.md"
+          },
+          {
+            "name": "Xs_maxInclusive$Children",
+            "href": "types/ids.v1_0.Xs_maxInclusive_Children.md"
+          },
+          {
+            "name": "Xs_maxLength$Children",
+            "href": "types/ids.v1_0.Xs_maxLength_Children.md"
+          },
+          {
+            "name": "Xs_memberTypes_Value",
+            "href": "types/ids.v1_0.Xs_memberTypes_Value.md"
+          },
+          {
+            "name": "Xs_minExclusive$Children",
+            "href": "types/ids.v1_0.Xs_minExclusive_Children.md"
+          },
+          {
+            "name": "Xs_minInclusive$Children",
+            "href": "types/ids.v1_0.Xs_minInclusive_Children.md"
+          },
+          {
+            "name": "Xs_minLength$Children",
+            "href": "types/ids.v1_0.Xs_minLength_Children.md"
+          },
+          {
+            "name": "Xs_pattern$Children",
+            "href": "types/ids.v1_0.Xs_pattern_Children.md"
+          },
+          {
+            "name": "Xs_restriction$Children",
+            "href": "types/ids.v1_0.Xs_restriction_Children.md"
+          },
+          {
+            "name": "Xs_simpleDerivationSet",
+            "href": "types/ids.v1_0.Xs_simpleDerivationSet.md"
+          },
+          {
+            "name": "Xs_simpleType_Element_2$Children",
+            "href": "types/ids.v1_0.Xs_simpleType_Element_2_Children.md"
+          },
+          {
+            "name": "Xs_simpleType_Element_3$Children",
+            "href": "types/ids.v1_0.Xs_simpleType_Element_3_Children.md"
+          },
+          {
+            "name": "Xs_simpleType_Element$Children",
+            "href": "types/ids.v1_0.Xs_simpleType_Element_Children.md"
+          },
+          {
+            "name": "Xs_totalDigits$Children",
+            "href": "types/ids.v1_0.Xs_totalDigits_Children.md"
+          },
+          {
+            "name": "Xs_union$Children",
+            "href": "types/ids.v1_0.Xs_union_Children.md"
+          },
+          {
+            "name": "Xs_value_Value",
+            "href": "types/ids.v1_0.Xs_value_Value.md"
+          },
+          {
+            "name": "Xs_whiteSpace$Children",
+            "href": "types/ids.v1_0.Xs_whiteSpace_Children.md"
+          },
+          {
+            "name": "Xs_Xs_allNNI_Member",
+            "href": "types/ids.v1_0.Xs_Xs_allNNI_Member.md"
+          },
+          {
+            "name": "Xs_Xs_simpleDerivationSet_Member",
+            "href": "types/ids.v1_0.Xs_Xs_simpleDerivationSet_Member.md"
+          },
+          {
+            "name": "Xs_Xs_simpleDerivationSet_Member_2",
+            "href": "types/ids.v1_0.Xs_Xs_simpleDerivationSet_Member_2.md"
+          },
+          {
+            "name": "createApplicability",
+            "href": "variables/ids.v1_0.createApplicability.md"
+          },
+          {
+            "name": "createAttribute",
+            "href": "variables/ids.v1_0.createAttribute.md"
+          },
+          {
+            "name": "createAttribute_2",
+            "href": "variables/ids.v1_0.createAttribute_2.md"
+          },
+          {
+            "name": "createAuthor",
+            "href": "variables/ids.v1_0.createAuthor.md"
+          },
+          {
+            "name": "createBaseName",
+            "href": "variables/ids.v1_0.createBaseName.md"
+          },
+          {
+            "name": "createClassification",
+            "href": "variables/ids.v1_0.createClassification.md"
+          },
+          {
+            "name": "createClassification_2",
+            "href": "variables/ids.v1_0.createClassification_2.md"
+          },
+          {
+            "name": "createCopyright",
+            "href": "variables/ids.v1_0.createCopyright.md"
+          },
+          {
+            "name": "createDate",
+            "href": "variables/ids.v1_0.createDate.md"
+          },
+          {
+            "name": "createDescription",
+            "href": "variables/ids.v1_0.createDescription.md"
+          },
+          {
+            "name": "createEntity",
+            "href": "variables/ids.v1_0.createEntity.md"
+          },
+          {
+            "name": "createEntity_2",
+            "href": "variables/ids.v1_0.createEntity_2.md"
+          },
+          {
+            "name": "createEntity_3",
+            "href": "variables/ids.v1_0.createEntity_3.md"
+          },
+          {
+            "name": "createIds",
+            "href": "variables/ids.v1_0.createIds.md"
+          },
+          {
+            "name": "createInfo",
+            "href": "variables/ids.v1_0.createInfo.md"
+          },
+          {
+            "name": "createMaterial",
+            "href": "variables/ids.v1_0.createMaterial.md"
+          },
+          {
+            "name": "createMaterial_2",
+            "href": "variables/ids.v1_0.createMaterial_2.md"
+          },
+          {
+            "name": "createMilestone",
+            "href": "variables/ids.v1_0.createMilestone.md"
+          },
+          {
+            "name": "createName",
+            "href": "variables/ids.v1_0.createName.md"
+          },
+          {
+            "name": "createName_2",
+            "href": "variables/ids.v1_0.createName_2.md"
+          },
+          {
+            "name": "createPartOf",
+            "href": "variables/ids.v1_0.createPartOf.md"
+          },
+          {
+            "name": "createPartOf_2",
+            "href": "variables/ids.v1_0.createPartOf_2.md"
+          },
+          {
+            "name": "createPredefinedType",
+            "href": "variables/ids.v1_0.createPredefinedType.md"
+          },
+          {
+            "name": "createProperty",
+            "href": "variables/ids.v1_0.createProperty.md"
+          },
+          {
+            "name": "createProperty_2",
+            "href": "variables/ids.v1_0.createProperty_2.md"
+          },
+          {
+            "name": "createPropertySet",
+            "href": "variables/ids.v1_0.createPropertySet.md"
+          },
+          {
+            "name": "createPurpose",
+            "href": "variables/ids.v1_0.createPurpose.md"
+          },
+          {
+            "name": "createRequirements",
+            "href": "variables/ids.v1_0.createRequirements.md"
+          },
+          {
+            "name": "createSimpleValue",
+            "href": "variables/ids.v1_0.createSimpleValue.md"
+          },
+          {
+            "name": "createSpecification",
+            "href": "variables/ids.v1_0.createSpecification.md"
+          },
+          {
+            "name": "createSpecifications",
+            "href": "variables/ids.v1_0.createSpecifications.md"
+          },
+          {
+            "name": "createSystem",
+            "href": "variables/ids.v1_0.createSystem.md"
+          },
+          {
+            "name": "createTitle",
+            "href": "variables/ids.v1_0.createTitle.md"
+          },
+          {
+            "name": "createValue",
+            "href": "variables/ids.v1_0.createValue.md"
+          },
+          {
+            "name": "createValue_2",
+            "href": "variables/ids.v1_0.createValue_2.md"
+          },
+          {
+            "name": "createValue_3",
+            "href": "variables/ids.v1_0.createValue_3.md"
+          },
+          {
+            "name": "createValue_4",
+            "href": "variables/ids.v1_0.createValue_4.md"
+          },
+          {
+            "name": "createVersion",
+            "href": "variables/ids.v1_0.createVersion.md"
+          },
+          {
+            "name": "createXs_annotation",
+            "href": "variables/ids.v1_0.createXs_annotation.md"
+          },
+          {
+            "name": "createXs_appinfo",
+            "href": "variables/ids.v1_0.createXs_appinfo.md"
+          },
+          {
+            "name": "createXs_documentation",
+            "href": "variables/ids.v1_0.createXs_documentation.md"
+          },
+          {
+            "name": "createXs_enumeration",
+            "href": "variables/ids.v1_0.createXs_enumeration.md"
+          },
+          {
+            "name": "createXs_fractionDigits",
+            "href": "variables/ids.v1_0.createXs_fractionDigits.md"
+          },
+          {
+            "name": "createXs_length",
+            "href": "variables/ids.v1_0.createXs_length.md"
+          },
+          {
+            "name": "createXs_list",
+            "href": "variables/ids.v1_0.createXs_list.md"
+          },
+          {
+            "name": "createXs_maxExclusive",
+            "href": "variables/ids.v1_0.createXs_maxExclusive.md"
+          },
+          {
+            "name": "createXs_maxInclusive",
+            "href": "variables/ids.v1_0.createXs_maxInclusive.md"
+          },
+          {
+            "name": "createXs_maxLength",
+            "href": "variables/ids.v1_0.createXs_maxLength.md"
+          },
+          {
+            "name": "createXs_minExclusive",
+            "href": "variables/ids.v1_0.createXs_minExclusive.md"
+          },
+          {
+            "name": "createXs_minInclusive",
+            "href": "variables/ids.v1_0.createXs_minInclusive.md"
+          },
+          {
+            "name": "createXs_minLength",
+            "href": "variables/ids.v1_0.createXs_minLength.md"
+          },
+          {
+            "name": "createXs_pattern",
+            "href": "variables/ids.v1_0.createXs_pattern.md"
+          },
+          {
+            "name": "createXs_restriction",
+            "href": "variables/ids.v1_0.createXs_restriction.md"
+          },
+          {
+            "name": "createXs_simpleType",
+            "href": "variables/ids.v1_0.createXs_simpleType.md"
+          },
+          {
+            "name": "createXs_simpleType_2",
+            "href": "variables/ids.v1_0.createXs_simpleType_2.md"
+          },
+          {
+            "name": "createXs_simpleType_3",
+            "href": "variables/ids.v1_0.createXs_simpleType_3.md"
+          },
+          {
+            "name": "createXs_totalDigits",
+            "href": "variables/ids.v1_0.createXs_totalDigits.md"
+          },
+          {
+            "name": "createXs_union",
+            "href": "variables/ids.v1_0.createXs_union.md"
+          },
+          {
+            "name": "createXs_whiteSpace",
+            "href": "variables/ids.v1_0.createXs_whiteSpace.md"
+          },
+          {
+            "name": "createXmlFile",
+            "href": "functions/ids.v1_0.createXmlFile.md"
+          }
+        ]
+      },
+      {
+        "name": "load",
+        "href": "functions/ids.load.md"
+      },
+      {
+        "name": "save",
+        "href": "functions/ids.save.md"
+      },
+      {
+        "name": "validate",
+        "href": "functions/ids.validate.md"
+      }
+    ]
+  }
+]
