@@ -1,4 +1,9 @@
- ### v4.0.5 - 2026-10-19
+ ### v4.0.6 - 2026-10-19
+
+- Save BCF changes locally and through the API
+
+
+### v4.0.5 - 2026-10-19
 
 - Fix mobile zoom and context menus
 
