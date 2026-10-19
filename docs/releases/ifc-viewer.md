@@ -1,4 +1,10 @@
- ### v4.0.6 - 2026-10-19
+ ### v4.0.7 - 2026-10-19
+
+- Fix intermittent ZIP checksum test failures
+- Fix legacy BCF saves and restore wheel zoom
+
+
+### v4.0.6 - 2026-10-19
 
 - Save BCF changes locally and through the API
 
