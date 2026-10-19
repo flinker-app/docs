@@ -1,4 +1,11 @@
- ### v4.0.3 - 2026-10-17
+ ### v4.0.4 - 2026-10-19
+
+- Add regression tests for IFC properties, drawings and maps
+- Fix IDS rotation and improve issue panel controls
+- Reduce memory use for large models and floor plans
+
+
+### v4.0.3 - 2026-10-17
 
 - Faster model viewing, point clouds, 3D terrain maps and better issue tracking
 
