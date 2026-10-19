@@ -1,4 +1,9 @@
- ### v4.0.4 - 2026-10-19
+ ### v4.0.5 - 2026-10-19
+
+- Fix mobile zoom and context menus
+
+
+### v4.0.4 - 2026-10-19
 
 - Add regression tests for IFC properties, drawings and maps
 - Fix IDS rotation and improve issue panel controls
