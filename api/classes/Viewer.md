@@ -154,7 +154,7 @@ See `Viewer.supportedFileTypes`.
 
 `string` \| `null` \| `undefined`
 
-Original filename. Missing or incorrect IFC filenames are repaired by inspecting the file header.
+Original filename and identifier for [get](#get). Missing or incorrect IFC filenames are repaired by inspecting the file header.
 
 ##### source
 
@@ -471,6 +471,35 @@ Creating the archive leaves the loaded topic list unchanged.
 
 ***
 
+<a id="get"></a>
+
+### get()
+
+```ts
+get(name: string): Promise<Uint8Array>;
+```
+
+Export a loaded BCF file using the same filename passed to [add](#add).
+Serializes its current topics, comments, viewpoints and attachments on demand.
+The result is an independent byte array suitable for download, storage or [add](#add).
+Filenames are matched without case or surrounding whitespace, like the file registry.
+
+#### Parameters
+
+##### name
+
+`string`
+
+#### Returns
+
+`Promise`\<`Uint8Array`\>
+
+#### Throws
+
+If the file is missing, still loading, failed, or is not BCF data.
+
+***
+
 <a id="oncopilotfilesgenerated"></a>
 
 ### onCopilotFilesGenerated()
@@ -707,6 +736,33 @@ Progress from 0 to 100. Omit for indeterminate loading.
 ###### type?
 
 `"info"` \| `"loading"` \| `"error"` \| `"warning"` \| `"success"`
+
+#### Returns
+
+`Promise`\<`void`\>
+
+***
+
+<a id="setsavetopicshandler"></a>
+
+### setSaveTopicsHandler()
+
+```ts
+setSaveTopicsHandler(handler: ViewerSaveHandler | null): Promise<void>;
+```
+
+Override the Save topics button, or pass null to restore the local save dialog.
+The handler receives { name, data }, with the current BCF bytes already exported.
+Return the save promise; the button remains disabled until it settles.
+Use setMessage() for progress, success and hiding host messages. Unhandled failures
+appear as host error messages. Custom saves do not add native save status messages.
+Registration survives clear(); setting null does not show or hide messages.
+
+#### Parameters
+
+##### handler
+
+[`ViewerSaveHandler`](../types/ViewerSaveHandler.md) \| `null`
 
 #### Returns
 

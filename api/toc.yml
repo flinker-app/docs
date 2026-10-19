@@ -3574,5 +3574,13 @@
         "href": "functions/ids.validate.md"
       }
     ]
+  },
+  {
+    "name": "ViewerSaveRequest",
+    "href": "interfaces/ViewerSaveRequest.md"
+  },
+  {
+    "name": "ViewerSaveHandler",
+    "href": "types/ViewerSaveHandler.md"
   }
 ]
