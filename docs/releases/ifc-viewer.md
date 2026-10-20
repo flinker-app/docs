@@ -1,4 +1,9 @@
- ### v4.0.7 - 2026-10-19
+ ### v4.0.8 - 2026-10-20
+
+- Add Excel export callbacks and Copilot to the viewer API
+
+
+### v4.0.7 - 2026-10-19
 
 - Fix intermittent ZIP checksum test failures
 - Fix legacy BCF saves and restore wheel zoom
