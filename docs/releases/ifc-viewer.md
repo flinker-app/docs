@@ -1,4 +1,9 @@
- ### v4.0.8 - 2026-10-20
+ ### v4.0.9 - 2026-10-20
+
+- Fix BCF image clipping and cleanup
+
+
+### v4.0.8 - 2026-10-20
 
 - Add Excel export callbacks and Copilot to the viewer API
 
