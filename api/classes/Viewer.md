@@ -471,6 +471,23 @@ Creating the archive leaves the loaded topic list unchanged.
 
 ***
 
+<a id="enablecopilot"></a>
+
+### enableCopilot()
+
+```ts
+enableCopilot(): Promise<void>;
+```
+
+Initialize Copilot and reveal its toolbar button. Repeated calls are safe.
+Files opened after enabling are retained for Copilot; [clear](#clear) preserves this opt-in.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+***
+
 <a id="get"></a>
 
 ### get()
@@ -678,6 +695,33 @@ A BCF report with application state, issues and a summary.
 #### Throws
 
 If the topic does not exist or selection fails.
+
+***
+
+<a id="setexportexcelhandler"></a>
+
+### setExportExcelHandler()
+
+```ts
+setExportExcelHandler(handler: ViewerSaveHandler | null): Promise<void>;
+```
+
+Override the host Excel export action for selection properties and measurements.
+The handler receives { name, data }, with the XLSX bytes already generated,
+using the same contract as [setSaveTopicsHandler](#setsavetopicshandler).
+Return the save promise; the button remains disabled until it settles.
+Pass null to remove the override and restore the app integration hint.
+Registration survives [clear](#clear).
+
+#### Parameters
+
+##### handler
+
+[`ViewerSaveHandler`](../types/ViewerSaveHandler.md) \| `null`
+
+#### Returns
+
+`Promise`\<`void`\>
 
 ***
 

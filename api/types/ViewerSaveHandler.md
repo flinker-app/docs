@@ -17,13 +17,13 @@ Return the save promise to keep the button disabled until saving finishes.
 
 `Uint8Array`
 
-Current BCF bytes, generated before the handler is called.
+File bytes, generated before the handler is called.
 
 #### name
 
 `string`
 
-Source filename for one file, or topics.bcf for a combined export.
+Suggested filename, including its extension.
 
 ## Returns
 

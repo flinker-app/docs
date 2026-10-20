@@ -10,7 +10,7 @@
 readonly data: Uint8Array;
 ```
 
-Current BCF bytes, generated before the handler is called.
+File bytes, generated before the handler is called.
 
 ***
 
@@ -22,4 +22,4 @@ Current BCF bytes, generated before the handler is called.
 readonly name: string;
 ```
 
-Source filename for one file, or topics.bcf for a combined export.
+Suggested filename, including its extension.
