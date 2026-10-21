@@ -1,4 +1,9 @@
- ### v4.0.9 - 2026-10-20
+ ### v4.0.10 - 2026-10-21
+
+- Improve local projects and SharePoint file support
+
+
+### v4.0.9 - 2026-10-20
 
 - Fix BCF image clipping and cleanup
 
