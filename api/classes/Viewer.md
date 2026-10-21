@@ -310,9 +310,60 @@ Disposes geometry, clipping planes, measurements, filters, and event listeners.
 
 ### createTopic()
 
+#### Call Signature
+
+```ts
+createTopic(topic: 
+  | Topic_Element
+  | undefined, options: {
+  signal?: AbortSignal;
+  snapshot?: boolean;
+} & {
+  output: "bytes";
+}): Promise<Uint8Array>;
+```
+
+Create a BCF-XML 3.0 archive containing a topic, the current viewpoint and its images.
+Captures camera, selection, visibility, colors, clipping and markup through the shared view state.
+Optional topic metadata uses the generated BCF XML element. Defaults to a new "View" topic
+with the configured BCF author. Its Viewpoints section is supplied by the capture.
+Extension definitions follow the supplied metadata. External snippet and document URLs
+are preserved; internal snippet/document references are rejected because no attachment files are supplied.
+Includes a PNG snapshot by default; pass `{ snapshot: false }` for a smaller archive.
+Validates against the official schemas and checks referenced files before returning.
+Serialize with `bcf.save(archive)`. Import with [add](#add) to edit or select the topic in the viewer.
+Pass `{ output: 'bytes' }` to return a validated ZIP directly without a second serialization.
+Large component sets are transferred in batches; XML validation and ZIP creation run in a worker.
+Creating the archive leaves the loaded topic list unchanged.
+
+##### Parameters
+
+###### topic
+
+  \| [`Topic_Element`](../interfaces/bcf.v3_0.markup.Topic_Element.md)
+  \| `undefined`
+
+###### options
+
+\{
+  `signal?`: `AbortSignal`;
+  `snapshot?`: `boolean`;
+\} & \{
+  `output`: `"bytes"`;
+\}
+
+##### Returns
+
+`Promise`\<`Uint8Array`\>
+
+#### Call Signature
+
 ```ts
 createTopic(topic?: Topic_Element, options?: {
+  signal?: AbortSignal;
   snapshot?: boolean;
+} & {
+  output?: "archive";
 }): Promise<{
   entries: Record<string, 
      | {
@@ -388,21 +439,26 @@ are preserved; internal snippet/document references are rejected because no atta
 Includes a PNG snapshot by default; pass `{ snapshot: false }` for a smaller archive.
 Validates against the official schemas and checks referenced files before returning.
 Serialize with `bcf.save(archive)`. Import with [add](#add) to edit or select the topic in the viewer.
+Pass `{ output: 'bytes' }` to return a validated ZIP directly without a second serialization.
+Large component sets are transferred in batches; XML validation and ZIP creation run in a worker.
 Creating the archive leaves the loaded topic list unchanged.
 
-#### Parameters
+##### Parameters
 
-##### topic?
+###### topic?
 
 [`Topic_Element`](../interfaces/bcf.v3_0.markup.Topic_Element.md)
 
-##### options?
+###### options?
 
-###### snapshot?
+\{
+  `signal?`: `AbortSignal`;
+  `snapshot?`: `boolean`;
+\} & \{
+  `output?`: `"archive"`;
+\}
 
-`boolean`
-
-#### Returns
+##### Returns
 
 `Promise`\<\{
   `entries`: `Record`\<`string`, 
