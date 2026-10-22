@@ -1,4 +1,10 @@
- ### v4.0.10 - 2026-10-21
+ ### v4.0.11 - 2026-10-22
+
+- Fix example redirects and API documentation publishing
+- Fix dark mode and complete interface translations
+
+
+### v4.0.10 - 2026-10-21
 
 - Improve local projects and SharePoint file support
 
