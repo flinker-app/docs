@@ -1,4 +1,9 @@
- ### v4.0.13 - 2026-10-23
+ ### v4.0.14 - 2026-10-23
+
+- Preserve Copilot progress and add a stop button
+
+
+### v4.0.13 - 2026-10-23
 
 - Make section cuts clearer and selectable
 
