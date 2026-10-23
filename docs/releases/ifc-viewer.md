@@ -1,4 +1,9 @@
- ### v4.0.12 - 2026-10-23
+ ### v4.0.13 - 2026-10-23
+
+- Make section cuts clearer and selectable
+
+
+### v4.0.12 - 2026-10-23
 
 - Save and restore measurements with BCF
 
