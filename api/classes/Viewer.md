@@ -316,6 +316,7 @@ Disposes geometry, clipping planes, measurements, filters, and event listeners.
 createTopic(topic: 
   | Topic_Element
   | undefined, options: {
+  includeTopics?: boolean;
   signal?: AbortSignal;
   snapshot?: boolean;
 } & {
@@ -333,6 +334,7 @@ Includes a PNG snapshot by default; pass `{ snapshot: false }` for a smaller arc
 Validates against the official schemas and checks referenced files before returning.
 Serialize with `bcf.save(archive)`. Import with [add](#add) to edit or select the topic in the viewer.
 Pass `{ output: 'bytes' }` to return a validated ZIP directly without a second serialization.
+Pass `{ includeTopics: true }` to include all loaded BCF topics and their attachments.
 Large component sets are transferred in batches; XML validation and ZIP creation run in a worker.
 Creating the archive leaves the loaded topic list unchanged.
 
@@ -346,6 +348,7 @@ Creating the archive leaves the loaded topic list unchanged.
 ###### options
 
 \{
+  `includeTopics?`: `boolean`;
   `signal?`: `AbortSignal`;
   `snapshot?`: `boolean`;
 \} & \{
@@ -360,6 +363,7 @@ Creating the archive leaves the loaded topic list unchanged.
 
 ```ts
 createTopic(topic?: Topic_Element, options?: {
+  includeTopics?: boolean;
   signal?: AbortSignal;
   snapshot?: boolean;
 } & {
@@ -440,6 +444,7 @@ Includes a PNG snapshot by default; pass `{ snapshot: false }` for a smaller arc
 Validates against the official schemas and checks referenced files before returning.
 Serialize with `bcf.save(archive)`. Import with [add](#add) to edit or select the topic in the viewer.
 Pass `{ output: 'bytes' }` to return a validated ZIP directly without a second serialization.
+Pass `{ includeTopics: true }` to include all loaded BCF topics and their attachments.
 Large component sets are transferred in batches; XML validation and ZIP creation run in a worker.
 Creating the archive leaves the loaded topic list unchanged.
 
@@ -452,6 +457,7 @@ Creating the archive leaves the loaded topic list unchanged.
 ###### options?
 
 \{
+  `includeTopics?`: `boolean`;
   `signal?`: `AbortSignal`;
   `snapshot?`: `boolean`;
 \} & \{
