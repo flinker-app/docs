@@ -1,4 +1,9 @@
- ### v4.0.11 - 2026-10-22
+ ### v4.0.12 - 2026-10-23
+
+- Save and restore measurements with BCF
+
+
+### v4.0.11 - 2026-10-22
 
 - Fix example redirects and API documentation publishing
 - Fix dark mode and complete interface translations
