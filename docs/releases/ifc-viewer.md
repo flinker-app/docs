@@ -1,4 +1,9 @@
- ### v4.0.15 - 2026-10-26
+ ### v4.0.16 - 2026-10-26
+
+- Restore legacy BCF camera views
+
+
+### v4.0.15 - 2026-10-26
 
 - Keep IDS reports compact and compress BCF snapshots
 
