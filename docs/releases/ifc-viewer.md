@@ -1,4 +1,9 @@
- ### v4.0.14 - 2026-10-23
+ ### v4.0.15 - 2026-10-26
+
+- Keep IDS reports compact and compress BCF snapshots
+
+
+### v4.0.14 - 2026-10-23
 
 - Preserve Copilot progress and add a stop button
 
