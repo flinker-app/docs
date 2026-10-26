@@ -1,4 +1,9 @@
- ### v4.0.16 - 2026-10-26
+ ### v4.0.17 - 2026-10-26
+
+- Show BCF save progress and speed up large exports
+
+
+### v4.0.16 - 2026-10-26
 
 - Restore legacy BCF camera views
 
