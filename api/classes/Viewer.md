@@ -861,7 +861,7 @@ Override the Save topics button, or pass null to restore the local save dialog.
 The handler receives { name, data }, with the current BCF bytes already exported.
 Return the save promise; the button remains disabled until it settles.
 Use setMessage() for progress, success and hiding host messages. Unhandled failures
-appear as host error messages. Custom saves do not add native save status messages.
+appear as host error messages. The viewer shows save feedback until the host supplies its own messages.
 Registration survives clear(); setting null does not show or hide messages.
 
 #### Parameters
