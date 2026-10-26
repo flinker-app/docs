@@ -1,4 +1,9 @@
- ## v2.1.2 - 2026-07-07
+ ## v2.1.3 - 2026-10-26
+
+- Upgrade the Teams viewer to SDK 4.0.17
+
+
+## v2.1.2 - 2026-07-07
 
 - Fix viewer reload on tab rerenders/BCF data loading issue
 
