@@ -1,4 +1,10 @@
- ## v2.1.3 - 2026-10-26
+ ## v2.1.4 - 2026-10-28
+
+- Fix release notes synchronization
+- Fix BCF topic sharing and Teams sign-in for v2.1.4
+
+
+## v2.1.3 - 2026-10-26
 
 - Upgrade the Teams viewer to SDK 4.0.17
 
