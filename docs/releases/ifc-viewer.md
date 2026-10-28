@@ -1,4 +1,9 @@
- ### v4.0.17 - 2026-10-26
+ ### v4.0.18 - 2026-10-28
+
+- Add BCF viewpoint markers and connected account authors
+
+
+### v4.0.17 - 2026-10-26
 
 - Show BCF save progress and speed up large exports
 
