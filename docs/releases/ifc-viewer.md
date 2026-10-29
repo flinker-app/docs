@@ -1,4 +1,9 @@
- ### v4.0.19 - 2026-10-29
+ ### v4.0.20 - 2026-10-29
+
+- Speed up drawing measurements and simplify map credits
+
+
+### v4.0.19 - 2026-10-29
 
 - Speed up cached model loading and confirm saved views
 
