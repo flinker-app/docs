@@ -1,4 +1,9 @@
- ### v4.0.18 - 2026-10-28
+ ### v4.0.19 - 2026-10-29
+
+- Speed up cached model loading and confirm saved views
+
+
+### v4.0.18 - 2026-10-28
 
 - Add BCF viewpoint markers and connected account authors
 
