@@ -1,4 +1,9 @@
- ### v4.0.20 - 2026-10-29
+ ### v4.0.21 - 2026-10-30
+
+- Improve BCF annotations and viewpoint details
+
+
+### v4.0.20 - 2026-10-29
 
 - Speed up drawing measurements and simplify map credits
 
