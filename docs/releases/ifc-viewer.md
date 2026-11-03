@@ -1,4 +1,9 @@
- ### v4.0.21 - 2026-10-30
+ ### v4.0.22 - 2026-11-03
+
+- Support more file types in SharePoint
+
+
+### v4.0.21 - 2026-10-30
 
 - Improve BCF annotations and viewpoint details
 
