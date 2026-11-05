@@ -1,4 +1,11 @@
- ### v4.0.22 - 2026-11-03
+ ### v4.0.23 - 2026-11-05
+
+- Prevent GPU crashes on Windows Intel graphics
+- Benchmark large IFC models on GPU runners
+- Keep large models responsive during navigation
+
+
+### v4.0.22 - 2026-11-03
 
 - Support more file types in SharePoint
 
