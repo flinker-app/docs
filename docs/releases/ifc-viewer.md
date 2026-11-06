@@ -1,4 +1,11 @@
- ### v4.0.23 - 2026-11-05
+ ### v4.0.25 - 2026-11-06
+
+- Show performance reports on fork pull requests
+- Keep models visible while moving
+- Import IDS and BCF files from their panels
+
+
+### v4.0.23 - 2026-11-05
 
 - Prevent GPU crashes on Windows Intel graphics
 - Benchmark large IFC models on GPU runners
