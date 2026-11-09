@@ -1,4 +1,9 @@
- ### v4.0.25 - 2026-11-06
+ ### v4.0.26 - 2026-11-09
+
+- Make SharePoint preview sign-in visible
+
+
+### v4.0.25 - 2026-11-06
 
 - Show performance reports on fork pull requests
 - Keep models visible while moving
