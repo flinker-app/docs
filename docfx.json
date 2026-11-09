@@ -34,6 +34,11 @@
       "modern",
       "my-template"
     ],
+    "fileMetadata": {
+      "_noindex": {
+        "api/**": true
+      }
+    },
     "fileMetadataFiles": [
       ".docfx/last-updated.json"
     ],
