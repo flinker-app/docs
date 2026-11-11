@@ -1,4 +1,9 @@
- ### v4.0.27 - 2026-11-11
+ ### v4.0.28 - 2026-11-11
+
+- Improve navigation plans
+
+
+### v4.0.27 - 2026-11-11
 
 - Improve BIM camera navigation and zoom
 
