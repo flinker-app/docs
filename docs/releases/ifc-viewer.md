@@ -1,4 +1,9 @@
- ### v4.0.26 - 2026-11-09
+ ### v4.0.27 - 2026-11-11
+
+- Improve BIM camera navigation and zoom
+
+
+### v4.0.26 - 2026-11-09
 
 - Make SharePoint preview sign-in visible
 
