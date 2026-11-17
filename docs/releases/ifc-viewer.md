@@ -1,4 +1,10 @@
- ### v4.0.28 - 2026-11-11
+ ### v4.0.29 - 2026-11-17
+
+- Prevent texture errors during zoom and resizing
+- Improve Copilot workflows and image support
+
+
+### v4.0.28 - 2026-11-11
 
 - Improve navigation plans
 
