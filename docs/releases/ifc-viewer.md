@@ -1,4 +1,9 @@
- ### v4.0.29 - 2026-11-17
+ ### v4.0.30 - 2026-11-18
+
+- Load maps and 3D terrain more smoothly
+
+
+### v4.0.29 - 2026-11-17
 
 - Prevent texture errors during zoom and resizing
 - Improve Copilot workflows and image support
