@@ -14,9 +14,10 @@
   <!-- generated:example-seo:end -->
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-results { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -80,6 +81,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <h2>Selected components</h2>
 <p>Click a duct or fitting. Ctrl/⌘+click adds components. Click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
 <strong id="selection-count" role="status">0 selected</strong><div class="table-scroll" tabindex="0" aria-label="Selected element records"><table><thead><tr><th scope="col">Component</th><th scope="col">Floor</th><th scope="col">System</th></tr></thead><tbody id="element-rows"></tbody></table></div><button id="retry" type="button" hidden>Retry sample</button>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic/Clinic_HVAC.ifc" target="_blank" rel="noopener noreferrer">BSI (2020) · Medical-Dental Test Files</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
 <template id="example-guide">
@@ -90,7 +92,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>BSI (2020) “Medical-Dental Test Files,” buildingSMART International. Original project provided to the US Construction Engineering Research Laboratory; formerly hosted by the US National Institute of Building Sciences. The HVAC IFC is imported unchanged.</p>
 </template>
 <script type="module">
-import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js';
 
 const { assets } = JSON.parse(document.getElementById('example-data').textContent);
 const viewer = new Viewer('#ifc-viewer');
@@ -105,6 +107,7 @@ async function run() {
     document.body.dataset.exampleState = 'loading';
     try {
         await viewer.ready;
+        await viewer.enableCopilot();
         if (typeof viewer.onViewChange !== 'function') throw new Error('This SDK version does not support live view events.');
         if (modelID < 0) await loadExampleFile(assets[0].name, assets[0].url, async blob => {
             nativeApi = await viewer.IfcAPI;

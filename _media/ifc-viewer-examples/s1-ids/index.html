@@ -7,9 +7,10 @@
 
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -133,6 +134,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>Open <strong>IDS</strong> (circled check) on the left toolbar → <strong>Run All Checks</strong>. Expand <strong>Walls · fire-rating information</strong> and click <strong>Apply</strong> beside a failed or passed finding.</p>
 <p class="note">Click a wall, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
 <button id="sample-retry" type="button" hidden>Retry sample</button>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-CON-Structural%20engineering%20-%20Constructie.ifc" target="_blank" rel="noopener noreferrer">Geonovum / W3C</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C</a></div>
 <template id="example-guide"><h2 data-example-title>Check wall names and fire-rating information</h2><p data-example-description>Run IDS checks to find walls with missing names or fire-rating values, then highlight passing or failing components.</p><h3>Try it</h3><p>The example opens the three discipline models with their original appearance and loads the two IDS specifications, ready for you to run.</p><p>Open IDS (circled check) on the left toolbar and click Run All Checks. Expand Walls · fire-rating information, then click Apply beside a failed finding to highlight those walls in red, or beside Passed elements to highlight passing walls in green. The SDK applies each finding separately. Click a wall, then click 1 element selected at the top left to open Properties and inspect Pset_WallCommon.FireRating.</p><h3>Expected results</h3><p>The fire-rating information check finds 299 passing structural walls with FireRating = 120, and 353 failing facade walls: 351 have no FireRating property and two have an empty value. The wall-name check finds 301 passing and 351 failing walls. The stairs model contains no applicable walls. These results come from the unchanged source exports.</p><h3>Developer integration</h3><p>Two IDS specifications are embedded alongside the three original IFC discipline models. The SDK runs the IDS checks. Use Run All Checks in the IDS panel to evaluate the loaded models, then Apply on a finding to visualize its results. The example does not calculate separate results or create a BCF overview at startup. Both checks review information completeness. The fire-rating check requires a non-empty Pset_WallCommon.FireRating, not a particular rating; it does not assess fire-safety compliance or represent the project contract.</p><p>Serve this folder over HTTP. The published SDK and source downloads require internet access.</p><h3>Model notes</h3><p>The original IFC source is imported unchanged.</p>
@@ -142,7 +144,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>The original source files are imported unchanged.</p>
 </template>
 <script type="module">
-import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js";
 // Example-only download feedback. All file parsing remains in the published SDK.
 async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
     const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
@@ -213,6 +215,7 @@ async function load() {
     document.body.dataset.exampleState = 'loading';
     try {
         await viewer.ready;
+        await viewer.enableCopilot();
         for (const asset of assets) {
             if (imported.has(asset.id))
                 continue;

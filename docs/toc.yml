@@ -262,6 +262,10 @@
           href: ifc-viewer-sdk-example-infra.md
         - name: "View a bridge on a map"
           href: ifc-viewer-sdk-example-rotterdam-bridge.md
+        - name: "View the Golden Gate Bridge on a map"
+          href: ifc-viewer-sdk-example-golden-gate-bridge.md
+        - name: "Explore the Golden Gate Bridge lidar survey"
+          href: ifc-viewer-sdk-example-golden-gate-lidar.md
         - name: "Review saved annotations at a stair opening"
           href: ifc-viewer-sdk-example-bcf-annotations.md
         - name: "Switch between top-down and 3D views"

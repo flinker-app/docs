@@ -7,9 +7,10 @@
 
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -83,6 +84,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>On the left toolbar, open <strong>Measure</strong> (ruler) → <strong>Add measurement</strong>. With <strong>Measure Mode</strong> set to <strong>Length</strong>, pick two scan points.</p>
 <p>To cut the scan, open <strong>Sections</strong> (scissors) → <strong>Add clipping plane</strong>, click a surface, then drag the plane.</p>
 <button id="sample-retry" type="button" hidden>Retry sample</button>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/PDAL/data/blob/ce0024257c573526389c4db9ab26e82739b8aaa9/autzen/autzen-classified.laz" target="_blank" rel="noopener noreferrer">© Aaron Reyna / WSI · Classification: Max Sampson / Hobu</a> · <a href="https://github.com/PDAL/data/blob/ce0024257c573526389c4db9ab26e82739b8aaa9/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
 <template id="example-guide">
@@ -95,7 +97,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <template id="example-notices">
 <h2>Sources and license notices</h2><p><a href="https://github.com/PDAL/data/blob/ce0024257c573526389c4db9ab26e82739b8aaa9/autzen/autzen-classified.laz" target="_blank" rel="noopener noreferrer">© Aaron Reyna, Watershed Sciences, Inc. · Classification: Max Sampson, Hobu, Inc. (2021)</a> · <a href="https://github.com/PDAL/data/blob/ce0024257c573526389c4db9ab26e82739b8aaa9/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p></template>
 <script type="module">
-import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js";
 // Example-only download feedback. All file parsing remains in the published SDK.
 async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
     const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
@@ -163,6 +165,7 @@ async function load() {
     document.body.dataset.exampleState = 'loading';
     try {
         await viewer.ready;
+        await viewer.enableCopilot();
         for (const asset of assets) {
             if (imported.has(asset.id))
                 continue;

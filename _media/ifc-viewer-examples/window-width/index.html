@@ -4,9 +4,10 @@
 <meta name="description" content="Compare window widths against a nominal size threshold and highlight the matching windows.">
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p, fieldset) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -77,7 +78,8 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 </script>
 </head><body data-example-state="loading">
 <main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
-<aside class="example-ui example-controls" aria-label="Window width review"><h2>Window width review</h2><p>Amber windows meet the width threshold. Blue windows are narrower.</p><fieldset id="task" disabled aria-label="Window width controls"><label for="threshold">Width ≥ <output id="threshold-label">1200</output> mm</label><input id="threshold" type="range" min="500" max="2500" step="100" value="1200"></fieldset><output id="result" aria-live="polite"></output><p>Select a window, then click <strong>1 element selected</strong> at the top left for Properties.</p><button id="retry" type="button" hidden>Retry</button></aside>
+<aside class="example-ui example-controls" aria-label="Window width review"><h2>Window width review</h2><p>Amber windows meet the width threshold. Blue windows are narrower.</p><fieldset id="task" disabled aria-label="Window width controls"><label for="threshold">Width ≥ <output id="threshold-label">1200</output> mm</label><input id="threshold" type="range" min="500" max="2500" step="100" value="1200"></fieldset><output id="result" aria-live="polite"></output><p>Select a window, then click <strong>1 element selected</strong> at the top left for Properties.</p><button id="retry" type="button" hidden>Retry</button><p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
+</aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/AdvancedProject/IFC/AdvancedProject.ifc" target="_blank" rel="noopener noreferrer">BIM Whale · André Wisén</a> · <a href="https://github.com/andrewisen/bim-whale-ifc-samples/blob/595fa90e3af7120d004fcb37a79d8657f1d1c9c2/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a></div>
 <template id="example-guide"><h2 data-example-title>Find windows by width</h2><p data-example-description>Compare window widths against a nominal size threshold and highlight the matching windows.</p><h3>Review widths</h3><p>Move the width slider. Amber windows meet the threshold; blue windows are narrower. Select a window, then click <strong>1 element selected</strong> at the top left for Properties.</p><h3>Developer integration</h3><p>The component identifiers, names, dimensions and memberships are queried through the native <code>viewer.IfcAPI</code>. The original IFC2x3 file is hash-verified and imported unchanged. BCF views are written with <code>bcf.save()</code>, imported with <code>viewer.add()</code>, and applied with <code>viewer.selectTopic()</code>. Open <strong>Topics</strong> (speech bubble) on the left toolbar to inspect the generated viewpoint.</p><p>The page reads each window’s OverallWidth attribute and the project length unit, converts widths to millimetres, then builds the two color sets at runtime.</p><p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
 </template>
@@ -99,7 +101,7 @@ async function withIfcModel(blob, read) {
     }
 }
 
-import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js';
 const { assets: modelFiles } = JSON.parse(document.getElementById('example-data').textContent);
 let windows = [];
 function createExampleProject(title, state, camera, identity = {}) {
@@ -245,6 +247,7 @@ function run(task) {
         let failed = false;
         try {
             await viewer.ready;
+            await viewer.enableCopilot();
             await task();
             await viewer.setMessage(null);
         } catch (error) {

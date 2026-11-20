@@ -7,9 +7,10 @@
 
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-task { right: 10px; bottom: 84px; width: 224px; max-width: calc(100vw - 64px); padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui h2 { margin: 0; font-size: 13px; line-height: 1.3; font-weight: 650; }
 .example-ui p { margin: 6px 0 0; color: #5a6575; }
@@ -95,6 +96,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>Open <strong>Files</strong> (folder) on the left toolbar. Toggle the checkbox beside each IFC or LAZ file to compare façades, balconies and roof edges. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
 <p>For a cut, open <strong>Sections</strong> (scissors) → <strong>Add clipping plane</strong>, then click a surface.</p>
 <button id="sample-retry" type="button" hidden>Retry sample</button>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <div class="example-ui example-credit" aria-label="Sample source and licence"><a href="https://github.com/xeokit/examples/tree/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las" target="_blank" rel="noopener noreferrer">Creoox / xeokit sample data</a> · <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/LICENSE" target="_blank" rel="noopener noreferrer">Repository licence</a></div>
 <template id="example-guide">
@@ -108,7 +110,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <h2>Sources and licence notices</h2><p>Both files are downloaded directly from the official <a href="https://github.com/xeokit/examples/tree/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las">xeokit/examples GitHub repository</a>, pinned to revision <code>eedeb4dca756d56c7703b312daff22fa31643fef</code>: <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las/example-no-1.ifc">example-no-1.ifc</a> and <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/assets/models/las/example-no-1.laz">example-no-1.laz</a>. The repository’s <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/lidar/las_Example1_alignPointCloud.html">model and point-cloud alignment example</a> uses the same pair.</p><p>Attribution: Creoox / xeokit example data. Copyright and other rights in the data remain with their original owners. The repository contains an <a href="https://github.com/xeokit/examples/blob/eedeb4dca756d56c7703b312daff22fa31643fef/LICENSE">AGPL-3.0 licence</a>; no separate dataset licence is stated for these files. This page downloads the pinned source bytes without modifying or redistributing the model and scan.</p><p>Source checksums: IFC SHA-256 <code>6d508cd61a93b30eef567b4bcf82fc54b8af98ff99b7dee9c0c57af8383834dc</code>; LAZ SHA-256 <code>50f2a941ff9afe0390da3542ed7b5b576cf5cceb71eecea0955b74fc0bdf015a</code>.</p>
 </template>
 <script type="module">
-import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js";
 // Example-only download feedback. All file parsing remains in the published SDK.
 async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
     const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
@@ -184,6 +186,7 @@ async function load() {
     document.body.dataset.exampleState = 'loading';
     try {
         await viewer.ready;
+        await viewer.enableCopilot();
         for (const asset of assets) {
             if (imported.has(asset.id))
                 continue;

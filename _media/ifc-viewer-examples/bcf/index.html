@@ -4,9 +4,10 @@
 <meta name="description" content="Explore buildingSMART BCF 3.0 issues for the Architectural and MEP models, including comments and saved viewpoints.">
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -52,6 +53,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>19 BCF 3.0 samples · buildingSMART</p>
 <p>Open <strong>Topics</strong> (speech bubble) on the left toolbar, then select a topic to explore its comments and saved viewpoints. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
 <button id="sample-retry" type="button" hidden>Retry failed files</button>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingSMART/BCF-XML/tree/bc48611d0d7a1587f028a2b69677a1aafd5cd0a8/Test%20Cases" target="_blank" rel="noopener noreferrer">© buildingSMART International</a> · <a href="https://github.com/buildingSMART/BCF-XML/blob/bc48611d0d7a1587f028a2b69677a1aafd5cd0a8/LICENSE" target="_blank" rel="noopener noreferrer">CC BY-ND 4.0</a></div>
 <template id="example-guide">
@@ -61,7 +63,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <h2>Sources and license notices</h2><p><a href="https://github.com/buildingSMART/BCF-XML/tree/bc48611d0d7a1587f028a2b69677a1aafd5cd0a8/Test%20Cases" target="_blank" rel="noopener noreferrer">© buildingSMART International Ltd.</a> · <a href="https://github.com/buildingSMART/BCF-XML/blob/bc48611d0d7a1587f028a2b69677a1aafd5cd0a8/LICENSE" target="_blank" rel="noopener noreferrer">CC BY-ND 4.0</a></p><p>Dedicated standalone examples cover <a href="https://viewer.flinker.app/examples/selection/index.html">selection from a building work schedule</a>, <a href="https://viewer.flinker.app/examples/bcf-coloring/index.html">coloring</a>, <a href="https://viewer.flinker.app/examples/bcf-visibility/index.html">visibility</a> and <a href="https://viewer.flinker.app/examples/bcf-clipping/index.html">clipping</a>. Use the viewer's Topics panel to inspect or export their generated topics.</p>
 </template>
 <script type="module">
-import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js';
 async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
     const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
     const chunks = [], chunkSize = 4 * 1024 * 1024;
@@ -158,6 +160,7 @@ async function load() {
 }
 retry.addEventListener('click', () => { void load(); });
 await viewer.ready;
+await viewer.enableCopilot();
 await load();
 </script>
 </body>

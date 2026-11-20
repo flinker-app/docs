@@ -7,9 +7,10 @@
 <meta name="description" content="Choose a message type, enter your own text and preview information, success, warning, error or loading messages in the viewer.">
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p, fieldset) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -64,6 +65,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
       <label>Message text <input id="message-text" value="Project information is available for review."></label>
       <button id="show-message" type="button">Display message</button>
     </fieldset>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <template id="example-guide">
 <h2 data-example-title>Show messages in the viewer</h2>
@@ -74,7 +76,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <h2>Sources and license notices</h2><p>No third-party model data is used by this example.</p>
 </template>
 <script type="module">
-import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+import { Viewer } from 'https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js';
 const viewer = new Viewer('#ifc-viewer');
 window.exampleViewer = viewer;
 document.body.dataset.exampleState = 'loading';
@@ -112,6 +114,7 @@ types.addEventListener('change', event => {
 });
 document.getElementById('show-message').addEventListener('click', () => { void run(applyMessage); });
 await viewer.ready;
+await viewer.enableCopilot();
 controls.disabled = false;
 await applyMessage();
 document.body.dataset.exampleState = 'loaded';

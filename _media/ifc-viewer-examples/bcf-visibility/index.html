@@ -4,9 +4,10 @@
 <meta name="description" content="Switch between saved visibility presets to show only rooms, focus on doors and windows, or hide spaces and openings.">
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p, fieldset) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -63,6 +64,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <h2>Focus the model</h2>
 <p>Choose which components stay visible.</p>
 <fieldset id="preset-choice" disabled><legend>Saved view</legend><label class="example-option"><input type="radio" name="preset" value="bcf-visibility-hide-spaces-boundaries-openings">Hide spaces and openings</label><label class="example-option"><input type="radio" name="preset" value="bcf-visibility-show-spaces-only">Rooms only</label><label class="example-option"><input type="radio" name="preset" value="bcf-visibility-show-doors-windows">Doors and windows only</label><label class="example-option"><input type="radio" name="preset" value="bcf-visibility-hide-doors-windows">Hide doors and windows</label></fieldset><button id="retry" type="button" hidden>Retry sample</button>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/tree/7ddf57a201f88a0c213d5322b02ed15e94a60a40/IFC%202.3.0.1%20(IFC%202x3)/Medical-Dental%20Clinic" target="_blank" rel="noopener noreferrer">BSI (2020) · Medical-Dental Test Files</a> · <a href="https://github.com/buildingsmart-community/Community-Sample-Test-Files/blob/7ddf57a201f88a0c213d5322b02ed15e94a60a40/LICENSE" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
 <template id="example-guide">
@@ -88,7 +90,7 @@ async function withIfcModel(blob, read) {
     }
 }
 
-import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js';
 
 // GlobalIds, cameras and planes belong to these exact upstream IFC revisions.
 const model = {
@@ -424,6 +426,7 @@ presetChoice.addEventListener('change', async event => {
 retry.addEventListener('click', () => { void run(); });
 document.body.dataset.exampleState = 'loading';
 await viewer.ready;
+await viewer.enableCopilot();
 await run();
 </script>
 </body>

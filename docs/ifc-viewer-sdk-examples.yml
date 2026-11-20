@@ -97,6 +97,14 @@ items:
     thumbnail: /_media/ifc-viewer-examples/rotterdam-bridge/thumbnail.webp
     description: "See how a bridge connects the surrounding roads across a river, and switch between street and satellite maps."
     href: ifc-viewer-sdk-example-rotterdam-bridge.html
+  - name: "View the Golden Gate Bridge on a map"
+    thumbnail: /_media/ifc-viewer-examples/golden-gate-bridge/thumbnail.webp
+    description: "Explore the georeferenced IFC4x3 model of the Golden Gate Bridge and inspect its towers, deck and approaches on a map of San Francisco Bay."
+    href: ifc-viewer-sdk-example-golden-gate-bridge.html
+  - name: "Explore the Golden Gate Bridge lidar survey"
+    thumbnail: /_media/ifc-viewer-examples/golden-gate-lidar/thumbnail.webp
+    description: "Open the full-resolution USGS lidar scan on a map and inspect the surveyed towers and deck of the Golden Gate Bridge."
+    href: ifc-viewer-sdk-example-golden-gate-lidar.html
   - name: "Review saved annotations at a stair opening"
     thumbnail: /_media/ifc-viewer-examples/bcf-annotations/thumbnail.webp
     description: "Open an existing BCF outline and arrow in a close section view to review the stair opening and its approach."

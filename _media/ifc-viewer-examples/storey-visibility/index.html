@@ -4,9 +4,10 @@
 <meta name="description" content="Choose which storeys to display using the building components assigned to each level.">
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-controls { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p, fieldset) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -80,7 +81,8 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 </script>
 </head><body data-example-state="loading">
 <main id="example-viewer-mount" aria-label="Model viewer"><bim-grid id="ifc-viewer"></bim-grid></main>
-<aside class="example-ui example-controls" aria-label="Building storeys"><h2>Building storeys</h2><p>Choose the levels you want to inspect. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p><fieldset id="task" disabled aria-label="Storey visibility controls"></fieldset><output id="result" aria-live="polite"></output><button id="retry" type="button" hidden>Retry</button></aside>
+<aside class="example-ui example-controls" aria-label="Building storeys"><h2>Building storeys</h2><p>Choose the levels you want to inspect. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p><fieldset id="task" disabled aria-label="Storey visibility controls"></fieldset><output id="result" aria-live="polite"></output><button id="retry" type="button" hidden>Retry</button><p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
+</aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://huggingface.co/datasets/sylvainHellin/ifc-bench/blob/1288fc91655823a36900b7bb75a671d5fa444afd/projects/west_riverside_hospital/arc_ifc4.ifc" target="_blank" rel="noopener noreferrer">Wawan Solihin / OpenIFC · IFC-Bench</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a></div>
 <template id="example-guide"><h2 data-example-title>Show or hide building storeys</h2><p data-example-description>Choose which storeys to display using the building components assigned to each level.</p><h3>Inspect levels</h3><p>Toggle a storey to show or hide its components. Unassigned components have their own option. This example changes visibility; it does not cut the model. Select a component, then click <strong>1 element selected</strong> at the top left to open Properties.</p><h3>Developer integration</h3><p>The component identifiers, names and storey memberships are queried through the native <code>viewer.IfcAPI</code>. The original architectural IFC4 file is hash-verified and imported unchanged. BCF views are written with <code>bcf.save()</code>, imported with <code>viewer.add()</code>, and applied with <code>viewer.selectTopic()</code>. Open <strong>Topics</strong> (speech bubble) on the left toolbar to inspect the generated viewpoint.</p><p>The spatial tree supplies level names and element membership. Components nested in spaces or assemblies inherit the enclosing storey.</p><p>The page opens the original source bytes with <code>await viewer.IfcAPI</code>, reads native model data, then closes the model and disposes WASM before displaying the source with <code>viewer.add()</code>. See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a>.</p>
 </template>
@@ -105,7 +107,7 @@ async function withIfcModel(blob, read) {
     }
 }
 
-import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js';
+import { Viewer, bcf } from 'https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js';
 const { assets: modelFiles } = JSON.parse(document.getElementById('example-data').textContent);
 let storeys = [];
 function createExampleProject(title, state, identity = {}) {
@@ -226,6 +228,7 @@ function run(task) {
         let failed = false;
         try {
             await viewer.ready;
+            await viewer.enableCopilot();
             await task();
             await viewer.setMessage(null);
         } catch (error) {

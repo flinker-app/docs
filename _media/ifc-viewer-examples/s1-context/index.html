@@ -7,9 +7,10 @@
 
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -69,13 +70,14 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
       "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
       "noticeUrl": "https://viewer.flinker.app/examples/s1-context/index.html#example-notices",
       "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Sixty5 / Building Field S1, Strijp-S.",
-      "notes": "The example corrects IFC georeferencing metadata using the published S1 horizontal placement before normal import. Original geometry is retained. Local model heights are used; no surveyed elevation is claimed.",
+      "notes": "The example uses the published S1 horizontal placement and interprets the facade IFC's 20 m site elevation as NAP for both building models.",
       "georeference": {
         "eastings": 160071.5,
         "northings": 384156.5,
         "xAxisAbscissa": 0.6379617540893054,
         "xAxisOrdinate": -0.7700680491484481,
         "scale": 0.001,
+        "orthogonalHeight": 20,
         "latitude": 51.44647556666666,
         "longitude": 5.460151696111112
       },
@@ -92,13 +94,14 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
       "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
       "noticeUrl": "https://viewer.flinker.app/examples/s1-context/index.html#example-notices",
       "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Sixty5 / Building Field S1, Strijp-S.",
-      "notes": "The example corrects IFC georeferencing metadata using the published S1 horizontal placement before normal import. Original geometry is retained. Local model heights are used; no surveyed elevation is claimed.",
+      "notes": "The example uses the published S1 horizontal placement and interprets this IFC's 20 m site elevation as NAP.",
       "georeference": {
         "eastings": 160071.5,
         "northings": 384156.5,
         "xAxisAbscissa": 0.6379617540893054,
         "xAxisOrdinate": -0.7700680491484481,
         "scale": 0.001,
+        "orthogonalHeight": 20,
         "latitude": 51.44647556666666,
         "longitude": 5.460151696111112
       },
@@ -115,13 +118,15 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
       "licenseUrl": "https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE",
       "noticeUrl": "https://viewer.flinker.app/examples/s1-context/index.html#example-notices",
       "attribution": "Geonovum GeoBIM georeferencing practice dataset and original model authors. W3C Software and Document license as published in the source repository. Underlying data: © 3DBAG by tudelft3d and 3DGI, CC BY 4.0. https://docs.3dbag.nl/en/copyright/",
-      "notes": "The example writes the published GIS origin into standard IFC2X3 georeferencing metadata before normal import. Original geometry and local model heights are retained.",
+      "notes": "The example uses the published GIS origin and restores each neighbouring building's NAP ground elevation from its 3DBAG property.",
       "georeference": {
         "eastings": 159860.987,
         "northings": 384230.208,
         "xAxisAbscissa": 1,
         "xAxisOrdinate": 0,
         "scale": 1,
+        "orthogonalHeight": 0,
+        "restoreGroundElevations": true,
         "latitude": 51.44714029715481,
         "longitude": 5.457125826791071
       },
@@ -171,25 +176,26 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>The native IFC API edits georeferencing in memory before the models are displayed.</p>
 <p>Open <strong>Files</strong> (folder) on the left toolbar. Toggle the checkbox beside <strong>OMG_KS_3dBAG.ifc</strong> to show or hide the neighbouring buildings. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
 <button id="sample-retry" type="button" hidden>Retry sample</button>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1/O-S1-CON-Structural%20engineering%20-%20Constructie.ifc" target="_blank" rel="noopener noreferrer">Geonovum / W3C</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C</a><br><a href="https://docs.3dbag.nl/en/copyright/" target="_blank" rel="noopener noreferrer">© 3DBAG by tudelft3d and 3DGI</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div>
 <template id="example-guide">
 <h2 data-example-title>Edit IFC georeferencing with web-ifc</h2>
 <p data-example-description>Use the native IFC API to position the S1 building and 3DBAG surroundings, then display the edited models on a map.</p>
-<h3>Try it</h3><ol><li>Compare the building with the surrounding buildings and street map.</li><li>Open Files (folder) on the left toolbar and toggle the checkbox beside OMG_KS_3dBAG.ifc to distinguish project geometry from its neighbours.</li><li>Zoom to the project boundary to inspect its relationship to the nearby buildings.</li></ol><h2>Developer integration</h2>
+<h3>Try it</h3><ol><li>Compare the building, surrounding buildings and map terrain. Open View → Layers to adjust Terrain heights.</li><li>Open Files (folder) on the left toolbar and toggle the checkbox beside OMG_KS_3dBAG.ifc to distinguish project geometry from its neighbours.</li><li>Zoom to the project boundary to inspect its relationship to the nearby buildings.</li></ol><h2>Developer integration</h2>
 <p>Use <code>const api = await viewer.IfcAPI</code> to obtain the complete native web-ifc instance supplied by the SDK. Call <code>Init()</code> and <code>OpenModel()</code> for each downloaded IFC. This API runs on the main thread and owns its models independently of the viewer.</p>
 <p>This example reads the project, site and geometric contexts through web-ifc. It updates the site coordinates and true north, writes the IFC2X3 <code>ePSet_ProjectedCRS</code> and <code>ePSet_MapConversion</code> property sets with <code>CreateIfcEntity()</code>, <code>CreateIfcType()</code> and <code>WriteLine()</code>, then saves the edited bytes with <code>SaveModel()</code>.</p>
-<p>The native model is closed and WASM disposed before the saved bytes are passed to <code>viewer.add()</code>. After all three files load, <code>viewer.toggleMap(true)</code> displays their corrected placement. Native vectors are released explicitly. Repeated access to <code>viewer.IfcAPI</code> returns the same instance, which is initialized again for the next file. Geometry and local heights are retained, and the original downloads are not overwritten.</p>
+<p>The native model is closed and WASM disposed before the saved bytes are passed to <code>viewer.add()</code>. After all three files load, <code>viewer.toggleMap(true)</code> displays their corrected placement and lets the viewer enable terrain automatically. Native vectors are released explicitly. Repeated access to <code>viewer.IfcAPI</code> returns the same instance, which is initialized again for the next file.</p>
 <p>See the <a href="https://thatopen.github.io/engine_web-ifc/docs/classes/web-ifc.IfcAPI.html">complete web-ifc API reference</a> for all native methods.</p><p>Copy this folder and serve it over HTTP, for example <code>python -m http.server 8080</code>. Open <code>http://localhost:8080/</code>; the SDK and sample downloads require internet access.</p>
-<h3>Model notes</h3><p>Georeferencing corrected; geometry retained. Heights are local.</p>
+<h3>Model notes</h3><p>Placement uses RD New and NAP. The building's 20 m reference elevation is an assumption for this demo, based on the facade IFC.</p>
 </template>
 <template id="example-notices">
 <h2>Sources and license notices</h2><p><a href="https://github.com/Geonovum/GeoBIM_Georefereren/tree/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_B%26U/Project%20S1" target="_blank" rel="noopener noreferrer">Geonovum and original model authors</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C</a></p>
-<h3>3DBAG surroundings</h3><p>The neighbouring buildings in <code>OMG_KS_3dBAG.ifc</code> are derived from 3DBAG. <a href="https://docs.3dbag.nl/en/copyright/" target="_blank" rel="noopener noreferrer">© 3DBAG by tudelft3d and 3DGI</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Geonovum distributes the IFC conversion. This example corrects its IFC georeferencing metadata before import; original geometry and local model heights are retained.</p>
-<p>The example corrects IFC georeferencing metadata using the published S1 horizontal placement before normal import. Original geometry is retained. Local model heights are used; no surveyed elevation is claimed.</p>
+<h3>3DBAG surroundings</h3><p>The neighbouring buildings in <code>OMG_KS_3dBAG.ifc</code> are derived from 3DBAG. <a href="https://docs.3dbag.nl/en/copyright/" target="_blank" rel="noopener noreferrer">© 3DBAG by tudelft3d and 3DGI</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Geonovum distributes the IFC conversion. The example restores the <a href="https://docs.3dbag.nl/en/schema/attributes/#b3_h_maaiveld">3DBAG ground elevations in NAP</a> through the IFC object placements.</p>
+<p>The building models share the <a href="https://github.com/bedrock-engineer/ifc-georeferencer-workshop">published S1 horizontal placement</a> and use the facade IFC's 20 m site elevation as an approximate NAP reference. Nearby ground levels were checked against <a href="https://www.ahn.nl/dataroom">AHN4</a>.</p>
 </template>
 <script type="module">
-import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js";
 async function withIfcModel(blob, read) {
     const api = await viewer.IfcAPI;
     await api.Init();
@@ -217,6 +223,32 @@ async function queryType(api, modelID, name, recursive = false) {
         return await readIfcLines(api, modelID, ids, recursive);
     } finally { vector.delete(); }
 }
+async function restore3dBagGroundElevations(api, modelID) {
+    const entity = (name, ...args) => api.CreateIfcEntity(modelID, api.GetTypeCodeFromName(name), ...args);
+    const length = value => api.CreateIfcType(modelID, api.GetTypeCodeFromName('IFCLENGTHMEASURE'), value);
+    const heightBySet = new Map();
+    for (const set of await queryType(api, modelID, 'IFCPROPERTYSET')) {
+        if (set.Name?.value !== 'CPset_3dBAG-pand') continue;
+        const ground = set.HasProperties.map(ref => api.GetLine(modelID, ref.value))
+            .find(property => property.Name?.value === 'h_maaiveld');
+        heightBySet.set(set.expressID, Number(ground?.NominalValue?.value));
+    }
+    // This IFC stores each footprint at local zero and its NAP height as a property.
+    for (const relation of await queryType(api, modelID, 'IFCRELDEFINESBYPROPERTIES')) {
+        const height = heightBySet.get(relation.RelatingPropertyDefinition?.value);
+        if (!Number.isFinite(height)) continue;
+        for (const ref of relation.RelatedObjects) {
+            const building = api.GetLine(modelID, ref.value);
+            const placement = api.GetLine(modelID, building.ObjectPlacement.value);
+            const axes = api.GetLine(modelID, placement.RelativePlacement.value);
+            const [x, y, z] = api.GetLine(modelID, axes.Location.value).Coordinates.map(coordinate => Number(coordinate.value));
+            const point = entity('IFCCARTESIANPOINT', [length(x), length(y), length(z + height)]);
+            const raisedAxes = entity('IFCAXIS2PLACEMENT3D', point, axes.Axis, axes.RefDirection);
+            building.ObjectPlacement = entity('IFCLOCALPLACEMENT', placement.PlacementRelTo, raisedAxes);
+            api.WriteLine(modelID, building);
+        }
+    }
+}
 async function correctSampleGeoreference(file, geo) {
     return withIfcModel(file, async (api, modelID) => {
         if (api.GetModelSchema(modelID) !== 'IFC2X3') throw new Error('The S1 correction requires the pinned IFC2X3 source.');
@@ -228,7 +260,7 @@ async function correctSampleGeoreference(file, geo) {
         for (const site of await queryType(api, modelID, 'IFCSITE')) {
             site.RefLatitude = dms(geo.latitude).map(value => type('IFCINTEGER', value));
             site.RefLongitude = dms(geo.longitude).map(value => type('IFCINTEGER', value));
-            site.RefElevation = type('IFCLENGTHMEASURE', 0);
+            site.RefElevation = type('IFCLENGTHMEASURE', geo.orthogonalHeight / geo.scale);
             api.WriteLine(modelID, site);
         }
         for (const context of await queryType(api, modelID, 'IFCGEOMETRICREPRESENTATIONCONTEXT')) {
@@ -257,13 +289,14 @@ async function correctSampleGeoreference(file, geo) {
         };
         pset('ePSet_ProjectedCRS', {
             Name: type('IFCLABEL', 'EPSG:28992'), MapUnit: type('IFCLABEL', 'METRE'),
-            Description: type('IFCTEXT', 'S1 example: published RD New horizontal placement; local model heights, no surveyed elevation'),
-            VerticalDatum: type('IFCLABEL', 'LOCAL'),
+            Description: type('IFCTEXT', 'S1 example: RD New horizontal placement and NAP heights for terrain comparison'),
+            VerticalDatum: type('IFCLABEL', 'EPSG:5709'),
         });
         pset('ePSet_MapConversion', Object.fromEntries(Object.entries({
-            Eastings: geo.eastings, Northings: geo.northings, OrthogonalHeight: 0,
+            Eastings: geo.eastings, Northings: geo.northings, OrthogonalHeight: geo.orthogonalHeight,
             XAxisAbscissa: geo.xAxisAbscissa, XAxisOrdinate: geo.xAxisOrdinate, Scale: geo.scale,
         }).map(([key, value]) => [key, type('IFCREAL', value)])));
+        if (geo.restoreGroundElevations) await restore3dBagGroundElevations(api, modelID);
         return api.SaveModel(modelID);
     });
 }
@@ -343,6 +376,7 @@ async function load() {
     document.body.dataset.exampleState = 'loading';
     try {
         await viewer.ready;
+        await viewer.enableCopilot();
         for (const asset of assets) {
             if (imported.has(asset.id))
                 continue;

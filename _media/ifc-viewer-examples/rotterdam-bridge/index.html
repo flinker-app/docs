@@ -7,9 +7,10 @@
 
 <style>
 html, body { height: 100%; margin: 0; }
-#example-viewer-mount { position: fixed; inset: 0; }
+/* Keep host controls below SDK side panels on narrow screens. */
+#example-viewer-mount { position: absolute; inset: 0; }
 bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.example-ui { position: fixed; z-index: 10; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
+.example-ui { position: fixed; z-index: 2; box-sizing: border-box; color: #253041; font: 12px/1.4 system-ui, sans-serif; }
 .example-ui.example-task { right: 10px; bottom: 64px; width: 224px; max-width: calc(100vw - 64px); display: grid; gap: 6px; padding: 10px; background: #fff; border: 1px solid #dfe3e8; border-radius: 4px; box-shadow: 0 1px 5px #14203310; }
 .example-ui :is(h2, p) { margin: 0; }
 .example-ui h2 { font-size: 13px; line-height: 1.3; font-weight: 650; }
@@ -86,6 +87,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>Zoom out to see how the bridge connects the roads across the river. Select a component, then click <strong>1 element selected</strong> at the top left to open <strong>Properties</strong>.</p>
 <p>To change the map, open <strong>View</strong> at the top right → <strong>Layers</strong>, then choose <strong>Satellite</strong> or <strong>Street</strong>.</p>
 <button id="sample-retry" type="button" hidden>Retry sample</button>
+<p>Open <strong>Copilot</strong> on the left toolbar to start a chat.</p>
 </aside>
 <div class="example-ui example-credit" aria-label="Sample source and license"><a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/data/voorbeeldmodellen_Infra/Van%20Brienenoordbrug-IFC4X3.ifc" target="_blank" rel="noopener noreferrer">Geonovum / W3C</a> · <a href="https://github.com/Geonovum/GeoBIM_Georefereren/blob/0fe0f5e89676de3d21fc3219eb5805b36e29e032/LICENSE" target="_blank" rel="noopener noreferrer">W3C</a></div>
 <template id="example-guide">
@@ -99,7 +101,7 @@ bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%;
 <p>The example supplements the missing vertical datum as NAP, inferred from the publisher’s successful height validation against AHN (NAP). Original geometry, map-conversion coordinates and heights are retained. The publisher reports a small XYZ offset against AHN. Copernicus is a 30 m surface model, so this is not a certified survey overlay.</p>
 </template>
 <script type="module">
-import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.3/ifc-viewer.es.js";
+import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js";
 async function withIfcModel(blob, read) {
     const api = await viewer.IfcAPI;
     await api.Init();
@@ -201,6 +203,7 @@ async function load() {
     document.body.dataset.exampleState = 'loading';
     try {
         await viewer.ready;
+        await viewer.enableCopilot();
         for (const asset of assets) {
             if (imported.has(asset.id))
                 continue;

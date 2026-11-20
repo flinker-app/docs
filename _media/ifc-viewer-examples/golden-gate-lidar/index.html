@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore the Golden Gate Bridge lidar survey</title>
+  <meta name="description" content="Open the full-resolution USGS lidar scan on a map and inspect the surveyed towers and deck of the Golden Gate Bridge.">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #example-viewer-mount { position: absolute; inset: 0; }
+    bim-grid#ifc-viewer { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
+    .example-ui { position: fixed; z-index: 2; right: 12px; bottom: 58px; width: 252px;
+      max-width: calc(100vw - 72px); box-sizing: border-box; padding: 10px 12px; border: 1px solid #dfe3e8;
+      border-radius: 4px; background: #fff; color: #233041; font: 12px/1.45 system-ui, sans-serif; }
+    .example-ui h1 { margin: 0; font-size: 15px; line-height: 1.3; }
+    .example-ui p { margin: 6px 0 0; }
+    .example-ui .credit { color: #516174; font-size: 11px; }
+    .example-ui button { margin-top: 8px; font: inherit; }
+    @media (max-width: 500px) { .example-ui { right: 8px; bottom: 52px; padding: 8px 10px; } }
+  </style>
+  <!-- generated:example-seo:start -->
+  <link rel="canonical" href="https://viewer.flinker.app/examples/golden-gate-lidar/index.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Explore the Golden Gate Bridge lidar survey">
+  <meta property="og:description" content="Open the full-resolution USGS lidar scan on a map and inspect the surveyed towers and deck of the Golden Gate Bridge.">
+  <meta property="og:url" content="https://viewer.flinker.app/examples/golden-gate-lidar/index.html"><meta property="og:type" content="article">
+  <meta property="og:site_name" content="Flinker IFC Viewer"><meta property="og:image" content="https://viewer.flinker.app/examples/golden-gate-lidar/thumbnail.webp">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Explore the Golden Gate Bridge lidar survey">
+  <meta name="twitter:description" content="Open the full-resolution USGS lidar scan on a map and inspect the surveyed towers and deck of the Golden Gate Bridge."><meta name="twitter:image" content="https://viewer.flinker.app/examples/golden-gate-lidar/thumbnail.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Explore the Golden Gate Bridge lidar survey","description":"Open the full-resolution USGS lidar scan on a map and inspect the surveyed towers and deck of the Golden Gate Bridge.","url":"https://viewer.flinker.app/examples/golden-gate-lidar/index.html","mainEntityOfPage":"https://viewer.flinker.app/examples/golden-gate-lidar/index.html","image":"https://viewer.flinker.app/examples/golden-gate-lidar/thumbnail.webp","inLanguage":"en","author":{"@type":"Organization","name":"Flinker","url":"https://www.flinker.app/"}}</script>
+  <!-- generated:example-seo:end -->
+  <script type="application/json" id="example-data">
+{
+  "category": "Reality capture",
+  "formats": [
+    "LAZ"
+  ],
+  "capabilities": [
+    "LiDAR",
+    "Georeferencing",
+    "Bridges",
+    "Maps"
+  ],
+  "audience": "BIM workflow",
+  "order": 22.2,
+  "viewer": {
+    "assetIds": [
+      "golden-gate-survey"
+    ],
+    "presentation": "map"
+  },
+  "assets": [
+    {
+      "id": "golden-gate-survey",
+      "name": "Golden Gate Bridge 2023.laz",
+      "format": "LAZ",
+      "bytes": 92012342,
+      "points": 21854294,
+      "sha256": "404ee4c8d080656f6b63867a77d6e2514d744b82de5840fa5a29de58699fc883",
+      "url": "https://raw.githubusercontent.com/flinker-app/ifc-sample-files/88e19691a436ed4740a9904bfd4de48accaa3e1d/Golden_Gate_Bridge/Golden%20Gate%20Bridge%202023.laz",
+      "sourceUrl": "https://www.fisheries.noaa.gov/inport/item/73386/full-list",
+      "license": "Public domain",
+      "licenseUrl": "https://www.usgs.gov/3d-elevation-program/about-3dep-products-services",
+      "noticeUrl": "https://viewer.flinker.app/examples/golden-gate-lidar/index.html#example-notices",
+      "attribution": "2023 USGS 3D Elevation Program and NV5 Geospatial. Flinker clipped the public survey to the bridge corridor at full point density.",
+      "notes": "Flinker clipped the source survey to the bridge corridor at full point density and ordered the returns by acquisition time for lossless LAZ compression."
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <main id="example-viewer-mount" aria-label="Explore the Golden Gate Bridge lidar survey"><bim-grid id="ifc-viewer"></bim-grid></main>
+  <aside class="example-ui" aria-label="Golden Gate Bridge instructions">
+    <h1 data-example-title>Explore the Golden Gate Bridge lidar survey</h1>
+    <p>Zoom in on a tower to inspect the survey points. Open <strong>View → Layers</strong> to switch between Street and Satellite.</p>
+    <p class="credit"><a href="https://www.fisheries.noaa.gov/inport/item/73386/full-list">USGS and NV5 Geospatial</a> · <a href="https://www.usgs.gov/3d-elevation-program/about-3dep-products-services">Public domain</a></p>
+    <button id="retry" type="button" hidden>Retry sample</button>
+  </aside>
+
+  <template id="example-guide">
+    <h2>Explore the surveyed bridge</h2>
+    <p>The 92 MB LAZ opens at the Golden Gate using its embedded WGS 84 / Pseudo-Mercator coordinates (EPSG:3857). Elevations are in NAVD88 metres (EPSG:5703). Zoom toward either tower to see the scan refine. Use <strong>View → Layers</strong> to switch the basemap.</p>
+    <p>The cloud contains 21,854,294 returns in a 90 m wide corridor along the main span and approaches. Allow about 2.2 GB of temporary browser storage for indexing. Each return includes position, laser intensity and classification.</p>
+  </template>
+
+  <template id="example-notices">
+    <h2>Survey source and reuse</h2>
+    <p><a href="https://www.fisheries.noaa.gov/inport/item/73386/full-list">2023 USGS Lidar: San Francisco, CA</a> was acquired by NV5 Geospatial for the USGS 3D Elevation Program. Flinker clipped all survey detail levels to the bridge corridor, retaining the point attributes and coordinates, and ordered the points by acquisition time for lossless LAZ compression. The survey is <a href="https://www.usgs.gov/3d-elevation-program/about-3dep-products-services">public domain</a>.</p>
+  </template>
+
+  <script type="module">
+    import { Viewer } from "https://cdn.flinker.app/ifc-viewer/v4.0.28/ifc-viewer.es.js";
+
+async function loadExampleFile(name, url, load = blob => viewer.add(name, blob), size = 0) {
+    const show = stage => viewer.setMessage(name + ': ' + stage, { type: 'loading' });
+    const chunks = [], chunkSize = 4 * 1024 * 1024;
+    let offset = 0, attempts = 0, action = 'download', type = '';
+    try {
+        await show('Downloading');
+        while (!size || offset < size) {
+            try {
+                const end = Math.min(offset + chunkSize, size || Infinity) - 1;
+                const response = await fetch(url, {
+                    headers: { Range: 'bytes=' + offset + '-' + end },
+                    cache: 'no-store', signal: AbortSignal.timeout(60000),
+                });
+                if (!response.ok) {
+                    await response.body?.cancel();
+                    // GitHub raw hides Content-Range from browser JavaScript: probe EOF.
+                    if (response.status === 416 && offset && !size) break;
+                    throw Object.assign(new Error('HTTP ' + response.status), { retry: [408, 429].includes(response.status) || response.status >= 500 });
+                }
+                const range = response.headers.get('content-range')?.match(/^bytes (\d+)-(\d+)\/(\d+)$/);
+                if (range && Number(range[1]) !== offset) throw new TypeError('Unexpected byte range');
+                size ||= Number(range?.[3]) || 0;
+                const bytes = await response.arrayBuffer();
+                const expected = response.status === 206 ? (size ? Math.min(chunkSize, size - offset) : 0) : size;
+                if (!bytes.byteLength || (expected && bytes.byteLength !== expected) || (response.status === 206 && bytes.byteLength > chunkSize))
+                    throw new TypeError('Incomplete download at byte ' + offset);
+                if (response.status === 200) chunks.length = 0; // Server ignored Range.
+                chunks.push(bytes);
+                offset = response.status === 200 ? bytes.byteLength : offset + bytes.byteLength;
+                type = response.headers.get('content-type') || '';
+                attempts = 0;
+                if (response.status === 200) break;
+                await show('Downloading' + (size ? ' ' + Math.round(offset / size * 100) + '%' : ''));
+            }
+            catch (error) {
+                if (error.retry === false || ++attempts === 3) throw error;
+                await show('Retrying download');
+                await new Promise(resolve => setTimeout(resolve, 500 * 2 ** (attempts - 1)));
+            }
+        }
+        action = 'open';
+        const result = await load(new Blob(chunks, { type }), show);
+        if (result?.isError) throw new Error('The viewer could not open the file');
+        await viewer.setMessage(null);
+        return result;
+    }
+    catch (error) {
+        throw new Error('Could not ' + action + ' ' + name + (action === 'download' ? ' from ' + url : '') + ': ' + error.message, { cause: error });
+    }
+}
+
+    const { assets: [asset] } = JSON.parse(document.getElementById('example-data').textContent);
+    const viewer = new Viewer('#ifc-viewer');
+    window.exampleViewer = viewer;
+    const retry = document.getElementById('retry');
+    let imported = false;
+
+    async function load() {
+      retry.hidden = true;
+      document.body.dataset.exampleState = 'loading';
+      try {
+        await viewer.ready;
+        if (!imported) {
+          await viewer.enableCopilot();
+          await loadExampleFile(asset.name, asset.url, undefined, asset.bytes);
+          imported = true;
+        }
+        await viewer.toggleMap(true);
+        document.body.dataset.exampleState = 'loaded';
+      } catch (error) {
+        document.body.dataset.exampleState = 'error';
+        await viewer.setMessage(error instanceof Error ? error.message : String(error), { type: 'error' });
+        retry.hidden = false;
+      }
+    }
+
+    retry.addEventListener('click', () => { void load(); });
+    void load();
+  </script>
+</body>
+</html>
