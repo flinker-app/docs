@@ -1,4 +1,16 @@
- ### 2.5.0.0 - 2026-07-22
+### 3.0.0.0 - 2026-11-20
+
+- Show a clear message when SharePoint blocks the viewer
+- Show SharePoint download progress and retry temporary failures
+- Fix false BCF import errors and identify Microsoft Lists by name
+- Save BCF edits back to the original files and Microsoft Lists
+- Make the viewer easier to reopen and match light or dark mode
+- Navigate large models more smoothly and view point clouds on maps
+- Release IFC Viewer for SharePoint 3.0
+
+
+
+### 2.5.0.0 - 2026-07-22
 
 * Use the Viewer SDK for SharePoint file loading
 * Load viewer models faster
