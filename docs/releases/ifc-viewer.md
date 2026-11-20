@@ -1,4 +1,9 @@
- ### v4.0.30 - 2026-11-18
+ ### v4.0.31 - 2026-11-20
+
+- Improve IFC georeferencing, terrain maps and point clouds
+
+
+### v4.0.30 - 2026-11-18
 
 - Load maps and 3D terrain more smoothly
 
