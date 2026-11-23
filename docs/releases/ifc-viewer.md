@@ -1,4 +1,9 @@
- ### v4.0.31 - 2026-11-20
+ ### v4.0.32 - 2026-11-23
+
+- Improve IFC Copilot and file management
+
+
+### v4.0.31 - 2026-11-20
 
 - Improve IFC georeferencing, terrain maps and point clouds
 
