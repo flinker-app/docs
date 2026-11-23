@@ -542,7 +542,8 @@ enableCopilot(): Promise<void>;
 ```
 
 Initialize Copilot and reveal its toolbar button. Repeated calls are safe.
-Files opened after enabling are retained for Copilot; [clear](#clear) preserves this opt-in.
+Copilot can read files opened after enabling it. Subsequent IFC imports use browser disk staging.
+[clear](#clear) preserves this opt-in.
 
 #### Returns
 
