@@ -1,4 +1,9 @@
- ### v4.0.32 - 2026-11-23
+ ### v4.0.33 - 2026-11-23
+
+- Fix camera movement in Firefox
+
+
+### v4.0.32 - 2026-11-23
 
 - Improve IFC Copilot and file management
 
