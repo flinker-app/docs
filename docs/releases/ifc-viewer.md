@@ -1,4 +1,9 @@
- ### v4.0.33 - 2026-11-23
+ ### v4.0.34 - 2026-11-24
+
+- Update Copilot to IFC MCP 0.3
+
+
+### v4.0.33 - 2026-11-23
 
 - Fix camera movement in Firefox
 
