@@ -73,6 +73,10 @@ jobs:
         # Upload the _site directory containing the generated site
         path: './_site'
 
+    # GitHub Pages can take time to find a completed upload. See actions/deploy-pages#451.
+    - name: Wait for the Pages artifact to become visible
+      run: sleep 60
+
     # Deploy the site to GitHub Pages
     - name: Deploy to GitHub Pages
       id: deployment
