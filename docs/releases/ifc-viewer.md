@@ -1,4 +1,10 @@
- ### v4.0.34 - 2026-11-24
+ ### v4.0.35 - 2026-11-26
+
+- Fix reopening saved projects when original file access is lost
+- Speed up the first zoom and drag on large IFC models
+
+
+### v4.0.34 - 2026-11-24
 
 - Update Copilot to IFC MCP 0.3
 
