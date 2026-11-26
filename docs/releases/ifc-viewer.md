@@ -1,4 +1,11 @@
- ### v4.0.35 - 2026-11-26
+ ### v4.0.36 - 2026-11-26
+
+- Configure the Activity Bar, View Bar, and Status Bar independently. The split SDK loads UI assets on demand.
+- Unload all files from the Files toolbar.
+- Keep the Status Bar and rotation helper consistent when the viewer runs with fewer controls.
+- Cancel pending BCF imports when clearing the viewer.
+
+### v4.0.35 - 2026-11-26
 
 - Fix reopening saved projects when original file access is lost
 - Speed up the first zoom and drag on large IFC models
