@@ -18,7 +18,14 @@ await viewer.add("model.ifc", bytes);
 ### Constructor
 
 ```ts
-new Viewer(target?: string | HTMLElement): Viewer;
+new Viewer(target?: string | HTMLElement, options?: {
+  ui?:   | boolean
+     | {
+     activityBar?: boolean;
+     statusBar?: boolean;
+     viewBar?: boolean;
+   };
+}): Viewer;
 ```
 
 #### Parameters
@@ -29,6 +36,21 @@ new Viewer(target?: string | HTMLElement): Viewer;
 
 CSS selector string or HTMLElement where the viewer will be mounted.
   Defaults to `"#ifc-viewer"`.
+
+##### options?
+
+Set `ui` to false for the interactive viewport alone, or configure the activity bar, view bar, and status bar separately.
+
+###### ui?
+
+  \| `boolean`
+  \| \{
+  `activityBar?`: `boolean`;
+  `statusBar?`: `boolean`;
+  `viewBar?`: `boolean`;
+\}
+
+Show or hide all controls, or configure each bar separately. Defaults to true.
 
 #### Returns
 
@@ -126,7 +148,7 @@ try {
 add(name: string | null | undefined, source: Uint8Array | Blob): Promise<
   | void
   | {
-  application: "failed" | "partial" | "pending" | "not-applied" | "applied";
+  application: "partial" | "failed" | "pending" | "not-applied" | "applied";
   coloredComponents?: number;
   filename?: string;
   issues: {
@@ -167,7 +189,7 @@ Raw file contents as a `Uint8Array` or `Blob`.
 `Promise`\<
   \| `void`
   \| \{
-  `application`: `"failed"` \| `"partial"` \| `"pending"` \| `"not-applied"` \| `"applied"`;
+  `application`: `"partial"` \| `"failed"` \| `"pending"` \| `"not-applied"` \| `"applied"`;
   `coloredComponents?`: `number`;
   `filename?`: `string`;
   `issues`: \{
@@ -297,7 +319,7 @@ Initialize licensing and reveal the account button, using the host's user contex
 clear(): Promise<void>;
 ```
 
-Unload all models and BCF data and reset the viewer to a clean state.
+Unload all files and reset the viewer to a clean state.
 Disposes geometry, clipping planes, measurements, filters, and event listeners.
 
 #### Returns
@@ -542,7 +564,8 @@ enableCopilot(): Promise<void>;
 ```
 
 Initialize Copilot and reveal its toolbar button. Repeated calls are safe.
-Copilot can read files opened after enabling it. Subsequent IFC imports use browser disk staging.
+Activation waits until the left bar is shown.
+Copilot can read files opened after activation. Subsequent IFC imports use browser disk staging.
 [clear](#clear) preserves this opt-in.
 
 #### Returns
@@ -703,7 +726,7 @@ Returns a function that removes the listener. Subscriptions survive `clear()`.
 
 ```ts
 selectTopic(id: string): Promise<{
-  application: "failed" | "partial" | "pending" | "not-applied" | "applied";
+  application: "partial" | "failed" | "pending" | "not-applied" | "applied";
   coloredComponents?: number;
   filename?: string;
   issues: {
@@ -735,7 +758,7 @@ GUID of the loaded BCF topic whose default viewpoint is displayed.
 #### Returns
 
 `Promise`\<\{
-  `application`: `"failed"` \| `"partial"` \| `"pending"` \| `"not-applied"` \| `"applied"`;
+  `application`: `"partial"` \| `"failed"` \| `"pending"` \| `"not-applied"` \| `"applied"`;
   `coloredComponents?`: `number`;
   `filename?`: `string`;
   `issues`: \{
@@ -800,12 +823,13 @@ setMessage(textOrNull: string | null, options?: {
      label: string;
   };
   progress?: number;
-  type?: "info" | "loading" | "error" | "warning" | "success";
+  type?: "error" | "info" | "warning" | "success" | "loading";
 }): Promise<void>;
 ```
 
 Set a custom status message, or pass `null` to clear it.
 Defaults to an informational message. Clearing preserves import progress and license notices.
+Messages appear when the loading and message bar is enabled.
 
 #### Parameters
 
@@ -842,7 +866,7 @@ Progress from 0 to 100. Omit for indeterminate loading.
 
 ###### type?
 
-`"info"` \| `"loading"` \| `"error"` \| `"warning"` \| `"success"`
+`"error"` \| `"info"` \| `"warning"` \| `"success"` \| `"loading"`
 
 #### Returns
 
@@ -870,6 +894,28 @@ Registration survives clear(); setting null does not show or hide messages.
 ##### handler
 
 [`ViewerSaveHandler`](../types/ViewerSaveHandler.md) \| `null`
+
+#### Returns
+
+`Promise`\<`void`\>
+
+***
+
+<a id="setuivisible"></a>
+
+### setUIVisible()
+
+```ts
+setUIVisible(visible: boolean): Promise<void>;
+```
+
+Show or hide the built-in toolbars, panels, and context menu. Preserves the current view.
+
+#### Parameters
+
+##### visible
+
+`boolean`
 
 #### Returns
 

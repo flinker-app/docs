@@ -3580,7 +3580,15 @@
     "href": "interfaces/ViewerSaveRequest.md"
   },
   {
+    "name": "ViewerOptions",
+    "href": "types/ViewerOptions.md"
+  },
+  {
     "name": "ViewerSaveHandler",
     "href": "types/ViewerSaveHandler.md"
+  },
+  {
+    "name": "ViewerUIOptions",
+    "href": "types/ViewerUIOptions.md"
   }
 ]

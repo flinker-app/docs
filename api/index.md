@@ -15,4 +15,6 @@
 
 ## Type Aliases
 
+- [ViewerOptions](types/ViewerOptions.md)
 - [ViewerSaveHandler](types/ViewerSaveHandler.md)
+- [ViewerUIOptions](types/ViewerUIOptions.md)
