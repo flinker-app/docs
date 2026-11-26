@@ -12,7 +12,7 @@ The automated 5D pipeline takes three things your project already produces, the 
 
 This article explains what the pipeline does at each stage and how to read its results.
 
-<iframe title="ifcviewer_5D_pipeline" style="width: 100%; aspect-ratio: 16 / 9;" src="https://app.powerbi.com/view?r=eyJrIjoiMzlhMDc3OTEtZTkwZC00Nzk0LTk2MWItNmMyOGQ3MTcyYjkwIiwidCI6IjQ0YjY0MGYzLTQ5YjAtNDMwNC05Yzk4LWM2MWQwYmMwZGMwMiJ9" frameborder="0" allowFullScreen="true"></iframe>
+<iframe title="ifcviewer_5D_pipeline" style="width: 100%; aspect-ratio: 16 / 9;" src="https://app.powerbi.com/reportEmbed?reportId=f1649ce1-1b08-4991-8b91-12b1808e3e6d&amp;autoAuth=true&amp;ctid=44b640f3-49b0-4304-9c98-c61d0bc0dc02" frameborder="0" allowFullScreen="true"></iframe>
 
 ## How the pipeline works
 
