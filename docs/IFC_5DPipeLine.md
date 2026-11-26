@@ -14,14 +14,9 @@ This article explains what the pipeline does at each stage and how to read its r
 
 <iframe title="ifcviewer_5D_pipeline" style="width: 100%; aspect-ratio: 16 / 9;" src="https://app.powerbi.com/view?r=eyJrIjoiMzlhMDc3OTEtZTkwZC00Nzk0LTk2MWItNmMyOGQ3MTcyYjkwIiwidCI6IjQ0YjY0MGYzLTQ5YjAtNDMwNC05Yzk4LWM2MWQwYmMwZGMwMiJ9" frameborder="0" allowFullScreen="true"></iframe>
 
-<video controls style="width: 100%; max-width: 960px; border-radius: 6px; margin: 12px 0;">
-  <source src="/_media/5d-pipeline-overview.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-The video is an eight-minute walkthrough of the full pipeline, from the input folders to the report pages.
-
 ## How the pipeline works
+
+![Diagram showing how Microsoft Fabric processes IFC models, a bill of quantities, and a Primavera P6 schedule from SharePoint, then publishes QA files and a Power BI report.](../_media/5d-pipeline-diagram.png)
 
 The pipeline has three stages:
 
@@ -123,7 +118,7 @@ The results come back to SharePoint on one reporting page that the whole team ca
 | Schedule & EV | The programme, with the activities and blocks that are falling behind. |
 | Action list | Every gap as a task, with its owner and reason. |
 
-![Screenshot of the Pulse page with the headline cost and schedule figures, the 3D model, and planned, earned, and actual cost by discipline.](../_media/5d-pipeline-pulse-page.png)
+![Screenshot of the Pulse page showing cost and schedule metrics, a 3D model colored by schedule performance, changes since the last run, and health checks.](../_media/5d-pipeline-pulse-page.png)
 
 ## Work through the action list
 
